@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.9.0</maven>
+  </prerequisites>
+
+  <groupId>com.apixio.PROJECTNAME</groupId>
+  <artifactId>apixio-app-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>${revision}${sha1}${changelist}</version>
+
+  <parent>
+    <groupId>com.apixio</groupId>
+    <artifactId>apixio-parent-scala</artifactId>
+    <version>13.0.21</version>
+  </parent>
+
+  <name>PROJECTNAME-parent-pom</name>
+
+  <profiles>
+    <!-- 
+      this profile is unable to be inherited due to the parent pom profiles being loaded after version is resolved
+    -->
+    <profile>
+      <id>ci-properties</id>
+      <activation>
+        <property>
+          <name>env.CIRCLE_PR_NUMBER</name>
+        </property>
+      </activation>
+      <properties>
+        <sha1>.${env.CIRCLE_PR_NUMBER}</sha1>
+      </properties>
+    </profile>
+  </profiles>
+
+  <properties>
+    <revision>100.0.0</revision>    <!-- Version for ALL artifacts built by this pom.xml+modules -->
+    <changelist>-SNAPSHOT</changelist>
+    <sha1/>
+    <io.dropwizard.metrics-version>4.1.16</io.dropwizard.metrics-version>
+    <io.dropwizard.version>1.3.29</io.dropwizard.version>
+    <com.fasterxml.jackson-version>2.14.2</com.fasterxml.jackson-version>
+    <org.slf4j-version>2.0.12</org.slf4j-version>
+    <com.google.protobuf-version>3.21.11</com.google.protobuf-version>
+  </properties>
+
+  <modules>
+    <module>exampleSvc</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- This section should list ALL artifacts produced by builds IN THIS REPOSITORY
+           in order to force a consistent version across uses.  This also implies that
+           any apixio artifact in this repository that depends on another apixio
+           artifact in here should NOT include <version> in the <dependency>
+           declaration. -->
+
+      <!-- use bom imports whenever possible -->
+
+      <!-- This section is for all known top-level shared/common dependencies of
+           modules.  All module pom.xml files that declare a <dependency> on one of
+           these artifacts MUST NOT INCLUDE <version> in the <dependency> declaration.
+
+           Note that groups of related artifacts (e.g., com.fasterxml.jackson.*) SHOULD
+           use a macro that defines the common version number for them.
+
+           ALL artifacts that are used/declared by more than one module MUST be declared
+           here (and follow the above rules). -->
+
+      <!-- use bom imports whenever possible -->
+
+      <dependency>
+        <groupId>com.apixio</groupId>
+        <artifactId>mono-bom_${scala.binary.version}</artifactId>
+        <version>${mono.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- 1.3.x of dropizard-bom includes a large dependency set which can cause un-neccissary confusion about dependencies -->
+      <dependency><groupId>io.dropwizard</groupId><artifactId>dropwizard-core</artifactId><version>${io.dropwizard.version}</version></dependency>
+      <dependency><groupId>io.dropwizard</groupId><artifactId>dropwizard-forms</artifactId><version>${io.dropwizard.version}</version></dependency>
+      <dependency><groupId>io.dropwizard</groupId><artifactId>dropwizard-testing</artifactId><version>${io.dropwizard.version}</version></dependency>
+      <dependency><groupId>io.dropwizard</groupId><artifactId>dropwizard-views-freemarker</artifactId><version>${io.dropwizard.version}</version></dependency>
+      <dependency><groupId>io.dropwizard.metrics</groupId><artifactId>metrics-annotation</artifactId><version>${io.dropwizard.metrics-version}</version></dependency>
+      <dependency><groupId>io.dropwizard.metrics</groupId><artifactId>metrics-core</artifactId><version>${io.dropwizard.metrics-version}</version></dependency>
+      <dependency><groupId>io.dropwizard.metrics</groupId><artifactId>metrics-jmx</artifactId><version>${io.dropwizard.metrics-version}</version></dependency>
+
+      <!-- This section is to fix problems with upperbounds/convergence with TRANSITIVE dependencies!  Top-level
+           dependencies are theoretically never conflicting due to single-point-control over versions (above)
+      -->
+
+      <!-- use bom imports whenever possible -->
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-bom</artifactId>
+        <version>${org.slf4j-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${com.fasterxml.jackson-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency><groupId>org.apache.commons</groupId><artifactId>commons-text</artifactId><version>1.10.0</version></dependency>
+      <dependency><groupId>com.google.errorprone</groupId><artifactId>error_prone_annotations</artifactId><version>2.7.1</version></dependency>
+      <dependency><groupId>org.hibernate</groupId><artifactId>hibernate-validator</artifactId><version>5.4.3.Final</version></dependency>
+      <dependency><groupId>org.scala-lang</groupId><artifactId>scala-library</artifactId><version>${scala.version}</version></dependency>
+      <dependency><groupId>joda-time</groupId><artifactId>joda-time</artifactId><version>2.12.2</version></dependency>
+      <dependency><groupId>com.google.code.gson</groupId><artifactId>gson</artifactId><version>2.8.9</version></dependency>
+      <dependency><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.12.0</version></dependency>
+      <dependency><groupId>org.javassist</groupId><artifactId>javassist</artifactId><version>3.28.0-GA</version></dependency>
+      <dependency><groupId>com.google.guava</groupId><artifactId>guava</artifactId><version>31.0.1-jre</version></dependency>
+      <dependency><groupId>com.google.protobuf</groupId><artifactId>protobuf-java-util</artifactId><version>${com.google.protobuf-version}</version></dependency>
+      <dependency><groupId>com.google.protobuf</groupId><artifactId>protobuf-java</artifactId><version>${com.google.protobuf-version}</version></dependency>
+
+
+    </dependencies>
+  </dependencyManagement>
+</project>

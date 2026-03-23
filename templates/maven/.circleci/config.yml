@@ -1,0 +1,142 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+orbs:
+  apx-maven-build: apixio/apx-maven-build@3.4.1
+  apx-utils: apixio/apx-circle-utils@3.4.1
+  apx-cache: apixio/apx-cache-wrapper@3.4.1
+
+parameters:
+  force_publish:
+    type: boolean
+    default: false
+  force_docker_build:
+    type: boolean
+    default: false
+
+workflows:
+  build-and-scan:
+    when:
+      not:
+        matches:
+          pattern: "^gh-readonly-queue/.*"
+          value: << pipeline.git.branch >>
+    jobs:
+      - apx-maven-build/maven-build:
+          name: maven-build-<< matrix.scala-version >>-with-shade
+          cache-prefix: &shade-cache-prefix PROJECTNAME-shade
+          maven-args: &maven-args -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS
+          with-shade: true
+          only-build-artifacts: false
+          matrix:
+            parameters:
+              scala-version: &scala-versions
+              - "2.12"
+      - apx-utils/container-build:
+          name: xray-container-build
+          publish-artifactory-build: true
+          publish-main-build: false
+          parallelism: 1
+          pre-steps:
+            - apx-cache/restore_cache:
+                key: PROJECTNAME-shade-depdendency-cache-2.12-build
+                workflow_cache: true
+                path: /root/.m2/repository
+          post-steps:
+          context:
+          - maven-user-creds
+          requires:
+          - maven-build-2.12-with-shade
+      - apx-utils/publish-xray-results:
+          name: publish-xray-results
+          pre-steps:
+          post-steps:
+          context:
+          - maven-user-creds
+          - github-comment-token
+          requires:
+          - xray-container-build
+  build-and-test:
+    when:
+      not:
+        matches: &publishOnlyBranchesMatch
+          pattern: "^(main|master|dev)$"
+          value: << pipeline.git.branch >>
+    jobs:
+      - apx-maven-build/maven-build:
+          name: maven-build-<< matrix.scala-version >>
+          cache-prefix: &cache-prefix PROJECTNAME
+          maven-args: *maven-args
+          matrix:
+            parameters:
+              scala-version: *scala-versions
+      - apx-maven-build/maven-test:
+          name: maven-test-<< matrix.scala-version >>
+          run-tests: true
+          cache-prefix: *cache-prefix
+          maven-args: *maven-args
+          parallelism: 1
+          context:
+          - staging-tests
+          requires:
+          - maven-build-<< matrix.scala-version >>
+          matrix:
+            parameters:
+              scala-version: *scala-versions
+      - apx-maven-build/maven-integration-test:
+          name: maven-integration-test-<< matrix.scala-version >>
+          run-tests: true
+          cache-prefix: *cache-prefix
+          maven-args: *maven-args
+          parallelism: 1
+          context:
+          - staging-tests
+          requires:
+          - maven-build-<< matrix.scala-version >>
+          matrix:
+            parameters:
+              scala-version: *scala-versions
+      - apx-maven-build/maven-codacy:
+          requires:
+          - apx-maven-build/maven-test
+          - apx-maven-build/maven-integration-test
+          run-tests: true
+          scala-version: "2.12"
+          cache-prefix: *cache-prefix
+  build-and-publish:
+    when:
+      or:
+        - matches: *publishOnlyBranchesMatch
+        - << pipeline.parameters.force_publish >>
+    jobs:
+      - apx-maven-build/maven-build:
+          name: maven-build-<< matrix.scala-version >>
+          cache-prefix: *cache-prefix
+          maven-args: *maven-args
+          matrix:
+            parameters:
+              scala-version: *scala-versions
+      - apx-maven-build/maven-publish:
+          name: maven-publish-<< matrix.scala-version >>
+          force-publish: << pipeline.parameters.force_publish >>
+          branch: << pipeline.git.branch >>
+          cache-prefix: *cache-prefix
+          maven-args: *maven-args
+          parallelism: 1
+          context:
+          - staging-tests
+          requires:
+          - maven-build-<< matrix.scala-version >>
+          matrix:
+            parameters:
+              scala-version: *scala-versions
+      - apx-utils/container-build:
+          force-docker-build: << pipeline.parameters.force_docker_build >>
+          force-publish: << pipeline.parameters.force_publish >>
+          branch: << pipeline.git.branch >>
+          parallelism: 1
+          post-steps:
+          context:
+          - maven-user-creds
+          requires:
+          - apx-maven-build/maven-publish
