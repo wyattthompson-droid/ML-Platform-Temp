@@ -1,0 +1,147 @@
+name: Refresh KPIs
+
+on:
+  schedule:
+    # Runs every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch GitHub KPIs
+        env:
+          GH_TOKEN: ${{ secrets.KPI_GITHUB_TOKEN }}
+          ORG: apixio
+        run: |
+          set -e
+
+          NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          THIRTY_DAYS_AGO=$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-30d +%Y-%m-%dT%H:%M:%SZ)
+          SIXTY_DAYS_AGO=$(date -u -d '60 days ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-60d +%Y-%m-%dT%H:%M:%SZ)
+
+          echo "Fetching repos for $ORG..."
+          REPOS=$(gh api "/orgs/$ORG/repos?per_page=100&sort=pushed" --paginate --jq '.[].name' 2>/dev/null | head -30)
+
+          CURRENT_PRS=0
+          PRIOR_PRS=0
+          MODEL_CURRENT=0
+          MODEL_PRIOR=0
+          TOTAL_MERGE_HOURS=0
+          MERGED_COUNT=0
+          PRIOR_MERGE_HOURS=0
+          PRIOR_MERGED_COUNT=0
+
+          for REPO in $REPOS; do
+            echo "Checking $REPO..."
+
+            # Fetch closed PRs
+            PRS=$(gh api "/repos/$ORG/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=50" 2>/dev/null || echo "[]")
+
+            # Current period (last 30 days)
+            CURRENT=$(echo "$PRS" | jq --arg since "$THIRTY_DAYS_AGO" --arg until "$NOW" '
+              [.[] | select(.merged_at != null and .merged_at >= $since and .merged_at < $until)]
+            ')
+            COUNT=$(echo "$CURRENT" | jq 'length')
+            CURRENT_PRS=$((CURRENT_PRS + COUNT))
+
+            # Model-related PRs (current)
+            MODEL_COUNT=$(echo "$CURRENT" | jq '
+              [.[] | select(
+                (.title | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i")) or
+                ((.body // "") | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i"))
+              )] | length
+            ')
+            MODEL_CURRENT=$((MODEL_CURRENT + MODEL_COUNT))
+
+            # Merge time (current)
+            MERGE_DATA=$(echo "$CURRENT" | jq '
+              [.[] | {
+                hours: (((.merged_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 3600)
+              }]
+            ')
+            PERIOD_HOURS=$(echo "$MERGE_DATA" | jq '[.[].hours] | add // 0')
+            PERIOD_COUNT=$(echo "$MERGE_DATA" | jq 'length')
+            TOTAL_MERGE_HOURS=$(echo "$TOTAL_MERGE_HOURS + $PERIOD_HOURS" | bc)
+            MERGED_COUNT=$((MERGED_COUNT + PERIOD_COUNT))
+
+            # Prior period (30-60 days ago)
+            PRIOR=$(echo "$PRS" | jq --arg since "$SIXTY_DAYS_AGO" --arg until "$THIRTY_DAYS_AGO" '
+              [.[] | select(.merged_at != null and .merged_at >= $since and .merged_at < $until)]
+            ')
+            PCOUNT=$(echo "$PRIOR" | jq 'length')
+            PRIOR_PRS=$((PRIOR_PRS + PCOUNT))
+
+            # Model-related PRs (prior)
+            PRIOR_MODEL_COUNT=$(echo "$PRIOR" | jq '
+              [.[] | select(
+                (.title | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i")) or
+                ((.body // "") | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i"))
+              )] | length
+            ')
+            MODEL_PRIOR=$((MODEL_PRIOR + PRIOR_MODEL_COUNT))
+
+            # Merge time (prior)
+            PRIOR_MERGE_DATA=$(echo "$PRIOR" | jq '
+              [.[] | {
+                hours: (((.merged_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 3600)
+              }]
+            ')
+            PRIOR_PERIOD_HOURS=$(echo "$PRIOR_MERGE_DATA" | jq '[.[].hours] | add // 0')
+            PRIOR_PERIOD_COUNT=$(echo "$PRIOR_MERGE_DATA" | jq 'length')
+            PRIOR_MERGE_HOURS=$(echo "$PRIOR_MERGE_HOURS + $PRIOR_PERIOD_HOURS" | bc)
+            PRIOR_MERGED_COUNT=$((PRIOR_MERGED_COUNT + PRIOR_PERIOD_COUNT))
+          done
+
+          # Calculate averages
+          if [ "$MERGED_COUNT" -gt 0 ]; then
+            AVG_MERGE_HOURS=$(echo "scale=0; $TOTAL_MERGE_HOURS / $MERGED_COUNT" | bc)
+          else
+            AVG_MERGE_HOURS="null"
+          fi
+
+          if [ "$PRIOR_MERGED_COUNT" -gt 0 ]; then
+            PRIOR_AVG_MERGE_HOURS=$(echo "scale=0; $PRIOR_MERGE_HOURS / $PRIOR_MERGED_COUNT" | bc)
+          else
+            PRIOR_AVG_MERGE_HOURS="null"
+          fi
+
+          UPDATED=$(date -u +"%Y-%m-%d %H:%M UTC")
+
+          # Update kpi-data.json
+          jq \
+            --argjson current_prs "$CURRENT_PRS" \
+            --argjson prior_prs "$PRIOR_PRS" \
+            --argjson model_current "$MODEL_CURRENT" \
+            --argjson model_prior "$MODEL_PRIOR" \
+            --argjson avg_merge "$AVG_MERGE_HOURS" \
+            --argjson prior_merge "$PRIOR_AVG_MERGE_HOURS" \
+            --arg updated "$UPDATED" \
+            '
+            .northstar[0].value = $model_current |
+            .northstar[0].previousValue = $model_prior |
+            .northstar[0].lastUpdated = $updated |
+            (.leading[] | select(.id == "num-prs")).value = $current_prs |
+            (.leading[] | select(.id == "num-prs")).previousValue = $prior_prs |
+            (.leading[] | select(.id == "num-prs")).lastUpdated = $updated |
+            (.leading[] | select(.id == "deployment-time")).value = $avg_merge |
+            (.leading[] | select(.id == "deployment-time")).previousValue = $prior_merge |
+            (.leading[] | select(.id == "deployment-time")).lastUpdated = $updated
+            ' kpi-data.json > kpi-data.tmp && mv kpi-data.tmp kpi-data.json
+
+          echo "Done! PRs: $CURRENT_PRS (prior: $PRIOR_PRS), Model updates: $MODEL_CURRENT, Avg merge: ${AVG_MERGE_HOURS}h"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kpi-data.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Auto-refresh KPI data $(date -u +%Y-%m-%d)"
+          git push

@@ -2,24 +2,29 @@
 
 Live dashboard and documentation hub for the Data Science & ML Platform team.
 
-## What's here
-
-- **KPI Dashboard** — Live metrics pulled from GitHub (Apixio org) + manually tracked KPIs
-- **Documentation** — OCR decision tree, Bedrock vs Databricks pricing, model availability, user personas
-
 ## View the Dashboard
 
-Once GitHub Pages is enabled, visit: `https://wyattthompson-droid.github.io/Wyatt/`
+https://wyattthompson-droid.github.io/ML-Platform-Temp/
 
-## Updating Manual KPIs
+## What's here
 
-Edit `kpi-data.json` and update the `value` and `previousValue` fields for any manual KPI. The dashboard reads from this file directly.
+- **KPI Dashboard** — GitHub-sourced metrics auto-refresh every 6 hours via GitHub Actions. Manual KPIs updated via `kpi-data.json`.
+- **Documentation** — OCR decision tree, Bedrock vs Databricks pricing, model availability, user personas
 
-## Connecting GitHub KPIs
+## How KPIs update
 
-1. Generate a GitHub personal access token with `repo` and `read:org` scope
-2. Enter it in the token field on the dashboard
-3. Click Connect — live KPIs will populate from the Apixio org
+**GitHub KPIs** (PRs, model updates, deployment time) are refreshed automatically every 6 hours by a GitHub Actions workflow. The workflow queries the Apixio org and writes results to `kpi-data.json`.
+
+**Manual KPIs** (inference errors, Databricks cost, OCR metrics) — edit `kpi-data.json` and update the `value` and `previousValue` fields.
+
+## Setup: GitHub Actions Token
+
+For the auto-refresh to work, add a repository secret:
+
+1. Go to repo **Settings → Secrets and variables → Actions**
+2. Click **New repository secret**
+3. Name: `KPI_GITHUB_TOKEN`
+4. Value: A GitHub personal access token with `repo` and `read:org` scope, authorized for the Apixio org via SSO
 
 ## Adding Documentation
 
@@ -28,11 +33,12 @@ Add new HTML pages to the `docs/` folder and link them from `index.html`.
 ## Repo Structure
 
 ```
-├── index.html          # Dashboard
-├── styles.css          # Styling
-├── app.js              # GitHub API integration + rendering
-├── kpi-data.json       # Manual KPI values
-├── docs/               # Documentation pages
+├── index.html                         # Dashboard
+├── styles.css                         # Styling
+├── app.js                             # Rendering logic
+├── kpi-data.json                      # All KPI values (auto + manual)
+├── .github/workflows/refresh-kpis.yml # Auto-refresh workflow
+├── docs/                              # Documentation pages
 │   ├── ocr-decision-tree.html
 │   ├── bedrock-vs-databricks-pricing.html
 │   ├── model-availability.html

@@ -40,36 +40,6 @@ header {
     gap: 12px;
 }
 
-.token-section {
-    display: flex;
-    gap: 8px;
-}
-
-.token-section input {
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    padding: 6px 12px;
-    color: #e1e4e8;
-    font-size: 13px;
-    width: 220px;
-}
-
-.token-section button {
-    background: #238636;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 16px;
-    font-size: 13px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.token-section button:hover {
-    background: #2ea043;
-}
-
 .last-refresh {
     color: #8b949e;
     font-size: 12px;
