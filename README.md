@@ -1,27 +1,41 @@
-# Getting Started
+# ML Platform Command Center
 
-You have a new team application repository!
+Live dashboard and documentation hub for the Data Science & ML Platform team.
 
-If you are seeing this in your README you likely have not ran the initialization script [init.sh](./init.sh). Read the below readme for instructions on how to get started.
+## What's here
 
+- **KPI Dashboard** — Live metrics pulled from GitHub (Apixio org) + manually tracked KPIs
+- **Documentation** — OCR decision tree, Bedrock vs Databricks pricing, model availability, user personas
 
-## Running init.sh
+## View the Dashboard
 
-the `init.sh` script will setup this repository for the specified project type. The project name will be inferred by based off the git repository name.
+Once GitHub Pages is enabled, visit: `https://wyattthompson-droid.github.io/Wyatt/`
+
+## Updating Manual KPIs
+
+Edit `kpi-data.json` and update the `value` and `previousValue` fields for any manual KPI. The dashboard reads from this file directly.
+
+## Connecting GitHub KPIs
+
+1. Generate a GitHub personal access token with `repo` and `read:org` scope
+2. Enter it in the token field on the dashboard
+3. Click Connect — live KPIs will populate from the Apixio org
+
+## Adding Documentation
+
+Add new HTML pages to the `docs/` folder and link them from `index.html`.
+
+## Repo Structure
 
 ```
-./init.sh maven
-```
-
-### Running outside of git
-
-Run init.sh with a project name and path. This can also be used for testing out changes to the templates
-
-```
-./init.sh maven myproject-name /path/to/project/dir
-```
-
-Testing out local changes
-```
-./init.sh maven testprojectname ./target
+├── index.html          # Dashboard
+├── styles.css          # Styling
+├── app.js              # GitHub API integration + rendering
+├── kpi-data.json       # Manual KPI values
+├── docs/               # Documentation pages
+│   ├── ocr-decision-tree.html
+│   ├── bedrock-vs-databricks-pricing.html
+│   ├── model-availability.html
+│   └── user-personas.html
+└── README.md
 ```

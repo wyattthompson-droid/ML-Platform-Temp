@@ -1,0 +1,123 @@
+{
+  "northstar": [
+    {
+      "id": "model-updates-prod",
+      "label": "Model Updates in Production",
+      "value": null,
+      "previousValue": null,
+      "unit": "",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
+    }
+  ],
+  "lagging": [
+    {
+      "id": "inference-errors",
+      "label": "Inference Errors",
+      "value": "—",
+      "previousValue": null,
+      "unit": "",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "Number of inference errors across production models"
+    },
+    {
+      "id": "model-runtime",
+      "label": "Model Run Time / Inference",
+      "value": "—",
+      "previousValue": null,
+      "unit": "ms",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "Average model run time per inference per product"
+    }
+  ],
+  "leading": [
+    {
+      "id": "deploy-success-rate",
+      "label": "Deploy Success Rate",
+      "value": null,
+      "previousValue": null,
+      "unit": "%",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Percentage of successful CI/CD deployments"
+    },
+    {
+      "id": "num-prs",
+      "label": "Number of PRs",
+      "value": null,
+      "previousValue": null,
+      "unit": "",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Pull requests opened (rolling 30 days)"
+    },
+    {
+      "id": "new-pipelines",
+      "label": "New Pipelines Set Up",
+      "value": null,
+      "previousValue": null,
+      "unit": "",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "New pipeline configurations added"
+    },
+    {
+      "id": "deployment-time",
+      "label": "Deployment Time (PR to Prod)",
+      "value": null,
+      "previousValue": null,
+      "unit": "hrs",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Average time from PR open to merge on main"
+    },
+    {
+      "id": "databricks-cost",
+      "label": "Non-Prod Databricks Cost",
+      "value": "—",
+      "previousValue": null,
+      "unit": "$",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "Monthly non-production Databricks spend"
+    },
+    {
+      "id": "ocr-throughput",
+      "label": "OCR Throughput",
+      "value": "—",
+      "previousValue": null,
+      "unit": "docs/hr",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "Documents processed per hour"
+    },
+    {
+      "id": "ocr-cost",
+      "label": "OCR Cost",
+      "value": "—",
+      "previousValue": null,
+      "unit": "$/doc",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "Cost per document processed"
+    },
+    {
+      "id": "ocr-reliability",
+      "label": "OCR Reliability",
+      "value": "—",
+      "previousValue": null,
+      "unit": "%",
+      "source": "manual",
+      "lastUpdated": "Awaiting data",
+      "description": "OCR pipeline success rate"
+    }
+  ],
+  "github_config": {
+    "org": "apixio",
+    "repos": [],
+    "team_members": []
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Availability — ML Platform</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .doc-page { max-width: 800px; margin: 0 auto; padding: 32px; }
+        .doc-page h1 { font-size: 28px; margin-bottom: 8px; color: #f0f6fc; }
+        .doc-page .status { color: #f0883e; font-size: 13px; margin-bottom: 24px; }
+        .doc-page p { color: #c9d1d9; line-height: 1.7; margin-bottom: 16px; }
+        .doc-page table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .doc-page th, .doc-page td { text-align: left; padding: 10px 14px; border: 1px solid #30363d; }
+        .doc-page th { background: #1c2128; color: #8b949e; font-size: 13px; text-transform: uppercase; }
+        .doc-page td { color: #c9d1d9; font-size: 14px; }
+        .check { color: #3fb950; }
+        .cross { color: #484f58; }
+        .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="doc-page">
+        <a href="../index.html" class="back-link">← Back to Command Center</a>
+        <h1>Model Availability by Platform</h1>
+        <p class="status">Status: Draft — to be validated with Tommy and Saba</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Databricks</th>
+                    <th>AWS Bedrock</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Claude (Anthropic)</td>
+                    <td class="check">Yes</td>
+                    <td class="check">Yes (4% discount)</td>
+                    <td>Pricing parity, ~4% difference</td>
+                </tr>
+                <tr>
+                    <td>GPT-4 / ChatGPT flagship</td>
+                    <td class="cross">—</td>
+                    <td class="cross">Not available</td>
+                    <td>Not available on Bedrock; not found on Databricks either</td>
+                </tr>
+                <tr>
+                    <td>OSS models (e.g., OSS120B)</td>
+                    <td class="check">Yes (own compute)</td>
+                    <td class="cross">Pricing not found</td>
+                    <td>May run on our own hardware — different cost model</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Note: The LLM false positive model may be running on a fine-tuned OSS120B on Databricks (per Geraint). Needs confirmation.</p>
+    </div>
+</body>
+</html>

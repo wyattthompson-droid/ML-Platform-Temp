@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Platform Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ML Platform Command Center</h1>
+            <p class="subtitle">Data Science & ML Platform KPIs and Documentation</p>
+        </div>
+        <div class="header-actions">
+            <div class="token-section">
+                <input type="password" id="github-token" placeholder="GitHub Token (for live KPIs)">
+                <button onclick="loadGitHubKPIs()">Connect</button>
+            </div>
+            <span class="last-refresh" id="last-refresh"></span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#kpis" class="active">KPIs</a>
+        <a href="#docs">Documentation</a>
+    </nav>
+
+    <main>
+        <!-- KPI Section -->
+        <section id="kpis">
+            <h2 class="section-title">North Star</h2>
+            <div class="kpi-grid" id="northstar-kpis"></div>
+
+            <h2 class="section-title">Outcome Metrics — Lagging</h2>
+            <div class="kpi-grid" id="lagging-kpis"></div>
+
+            <h2 class="section-title">Outcome Metrics — Leading</h2>
+            <div class="kpi-grid" id="leading-kpis"></div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section id="docs" style="display:none;">
+            <h2 class="section-title">Documentation</h2>
+            <div class="docs-grid">
+                <a href="docs/ocr-decision-tree.html" class="doc-card">
+                    <div class="doc-icon">&#128269;</div>
+                    <h3>OCR Decision Tree</h3>
+                    <p>When to use which OCR approach</p>
+                </a>
+                <a href="docs/bedrock-vs-databricks-pricing.html" class="doc-card">
+                    <div class="doc-icon">&#128176;</div>
+                    <h3>Bedrock vs Databricks Pricing</h3>
+                    <p>LLM cost comparison across platforms</p>
+                </a>
+                <a href="docs/model-availability.html" class="doc-card">
+                    <div class="doc-icon">&#129302;</div>
+                    <h3>Model Availability</h3>
+                    <p>Which models are available on which platforms</p>
+                </a>
+                <a href="docs/user-personas.html" class="doc-card">
+                    <div class="doc-icon">&#128100;</div>
+                    <h3>User Personas</h3>
+                    <p>Data Dan, ML Maya, AI Builder</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
