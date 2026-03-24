@@ -38,6 +38,10 @@ jobs:
           PRIOR_MERGE_HOURS=0
           PRIOR_MERGED_COUNT=0
 
+          # Initialize PR detail files
+          echo '[]' > model-prs.json
+          echo '[]' > all-prs.json
+
           REPO_COUNT=0
           for REPO in $REPOS; do
             echo "Checking $REPO..."
@@ -64,6 +68,12 @@ jobs:
             COUNT=$(echo "$CURRENT" | jq 'length')
             CURRENT_PRS=$((CURRENT_PRS + COUNT))
 
+            # Save all current PR details
+            echo "$CURRENT" | jq --arg repo "$REPO" '
+              [.[] | {title: .title, url: .html_url, repo: $repo, author: .user.login, merged_at: .merged_at, created_at: .created_at}]
+            ' > /tmp/current_prs.json
+            jq -s '.[0] + .[1]' all-prs.json /tmp/current_prs.json > /tmp/all_merged.json && mv /tmp/all_merged.json all-prs.json
+
             # Model-related PRs (current)
             MODEL_COUNT=$(echo "$CURRENT" | jq '
               [.[] | select(
@@ -72,6 +82,15 @@ jobs:
               )] | length
             ')
             MODEL_CURRENT=$((MODEL_CURRENT + MODEL_COUNT))
+
+            # Save model PR details
+            echo "$CURRENT" | jq --arg repo "$REPO" '
+              [.[] | select(
+                (.title | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i")) or
+                ((.body // "") | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i"))
+              ) | {title: .title, url: .html_url, repo: $repo, author: .user.login, merged_at: .merged_at, created_at: .created_at}]
+            ' > /tmp/model_prs.json
+            jq -s '.[0] + .[1]' model-prs.json /tmp/model_prs.json > /tmp/model_merged.json && mv /tmp/model_merged.json model-prs.json
 
             # Merge time (current)
             MERGE_DATA=$(echo "$CURRENT" | jq '
@@ -148,6 +167,10 @@ jobs:
             (.leading[] | select(.id == "deployment-time")).lastUpdated = $updated
             ' kpi-data.json > kpi-data.tmp && mv kpi-data.tmp kpi-data.json
 
+          # Sort detail files by merge date (newest first)
+          jq 'sort_by(.merged_at) | reverse' model-prs.json > /tmp/sorted.json && mv /tmp/sorted.json model-prs.json
+          jq 'sort_by(.merged_at) | reverse' all-prs.json > /tmp/sorted.json && mv /tmp/sorted.json all-prs.json
+
           echo "Checked $REPO_COUNT repos"
           echo "Done! PRs: $CURRENT_PRS (prior: $PRIOR_PRS), Model updates: $MODEL_CURRENT, Avg merge: ${AVG_MERGE_HOURS}h"
 
@@ -155,7 +178,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add kpi-data.json
+          git add kpi-data.json model-prs.json all-prs.json
           git diff --staged --quiet && echo "No changes" && exit 0
           git commit -m "Auto-refresh KPI data $(date -u +%Y-%m-%d)"
           git push

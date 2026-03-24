@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI Details — ML Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .detail-page { max-width: 900px; margin: 0 auto; padding: 32px; }
+        .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+        .detail-page h1 { font-size: 24px; color: #f0f6fc; margin-bottom: 4px; }
+        .detail-page .subtitle { color: #8b949e; font-size: 14px; margin-bottom: 24px; }
+        .pr-list { list-style: none; padding: 0; }
+        .pr-item {
+            background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+            padding: 16px; margin-bottom: 8px; display: flex; justify-content: space-between;
+            align-items: flex-start; gap: 16px; transition: border-color 0.2s;
+        }
+        .pr-item:hover { border-color: #58a6ff; }
+        .pr-title { color: #f0f6fc; font-size: 14px; font-weight: 500; text-decoration: none; display: block; margin-bottom: 4px; }
+        .pr-title:hover { color: #58a6ff; text-decoration: underline; }
+        .pr-meta { color: #8b949e; font-size: 12px; }
+        .pr-meta span { margin-right: 12px; }
+        .pr-repo { background: #1c2128; color: #58a6ff; font-size: 11px; padding: 2px 8px; border-radius: 10px; border: 1px solid #1f6feb33; white-space: nowrap; }
+        .empty-state { color: #8b949e; text-align: center; padding: 48px; font-size: 14px; }
+        .tab-bar { display: flex; gap: 0; margin-bottom: 24px; border-bottom: 1px solid #30363d; }
+        .tab { color: #8b949e; text-decoration: none; padding: 10px 16px; font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; cursor: pointer; }
+        .tab:hover { color: #f0f6fc; }
+        .tab.active { color: #f0f6fc; border-bottom-color: #f78166; }
+        .count-badge { background: #30363d; color: #c9d1d9; font-size: 11px; padding: 1px 6px; border-radius: 8px; margin-left: 6px; }
+    </style>
+</head>
+<body>
+    <div class="detail-page">
+        <a href="index.html" class="back-link">&larr; Back to Dashboard</a>
+        <h1 id="page-title">Loading...</h1>
+        <p class="subtitle" id="page-subtitle"></p>
+
+        <div class="tab-bar">
+            <div class="tab active" data-view="model" onclick="switchTab('model')">Model Updates <span class="count-badge" id="model-count"></span></div>
+            <div class="tab" data-view="all" onclick="switchTab('all')">All PRs <span class="count-badge" id="all-count"></span></div>
+        </div>
+
+        <ul class="pr-list" id="pr-list"></ul>
+    </div>
+
+    <script>
+        let modelPRs = [];
+        let allPRs = [];
+        let currentView = 'model';
+
+        async function init() {
+            try {
+                const [modelRes, allRes] = await Promise.all([
+                    fetch('model-prs.json'),
+                    fetch('all-prs.json')
+                ]);
+                modelPRs = await modelRes.json();
+                allPRs = await allRes.json();
+
+                document.getElementById('model-count').textContent = modelPRs.length;
+                document.getElementById('all-count').textContent = allPRs.length;
+
+                // Check URL hash for which tab
+                if (window.location.hash === '#all') {
+                    switchTab('all');
+                } else {
+                    render(modelPRs, 'Model Updates in Production');
+                }
+            } catch (err) {
+                document.getElementById('pr-list').innerHTML = '<li class="empty-state">No data yet. Run the KPI refresh workflow first.</li>';
+            }
+        }
+
+        function switchTab(view) {
+            currentView = view;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.tab[data-view="${view}"]`).classList.add('active');
+
+            if (view === 'model') {
+                render(modelPRs, 'Model Updates in Production');
+            } else {
+                render(allPRs, 'All PRs Merged');
+            }
+        }
+
+        function render(prs, title) {
+            document.getElementById('page-title').textContent = title;
+            document.getElementById('page-subtitle').textContent = `Rolling 30 days \u2014 ${prs.length} items`;
+
+            const list = document.getElementById('pr-list');
+
+            if (prs.length === 0) {
+                list.innerHTML = '<li class="empty-state">No items found for this period.</li>';
+                return;
+            }
+
+            list.innerHTML = prs.map(pr => {
+                const mergedDate = new Date(pr.merged_at).toLocaleDateString('en-US', {
+                    month: 'short', day: 'numeric', year: 'numeric'
+                });
+                const mergedTime = new Date(pr.merged_at).toLocaleTimeString('en-US', {
+                    hour: '2-digit', minute: '2-digit'
+                });
+                return `
+                    <li class="pr-item">
+                        <div>
+                            <a class="pr-title" href="${pr.url}" target="_blank">${pr.title}</a>
+                            <div class="pr-meta">
+                                <span>by ${pr.author}</span>
+                                <span>merged ${mergedDate} at ${mergedTime}</span>
+                            </div>
+                        </div>
+                        <span class="pr-repo">${pr.repo}</span>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        init();
+    </script>
+</body>
+</html>

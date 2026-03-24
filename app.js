@@ -39,10 +39,23 @@ function renderKPISection(containerId, kpis) {
     });
 }
 
+// Map KPI IDs to detail page views
+const kpiDetailLinks = {
+    'model-updates-prod': 'details.html#model',
+    'num-prs': 'details.html#all',
+    'deployment-time': 'details.html#all',
+};
+
 function createKPICard(kpi) {
     const card = document.createElement('div');
     card.className = 'kpi-card';
     card.id = `kpi-${kpi.id}`;
+
+    const detailLink = kpiDetailLinks[kpi.id];
+    if (detailLink) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => window.location.href = detailLink);
+    }
 
     const displayValue = kpi.value !== null ? formatValue(kpi.value, kpi.unit) : '\u2014';
     const change = calculateChange(kpi.value, kpi.previousValue);
