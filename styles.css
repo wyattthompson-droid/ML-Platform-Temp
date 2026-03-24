@@ -211,6 +211,34 @@ main {
     color: #8b949e;
 }
 
+/* Tooltip */
+.kpi-card.has-tooltip {
+    position: relative;
+}
+
+.kpi-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1c2128;
+    border: 1px solid #58a6ff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #c9d1d9;
+    line-height: 1.5;
+    width: 300px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+.kpi-card.has-tooltip:hover .kpi-tooltip {
+    display: block;
+}
+
 /* Loading state */
 .loading {
     color: #8b949e;

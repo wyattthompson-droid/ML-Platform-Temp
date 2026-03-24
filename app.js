@@ -14,15 +14,47 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
+// PR detail data for tooltips
+let modelPRs = [];
+let allPRs = [];
+
 // Load KPI data and render
 async function init() {
     try {
-        const response = await fetch('kpi-data.json');
-        kpiData = await response.json();
+        const [kpiRes, modelRes, allRes] = await Promise.all([
+            fetch('kpi-data.json'),
+            fetch('model-prs.json').catch(() => ({ json: () => [] })),
+            fetch('all-prs.json').catch(() => ({ json: () => [] }))
+        ]);
+        kpiData = await kpiRes.json();
+        modelPRs = await modelRes.json();
+        allPRs = await allRes.json();
         renderAllKPIs();
     } catch (err) {
         console.error('Failed to load KPI data:', err);
     }
+}
+
+function buildTooltipSummary(kpiId) {
+    let prs = [];
+    if (kpiId === 'model-updates-prod') prs = modelPRs;
+    else if (kpiId === 'num-prs' || kpiId === 'deployment-time') prs = allPRs;
+    else return null;
+
+    if (prs.length === 0) return null;
+
+    const repos = [...new Set(prs.map(p => p.repo))];
+    const latest = prs[0];
+    const latestDate = new Date(latest.merged_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    if (kpiId === 'model-updates-prod') {
+        return `${prs.length} model PRs across ${repos.length} repos. Latest: "${latest.title}" (${latest.repo}, ${latestDate})`;
+    } else if (kpiId === 'num-prs') {
+        return `${prs.length} PRs merged across ${repos.length} repos. Latest: "${latest.title}" (${latest.repo}, ${latestDate})`;
+    } else if (kpiId === 'deployment-time') {
+        return `Based on ${prs.length} merged PRs across ${repos.length} repos. Click for full list.`;
+    }
+    return null;
 }
 
 function renderAllKPIs() {
@@ -76,7 +108,18 @@ function createKPICard(kpi) {
         </div>
     `;
 
-    card.title = kpi.description;
+    // Add hover tooltip
+    const tooltip = buildTooltipSummary(kpi.id);
+    if (tooltip) {
+        const tipEl = document.createElement('div');
+        tipEl.className = 'kpi-tooltip';
+        tipEl.textContent = tooltip;
+        card.appendChild(tipEl);
+        card.classList.add('has-tooltip');
+    } else {
+        card.title = kpi.description;
+    }
+
     return card;
 }
 
