@@ -160,6 +160,30 @@
     "created_at": "2026-03-10T17:15:13Z"
   },
   {
+    "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/286",
+    "repo": "databricks-ops-infra",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-09T17:37:03Z",
+    "created_at": "2026-03-09T16:52:38Z"
+  },
+  {
+    "title": "fix: resolve ETL workspace drift from provider constraint and missing workload_size (PLT-3878)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/285",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-09T17:28:16Z",
+    "created_at": "2026-03-06T19:59:16Z"
+  },
+  {
+    "title": "PLT-3698: DBU Spend Analysis + CYA Asset Claim Report",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/271",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-06T18:51:29Z",
+    "created_at": "2026-02-26T22:48:57Z"
+  },
+  {
     "title": "Security aca models",
     "url": "https://github.com/Apixio/di-platform/pull/248",
     "repo": "di-platform",
@@ -168,11 +192,59 @@
     "created_at": "2026-03-05T19:04:31Z"
   },
   {
+    "title": "fix: add workspace compliance tags to LLM tenant module",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/281",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T22:08:33Z",
+    "created_at": "2026-03-05T22:08:20Z"
+  },
+  {
+    "title": "chore: reconcile LLM model serving endpoint drift (etl-ra-prd)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/280",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T20:54:27Z",
+    "created_at": "2026-03-05T20:49:21Z"
+  },
+  {
     "title": "[READY] remove all unused kaiser related models and tasklist models",
     "url": "https://github.com/Apixio/di-platform/pull/245",
     "repo": "di-platform",
     "author": "ktapixio",
     "merged_at": "2026-03-04T00:39:58Z",
     "created_at": "2026-03-03T22:43:08Z"
+  },
+  {
+    "title": "Add test endpoints for all partner models",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/263",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T23:16:10Z",
+    "created_at": "2026-02-23T18:40:46Z"
+  },
+  {
+    "title": "Remove moved block — fix external_model endpoint creation",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/262",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T18:30:55Z",
+    "created_at": "2026-02-23T18:24:28Z"
+  },
+  {
+    "title": "Fix partner model endpoints — use external_model proxy",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/261",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T18:18:04Z",
+    "created_at": "2026-02-23T17:43:44Z"
+  },
+  {
+    "title": "Fix LLM endpoint: use workload_size for partner models",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/260",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T17:06:43Z",
+    "created_at": "2026-02-20T22:31:33Z"
   }
 ]

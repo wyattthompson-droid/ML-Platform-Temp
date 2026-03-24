@@ -248,6 +248,22 @@
     "created_at": "2026-03-22T23:40:27Z"
   },
   {
+    "title": "add back self trust",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/296",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-21T00:27:30Z",
+    "created_at": "2026-03-21T00:17:16Z"
+  },
+  {
+    "title": "hide the iam role not yet created 2",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/295",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-21T00:10:26Z",
+    "created_at": "2026-03-20T21:16:29Z"
+  },
+  {
     "title": "Al update arns parent chart",
     "url": "https://github.com/Apixio/cloud9/pull/313",
     "repo": "cloud9",
@@ -256,12 +272,28 @@
     "created_at": "2026-03-20T21:18:37Z"
   },
   {
+    "title": "PLT-4166 hide the iam role not yet created",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/294",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-20T20:04:41Z",
+    "created_at": "2026-03-20T19:35:28Z"
+  },
+  {
     "title": "AL: now let's update them arns",
     "url": "https://github.com/Apixio/cloud9/pull/312",
     "repo": "cloud9",
     "author": "adalundhe",
     "merged_at": "2026-03-20T19:57:11Z",
     "created_at": "2026-03-20T19:09:32Z"
+  },
+  {
+    "title": "PLT-4166 add IAM roles for databricks accessing to docsearch-opensearch prd",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/293",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-20T19:14:11Z",
+    "created_at": "2026-03-20T18:09:14Z"
   },
   {
     "title": "Al add port 8443",
@@ -294,6 +326,14 @@
     "author": "dmytrobondarchuk-datavant",
     "merged_at": "2026-03-20T17:59:49Z",
     "created_at": "2026-03-17T16:54:10Z"
+  },
+  {
+    "title": "Ming plt 4166 add service principals",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/292",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-20T16:41:47Z",
+    "created_at": "2026-03-19T22:16:09Z"
   },
   {
     "title": "[READY] DI-2839: Fix collision issues",
@@ -454,6 +494,14 @@
     "author": "ribrayev-apixio",
     "merged_at": "2026-03-19T19:35:33Z",
     "created_at": "2026-03-19T19:24:33Z"
+  },
+  {
+    "title": "update terraform to reflect the changes in databricks catalog credent…",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/291",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-19T19:35:27Z",
+    "created_at": "2026-03-18T20:56:11Z"
   },
   {
     "title": "dev to main",
@@ -1104,6 +1152,14 @@
     "created_at": "2026-03-12T20:58:00Z"
   },
   {
+    "title": "PLT-4201: Empower table owners to validate Snowflake grants end-to-end",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/290",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-12T21:34:41Z",
+    "created_at": "2026-03-12T17:32:03Z"
+  },
+  {
     "title": "changed sp secret to science sp",
     "url": "https://github.com/Apixio/ml-qamodel/pull/21",
     "repo": "ml-qamodel",
@@ -1150,6 +1206,14 @@
     "author": "alanli-datavant",
     "merged_at": "2026-03-12T17:55:13Z",
     "created_at": "2026-03-11T00:15:21Z"
+  },
+  {
+    "title": "Add Snowflake grants for clinical platform_silver tables",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/289",
+    "repo": "databricks-ops-infra",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-12T16:34:09Z",
+    "created_at": "2026-03-12T15:06:12Z"
   },
   {
     "title": "Al reenable tls",
@@ -1336,6 +1400,14 @@
     "created_at": "2026-03-06T17:16:57Z"
   },
   {
+    "title": "PLT-4142 - Adding remaining data-platform SPs in Dev",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/288",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-03-11T12:41:56Z",
+    "created_at": "2026-03-10T14:43:55Z"
+  },
+  {
     "title": "Auto release PR 15.0.34",
     "url": "https://github.com/Apixio/mono/pull/3623",
     "repo": "mono",
@@ -1464,6 +1536,14 @@
     "created_at": "2026-03-09T22:51:41Z"
   },
   {
+    "title": "Snowflake integration ontology mapping tables",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/287",
+    "repo": "databricks-ops-infra",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-09T20:08:40Z",
+    "created_at": "2026-03-09T19:44:41Z"
+  },
+  {
     "title": "dev -> main",
     "url": "https://github.com/Apixio/ml-retrosp/pull/113",
     "repo": "ml-retrosp",
@@ -1512,12 +1592,28 @@
     "created_at": "2026-03-06T18:14:18Z"
   },
   {
+    "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/286",
+    "repo": "databricks-ops-infra",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-09T17:37:03Z",
+    "created_at": "2026-03-09T16:52:38Z"
+  },
+  {
     "title": "added icd remap table for meatlaat inference",
     "url": "https://github.com/Apixio/ml-retrosp/pull/111",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-03-09T17:36:57Z",
     "created_at": "2026-03-09T17:06:48Z"
+  },
+  {
+    "title": "fix: resolve ETL workspace drift from provider constraint and missing workload_size (PLT-3878)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/285",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-09T17:28:16Z",
+    "created_at": "2026-03-06T19:59:16Z"
   },
   {
     "title": "FIx HCC Blacklisting zip bug",
@@ -1624,12 +1720,28 @@
     "created_at": "2026-03-06T18:50:21Z"
   },
   {
+    "title": "PLT-3698: DBU Spend Analysis + CYA Asset Claim Report",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/271",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-06T18:51:29Z",
+    "created_at": "2026-02-26T22:48:57Z"
+  },
+  {
     "title": "Fix",
     "url": "https://github.com/Apixio/di-platform/pull/252",
     "repo": "di-platform",
     "author": "nsadineni-apixio",
     "merged_at": "2026-03-06T18:20:58Z",
     "created_at": "2026-03-06T18:19:24Z"
+  },
+  {
+    "title": "feat: import data-ml-platform-cost-usage SPN into IaC (PLT-4065)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/283",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-06T18:19:13Z",
+    "created_at": "2026-03-06T17:24:26Z"
   },
   {
     "title": "Fix",
@@ -1646,6 +1758,14 @@
     "author": "nsadineni-apixio",
     "merged_at": "2026-03-06T17:35:57Z",
     "created_at": "2026-03-05T16:34:01Z"
+  },
+  {
+    "title": "fix: include USE_CATALOG and BROWSE in ontology catalog grants (PLT-4067)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/282",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-06T17:05:16Z",
+    "created_at": "2026-03-06T16:56:49Z"
   },
   {
     "title": "AL: add deploy identity verification",
@@ -1696,6 +1816,14 @@
     "created_at": "2026-03-05T19:04:31Z"
   },
   {
+    "title": "fix: add workspace compliance tags to LLM tenant module",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/281",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T22:08:33Z",
+    "created_at": "2026-03-05T22:08:20Z"
+  },
+  {
     "title": "EN-46767: other Transfer Status Enum",
     "url": "https://github.com/Apixio/mono/pull/3619",
     "repo": "mono",
@@ -1704,12 +1832,36 @@
     "created_at": "2026-03-05T21:41:13Z"
   },
   {
+    "title": "feat: grant Data ML Platform access to ontology catalogs (PLT-4067)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/279",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T21:46:09Z",
+    "created_at": "2026-03-05T20:39:29Z"
+  },
+  {
+    "title": "chore: reconcile LLM model serving endpoint drift (etl-ra-prd)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/280",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T20:54:27Z",
+    "created_at": "2026-03-05T20:49:21Z"
+  },
+  {
     "title": "Change logic from single to multiple mbis",
     "url": "https://github.com/Apixio/mono/pull/3617",
     "repo": "mono",
     "author": "luizalcantara-apixio",
     "merged_at": "2026-03-05T19:28:05Z",
     "created_at": "2026-03-04T18:54:28Z"
+  },
+  {
+    "title": "feat: add data-ml-platform-unstructured SPs to IaC (PLT-4052)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/277",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-03-05T19:13:26Z",
+    "created_at": "2026-03-04T21:50:33Z"
   },
   {
     "title": "updated black list all ACA pregnancy HCCs as requested by Samantha",
@@ -1768,6 +1920,14 @@
     "created_at": "2026-03-04T23:11:07Z"
   },
   {
+    "title": "include instance profile to compute policy 4",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/278",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-04T23:52:34Z",
+    "created_at": "2026-03-04T22:48:12Z"
+  },
+  {
     "title": "version upgrade to handle docs updates",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/106",
     "repo": "tfc-bootstrap",
@@ -1798,6 +1958,22 @@
     "author": "yjiang-apixio",
     "merged_at": "2026-03-04T21:18:29Z",
     "created_at": "2026-03-04T19:08:15Z"
+  },
+  {
+    "title": "add policies for dev and etl-ra-prd",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/276",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-04T18:49:04Z",
+    "created_at": "2026-03-04T17:59:02Z"
+  },
+  {
+    "title": "create new compute policy for docsearch",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/275",
+    "repo": "databricks-ops-infra",
+    "author": "MingFang-datavant",
+    "merged_at": "2026-03-04T17:40:10Z",
+    "created_at": "2026-03-03T19:33:22Z"
   },
   {
     "title": "User Manager feature Dao code",
@@ -1960,6 +2136,14 @@
     "created_at": "2026-02-26T23:17:45Z"
   },
   {
+    "title": "remove duplicate rick analytics group from dev",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/274",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-03-02T20:23:02Z",
+    "created_at": "2026-03-02T19:05:00Z"
+  },
+  {
     "title": "add launchpad, workqueue, cardinal-system and qie",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/103",
     "repo": "tfc-bootstrap",
@@ -1982,6 +2166,22 @@
     "author": "alanli-datavant",
     "merged_at": "2026-03-02T17:22:10Z",
     "created_at": "2026-02-24T20:05:04Z"
+  },
+  {
+    "title": "add group to dev workspace",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/273",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-02-27T22:57:58Z",
+    "created_at": "2026-02-27T22:52:48Z"
+  },
+  {
+    "title": "create new group risk analytics",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/272",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-02-27T21:09:50Z",
+    "created_at": "2026-02-27T18:31:43Z"
   },
   {
     "title": "version bump to fix import workflow tmpl",
@@ -2032,12 +2232,28 @@
     "created_at": "2026-02-26T21:07:18Z"
   },
   {
+    "title": "PLT-3883 - Add IRR SPs for Data-Science",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/269",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-26T20:45:10Z",
+    "created_at": "2026-02-26T17:40:39Z"
+  },
+  {
     "title": "SCIK-2461 create catalog views and final feature exploration",
     "url": "https://github.com/Apixio/ml-df-matching/pull/5",
     "repo": "ml-df-matching",
     "author": "diegoramallo-apixio",
     "merged_at": "2026-02-26T20:42:52Z",
     "created_at": "2026-02-26T15:14:53Z"
+  },
+  {
+    "title": "PLT-3790 - Fix SP Permission reapplication",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/270",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-26T20:42:46Z",
+    "created_at": "2026-02-26T17:43:13Z"
   },
   {
     "title": "En 45596 import",
@@ -2168,6 +2384,14 @@
     "created_at": "2026-02-25T23:22:13Z"
   },
   {
+    "title": "Adding batch-inference sp to Dev Workflow",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/268",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-25T23:21:34Z",
+    "created_at": "2026-02-25T23:18:13Z"
+  },
+  {
     "title": "updated view creation to only include docsts",
     "url": "https://github.com/Apixio/ml-retrosp/pull/100",
     "repo": "ml-retrosp",
@@ -2190,6 +2414,30 @@
     "author": "adalundhe",
     "merged_at": "2026-02-25T22:17:16Z",
     "created_at": "2026-02-19T01:18:38Z"
+  },
+  {
+    "title": "PLT-3625 - Adding data-ml-platform-data-validation SP in dev + etl",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/266",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-25T22:05:36Z",
+    "created_at": "2026-02-25T21:31:30Z"
+  },
+  {
+    "title": "PLT-3718 - Import data-science-job-dlt-policy-sp to dev/exp/etl",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/267",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-25T22:01:02Z",
+    "created_at": "2026-02-25T21:31:58Z"
+  },
+  {
+    "title": "PLT-3663 - Import data-science-icd + create secret scopes to store tokens",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/265",
+    "repo": "databricks-ops-infra",
+    "author": "dv-mmounts",
+    "merged_at": "2026-02-25T21:43:34Z",
+    "created_at": "2026-02-25T21:16:51Z"
   },
   {
     "title": "[CN] EN46539 - Add some defaults search filters for my search ",
@@ -2472,6 +2720,14 @@
     "created_at": "2026-02-24T00:34:36Z"
   },
   {
+    "title": "Add test endpoints for all partner models",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/263",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T23:16:10Z",
+    "created_at": "2026-02-23T18:40:46Z"
+  },
+  {
     "title": "Mapping Table Feature",
     "url": "https://github.com/Apixio/ml-llmfp/pull/86",
     "repo": "ml-llmfp",
@@ -2518,6 +2774,30 @@
     "author": "gtang-apixio",
     "merged_at": "2026-02-23T18:48:19Z",
     "created_at": "2026-02-23T18:17:27Z"
+  },
+  {
+    "title": "Remove moved block — fix external_model endpoint creation",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/262",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T18:30:55Z",
+    "created_at": "2026-02-23T18:24:28Z"
+  },
+  {
+    "title": "Fix partner model endpoints — use external_model proxy",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/261",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T18:18:04Z",
+    "created_at": "2026-02-23T17:43:44Z"
+  },
+  {
+    "title": "Fix LLM endpoint: use workload_size for partner models",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/260",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-02-23T17:06:43Z",
+    "created_at": "2026-02-20T22:31:33Z"
   },
   {
     "title": "Crest report queue page implemented",
