@@ -38,11 +38,24 @@ jobs:
           PRIOR_MERGE_HOURS=0
           PRIOR_MERGED_COUNT=0
 
+          REPO_COUNT=0
           for REPO in $REPOS; do
             echo "Checking $REPO..."
+            REPO_COUNT=$((REPO_COUNT + 1))
 
-            # Fetch closed PRs
-            PRS=$(gh api "/repos/$ORG/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=50" 2>/dev/null || echo "[]")
+            # Fetch closed PRs — validate response is an array
+            PRS=$(gh api "/repos/$ORG/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=50" 2>&1 || true)
+
+            # Check if response is a valid JSON array
+            IS_ARRAY=$(echo "$PRS" | jq 'if type == "array" then "yes" else "no" end' 2>/dev/null || echo '"no"')
+            if [ "$IS_ARRAY" != '"yes"' ]; then
+              echo "  Skipping $REPO — API returned non-array (likely auth issue)"
+              echo "  Response preview: $(echo "$PRS" | head -c 200)"
+              continue
+            fi
+
+            PR_COUNT=$(echo "$PRS" | jq 'length')
+            echo "  Found $PR_COUNT closed PRs"
 
             # Current period (last 30 days)
             CURRENT=$(echo "$PRS" | jq --arg since "$THIRTY_DAYS_AGO" --arg until "$NOW" '
@@ -135,6 +148,7 @@ jobs:
             (.leading[] | select(.id == "deployment-time")).lastUpdated = $updated
             ' kpi-data.json > kpi-data.tmp && mv kpi-data.tmp kpi-data.json
 
+          echo "Checked $REPO_COUNT repos"
           echo "Done! PRs: $CURRENT_PRS (prior: $PRIOR_PRS), Model updates: $MODEL_CURRENT, Avg merge: ${AVG_MERGE_HOURS}h"
 
       - name: Commit and push
