@@ -3,29 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedrock vs Databricks Pricing — ML Platform</title>
+    <title>Choosing an LLM Serving Path at Datavant — ML Platform</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .doc-page { max-width: 800px; margin: 0 auto; padding: 32px; }
+        .doc-page { max-width: 900px; margin: 0 auto; padding: 32px; }
         .doc-page h1 { font-size: 28px; margin-bottom: 8px; color: #f0f6fc; }
-        .doc-page .status { color: #f0883e; font-size: 13px; margin-bottom: 24px; }
+        .doc-page h2 { font-size: 20px; color: #f0f6fc; margin-top: 32px; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+        .doc-page h3 { font-size: 16px; color: #c9d1d9; margin-top: 24px; margin-bottom: 8px; }
         .doc-page p { color: #c9d1d9; line-height: 1.7; margin-bottom: 16px; }
+        .doc-page ul { color: #c9d1d9; padding-left: 24px; line-height: 1.8; margin-bottom: 16px; }
+        .doc-page li { margin-bottom: 4px; }
         .doc-page .tldr { background: #1c2128; border-left: 3px solid #3fb950; padding: 16px; border-radius: 4px; margin-bottom: 24px; }
         .doc-page .tldr strong { color: #3fb950; }
+        .doc-page .callout { background: #1c2128; border-left: 3px solid #f0883e; padding: 16px; border-radius: 4px; margin-bottom: 24px; }
+        .doc-page .callout strong { color: #f0883e; }
+        .doc-page .callout-blue { background: #1c2128; border-left: 3px solid #58a6ff; padding: 16px; border-radius: 4px; margin-bottom: 24px; }
+        .doc-page .callout-blue strong { color: #58a6ff; }
         .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
         .back-link:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th { background: #1c2128; color: #8b949e; text-align: left; padding: 10px 14px; border: 1px solid #30363d; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+        td { color: #c9d1d9; padding: 10px 14px; border: 1px solid #30363d; }
+        tr:hover td { background: #161b2288; }
+        .winner { color: #3fb950; font-weight: 500; }
+        .neutral { color: #8b949e; }
+        .section-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     </style>
 </head>
 <body>
     <div class="doc-page">
-        <a href="../index.html" class="back-link">← Back to Command Center</a>
-        <h1>Bedrock vs Databricks Pricing</h1>
-        <p class="status">Status: Pending migration from Google Docs</p>
+        <a href="../index.html" class="back-link">&larr; Back to Command Center</a>
+        <h1>Choosing an LLM Serving Path at Datavant</h1>
+
         <div class="tldr">
-            <strong>TLDR:</strong> Databricks costs ~4% more than Bedrock for Claude models — essentially pricing parity. The 4% reflects a discount we receive from AWS/Bedrock that Databricks doesn't match. Given the scaffolding benefits Databricks provides (tooling, governance, experiment tracking), the recommendation is Databricks unless there's a specific Bedrock-only requirement.
+            <strong>TLDR:</strong> Datavant has three ways to serve LLMs: Bedrock, Databricks, and Direct APIs. For production, Databricks is recommended for its built-in governance, cost attribution, and platform alignment &mdash; at only ~4% more cost than Bedrock. Databricks endpoints are early access with SLA-backed production targeted for Q2 2026.
         </div>
-        <p>Full pricing comparison tables and model-by-model breakdown to be migrated from Google Docs.</p>
-        <p>Key finding: OSS models on Databricks may run on our own compute, making the pricing model different (not per-token).</p>
+
+        <h2>The Three Paths</h2>
+        <p>Datavant teams currently have three viable ways to serve foundation models:</p>
+        <ul>
+            <li><strong>Amazon Bedrock</strong> &mdash; AWS-native, IAM-based auth, mature SLAs</li>
+            <li><strong>Databricks LLM Endpoints</strong> &mdash; Built-in cost attribution, usage tracking, endpoint isolation, open-source flexibility</li>
+            <li><strong>Direct Model APIs</strong> (e.g., Anthropic Claude directly) &mdash; Best for quick prototyping</li>
+        </ul>
+        <p>All three provide access to production-grade LLMs. The decision is not about model quality alone. It is about governance, cost visibility, operational overhead, compliance surface area, platform maturity, and long-term flexibility.</p>
+
+        <div class="callout">
+            <strong>Note:</strong> Databricks endpoints are currently early access and not yet SLA-backed, with a productionized release targeted for Q2 2026.
+        </div>
+
+        <h2>Estimated Timeline per Use Case</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Bedrock</th>
+                    <th>Databricks LLM Endpoints</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Time to First Call (0&rarr;1)</td>
+                    <td>1&ndash;3 days (AWS-native)</td>
+                    <td>2&ndash;5 days (PR + provisioning)</td>
+                </tr>
+                <tr>
+                    <td>Authentication Setup</td>
+                    <td>Same day (IAM role)</td>
+                    <td>1&ndash;2 days (OAuth setup)</td>
+                </tr>
+                <tr>
+                    <td>Secret Handling Setup</td>
+                    <td>&lt;1 day (IAM policy)</td>
+                    <td>1 day (credential setup)</td>
+                </tr>
+                <tr>
+                    <td>Endpoint Isolation</td>
+                    <td>1&ndash;3 days if separate</td>
+                    <td class="winner">Built in at provisioning</td>
+                </tr>
+                <tr>
+                    <td>Rate Limiting</td>
+                    <td>1&ndash;2 days (AWS/app config)</td>
+                    <td class="winner">Built in</td>
+                </tr>
+                <tr>
+                    <td>Usage Tracking Setup</td>
+                    <td>2&ndash;5 days (observability setup)</td>
+                    <td class="winner">Built in</td>
+                </tr>
+                <tr>
+                    <td>Cost Attribution Setup</td>
+                    <td>1&ndash;3 days (AWS tagging)</td>
+                    <td class="winner">Built in (cost tag required)</td>
+                </tr>
+                <tr>
+                    <td>Experimentation Setup</td>
+                    <td>3&ndash;7 days (app-managed)</td>
+                    <td class="winner">1&ndash;2 days (config change)</td>
+                </tr>
+                <tr>
+                    <td>Evaluation / ML Workflow</td>
+                    <td>1&ndash;3 weeks (separate tooling)</td>
+                    <td class="winner">2&ndash;5 days (platform-aligned)</td>
+                </tr>
+                <tr>
+                    <td>Open Source Model Setup</td>
+                    <td class="neutral">Limited support</td>
+                    <td class="winner">2&ndash;5 days (provisioned endpoint)</td>
+                </tr>
+                <tr>
+                    <td>Production Hardening</td>
+                    <td class="winner">Mature; minimal extra</td>
+                    <td>Not SLA-ready yet</td>
+                </tr>
+                <tr>
+                    <td>Internal Ramp-Up</td>
+                    <td class="winner">Low (AWS familiar)</td>
+                    <td>1&ndash;2 weeks familiarity</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>What You Get "Free" with Databricks</h2>
+        <p>Non-obvious benefits that come built in:</p>
+        <ul>
+            <li><strong>Dedicated endpoint per service</strong> &mdash; isolation + clean blast radius</li>
+            <li><strong>Built-in rate limiting</strong> &mdash; per-endpoint QPM caps</li>
+            <li><strong>Observability built in</strong> &mdash; automatic request logs + usage metrics (tokens, latency, volume) per endpoint</li>
+            <li><strong>Central dashboards</strong> &mdash; usage and cost visibility with no custom logging required</li>
+            <li><strong>Easier alerting</strong> &mdash; centralized metrics vs app-by-app</li>
+            <li><strong>Automatic cost attribution</strong> &mdash; required dv-cost-owner tag</li>
+            <li><strong>Usage tracking at the platform layer</strong> &mdash; no extra Datadog tracing setup</li>
+            <li><strong>Easy experimentation</strong> &mdash; swap models / adjust limits via config changes</li>
+            <li><strong>Open-source model support</strong> &mdash; provisioned throughput options like Llama</li>
+            <li><strong>Native evaluation + ML workflow path</strong> &mdash; aligned with Databricks tooling</li>
+        </ul>
+
+        <h2>Model Availability</h2>
+        <p>Model availability varies across platforms and does not imply production approval.</p>
+        <ul>
+            <li><strong>Databricks</strong> supports a broad set of commercial (Claude, GPT, Gemini) and open-source models within a unified serving framework.</li>
+            <li><strong>Amazon Bedrock</strong> provides strong support for Anthropic (Claude) and some Google and OpenAI offerings, but does not include all frontier models (e.g., GPT-5).</li>
+            <li><strong>Direct APIs</strong> (OpenAI, Google, Anthropic) provide the most complete and up-to-date model access.</li>
+        </ul>
+
+        <div class="callout-blue">
+            <strong>At Datavant:</strong>
+            <ul style="margin-bottom:0">
+                <li>Anthropic (Claude) is the current default and approved commercial provider.</li>
+                <li>Other commercial providers (e.g., OpenAI, Google) may require additional compliance and security review before production use.</li>
+                <li>Open-weight / open-source models (e.g., Llama, Qwen) do not require MSAs or BAAs, but remain subject to infrastructure, data handling, and usage compliance requirements.</li>
+            </ul>
+        </div>
+        <p>While Databricks enables access to both commercial and open-source models through a single platform, teams should confirm provider-level approval before onboarding a commercial model outside the current standard.</p>
+        <p>If a team requires a model beyond the approved commercial providers, that should trigger a broader discussion with DataOps and Security.</p>
+
+        <h2>Pricing</h2>
+        <p>Pricing is roughly the same across all three platforms. We've currently negotiated a cheaper rate to talk to Claude via Bedrock at a <strong>4% discount</strong>. We also agreed to hit a minimum threshold &mdash; otherwise we will incur penalties.</p>
+
+        <div class="callout">
+            <strong>Watch item:</strong> Overall usage of Claude in Bedrock has decreased, likely due to the rollout of Claude Code. Unknown if this will impact our contract.
+        </div>
+
+        <p><a href="model-availability.html" style="color: #58a6ff;">View all Models Available + Pricing &rarr;</a></p>
     </div>
 </body>
 </html>
