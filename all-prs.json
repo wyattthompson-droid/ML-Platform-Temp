@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Nexus] Doc Search Migration for Patient View + Doc Viewer",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4202",
+    "repo": "apx-launchpad",
+    "author": "gtang-apixio",
+    "merged_at": "2026-03-24T02:44:10Z",
+    "created_at": "2026-03-01T19:24:45Z"
+  },
+  {
     "title": "add org team import",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/112",
     "repo": "tfc-bootstrap",
