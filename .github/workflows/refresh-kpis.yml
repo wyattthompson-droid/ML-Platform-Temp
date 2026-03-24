@@ -83,12 +83,12 @@ jobs:
             ')
             MODEL_CURRENT=$((MODEL_CURRENT + MODEL_COUNT))
 
-            # Save model PR details
+            # Save model PR details (include body for summarization)
             echo "$CURRENT" | jq --arg repo "$REPO" '
               [.[] | select(
                 (.title | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i")) or
                 ((.body // "") | test("model|checkpoint|artifact|weight|training|fine.?tun"; "i"))
-              ) | {title: .title, url: .html_url, repo: $repo, author: .user.login, merged_at: .merged_at, created_at: .created_at}]
+              ) | {title: .title, body: (.body // ""), url: .html_url, repo: $repo, author: .user.login, merged_at: .merged_at, created_at: .created_at}]
             ' > /tmp/model_prs.json
             jq -s '.[0] + .[1]' model-prs.json /tmp/model_prs.json > /tmp/model_merged.json && mv /tmp/model_merged.json model-prs.json
 
@@ -173,6 +173,63 @@ jobs:
 
           echo "Checked $REPO_COUNT repos"
           echo "Done! PRs: $CURRENT_PRS (prior: $PRIOR_PRS), Model updates: $MODEL_CURRENT, Avg merge: ${AVG_MERGE_HOURS}h"
+
+      - name: Summarize model PRs via Bedrock
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          pip install boto3 --quiet
+
+          python3 << 'PYEOF'
+          import json, boto3, sys
+
+          bedrock = boto3.client("bedrock-runtime")
+
+          with open("model-prs.json") as f:
+              prs = json.load(f)
+
+          for i, pr in enumerate(prs):
+              # Skip if already summarized
+              if pr.get("summary"):
+                  continue
+
+              title = pr.get("title", "")
+              body = pr.get("body", "")
+              # Truncate body to avoid token limits
+              body_trimmed = body[:2000] if body else ""
+
+              prompt = f"Summarize this GitHub pull request in one sentence (max 30 words). Focus on what changed and why.\n\nTitle: {title}\n\nDescription: {body_trimmed}"
+
+              try:
+                  response = bedrock.invoke_model(
+                      modelId="anthropic.claude-haiku-4-5-20251001-v1:0",
+                      contentType="application/json",
+                      accept="application/json",
+                      body=json.dumps({
+                          "anthropic_version": "bedrock-2023-05-31",
+                          "max_tokens": 100,
+                          "messages": [{"role": "user", "content": prompt}]
+                      })
+                  )
+                  result = json.loads(response["body"].read())
+                  summary = result["content"][0]["text"].strip()
+                  prs[i]["summary"] = summary
+                  print(f"  Summarized: {title[:60]}... -> {summary[:80]}")
+              except Exception as e:
+                  print(f"  Failed to summarize: {title[:60]}... ({e})")
+                  prs[i]["summary"] = ""
+
+          # Remove body field before saving (keep JSON small)
+          for pr in prs:
+              pr.pop("body", None)
+
+          with open("model-prs.json", "w") as f:
+              json.dump(prs, f, indent=2)
+
+          print(f"Summarized {len(prs)} model PRs")
+          PYEOF
 
       - name: Commit and push
         run: |
