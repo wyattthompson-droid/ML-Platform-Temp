@@ -3,59 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Availability — ML Platform</title>
+    <title>Model Availability &amp; Pricing — ML Platform</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .doc-page { max-width: 800px; margin: 0 auto; padding: 32px; }
+        .doc-page { max-width: 1000px; margin: 0 auto; padding: 32px; }
         .doc-page h1 { font-size: 28px; margin-bottom: 8px; color: #f0f6fc; }
-        .doc-page .status { color: #f0883e; font-size: 13px; margin-bottom: 24px; }
+        .doc-page h2 { font-size: 20px; color: #f0f6fc; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
         .doc-page p { color: #c9d1d9; line-height: 1.7; margin-bottom: 16px; }
-        .doc-page table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .doc-page th, .doc-page td { text-align: left; padding: 10px 14px; border: 1px solid #30363d; }
-        .doc-page th { background: #1c2128; color: #8b949e; font-size: 13px; text-transform: uppercase; }
-        .doc-page td { color: #c9d1d9; font-size: 14px; }
-        .check { color: #3fb950; }
-        .cross { color: #484f58; }
+        .doc-page ul { color: #c9d1d9; padding-left: 24px; line-height: 1.8; margin-bottom: 16px; }
+        .doc-page .tldr { background: #1c2128; border-left: 3px solid #3fb950; padding: 16px; border-radius: 4px; margin-bottom: 24px; }
+        .doc-page .tldr strong { color: #3fb950; }
+        .doc-page .note { background: #1c2128; border-left: 3px solid #8b949e; padding: 14px 16px; border-radius: 4px; margin: 16px 0 24px 0; font-size: 13px; color: #8b949e; line-height: 1.6; }
         .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
         .back-link:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        th { background: #1c2128; color: #8b949e; text-align: right; padding: 8px 12px; border: 1px solid #30363d; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+        th:first-child { text-align: left; }
+        td { color: #c9d1d9; padding: 8px 12px; border: 1px solid #30363d; text-align: right; font-variant-numeric: tabular-nums; }
+        td:first-child { text-align: left; font-weight: 500; }
+        tr:hover td { background: #161b2288; }
+        .na { color: #484f58; }
+        .cheaper { color: #3fb950; }
+        .provider-header { background: #0d1117; }
+        .provider-header td { color: #58a6ff; font-weight: 600; font-size: 14px; text-align: left; padding: 12px; border-bottom: 2px solid #58a6ff; }
     </style>
 </head>
 <body>
     <div class="doc-page">
-        <a href="../index.html" class="back-link">← Back to Command Center</a>
-        <h1>Model Availability by Platform</h1>
-        <p class="status">Status: Draft — to be validated with Tommy and Saba</p>
+        <a href="../index.html" class="back-link">&larr; Back to Command Center</a>
+        <h1>Model Availability &amp; Pricing</h1>
+
+        <div class="tldr">
+            <strong>Summary:</strong>
+            <ul style="margin-bottom:0">
+                <li>Token pricing is broadly consistent across platforms when comparing equivalent models.</li>
+                <li>Databricks pay-per-token pricing aligns closely with provider list pricing.</li>
+                <li>Bedrock provides a <strong>~4% discount for Anthropic (Claude)</strong> under our contract, making it the lowest-cost option for those models.</li>
+                <li>Databricks exposes higher-end OpenAI and Google models (e.g., GPT-5, Gemini Pro variants) that are more capable, but also more expensive than the models currently surfaced via Bedrock.</li>
+            </ul>
+        </div>
+
+        <h2>Anthropic (Claude) &mdash; Per 1M Tokens</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Model</th>
-                    <th>Databricks</th>
-                    <th>AWS Bedrock</th>
-                    <th>Notes</th>
+                    <th style="width:22%">Model</th>
+                    <th>Bedrock Input</th>
+                    <th>Bedrock Output</th>
+                    <th>Databricks Input</th>
+                    <th>Databricks Output</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Claude (Anthropic)</td>
-                    <td class="check">Yes</td>
-                    <td class="check">Yes (4% discount)</td>
-                    <td>Pricing parity, ~4% difference</td>
+                    <td>Opus 4.6</td>
+                    <td class="cheaper">$4.80</td>
+                    <td class="cheaper">$24.00</td>
+                    <td>$5.00</td>
+                    <td>$25.00</td>
                 </tr>
                 <tr>
-                    <td>GPT-4 / ChatGPT flagship</td>
-                    <td class="cross">—</td>
-                    <td class="cross">Not available</td>
-                    <td>Not available on Bedrock; not found on Databricks either</td>
+                    <td>Opus 4.5</td>
+                    <td class="cheaper">$4.80</td>
+                    <td class="cheaper">$24.00</td>
+                    <td>$5.00</td>
+                    <td>$25.00</td>
                 </tr>
                 <tr>
-                    <td>OSS models (e.g., OSS120B)</td>
-                    <td class="check">Yes (own compute)</td>
-                    <td class="cross">Pricing not found</td>
-                    <td>May run on our own hardware — different cost model</td>
+                    <td>Opus 4.1</td>
+                    <td class="cheaper">$14.40</td>
+                    <td class="cheaper">$72.00</td>
+                    <td>$15.00</td>
+                    <td>$75.00</td>
+                </tr>
+                <tr>
+                    <td>Opus 4</td>
+                    <td class="cheaper">$14.40</td>
+                    <td class="cheaper">$72.00</td>
+                    <td>$15.00</td>
+                    <td>$75.00</td>
+                </tr>
+                <tr>
+                    <td>Sonnet 4.5</td>
+                    <td class="cheaper">$2.88</td>
+                    <td class="cheaper">$14.40</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                </tr>
+                <tr>
+                    <td>Sonnet 4</td>
+                    <td class="cheaper">$2.88</td>
+                    <td class="cheaper">$14.40</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                </tr>
+                <tr>
+                    <td>Sonnet 3.7</td>
+                    <td class="cheaper">$2.88</td>
+                    <td class="cheaper">$14.40</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                </tr>
+                <tr>
+                    <td>Haiku 4.5</td>
+                    <td class="cheaper">$0.96</td>
+                    <td class="cheaper">$4.80</td>
+                    <td>$1.00</td>
+                    <td>$5.00</td>
+                </tr>
+                <tr>
+                    <td>Haiku 3.5</td>
+                    <td>$0.768</td>
+                    <td>$3.84</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
                 </tr>
             </tbody>
         </table>
-        <p>Note: The LLM false positive model may be running on a fine-tuned OSS120B on Databricks (per Geraint). Needs confirmation.</p>
+        <div class="note">
+            Bedrock prices reflect our 4% negotiated discount with Anthropic. Hitting Claude via direct API is the same cost as Databricks.
+        </div>
+
+        <h2>OpenAI &mdash; Per 1M Tokens</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:22%">Model</th>
+                    <th>Bedrock Input</th>
+                    <th>Bedrock Output</th>
+                    <th>Databricks Input</th>
+                    <th>Databricks Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GPT OSS 20B</td>
+                    <td>$0.07</td>
+                    <td>$0.30</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>GPT OSS 120B</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>GPT OSS Safeguard 20B</td>
+                    <td>$0.07</td>
+                    <td>$0.20</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>GPT OSS Safeguard 120B</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>GPT-5.2</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$1.75</td>
+                    <td>$14.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5.1</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5.1 Codex Max</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5 mini</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5.1 Codex Mini</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                </tr>
+                <tr>
+                    <td>GPT-5 nano</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$0.05</td>
+                    <td>$0.40</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note">
+            OpenAI OSS models (available via Bedrock) can offer lower cost at scale, since you are paying primarily for compute rather than per-token API usage; however, this requires managing performance, reliability, and infrastructure. Databricks abstracts this complexity, handling deployment and scaling on your behalf.
+        </div>
+
+        <h2>Google &mdash; Per 1M Tokens</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:22%">Model</th>
+                    <th>Bedrock Input</th>
+                    <th>Bedrock Output</th>
+                    <th>Databricks Input</th>
+                    <th>Databricks Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gemini 3.0 / 3.1 Pro (Short)</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$2.50</td>
+                    <td>$15.00</td>
+                </tr>
+                <tr>
+                    <td>Gemini 3.0 / 3.1 Pro (Long)</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$5.00</td>
+                    <td>$22.50</td>
+                </tr>
+                <tr>
+                    <td>Gemini 3.0 Flash</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$0.63</td>
+                    <td>$3.75</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.5 Pro (Short)</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.5 Pro (Long)</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$2.50</td>
+                    <td>$15.00</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.5 Flash</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                    <td>$0.30</td>
+                    <td>$2.50</td>
+                </tr>
+                <tr>
+                    <td>Gemma 3 4B</td>
+                    <td>$0.04</td>
+                    <td>$0.08</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>Gemma 3 12B</td>
+                    <td>$0.09</td>
+                    <td>$0.29</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>Gemma 3 27B</td>
+                    <td>$0.23</td>
+                    <td>$0.38</td>
+                    <td class="na">&mdash;</td>
+                    <td class="na">&mdash;</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note">
+            Google Gemma models (available via Bedrock) can offer lower cost at scale, since you are paying primarily for compute rather than per-token API usage; however, this requires managing performance, reliability, and infrastructure. Databricks abstracts this complexity, handling deployment and scaling on your behalf.
+        </div>
+
+        <p><a href="bedrock-vs-databricks-pricing.html" style="color: #58a6ff;">&larr; Back to Choosing an LLM Serving Path</a></p>
     </div>
 </body>
 </html>
