@@ -3,24 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR Decision Tree — ML Platform</title>
+    <title>OCR-as-a-Service Overview — ML Platform</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .doc-page { max-width: 800px; margin: 0 auto; padding: 32px; }
+        .doc-page { max-width: 1000px; margin: 0 auto; padding: 32px; }
         .doc-page h1 { font-size: 28px; margin-bottom: 8px; color: #f0f6fc; }
-        .doc-page .status { color: #f0883e; font-size: 13px; margin-bottom: 24px; }
+        .doc-page h2 { font-size: 20px; color: #f0f6fc; margin-top: 36px; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
         .doc-page p { color: #c9d1d9; line-height: 1.7; margin-bottom: 16px; }
+        .doc-page ul { color: #c9d1d9; padding-left: 24px; line-height: 1.8; margin-bottom: 16px; }
+        .doc-page .tldr { background: #1c2128; border-left: 3px solid #3fb950; padding: 16px; border-radius: 4px; margin-bottom: 24px; }
+        .doc-page .tldr strong { color: #3fb950; }
+        .doc-page .note { background: #1c2128; border-left: 3px solid #8b949e; padding: 14px 16px; border-radius: 4px; margin: 16px 0 24px 0; font-size: 13px; color: #8b949e; line-height: 1.6; }
         .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
         .back-link:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        th { background: #1c2128; color: #8b949e; text-align: left; padding: 8px 12px; border: 1px solid #30363d; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+        td { color: #c9d1d9; padding: 8px 12px; border: 1px solid #30363d; }
+        .pro { color: #3fb950; }
+        .con { color: #f85149; }
+
+        /* Decision Tree Styles */
+        .tree { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 32px 0; }
+        .tree-node { position: relative; text-align: center; }
+        .tree-connector { width: 2px; height: 24px; background: #30363d; margin: 0 auto; }
+        .tree-branch-connector { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+
+        .decision {
+            background: #1c3a5f; border: 2px solid #58a6ff; border-radius: 8px;
+            padding: 12px 20px; display: inline-block; color: #c9d1d9; font-size: 13px;
+            max-width: 280px; transform: rotate(0deg);
+        }
+        .outcome-stop {
+            background: #3d1f1f; border: 2px solid #f85149; border-radius: 8px;
+            padding: 10px 16px; display: inline-block; color: #f85149; font-size: 13px; font-weight: 600;
+        }
+        .outcome-self {
+            background: #3d2f1f; border: 2px solid #f0883e; border-radius: 8px;
+            padding: 10px 16px; display: inline-block; color: #f0883e; font-size: 12px;
+            max-width: 240px;
+        }
+        .outcome-engine {
+            border-radius: 8px; padding: 12px 16px; display: inline-block;
+            font-size: 12px; text-align: center; min-width: 160px;
+        }
+        .engine-tesseract { background: #2d2a1f; border: 2px solid #d4c85c; color: #d4c85c; }
+        .engine-textract { background: #1f2d1f; border: 2px solid #3fb950; color: #3fb950; }
+        .engine-vlm { background: #1f2a3d; border: 2px solid #58a6ff; color: #58a6ff; }
+
+        .tree-row { display: flex; align-items: flex-start; justify-content: center; gap: 40px; margin: 16px 0; }
+        .tree-label { font-size: 11px; color: #8b949e; font-weight: 600; margin-bottom: 4px; }
+        .tree-sublabel { font-size: 11px; color: #6e7681; margin-top: 4px; }
+
+        .flow-section { margin: 32px 0; padding: 24px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; }
+        .flow-title { font-size: 14px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; text-align: center; }
+
+        .flow-step { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 12px 0; flex-wrap: wrap; }
+        .flow-question { background: #1c3a5f; border: 1px solid #58a6ff; border-radius: 6px; padding: 10px 16px; color: #c9d1d9; font-size: 13px; text-align: center; min-width: 200px; }
+        .flow-arrow { color: #30363d; font-size: 20px; }
+        .flow-answer { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; }
+        .flow-yes { background: #1f2d1f; color: #3fb950; }
+        .flow-no { background: #2d1f1f; color: #f85149; }
+        .flow-result { border-radius: 6px; padding: 10px 16px; font-size: 13px; font-weight: 600; text-align: center; }
+
+        .flow-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+        .flow-path { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+        .flow-path-title { font-size: 13px; color: #f0f6fc; font-weight: 600; margin-bottom: 8px; }
+        .flow-path-steps { font-size: 12px; color: #8b949e; line-height: 1.8; }
+        .flow-path-steps .q { color: #58a6ff; }
+        .flow-path-steps .a { font-weight: 600; }
+        .flow-path-result { margin-top: 8px; padding: 8px 12px; border-radius: 4px; font-size: 13px; font-weight: 600; display: inline-block; }
     </style>
 </head>
 <body>
     <div class="doc-page">
-        <a href="../index.html" class="back-link">← Back to Command Center</a>
-        <h1>OCR Decision Tree</h1>
-        <p class="status">Status: Pending migration from Google Docs (worked on with Austin)</p>
-        <p>This page will contain the OCR decision tree that helps teams determine which OCR approach to use based on their use case, volume, and quality requirements.</p>
-        <p>To migrate this content, paste the Google Doc content here and Claude will format it.</p>
+        <a href="../index.html" class="back-link">&larr; Back to Command Center</a>
+        <h1>OCR-as-a-Service Overview</h1>
+
+        <div class="tldr">
+            <strong>Quick Recommendation:</strong>
+            <ul style="margin-bottom:0">
+                <li><strong>Risk Adjustment</strong> &rarr; Tesseract (for now)</li>
+                <li><strong>Coordinate-dependent workflows</strong> &rarr; Textract</li>
+                <li><strong>New NLP-oriented workloads</strong> &rarr; VLM</li>
+                <li>Batch by default; real-time as a special serving pattern on your own.</li>
+            </ul>
+        </div>
+
+        <h2>Engine Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Engine</th>
+                    <th>Best For</th>
+                    <th>Pros</th>
+                    <th>Cons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tesseract</strong></td>
+                    <td>Legacy risk adjustment, ultra-low cost</td>
+                    <td class="pro">Low cost, simple</td>
+                    <td class="con">Lower accuracy, infrastructure complexity</td>
+                </tr>
+                <tr>
+                    <td><strong>Textract</strong></td>
+                    <td>Coordinate-dependent workflows</td>
+                    <td class="pro">Bounding boxes, structured blocks</td>
+                    <td class="con">Less semantically rich output</td>
+                </tr>
+                <tr>
+                    <td><strong>VLM</strong> (Gemini Flash, etc.)</td>
+                    <td>NLP-ready, markdown output, high accuracy</td>
+                    <td class="pro">High text quality, structured output</td>
+                    <td class="con">Higher cost, no coordinates</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Throughput</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Solution</th>
+                    <th>Throughput</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>VLM OCR</strong></td>
+                    <td>500k pages / day</td>
+                </tr>
+                <tr>
+                    <td><strong>Textract OCR</strong></td>
+                    <td>1 million pages / day</td>
+                </tr>
+                <tr>
+                    <td><strong>Tesseract OCR</strong></td>
+                    <td>10 million pages / day</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Pricing</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Solution</th>
+                    <th>Pricing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>VLM OCR</strong> (batch 24 hr)</td>
+                    <td>$0.001 / page</td>
+                </tr>
+                <tr>
+                    <td><strong>VLM OCR</strong> (&lt; 24 hr SLA)</td>
+                    <td>$0.002 / page</td>
+                </tr>
+                <tr>
+                    <td><strong>Textract OCR</strong></td>
+                    <td>$0.0006 / page</td>
+                </tr>
+                <tr>
+                    <td><strong>Tesseract OCR</strong></td>
+                    <td>$0.00025 / page</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Decision Tree</h2>
+        <p>Follow the questions below to determine which OCR engine fits your use case.</p>
+
+        <div class="flow-section">
+            <div class="flow-title">OCR Engine Decision Tree</div>
+
+            <div class="flow-grid">
+                <!-- Path 1: FedRAMP -->
+                <div class="flow-path">
+                    <div class="flow-path-title">Path: FedRAMP Workload</div>
+                    <div class="flow-path-steps">
+                        <span class="q">FedRAMP workload?</span> &rarr; <span class="a flow-yes">Yes</span>
+                    </div>
+                    <div class="flow-path-result outcome-stop" style="background:#3d1f1f; color:#f85149;">FedRAMP not supported</div>
+                </div>
+
+                <!-- Path 2: Real-time -->
+                <div class="flow-path">
+                    <div class="flow-path-title">Path: Real-Time Latency</div>
+                    <div class="flow-path-steps">
+                        <span class="q">FedRAMP workload?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Real time latency (&lt; 1 min SLA)?</span> &rarr; <span class="a flow-yes">Yes</span>
+                    </div>
+                    <div class="flow-path-result" style="background:#3d2f1f; color:#f0883e; border: 1px solid #f0883e;">Self-provisioned low-latency serving pattern (run it yourself) &mdash; e.g. Gemini Flash endpoint</div>
+                </div>
+
+                <!-- Path 3: Bounding boxes → Tesseract or Textract -->
+                <div class="flow-path">
+                    <div class="flow-path-title">Path: Coordinate-Dependent Workflow</div>
+                    <div class="flow-path-steps">
+                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Need bounding boxes or coordinates?</span> &rarr; <span class="a flow-yes">Yes</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
+                        <div class="flow-path-result engine-tesseract">Tesseract OCR<br><span style="font-size:11px; font-weight:400;">$0.00025/pg &bull; 10M pg/day</span></div>
+                        <div class="flow-path-result engine-textract">Textract OCR<br><span style="font-size:11px; font-weight:400;">$0.0006/pg &bull; 1M pg/day</span></div>
+                    </div>
+                </div>
+
+                <!-- Path 4: High accuracy → VLM -->
+                <div class="flow-path">
+                    <div class="flow-path-title">Path: High Accuracy on Complex Documents</div>
+                    <div class="flow-path-steps">
+                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Bounding boxes?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">High textual accuracy on complex docs? (scanned forms, tables, NLP-ready markdown)</span> &rarr; <span class="a flow-yes">Yes</span>
+                    </div>
+                    <div class="flow-path-result engine-vlm" style="margin-top:8px;">VLM OCR<br><span style="font-size:11px; font-weight:400;">$0.001/pg (batch) &bull; $0.002/pg (&lt;24hr) &bull; 500k pg/day</span></div>
+                </div>
+
+                <!-- Path 5: Simple PDFs → Tesseract or legacy check -->
+                <div class="flow-path">
+                    <div class="flow-path-title">Path: Simple PDFs</div>
+                    <div class="flow-path-steps">
+                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">Bounding boxes?</span> &rarr; <span class="a flow-no">No</span> &rarr;
+                        <span class="q">High accuracy on complex docs?</span> &rarr; <span class="a flow-no">No / simple PDFs</span> &rarr;
+                        <span class="q">Legacy Tesseract pipeline with high migration cost?</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; align-items: center;">
+                        <div><span class="a flow-yes" style="padding: 4px 10px; border-radius: 4px;">Yes</span> &rarr;</div>
+                        <div class="flow-path-result engine-tesseract">Tesseract OCR<br><span style="font-size:11px; font-weight:400;">$0.00025/pg &bull; 10M pg/day</span></div>
+                        <div><span class="a flow-no" style="padding: 4px 10px; border-radius: 4px;">No</span> &rarr;</div>
+                        <div class="flow-path-result engine-vlm">VLM OCR<br><span style="font-size:11px; font-weight:400;">$0.001/pg (batch) &bull; 500k pg/day</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            See the full visual decision tree in <strong>Lucid Chart</strong> for the flowchart version of this logic.
+        </div>
+
+        <p><a href="../index.html" style="color: #58a6ff;">&larr; Back to Command Center</a></p>
     </div>
 </body>
 </html>
