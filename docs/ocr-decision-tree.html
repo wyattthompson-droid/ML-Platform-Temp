@@ -174,79 +174,10 @@
         </table>
 
         <h2>Decision Tree</h2>
-        <p>Follow the questions below to determine which OCR engine fits your use case.</p>
+        <p>Follow the flowchart below to determine which OCR engine fits your use case.</p>
 
-        <div class="flow-section">
-            <div class="flow-title">OCR Engine Decision Tree</div>
-
-            <div class="flow-grid">
-                <!-- Path 1: FedRAMP -->
-                <div class="flow-path">
-                    <div class="flow-path-title">Path: FedRAMP Workload</div>
-                    <div class="flow-path-steps">
-                        <span class="q">FedRAMP workload?</span> &rarr; <span class="a flow-yes">Yes</span>
-                    </div>
-                    <div class="flow-path-result outcome-stop" style="background:#3d1f1f; color:#f85149;">FedRAMP not supported</div>
-                </div>
-
-                <!-- Path 2: Real-time -->
-                <div class="flow-path">
-                    <div class="flow-path-title">Path: Real-Time Latency</div>
-                    <div class="flow-path-steps">
-                        <span class="q">FedRAMP workload?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Real time latency (&lt; 1 min SLA)?</span> &rarr; <span class="a flow-yes">Yes</span>
-                    </div>
-                    <div class="flow-path-result" style="background:#3d2f1f; color:#f0883e; border: 1px solid #f0883e;">Self-provisioned low-latency serving pattern (run it yourself) &mdash; e.g. Gemini Flash endpoint</div>
-                </div>
-
-                <!-- Path 3: Bounding boxes → Tesseract or Textract -->
-                <div class="flow-path">
-                    <div class="flow-path-title">Path: Coordinate-Dependent Workflow</div>
-                    <div class="flow-path-steps">
-                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Need bounding boxes or coordinates?</span> &rarr; <span class="a flow-yes">Yes</span>
-                    </div>
-                    <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap;">
-                        <div class="flow-path-result engine-tesseract">Tesseract OCR<br><span style="font-size:11px; font-weight:400;">$0.00025/pg &bull; 10M pg/day</span></div>
-                        <div class="flow-path-result engine-textract">Textract OCR<br><span style="font-size:11px; font-weight:400;">$0.0006/pg &bull; 1M pg/day</span></div>
-                    </div>
-                </div>
-
-                <!-- Path 4: High accuracy → VLM -->
-                <div class="flow-path">
-                    <div class="flow-path-title">Path: High Accuracy on Complex Documents</div>
-                    <div class="flow-path-steps">
-                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Bounding boxes?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">High textual accuracy on complex docs? (scanned forms, tables, NLP-ready markdown)</span> &rarr; <span class="a flow-yes">Yes</span>
-                    </div>
-                    <div class="flow-path-result engine-vlm" style="margin-top:8px;">VLM OCR<br><span style="font-size:11px; font-weight:400;">$0.001/pg (batch) &bull; $0.002/pg (&lt;24hr) &bull; 500k pg/day</span></div>
-                </div>
-
-                <!-- Path 5: Simple PDFs → Tesseract or legacy check -->
-                <div class="flow-path">
-                    <div class="flow-path-title">Path: Simple PDFs</div>
-                    <div class="flow-path-steps">
-                        <span class="q">FedRAMP?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Real-time?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">Bounding boxes?</span> &rarr; <span class="a flow-no">No</span> &rarr;
-                        <span class="q">High accuracy on complex docs?</span> &rarr; <span class="a flow-no">No / simple PDFs</span> &rarr;
-                        <span class="q">Legacy Tesseract pipeline with high migration cost?</span>
-                    </div>
-                    <div style="display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; align-items: center;">
-                        <div><span class="a flow-yes" style="padding: 4px 10px; border-radius: 4px;">Yes</span> &rarr;</div>
-                        <div class="flow-path-result engine-tesseract">Tesseract OCR<br><span style="font-size:11px; font-weight:400;">$0.00025/pg &bull; 10M pg/day</span></div>
-                        <div><span class="a flow-no" style="padding: 4px 10px; border-radius: 4px;">No</span> &rarr;</div>
-                        <div class="flow-path-result engine-vlm">VLM OCR<br><span style="font-size:11px; font-weight:400;">$0.001/pg (batch) &bull; 500k pg/day</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="note">
-            See the full visual decision tree in <strong>Lucid Chart</strong> for the flowchart version of this logic.
+        <div style="margin: 24px 0; text-align: center;">
+            <img src="images/ocr_engine_decision_tree.png" alt="OCR Engine Decision Tree" style="max-width: 100%; border-radius: 8px; border: 1px solid #30363d;">
         </div>
 
         <p><a href="../index.html" style="color: #58a6ff;">&larr; Back to Command Center</a></p>
