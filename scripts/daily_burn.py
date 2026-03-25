@@ -191,9 +191,13 @@ async def get_epics(session, config, headers):
         async with session.post(post_url, headers=headers, json={
             "jql": jql, "maxResults": 100, "fields": fields_list.split(",")
         }) as resp:
+            print(f"  POST search status: {resp.status}")
             if resp.status == 200:
                 data = await resp.json()
                 url = post_url
+            else:
+                body = await resp.text()
+                print(f"  POST search response: {body[:300]}")
     except Exception as e:
         print(f"  POST search failed: {e}")
 
