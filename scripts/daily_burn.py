@@ -107,13 +107,23 @@ async def get_epics(session, config, headers):
     sp_field = config["jira"]["fields"]["storyPoints"]
 
     jql = f'project = {project} AND issuetype = Epic AND status not in (Done, Closed, Resolved) ORDER BY priority ASC'
-    url = f"{base}/rest/api/3/search"
 
-    data = await fetch_json(session, url, headers, {
-        "jql": jql,
-        "maxResults": 50,
-        "fields": f"summary,status,assignee,{sp_field},priority"
-    })
+    # Try v2 API first (v3 search is deprecated/410 on some instances)
+    for api_ver in ["2", "3"]:
+        url = f"{base}/rest/api/{api_ver}/search"
+        try:
+            data = await fetch_json(session, url, headers, {
+                "jql": jql,
+                "maxResults": 50,
+                "fields": f"summary,status,assignee,{sp_field},priority"
+            })
+            break
+        except Exception as e:
+            if api_ver == "2":
+                print(f"  API v2 search failed ({e}), trying v3...")
+                continue
+            print(f"  Epic fetch failed on both API versions: {e}")
+            return []
 
     epics = []
     for issue in data.get("issues", []):
@@ -130,22 +140,21 @@ async def get_epics(session, config, headers):
     # For each epic, get child issue counts
     for epic in epics:
         jql_children = f'"Epic Link" = {epic["key"]} OR parent = {epic["key"]}'
-        children_data = await fetch_json(session, url, headers, {
-            "jql": jql_children,
-            "maxResults": 0,
-            "fields": "status"
-        })
-        # Need actual issues to count done vs total
-        children_data = await fetch_json(session, url, headers, {
-            "jql": jql_children,
-            "maxResults": 200,
-            "fields": "status"
-        })
-        children = children_data.get("issues", [])
-        total = len(children)
-        done = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
-        epic["totalIssues"] = total
-        epic["doneIssues"] = done
+        try:
+            children_data = await fetch_json(session, url, headers, {
+                "jql": jql_children,
+                "maxResults": 200,
+                "fields": "status"
+            })
+            children = children_data.get("issues", [])
+            total = len(children)
+            done = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
+            epic["totalIssues"] = total
+            epic["doneIssues"] = done
+        except Exception as e:
+            print(f"  Failed to fetch children for {epic['key']}: {e}")
+            epic["totalIssues"] = 0
+            epic["doneIssues"] = 0
 
     return epics
 
