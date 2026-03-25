@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ML Platform Daily Burn ETL — fetches JIRA sprint data and writes a daily snapshot."""
+"""ML Platform Daily Burn ETL — fetches JIRA sprint data with changelogs and writes daily snapshots."""
 
 import asyncio
 import aiohttp
@@ -7,10 +7,9 @@ import json
 import os
 import sys
 from base64 import b64encode
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-# Paths
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config" / "daily-burn.json"
 SNAPSHOTS_DIR = ROOT / "snapshots"
@@ -37,36 +36,31 @@ async def fetch_json(session, url, headers, params=None):
         return await resp.json()
 
 
+# --- JIRA API ---
+
 async def get_active_sprint(session, config, headers):
-    """Get the active sprint for the board."""
     base = config["jira"]["baseUrl"]
     board_id = config["jira"]["boardId"]
     url = f"{base}/rest/agile/1.0/board/{board_id}/sprint"
     data = await fetch_json(session, url, headers, {"state": "active", "maxResults": 1})
     sprints = data.get("values", [])
-    if not sprints:
-        print("No active sprint found.")
-        return None
-    return sprints[0]
+    return sprints[0] if sprints else None
 
 
 async def get_sprint_issues(session, config, headers, sprint_id):
-    """Fetch all issues in the sprint."""
     base = config["jira"]["baseUrl"]
     board_id = config["jira"]["boardId"]
     url = f"{base}/rest/agile/1.0/board/{board_id}/sprint/{sprint_id}/issue"
-
     sp_field = config["jira"]["fields"]["storyPoints"]
     teams_field = config["jira"]["fields"]["teams"]
 
     all_issues = []
     start_at = 0
-    max_results = 50
 
     while True:
         data = await fetch_json(session, url, headers, {
             "startAt": start_at,
-            "maxResults": max_results,
+            "maxResults": 50,
             "fields": f"summary,status,assignee,issuetype,priority,{sp_field},{teams_field},created,resolutiondate"
         })
         issues = data.get("issues", [])
@@ -100,29 +94,102 @@ async def get_sprint_issues(session, config, headers, sprint_id):
     return all_issues
 
 
+async def fetch_issue_changelog(session, headers, base, key, semaphore):
+    """Fetch full changelog for a single issue with concurrency control."""
+    async with semaphore:
+        all_items = []
+        start_at = 0
+        while True:
+            try:
+                url = f"{base}/rest/api/2/issue/{key}/changelog"
+                data = await fetch_json(session, url, headers, {
+                    "startAt": start_at,
+                    "maxResults": 100
+                })
+                values = data.get("values", data.get("histories", []))
+                if not values:
+                    break
+                all_items.extend(values)
+                start_at += len(values)
+                total = data.get("total", len(all_items))
+                if start_at >= total:
+                    break
+            except Exception as e:
+                print(f"  Warning: changelog fetch failed for {key}: {e}")
+                break
+        return key, all_items
+
+
+async def fetch_all_changelogs(session, config, headers, issues):
+    """Fetch changelogs for all issues concurrently."""
+    base = config["jira"]["baseUrl"]
+    semaphore = asyncio.Semaphore(20)
+    tasks = [fetch_issue_changelog(session, headers, base, i["key"], semaphore) for i in issues]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    changelog_map = {}
+    for result in results:
+        if isinstance(result, Exception):
+            continue
+        key, items = result
+        changelog_map[key] = items
+    return changelog_map
+
+
+def extract_timestamps(changelog_items, config):
+    """Extract startedAt and blockedAt from changelog history."""
+    in_progress_statuses = set(s.lower() for s in config["jira"]["statusCategories"].get("inProgress", []))
+    blocked_statuses = set(s.lower() for s in config["jira"]["statusCategories"].get("blocked", []))
+
+    started_at = None
+    blocked_at = None
+
+    for entry in changelog_items:
+        created = entry.get("created", "")
+        items = entry.get("items", [])
+        for item in items:
+            if item.get("field") == "status":
+                to_status = (item.get("toString") or "").lower()
+                if to_status in in_progress_statuses:
+                    if started_at is None or created < started_at:
+                        started_at = created
+                if to_status in blocked_statuses:
+                    if blocked_at is None or created > blocked_at:
+                        blocked_at = created
+
+    return started_at, blocked_at
+
+
+def enrich_issues_with_changelogs(issues, changelog_map, config):
+    """Attach startedAt and blockedAt to each issue."""
+    for issue in issues:
+        changelog = changelog_map.get(issue["key"], [])
+        started_at, blocked_at = extract_timestamps(changelog, config)
+        issue["startedAt"] = started_at
+        issue["blockedAt"] = blocked_at
+        issue["completedAt"] = issue.get("resolved")
+
+
+# --- Epics ---
+
 async def get_epics(session, config, headers):
-    """Fetch active epics for the project."""
     base = config["jira"]["baseUrl"]
     project = config["jira"]["projectKey"]
     sp_field = config["jira"]["fields"]["storyPoints"]
-
     jql = f'project = {project} AND issuetype = Epic AND status not in (Done, Closed, Resolved) ORDER BY priority ASC'
 
-    # Try v2 API first (v3 search is deprecated/410 on some instances)
     for api_ver in ["2", "3"]:
         url = f"{base}/rest/api/{api_ver}/search"
         try:
             data = await fetch_json(session, url, headers, {
-                "jql": jql,
-                "maxResults": 50,
+                "jql": jql, "maxResults": 50,
                 "fields": f"summary,status,assignee,{sp_field},priority"
             })
             break
         except Exception as e:
             if api_ver == "2":
-                print(f"  API v2 search failed ({e}), trying v3...")
                 continue
-            print(f"  Epic fetch failed on both API versions: {e}")
+            print(f"  Epic fetch failed: {e}")
             return []
 
     epics = []
@@ -137,30 +204,25 @@ async def get_epics(session, config, headers):
             "priority": fields.get("priority", {}).get("name", ""),
         })
 
-    # For each epic, get child issue counts
     for epic in epics:
         jql_children = f'"Epic Link" = {epic["key"]} OR parent = {epic["key"]}'
         try:
             children_data = await fetch_json(session, url, headers, {
-                "jql": jql_children,
-                "maxResults": 200,
-                "fields": "status"
+                "jql": jql_children, "maxResults": 200, "fields": "status"
             })
             children = children_data.get("issues", [])
-            total = len(children)
-            done = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
-            epic["totalIssues"] = total
-            epic["doneIssues"] = done
-        except Exception as e:
-            print(f"  Failed to fetch children for {epic['key']}: {e}")
+            epic["totalIssues"] = len(children)
+            epic["doneIssues"] = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
+        except Exception:
             epic["totalIssues"] = 0
             epic["doneIssues"] = 0
 
     return epics
 
 
+# --- Categorization & Metrics ---
+
 def categorize_issues(issues, config):
-    """Group issues by status category."""
     categories = config["jira"]["statusCategories"]
     categorized = {cat: [] for cat in categories}
     categorized["other"] = []
@@ -168,12 +230,11 @@ def categorize_issues(issues, config):
     for issue in issues:
         placed = False
         for cat, statuses in categories.items():
-            if issue["status"] in statuses or issue["statusCategory"].lower() == cat.lower():
+            if issue["status"] in statuses:
                 categorized[cat].append(issue)
                 placed = True
                 break
         if not placed:
-            # Fall back to JIRA's statusCategory
             jira_cat = issue["statusCategory"].lower()
             if jira_cat == "to do":
                 categorized["todo"].append(issue)
@@ -188,14 +249,26 @@ def categorize_issues(issues, config):
 
 
 def compute_sprint_summary(sprint, categorized, issues):
-    """Compute sprint-level metrics."""
     total_points = sum(i["storyPoints"] or 0 for i in issues)
     done_points = sum(i["storyPoints"] or 0 for i in categorized.get("done", []))
     in_progress_points = sum(i["storyPoints"] or 0 for i in categorized.get("inProgress", []))
+    in_review_points = sum(i["storyPoints"] or 0 for i in categorized.get("inReview", []))
+    blocked_points = sum(i["storyPoints"] or 0 for i in categorized.get("blocked", []))
+    todo_points = sum(i["storyPoints"] or 0 for i in categorized.get("todo", []))
+    wont_do_points = sum(i["storyPoints"] or 0 for i in categorized.get("wontDo", []))
 
     start = sprint.get("startDate", "")
     end = sprint.get("endDate", "")
     days_remaining = None
+    days_elapsed = 0
+
+    if start:
+        try:
+            start_dt = datetime.fromisoformat(start.replace("Z", "+00:00"))
+            days_elapsed = max(1, (datetime.now(timezone.utc) - start_dt).days)
+        except (ValueError, TypeError):
+            days_elapsed = 1
+
     if end:
         try:
             end_dt = datetime.fromisoformat(end.replace("Z", "+00:00"))
@@ -203,15 +276,106 @@ def compute_sprint_summary(sprint, categorized, issues):
         except (ValueError, TypeError):
             pass
 
+    throughput = round(done_points / days_elapsed, 2) if days_elapsed > 0 else 0
+
     return {
         "totalIssues": len(issues),
         "totalPoints": total_points,
         "donePoints": done_points,
         "inProgressPoints": in_progress_points,
+        "inReviewPoints": in_review_points,
+        "blockedPoints": blocked_points,
+        "todoPoints": todo_points,
+        "wontDoPoints": wont_do_points,
         "daysRemaining": days_remaining,
+        "daysElapsed": days_elapsed,
         "completionPercent": round((done_points / total_points * 100) if total_points > 0 else 0, 1),
+        "throughput": throughput,
     }
 
+
+def percentile(sorted_values, p):
+    """Compute p-th percentile from a sorted list."""
+    if not sorted_values:
+        return None
+    k = (len(sorted_values) - 1) * (p / 100)
+    f = int(k)
+    c = f + 1
+    if c >= len(sorted_values):
+        return round(sorted_values[f], 1)
+    return round(sorted_values[f] + (k - f) * (sorted_values[c] - sorted_values[f]), 1)
+
+
+def compute_flow_metrics(done_tickets, sprint):
+    """Compute lead time, cycle time percentiles, throughput, and flow efficiency."""
+    lead_times = []
+    cycle_times = []
+
+    for t in done_tickets:
+        created = t.get("created")
+        completed = t.get("completedAt")
+        started = t.get("startedAt")
+
+        if created and completed:
+            try:
+                c = datetime.fromisoformat(created.replace("Z", "+00:00"))
+                d = datetime.fromisoformat(completed.replace("Z", "+00:00"))
+                lead_days = max(0, (d - c).total_seconds() / 86400)
+                lead_times.append(lead_days)
+            except (ValueError, TypeError):
+                pass
+
+        if started and completed:
+            try:
+                s = datetime.fromisoformat(started.replace("Z", "+00:00"))
+                d = datetime.fromisoformat(completed.replace("Z", "+00:00"))
+                cycle_days = max(0, (d - s).total_seconds() / 86400)
+                cycle_times.append(cycle_days)
+            except (ValueError, TypeError):
+                pass
+
+    lead_times.sort()
+    cycle_times.sort()
+
+    lead_p50 = percentile(lead_times, 50)
+    lead_p85 = percentile(lead_times, 85)
+    lead_p95 = percentile(lead_times, 95)
+    cycle_p50 = percentile(cycle_times, 50)
+    cycle_p85 = percentile(cycle_times, 85)
+    cycle_p95 = percentile(cycle_times, 95)
+
+    flow_efficiency = None
+    if lead_p85 and lead_p85 > 0 and cycle_p85:
+        flow_efficiency = round(cycle_p85 / lead_p85, 2)
+
+    return {
+        "leadTime": {"p50": lead_p50, "p85": lead_p85, "p95": lead_p95, "values": [round(v, 1) for v in lead_times]},
+        "cycleTime": {"p50": cycle_p50, "p85": cycle_p85, "p95": cycle_p95, "values": [round(v, 1) for v in cycle_times]},
+        "flowEfficiency": flow_efficiency,
+        "sampleSize": len(done_tickets),
+    }
+
+
+# --- Snapshot Index ---
+
+def update_snapshot_index(today):
+    index_path = SNAPSHOTS_DIR / "index.json"
+    index = []
+    if index_path.exists():
+        try:
+            index = json.loads(index_path.read_text())
+        except (json.JSONDecodeError, IOError):
+            index = []
+
+    if today not in index:
+        index.append(today)
+        index.sort()
+
+    index_path.write_text(json.dumps(index, indent=2))
+    return index
+
+
+# --- Main ETL ---
 
 async def run_etl(date_override=None):
     config = load_config()
@@ -220,7 +384,6 @@ async def run_etl(date_override=None):
     token = os.environ.get("JIRA_API_TOKEN")
     if not email or not token:
         print("Error: JIRA_EMAIL and JIRA_API_TOKEN environment variables required.")
-        print("See .env.example for setup.")
         sys.exit(1)
 
     headers = jira_auth_header(email, token)
@@ -230,7 +393,7 @@ async def run_etl(date_override=None):
     print("=" * 40)
 
     async with aiohttp.ClientSession() as session:
-        # Fetch sprint
+        # Sprint
         print("Fetching active sprint...")
         sprint = await get_active_sprint(session, config, headers)
         if not sprint:
@@ -238,20 +401,26 @@ async def run_etl(date_override=None):
             snapshot = {
                 "date": today,
                 "generatedAt": datetime.now(timezone.utc).isoformat(),
-                "sprint": None,
-                "tickets": {},
-                "summary": {},
-                "epics": [],
+                "sprint": None, "tickets": {}, "summary": {},
+                "epics": [], "flowMetrics": {},
             }
         else:
             sprint_id = sprint["id"]
             sprint_name = sprint.get("name", "Unknown Sprint")
             print(f"  Sprint: {sprint_name} (ID: {sprint_id})")
 
-            # Fetch issues
+            # Issues
             print("Fetching sprint issues...")
             issues = await get_sprint_issues(session, config, headers, sprint_id)
             print(f"  Found {len(issues)} issues")
+
+            # Changelogs
+            print("Fetching changelogs...")
+            changelog_map = await fetch_all_changelogs(session, config, headers, issues)
+            print(f"  Fetched changelogs for {len(changelog_map)} issues")
+
+            # Enrich
+            enrich_issues_with_changelogs(issues, changelog_map, config)
 
             # Categorize
             categorized = categorize_issues(issues, config)
@@ -262,10 +431,17 @@ async def run_etl(date_override=None):
             # Summary
             summary = compute_sprint_summary(sprint, categorized, issues)
             print(f"  Points: {summary['donePoints']}/{summary['totalPoints']} ({summary['completionPercent']}%)")
-            if summary["daysRemaining"] is not None:
-                print(f"  Days remaining: {summary['daysRemaining']}")
+            print(f"  Throughput: {summary['throughput']} pts/day")
 
-            # Fetch epics
+            # Flow metrics
+            print("Computing flow metrics...")
+            flow_metrics = compute_flow_metrics(categorized.get("done", []), sprint)
+            if flow_metrics["leadTime"]["p50"]:
+                print(f"  Lead Time P50: {flow_metrics['leadTime']['p50']}d, P85: {flow_metrics['leadTime']['p85']}d")
+            if flow_metrics["cycleTime"]["p50"]:
+                print(f"  Cycle Time P50: {flow_metrics['cycleTime']['p50']}d, P85: {flow_metrics['cycleTime']['p85']}d")
+
+            # Epics
             print("Fetching epics...")
             epics = await get_epics(session, config, headers)
             print(f"  Found {len(epics)} active epics")
@@ -274,8 +450,7 @@ async def run_etl(date_override=None):
                 "date": today,
                 "generatedAt": datetime.now(timezone.utc).isoformat(),
                 "sprint": {
-                    "id": sprint_id,
-                    "name": sprint_name,
+                    "id": sprint_id, "name": sprint_name,
                     "startDate": sprint.get("startDate"),
                     "endDate": sprint.get("endDate"),
                     "goal": sprint.get("goal", ""),
@@ -283,6 +458,7 @@ async def run_etl(date_override=None):
                 "summary": summary,
                 "tickets": categorized,
                 "epics": epics,
+                "flowMetrics": flow_metrics,
             }
 
     # Write snapshot
@@ -292,11 +468,14 @@ async def run_etl(date_override=None):
         json.dump(snapshot, f, indent=2)
     print(f"\nSnapshot written to {snapshot_path}")
 
-    # Also write latest.json for the dashboard to load
     latest_path = SNAPSHOTS_DIR / "latest.json"
     with open(latest_path, "w") as f:
         json.dump(snapshot, f, indent=2)
     print(f"Latest snapshot written to {latest_path}")
+
+    # Update index
+    update_snapshot_index(today)
+    print("Snapshot index updated")
 
     return snapshot
 
@@ -307,7 +486,6 @@ def main():
         idx = sys.argv.index("--date")
         if idx + 1 < len(sys.argv):
             date_override = sys.argv[idx + 1]
-
     asyncio.run(run_etl(date_override))
 
 

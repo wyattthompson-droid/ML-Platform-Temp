@@ -14,7 +14,8 @@
       "inProgress": ["In Progress", "In Development"],
       "inReview": ["In Review", "Code Review", "Review"],
       "blocked": ["Blocked", "On Hold", "Impediment"],
-      "done": ["Done", "Closed", "Resolved"]
+      "done": ["Done", "Closed", "Resolved"],
+      "wontDo": ["Won't Do", "Cancelled", "Won't Fix"]
     }
   },
   "github": {

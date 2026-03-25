@@ -5,45 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Burn — ML Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
     <style>
         .burn-page { max-width: 1100px; margin: 0 auto; padding: 32px; }
+
+        /* Header */
         .burn-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
         .burn-header h1 { font-size: 24px; color: #f0f6fc; margin-bottom: 4px; }
         .burn-header .date { color: #8b949e; font-size: 14px; }
         .sprint-badge { background: #1c2128; border: 1px solid #58a6ff; border-radius: 6px; padding: 8px 16px; color: #58a6ff; font-size: 13px; font-weight: 500; }
         .sprint-goal { color: #8b949e; font-size: 13px; font-style: italic; margin-top: 8px; max-width: 600px; }
 
-        /* Progress bar */
-        .progress-section { margin-bottom: 32px; }
-        .progress-bar-container { background: #21262d; border-radius: 6px; height: 24px; overflow: hidden; margin: 8px 0; }
-        .progress-bar { height: 100%; border-radius: 6px; transition: width 0.5s; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; }
-        .progress-bar.green { background: #238636; }
-        .progress-bar.yellow { background: #9e6a03; }
-        .progress-stats { display: flex; gap: 24px; font-size: 13px; color: #8b949e; flex-wrap: wrap; }
-        .progress-stats .stat { display: flex; align-items: center; gap: 6px; }
+        /* Stat Cards */
+        .stat-cards-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 24px; }
+        .stat-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center; border-top: 3px solid #30363d; }
+        .stat-card.todo { border-top-color: #8b949e; }
+        .stat-card.inProgress { border-top-color: #a371f7; }
+        .stat-card.inReview { border-top-color: #58a6ff; }
+        .stat-card.blocked { border-top-color: #f85149; }
+        .stat-card.done { border-top-color: #3fb950; }
+        .stat-card.wontDo { border-top-color: #484f58; }
+        .stat-card-value { font-size: 28px; font-weight: 700; color: #f0f6fc; }
+        .stat-card-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .stat-card-delta { font-size: 12px; margin-top: 4px; font-weight: 500; }
+        .stat-card-delta.up { color: #3fb950; }
+        .stat-card-delta.down { color: #f85149; }
+        .stat-card-delta.flat { color: #484f58; }
+
+        /* Segmented Progress */
+        .progress-section { margin-bottom: 24px; }
+        .progress-stats { display: flex; gap: 24px; font-size: 13px; color: #8b949e; flex-wrap: wrap; margin-bottom: 8px; }
         .progress-stats .stat-value { color: #f0f6fc; font-weight: 600; font-size: 16px; }
+        .segmented-bar { display: flex; height: 24px; border-radius: 6px; overflow: hidden; background: #21262d; }
+        .segmented-bar .segment { height: 100%; transition: width 0.5s; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; min-width: 0; }
+        .segment.done-seg { background: #238636; }
+        .segment.review-seg { background: #1f6feb; }
+        .segment.progress-seg { background: #8957e5; }
+        .bar-legend { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #8b949e; }
+        .bar-legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; vertical-align: middle; }
+        .dot.done-dot { background: #238636; }
+        .dot.review-dot { background: #1f6feb; }
+        .dot.progress-dot { background: #8957e5; }
+
+        /* Blocker Alert */
+        .blocker-alert { background: rgba(248, 81, 73, 0.08); border: 1px solid rgba(248, 81, 73, 0.3); border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+        .blocker-alert h3 { color: #f85149; font-size: 14px; margin-bottom: 10px; }
+        .blocker-item { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: 13px; }
+        .blocker-item a { color: #58a6ff; text-decoration: none; font-weight: 500; }
+        .blocker-item a:hover { text-decoration: underline; }
+        .blocker-item .summary { color: #c9d1d9; flex: 1; }
+        .blocker-item .meta { color: #8b949e; font-size: 12px; }
 
         /* Sections */
         .burn-section { margin-bottom: 32px; }
         .burn-section h2 { font-size: 16px; font-weight: 600; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
-        .status-group { margin-bottom: 20px; }
-        .status-group h3 { font-size: 14px; color: #c9d1d9; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .status-count { background: #30363d; color: #8b949e; font-size: 11px; padding: 1px 7px; border-radius: 8px; }
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-        .status-dot.inProgress { background: #58a6ff; }
-        .status-dot.inReview { background: #a371f7; }
-        .status-dot.blocked { background: #f85149; }
-        .status-dot.done { background: #3fb950; }
-        .status-dot.todo { background: #8b949e; }
+
+        /* DoD Table */
+        .dod-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .dod-table th { background: #1c2128; color: #8b949e; text-align: left; padding: 8px 12px; border: 1px solid #30363d; font-size: 11px; text-transform: uppercase; }
+        .dod-table td { color: #c9d1d9; padding: 8px 12px; border: 1px solid #30363d; }
+        .dod-table .delta-pos { color: #3fb950; font-weight: 500; }
+        .dod-table .delta-neg { color: #f85149; font-weight: 500; }
+        .dod-table .delta-zero { color: #484f58; }
+
+        /* Chart containers */
+        .chart-container { position: relative; height: 350px; width: 100%; margin: 16px 0; }
+        .chart-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
+        .toggle-btn { background: #21262d; color: #8b949e; border: 1px solid #30363d; border-radius: 4px; padding: 4px 12px; font-size: 12px; cursor: pointer; }
+        .toggle-btn.active { background: #30363d; color: #f0f6fc; }
+        .burndown-stats { display: flex; gap: 24px; margin-top: 12px; font-size: 13px; color: #8b949e; }
+        .burndown-stats .bstat { text-align: center; }
+        .burndown-stats .bstat-value { font-size: 20px; font-weight: 600; color: #f0f6fc; }
+        .burndown-stats .bstat-label { font-size: 11px; }
+
+        /* Flow Metrics */
+        .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+        .flow-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; text-align: center; }
+        .flow-card .flow-label { font-size: 11px; color: #8b949e; text-transform: uppercase; margin-bottom: 8px; }
+        .flow-card .flow-values { display: flex; justify-content: space-around; gap: 8px; }
+        .flow-card .flow-val { font-size: 20px; font-weight: 700; color: #f0f6fc; }
+        .flow-card .flow-pct { font-size: 10px; color: #8b949e; }
+        .flow-single .flow-val { font-size: 28px; }
 
         /* Ticket rows */
-        .ticket { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; background: #161b22; border: 1px solid #30363d; transition: border-color 0.2s; font-size: 13px; }
+        .ticket { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; background: #161b22; border: 1px solid #30363d; font-size: 13px; }
         .ticket:hover { border-color: #58a6ff; }
         .ticket-key { color: #58a6ff; font-weight: 500; min-width: 80px; text-decoration: none; }
         .ticket-key:hover { text-decoration: underline; }
         .ticket-summary { color: #c9d1d9; flex: 1; }
         .ticket-assignee { color: #8b949e; font-size: 12px; min-width: 120px; text-align: right; }
-        .ticket-points { background: #21262d; color: #8b949e; font-size: 11px; padding: 2px 8px; border-radius: 8px; min-width: 24px; text-align: center; }
+        .ticket-points { background: #21262d; color: #8b949e; font-size: 11px; padding: 2px 8px; border-radius: 8px; }
         .ticket.blocked-row { border-left: 3px solid #f85149; }
 
         /* Epic cards */
@@ -58,12 +111,14 @@
         .epic-progress-fill { height: 100%; background: #238636; border-radius: 4px; }
         .epic-progress-text { color: #8b949e; font-size: 11px; margin-top: 4px; }
 
-        /* Empty / loading */
         .empty { color: #484f58; font-size: 14px; text-align: center; padding: 32px; }
         .loading { color: #8b949e; text-align: center; padding: 48px; font-size: 14px; }
+        .placeholder-msg { color: #484f58; font-size: 13px; text-align: center; padding: 40px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
 
-        .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
-        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .stat-cards-row { grid-template-columns: repeat(3, 1fr); }
+            .flow-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -82,7 +137,7 @@
         <div class="burn-page">
             <div id="loading" class="loading">Loading daily burn...</div>
             <div id="content" style="display:none;">
-
+                <!-- Header -->
                 <div class="burn-header">
                     <div>
                         <h1 id="burn-title">Daily Burn</h1>
@@ -92,152 +147,455 @@
                     <div class="sprint-badge" id="sprint-badge"></div>
                 </div>
 
+                <!-- Stat Cards -->
+                <div class="stat-cards-row" id="stat-cards"></div>
+
                 <!-- Sprint Progress -->
                 <div class="progress-section">
                     <div class="progress-stats">
-                        <div class="stat"><span class="stat-value" id="done-points">0</span> pts done</div>
-                        <div class="stat"><span class="stat-value" id="total-points">0</span> pts total</div>
-                        <div class="stat"><span class="stat-value" id="days-remaining">—</span> days left</div>
-                        <div class="stat"><span class="stat-value" id="total-issues">0</span> issues</div>
+                        <div><span class="stat-value" id="done-points">0</span> pts done</div>
+                        <div><span class="stat-value" id="total-points">0</span> pts total</div>
+                        <div><span class="stat-value" id="days-remaining">—</span> days left</div>
+                        <div><span class="stat-value" id="total-issues">0</span> issues</div>
+                        <div><span class="stat-value" id="throughput">0</span> pts/day</div>
                     </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar green" id="progress-bar" style="width: 0%"></div>
+                    <div class="segmented-bar" id="progress-bar"></div>
+                    <div class="bar-legend">
+                        <span><span class="dot done-dot"></span>Done</span>
+                        <span><span class="dot review-dot"></span>In Review</span>
+                        <span><span class="dot progress-dot"></span>In Progress</span>
                     </div>
                 </div>
 
-                <!-- Blocked (always on top if any) -->
-                <div class="burn-section" id="blocked-section" style="display:none;">
-                    <h2>Blocked</h2>
-                    <div id="blocked-list"></div>
+                <!-- Blocker Alert -->
+                <div class="blocker-alert" id="blocker-section" style="display:none;">
+                    <h3>&#9888; Blockers Requiring Attention</h3>
+                    <div id="blocker-list"></div>
                 </div>
 
-                <!-- In Progress -->
-                <div class="burn-section" id="inprogress-section" style="display:none;">
-                    <h2>In Progress</h2>
-                    <div id="inprogress-list"></div>
+                <!-- Day-over-Day -->
+                <div class="burn-section" id="dod-section" style="display:none;">
+                    <h2>Day-over-Day Comparison</h2>
+                    <table class="dod-table">
+                        <thead><tr><th>Status</th><th>Previous</th><th>Current</th><th>Delta</th></tr></thead>
+                        <tbody id="dod-body"></tbody>
+                    </table>
                 </div>
 
-                <!-- In Review -->
-                <div class="burn-section" id="inreview-section" style="display:none;">
-                    <h2>In Review</h2>
-                    <div id="inreview-list"></div>
+                <!-- Burndown -->
+                <div class="burn-section" id="burndown-section">
+                    <h2>Burndown</h2>
+                    <div class="chart-toggle">
+                        <button class="toggle-btn active" onclick="switchBurndown('points')">Story Points</button>
+                        <button class="toggle-btn" onclick="switchBurndown('count')">Work Items</button>
+                    </div>
+                    <div class="chart-container"><canvas id="burndown-chart"></canvas></div>
+                    <div class="burndown-stats" id="burndown-stats"></div>
                 </div>
 
-                <!-- To Do -->
-                <div class="burn-section" id="todo-section" style="display:none;">
-                    <h2>To Do</h2>
-                    <div id="todo-list"></div>
+                <!-- Velocity (placeholder) -->
+                <div class="burn-section">
+                    <h2>Velocity History</h2>
+                    <div class="placeholder-msg">Velocity data will populate after multiple sprints are completed.</div>
                 </div>
 
-                <!-- Done -->
-                <div class="burn-section" id="done-section" style="display:none;">
-                    <h2>Done</h2>
-                    <div id="done-list"></div>
+                <!-- Flow Metrics -->
+                <div class="burn-section" id="flow-section" style="display:none;">
+                    <h2>Sprint Flow Metrics</h2>
+                    <div class="flow-grid" id="flow-cards"></div>
+                    <div class="chart-container"><canvas id="delivery-scatter"></canvas></div>
                 </div>
+
+                <!-- WIP Aging -->
+                <div class="burn-section" id="wip-section">
+                    <h2>Work In Progress Aging</h2>
+                    <div class="chart-container"><canvas id="wip-chart"></canvas></div>
+                </div>
+
+                <!-- Ticket Lists -->
+                <div class="burn-section" id="inprogress-section" style="display:none;"><h2>In Progress</h2><div id="inprogress-list"></div></div>
+                <div class="burn-section" id="inreview-section" style="display:none;"><h2>In Review</h2><div id="inreview-list"></div></div>
+                <div class="burn-section" id="blocked-detail-section" style="display:none;"><h2>Blocked</h2><div id="blocked-list"></div></div>
+                <div class="burn-section" id="todo-section" style="display:none;"><h2>To Do</h2><div id="todo-list"></div></div>
+                <div class="burn-section" id="done-section" style="display:none;"><h2>Done</h2><div id="done-list"></div></div>
 
                 <!-- Epics -->
-                <div class="burn-section">
-                    <h2>Epics</h2>
-                    <div class="epic-grid" id="epic-list"></div>
-                </div>
+                <div class="burn-section"><h2>Epics</h2><div class="epic-grid" id="epic-list"></div></div>
             </div>
         </div>
     </main>
 
     <script>
         const JIRA_BASE = 'https://datavant.atlassian.net';
+        let burndownChart = null;
+        let deliveryChart = null;
+        let wipChart = null;
+        let currentData = null;
+        let allSnapshots = {};
 
+        // --- Utilities ---
+        function daysAgo(isoStr) {
+            if (!isoStr) return null;
+            const d = new Date(isoStr);
+            return Math.max(0, Math.round((Date.now() - d.getTime()) / 86400000));
+        }
+        function getPreviousDate(dateStr) {
+            const d = new Date(dateStr + 'T12:00:00Z');
+            d.setDate(d.getDate() - 1);
+            // Skip weekends
+            while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() - 1);
+            return d.toISOString().split('T')[0];
+        }
+        function pct(a, b) { return b > 0 ? Math.round(a / b * 100) : 0; }
+
+        // --- Init ---
         async function init() {
             try {
-                const res = await fetch('snapshots/latest.json');
-                if (!res.ok) throw new Error('No snapshot found');
-                const data = await res.json();
-                render(data);
+                const latest = await fetch('snapshots/latest.json').then(r => r.json());
+                currentData = latest;
+
+                let previous = null;
+                try {
+                    const prevDate = getPreviousDate(latest.date);
+                    previous = await fetch(`snapshots/${prevDate}.json`).then(r => { if (!r.ok) throw 0; return r.json(); });
+                } catch(e) {}
+
+                let snapshotIndex = [];
+                try { snapshotIndex = await fetch('snapshots/index.json').then(r => r.json()); } catch(e) {}
+
+                render(latest, previous, snapshotIndex);
             } catch (err) {
-                document.getElementById('loading').textContent = 'No daily burn snapshot yet. Run the ETL script to generate one.';
+                document.getElementById('loading').textContent = 'No snapshot yet. Run the ETL to generate one.';
             }
         }
 
-        function render(data) {
+        function render(data, previous, snapshotIndex) {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
 
-            // Header
-            const genDate = new Date(data.generatedAt).toLocaleString('en-US', {
-                weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
-                hour: '2-digit', minute: '2-digit'
-            });
-            document.getElementById('burn-date').textContent = `Generated ${genDate}`;
-
-            if (data.sprint) {
-                document.getElementById('burn-title').textContent = `Daily Burn — ${data.sprint.name}`;
-                const endDate = data.sprint.endDate ? new Date(data.sprint.endDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
-                document.getElementById('sprint-badge').textContent = endDate ? `Ends ${endDate}` : data.sprint.name;
-                if (data.sprint.goal) {
-                    document.getElementById('sprint-goal').textContent = `Goal: ${data.sprint.goal}`;
-                }
-            } else {
-                document.getElementById('burn-title').textContent = 'Daily Burn — No Active Sprint';
-                document.getElementById('sprint-badge').style.display = 'none';
-            }
-
-            // Progress
-            const s = data.summary || {};
-            document.getElementById('done-points').textContent = s.donePoints || 0;
-            document.getElementById('total-points').textContent = s.totalPoints || 0;
-            document.getElementById('days-remaining').textContent = s.daysRemaining !== null && s.daysRemaining !== undefined ? s.daysRemaining : '—';
-            document.getElementById('total-issues').textContent = s.totalIssues || 0;
-            const pct = s.completionPercent || 0;
-            const bar = document.getElementById('progress-bar');
-            bar.style.width = `${pct}%`;
-            bar.textContent = `${pct}%`;
-            bar.className = `progress-bar ${pct >= 50 ? 'green' : 'yellow'}`;
-
-            // Tickets by status
-            const tickets = data.tickets || {};
-            renderTicketSection('blocked', tickets.blocked || [], 'blocked-section', 'blocked-list', true);
-            renderTicketSection('inProgress', tickets.inProgress || [], 'inprogress-section', 'inprogress-list');
-            renderTicketSection('inReview', tickets.inReview || [], 'inreview-section', 'inreview-list');
-            renderTicketSection('todo', tickets.todo || [], 'todo-section', 'todo-list');
-            renderTicketSection('done', tickets.done || [], 'done-section', 'done-list');
-
-            // Epics
+            renderHeader(data);
+            renderStatCards(data, previous);
+            renderProgressBar(data);
+            renderBlockerAlert(data);
+            renderDayOverDay(data, previous);
+            renderBurndown(snapshotIndex, data, 'points');
+            renderFlowMetrics(data);
+            renderDeliveryScatter(data);
+            renderWIPAging(data);
+            renderTicketSections(data.tickets || {});
             renderEpics(data.epics || []);
         }
 
-        function renderTicketSection(statusClass, tickets, sectionId, listId, isBlocked) {
+        // --- Header ---
+        function renderHeader(data) {
+            const genDate = new Date(data.generatedAt).toLocaleString('en-US', {
+                weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+            document.getElementById('burn-date').textContent = `Generated ${genDate}`;
+            if (data.sprint) {
+                document.getElementById('burn-title').textContent = `Daily Burn \u2014 ${data.sprint.name}`;
+                const endDate = data.sprint.endDate ? new Date(data.sprint.endDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+                document.getElementById('sprint-badge').textContent = endDate ? `Ends ${endDate}` : data.sprint.name;
+                if (data.sprint.goal) document.getElementById('sprint-goal').textContent = `Goal: ${data.sprint.goal}`;
+            }
+        }
+
+        // --- Stat Cards ---
+        function renderStatCards(data, previous) {
+            const cats = [
+                { key: 'todo', label: 'To Do', cls: 'todo' },
+                { key: 'inProgress', label: 'In Progress', cls: 'inProgress' },
+                { key: 'inReview', label: 'In Review', cls: 'inReview' },
+                { key: 'blocked', label: 'Blocked', cls: 'blocked' },
+                { key: 'done', label: 'Done', cls: 'done' },
+                { key: 'wontDo', label: "Won't Do", cls: 'wontDo' },
+            ];
+            const container = document.getElementById('stat-cards');
+            container.innerHTML = cats.map(c => {
+                const count = (data.tickets[c.key] || []).length;
+                let deltaHtml = '';
+                if (previous && previous.tickets) {
+                    const prev = (previous.tickets[c.key] || []).length;
+                    const diff = count - prev;
+                    if (diff > 0) deltaHtml = `<div class="stat-card-delta up">\u25B2 +${diff}</div>`;
+                    else if (diff < 0) deltaHtml = `<div class="stat-card-delta down">\u25BC ${diff}</div>`;
+                    else deltaHtml = `<div class="stat-card-delta flat">\u2014</div>`;
+                }
+                return `<div class="stat-card ${c.cls}"><div class="stat-card-label">${c.label}</div><div class="stat-card-value">${count}</div>${deltaHtml}</div>`;
+            }).join('');
+        }
+
+        // --- Progress Bar ---
+        function renderProgressBar(data) {
+            const s = data.summary || {};
+            document.getElementById('done-points').textContent = s.donePoints || 0;
+            document.getElementById('total-points').textContent = s.totalPoints || 0;
+            document.getElementById('days-remaining').textContent = s.daysRemaining != null ? s.daysRemaining : '\u2014';
+            document.getElementById('total-issues').textContent = s.totalIssues || 0;
+            document.getElementById('throughput').textContent = s.throughput || 0;
+            const total = s.totalPoints || 1;
+            const bar = document.getElementById('progress-bar');
+            bar.innerHTML = `
+                <div class="segment done-seg" style="width:${pct(s.donePoints||0, total)}%">${pct(s.donePoints||0, total)}%</div>
+                <div class="segment review-seg" style="width:${pct(s.inReviewPoints||0, total)}%"></div>
+                <div class="segment progress-seg" style="width:${pct(s.inProgressPoints||0, total)}%"></div>
+            `;
+        }
+
+        // --- Blocker Alert ---
+        function renderBlockerAlert(data) {
+            const blocked = data.tickets.blocked || [];
+            if (blocked.length === 0) return;
+            document.getElementById('blocker-section').style.display = 'block';
+            document.getElementById('blocker-list').innerHTML = blocked.map(t => {
+                const age = t.blockedAt ? `Blocked ${daysAgo(t.blockedAt)}d` : 'Blocked';
+                return `<div class="blocker-item"><a href="${JIRA_BASE}/browse/${t.key}" target="_blank">${t.key}</a><span class="summary">${t.summary}</span><span class="meta">${t.assignee} \u2022 ${age}</span></div>`;
+            }).join('');
+        }
+
+        // --- Day-over-Day ---
+        function renderDayOverDay(data, previous) {
+            if (!previous) return;
+            document.getElementById('dod-section').style.display = 'block';
+            const cats = ['todo', 'inProgress', 'inReview', 'blocked', 'done', 'wontDo'];
+            const labels = { todo: 'To Do', inProgress: 'In Progress', inReview: 'In Review', blocked: 'Blocked', done: 'Done', wontDo: "Won't Do" };
+            document.getElementById('dod-body').innerHTML = cats.map(c => {
+                const cur = (data.tickets[c] || []).length;
+                const prev = (previous.tickets[c] || []).length;
+                const diff = cur - prev;
+                const cls = diff > 0 ? 'delta-pos' : diff < 0 ? 'delta-neg' : 'delta-zero';
+                const sign = diff > 0 ? '+' : '';
+                return `<tr><td>${labels[c]}</td><td>${prev}</td><td>${cur}</td><td class="${cls}">${sign}${diff}</td></tr>`;
+            }).join('');
+        }
+
+        // --- Burndown ---
+        async function renderBurndown(snapshotIndex, data, mode) {
+            if (!data.sprint || snapshotIndex.length < 2) {
+                document.getElementById('burndown-stats').innerHTML = '<div class="placeholder-msg" style="padding:16px;">Burndown will appear after 2+ daily snapshots within a sprint.</div>';
+                return;
+            }
+            const sprintStart = data.sprint.startDate ? data.sprint.startDate.split('T')[0] : null;
+            const sprintEnd = data.sprint.endDate ? data.sprint.endDate.split('T')[0] : null;
+            if (!sprintStart || !sprintEnd) return;
+
+            const relevantDates = snapshotIndex.filter(d => d >= sprintStart && d <= sprintEnd);
+            if (relevantDates.length < 1) return;
+
+            // Load snapshots
+            const snapshots = [];
+            for (const d of relevantDates) {
+                try {
+                    if (!allSnapshots[d]) allSnapshots[d] = await fetch(`snapshots/${d}.json`).then(r => r.json());
+                    snapshots.push(allSnapshots[d]);
+                } catch(e) {}
+            }
+            if (snapshots.length < 1) return;
+
+            const totalInitial = snapshots[0].summary.totalPoints || 0;
+            const labels = snapshots.map(s => s.date);
+            const actual = snapshots.map(s => {
+                const sm = s.summary;
+                return mode === 'points' ? (sm.totalPoints - sm.donePoints) : (sm.totalIssues - (s.tickets.done || []).length);
+            });
+
+            // Ideal line
+            const startVal = mode === 'points' ? totalInitial : snapshots[0].summary.totalIssues;
+            const startD = new Date(sprintStart);
+            const endD = new Date(sprintEnd);
+            const sprintDays = Math.max(1, Math.round((endD - startD) / 86400000));
+            const idealLabels = [];
+            const idealVals = [];
+            for (let i = 0; i <= sprintDays; i++) {
+                const d = new Date(startD);
+                d.setDate(d.getDate() + i);
+                idealLabels.push(d.toISOString().split('T')[0]);
+                idealVals.push(Math.round(startVal * (1 - i / sprintDays)));
+            }
+
+            if (burndownChart) burndownChart.destroy();
+            const ctx = document.getElementById('burndown-chart').getContext('2d');
+            burndownChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: idealLabels,
+                    datasets: [
+                        { label: 'Actual Remaining', data: labels.map((l, i) => ({ x: l, y: actual[i] })), borderColor: '#a371f7', backgroundColor: 'rgba(163,113,247,0.1)', fill: true, tension: 0.3, pointRadius: 4 },
+                        { label: 'Ideal', data: idealLabels.map((l, i) => ({ x: l, y: idealVals[i] })), borderColor: '#484f58', borderDash: [5, 5], fill: false, pointRadius: 0 },
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        x: { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, grid: { color: '#21262d' }, ticks: { color: '#8b949e' } },
+                        y: { beginAtZero: true, grid: { color: '#21262d' }, ticks: { color: '#8b949e' } }
+                    },
+                    plugins: { legend: { labels: { color: '#8b949e' } } }
+                }
+            });
+
+            // Stats
+            const remaining = actual[actual.length - 1];
+            const elapsed = snapshots.length;
+            const burned = startVal - remaining;
+            const dailyRate = elapsed > 0 ? (burned / elapsed).toFixed(1) : 0;
+            const daysLeft = data.summary.daysRemaining || 0;
+            document.getElementById('burndown-stats').innerHTML = `
+                <div class="bstat"><div class="bstat-value">${remaining}</div><div class="bstat-label">${mode === 'points' ? 'Pts' : 'Items'} Remaining</div></div>
+                <div class="bstat"><div class="bstat-value">${dailyRate}</div><div class="bstat-label">Avg/${mode === 'points' ? 'Day' : 'Day'}</div></div>
+                <div class="bstat"><div class="bstat-value">${daysLeft}</div><div class="bstat-label">Days Left</div></div>
+            `;
+        }
+        function switchBurndown(mode) {
+            document.querySelectorAll('.chart-toggle .toggle-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            renderBurndown([], currentData, mode);
+        }
+
+        // --- Flow Metrics ---
+        function renderFlowMetrics(data) {
+            const fm = data.flowMetrics;
+            if (!fm || !fm.leadTime || fm.leadTime.p50 === null) return;
+            document.getElementById('flow-section').style.display = 'block';
+            document.getElementById('flow-cards').innerHTML = `
+                <div class="flow-card"><div class="flow-label">Lead Time (days)</div><div class="flow-values">
+                    <div><div class="flow-val">${fm.leadTime.p50 || '\u2014'}</div><div class="flow-pct">P50</div></div>
+                    <div><div class="flow-val">${fm.leadTime.p85 || '\u2014'}</div><div class="flow-pct">P85</div></div>
+                    <div><div class="flow-val">${fm.leadTime.p95 || '\u2014'}</div><div class="flow-pct">P95</div></div>
+                </div></div>
+                <div class="flow-card"><div class="flow-label">Cycle Time (days)</div><div class="flow-values">
+                    <div><div class="flow-val">${fm.cycleTime.p50 || '\u2014'}</div><div class="flow-pct">P50</div></div>
+                    <div><div class="flow-val">${fm.cycleTime.p85 || '\u2014'}</div><div class="flow-pct">P85</div></div>
+                    <div><div class="flow-val">${fm.cycleTime.p95 || '\u2014'}</div><div class="flow-pct">P95</div></div>
+                </div></div>
+                <div class="flow-card flow-single"><div class="flow-label">Throughput</div><div class="flow-val">${data.summary.throughput || 0}</div><div class="flow-pct">pts/day</div></div>
+                <div class="flow-card flow-single"><div class="flow-label">Flow Efficiency</div><div class="flow-val">${fm.flowEfficiency != null ? (fm.flowEfficiency * 100).toFixed(0) + '%' : '\u2014'}</div><div class="flow-pct">cycle/lead at P85</div></div>
+            `;
+        }
+
+        // --- Delivery Scatter ---
+        function renderDeliveryScatter(data) {
+            const done = (data.tickets.done || []).filter(t => t.completedAt && t.startedAt);
+            if (done.length < 2) return;
+
+            const points = done.map(t => {
+                const completed = new Date(t.completedAt);
+                const started = new Date(t.startedAt);
+                const cycleDays = Math.max(0, (completed - started) / 86400000);
+                return { x: completed, y: Math.round(cycleDays * 10) / 10, label: t.key };
+            });
+
+            const fm = data.flowMetrics || {};
+            const annotations = {};
+            if (fm.cycleTime) {
+                if (fm.cycleTime.p50) annotations.p50 = { type: 'line', yMin: fm.cycleTime.p50, yMax: fm.cycleTime.p50, borderColor: '#3fb950', borderDash: [4, 4], borderWidth: 1, label: { display: true, content: 'P50', position: 'start', color: '#3fb950', font: { size: 10 } } };
+                if (fm.cycleTime.p85) annotations.p85 = { type: 'line', yMin: fm.cycleTime.p85, yMax: fm.cycleTime.p85, borderColor: '#f0883e', borderDash: [4, 4], borderWidth: 1, label: { display: true, content: 'P85', position: 'start', color: '#f0883e', font: { size: 10 } } };
+                if (fm.cycleTime.p95) annotations.p95 = { type: 'line', yMin: fm.cycleTime.p95, yMax: fm.cycleTime.p95, borderColor: '#f85149', borderDash: [4, 4], borderWidth: 1, label: { display: true, content: 'P95', position: 'start', color: '#f85149', font: { size: 10 } } };
+            }
+
+            if (deliveryChart) deliveryChart.destroy();
+            const ctx = document.getElementById('delivery-scatter').getContext('2d');
+            deliveryChart = new Chart(ctx, {
+                type: 'scatter',
+                data: { datasets: [{ label: 'Cycle Time', data: points, backgroundColor: '#58a6ff', pointRadius: 6, pointHoverRadius: 8 }] },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        x: { type: 'time', time: { unit: 'day', tooltipFormat: 'MMM d' }, grid: { color: '#21262d' }, ticks: { color: '#8b949e' }, title: { display: true, text: 'Completion Date', color: '#8b949e' } },
+                        y: { beginAtZero: true, grid: { color: '#21262d' }, ticks: { color: '#8b949e' }, title: { display: true, text: 'Days', color: '#8b949e' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        annotation: { annotations },
+                        tooltip: { callbacks: { label: ctx => `${ctx.raw.label}: ${ctx.raw.y}d` } }
+                    }
+                }
+            });
+        }
+
+        // --- WIP Aging ---
+        function renderWIPAging(data) {
+            const statusOrder = ['todo', 'inProgress', 'inReview', 'blocked'];
+            const statusLabels = { todo: 'To Do', inProgress: 'In Progress', inReview: 'In Review', blocked: 'Blocked' };
+            const statusColors = { todo: '#8b949e', inProgress: '#a371f7', inReview: '#58a6ff', blocked: '#f85149' };
+
+            const points = [];
+            statusOrder.forEach((cat, idx) => {
+                (data.tickets[cat] || []).forEach(t => {
+                    const age = daysAgo(t.startedAt || t.created);
+                    if (age === null) return;
+                    points.push({ x: idx, y: age, key: t.key, url: `${JIRA_BASE}/browse/${t.key}`, color: statusColors[cat], summary: t.summary });
+                });
+            });
+
+            if (points.length === 0) {
+                document.getElementById('wip-section').style.display = 'none';
+                return;
+            }
+
+            if (wipChart) wipChart.destroy();
+            const ctx = document.getElementById('wip-chart').getContext('2d');
+            wipChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        data: points.map(p => ({ x: p.x, y: p.y })),
+                        backgroundColor: points.map(p => p.color),
+                        pointRadius: 8, pointHoverRadius: 10,
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    onClick: (evt, elements) => {
+                        if (elements.length > 0) {
+                            const idx = elements[0].index;
+                            window.open(points[idx].url, '_blank');
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear', min: -0.5, max: statusOrder.length - 0.5,
+                            ticks: { callback: v => statusLabels[statusOrder[v]] || '', stepSize: 1, color: '#8b949e' },
+                            grid: { color: '#21262d' }
+                        },
+                        y: { beginAtZero: true, title: { display: true, text: 'Age (days)', color: '#8b949e' }, grid: { color: '#21262d' }, ticks: { color: '#8b949e' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => { const p = points[ctx.dataIndex]; return `${p.key}: ${p.y}d — ${p.summary.substring(0, 50)}`; } } }
+                    }
+                }
+            });
+        }
+
+        // --- Ticket Lists ---
+        function renderTicketSections(tickets) {
+            renderTicketList('inProgress', tickets.inProgress || [], 'inprogress-section', 'inprogress-list');
+            renderTicketList('inReview', tickets.inReview || [], 'inreview-section', 'inreview-list');
+            renderTicketList('blocked', tickets.blocked || [], 'blocked-detail-section', 'blocked-list', true);
+            renderTicketList('todo', tickets.todo || [], 'todo-section', 'todo-list');
+            renderTicketList('done', tickets.done || [], 'done-section', 'done-list');
+        }
+        function renderTicketList(status, tickets, sectionId, listId, isBlocked) {
             if (tickets.length === 0) return;
             document.getElementById(sectionId).style.display = 'block';
-            const list = document.getElementById(listId);
-            list.innerHTML = tickets.map(t => `
+            document.getElementById(listId).innerHTML = tickets.map(t => `
                 <div class="ticket ${isBlocked ? 'blocked-row' : ''}">
                     <a class="ticket-key" href="${JIRA_BASE}/browse/${t.key}" target="_blank">${t.key}</a>
                     <span class="ticket-summary">${t.summary}</span>
                     <span class="ticket-assignee">${t.assignee}</span>
-                    ${t.storyPoints ? `<span class="ticket-points">${t.storyPoints} pts</span>` : '<span class="ticket-points">—</span>'}
+                    ${t.storyPoints ? `<span class="ticket-points">${t.storyPoints} pts</span>` : '<span class="ticket-points">\u2014</span>'}
                 </div>
             `).join('');
         }
 
+        // --- Epics ---
         function renderEpics(epics) {
             const list = document.getElementById('epic-list');
-            if (epics.length === 0) {
-                list.innerHTML = '<div class="empty">No active epics found.</div>';
-                return;
-            }
+            if (epics.length === 0) { list.innerHTML = '<div class="empty">No active epics found.</div>'; return; }
             list.innerHTML = epics.map(e => {
-                const pct = e.totalIssues > 0 ? Math.round(e.doneIssues / e.totalIssues * 100) : 0;
-                return `
-                    <div class="epic-card">
-                        <a class="epic-key" href="${JIRA_BASE}/browse/${e.key}" target="_blank">${e.key}</a>
-                        <div class="epic-title">${e.summary}</div>
-                        <div class="epic-meta">${e.assignee} &bull; ${e.priority}</div>
-                        <div class="epic-progress-bar">
-                            <div class="epic-progress-fill" style="width: ${pct}%"></div>
-                        </div>
-                        <div class="epic-progress-text">${e.doneIssues}/${e.totalIssues} issues done (${pct}%)</div>
-                    </div>
-                `;
+                const p = e.totalIssues > 0 ? Math.round(e.doneIssues / e.totalIssues * 100) : 0;
+                return `<div class="epic-card"><a class="epic-key" href="${JIRA_BASE}/browse/${e.key}" target="_blank">${e.key}</a><div class="epic-title">${e.summary}</div><div class="epic-meta">${e.assignee} \u2022 ${e.priority}</div><div class="epic-progress-bar"><div class="epic-progress-fill" style="width:${p}%"></div></div><div class="epic-progress-text">${e.doneIssues}/${e.totalIssues} done (${p}%)</div></div>`;
             }).join('');
         }
 
