@@ -2,17 +2,35 @@
 
 let kpiData = null;
 
-// Navigation
+// Navigation — only handle hash links, let real page links navigate normally
 document.querySelectorAll('nav a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href.startsWith('#')) return; // Let real links (daily-burn.html) navigate normally
+
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = link.getAttribute('href').replace('#', '');
+        const target = href.replace('#', '');
         document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
         document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
         document.getElementById(target).style.display = 'block';
+        window.location.hash = target;
     });
 });
+
+// Handle hash on page load (e.g., coming from daily-burn.html with index.html#docs)
+function handleHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(hash)) {
+        document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+        const matchingLink = document.querySelector(`nav a[href="#${hash}"]`);
+        if (matchingLink) matchingLink.classList.add('active');
+        document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+        document.getElementById(hash).style.display = 'block';
+    }
+}
+handleHash();
+window.addEventListener('hashchange', handleHash);
 
 // PR detail data for tooltips
 let modelPRs = [];
