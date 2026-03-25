@@ -1,0 +1,24 @@
+{
+  "jira": {
+    "baseUrl": "https://datavant.atlassian.net",
+    "projectKey": "PLT",
+    "boardId": 781,
+    "teamName": "ML Platform",
+    "fields": {
+      "storyPoints": "customfield_10026",
+      "sprint": "customfield_10020",
+      "teams": "customfield_10910"
+    },
+    "statusCategories": {
+      "todo": ["To Do", "Open", "New", "Backlog"],
+      "inProgress": ["In Progress", "In Development"],
+      "inReview": ["In Review", "Code Review", "Review"],
+      "blocked": ["Blocked", "On Hold", "Impediment"],
+      "done": ["Done", "Closed", "Resolved"]
+    }
+  },
+  "github": {
+    "org": "apixio",
+    "lookbackDays": 30
+  }
+}

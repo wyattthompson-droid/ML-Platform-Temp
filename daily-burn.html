@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Burn — ML Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .burn-page { max-width: 1100px; margin: 0 auto; padding: 32px; }
+        .burn-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+        .burn-header h1 { font-size: 24px; color: #f0f6fc; margin-bottom: 4px; }
+        .burn-header .date { color: #8b949e; font-size: 14px; }
+        .sprint-badge { background: #1c2128; border: 1px solid #58a6ff; border-radius: 6px; padding: 8px 16px; color: #58a6ff; font-size: 13px; font-weight: 500; }
+        .sprint-goal { color: #8b949e; font-size: 13px; font-style: italic; margin-top: 8px; max-width: 600px; }
+
+        /* Progress bar */
+        .progress-section { margin-bottom: 32px; }
+        .progress-bar-container { background: #21262d; border-radius: 6px; height: 24px; overflow: hidden; margin: 8px 0; }
+        .progress-bar { height: 100%; border-radius: 6px; transition: width 0.5s; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #fff; }
+        .progress-bar.green { background: #238636; }
+        .progress-bar.yellow { background: #9e6a03; }
+        .progress-stats { display: flex; gap: 24px; font-size: 13px; color: #8b949e; flex-wrap: wrap; }
+        .progress-stats .stat { display: flex; align-items: center; gap: 6px; }
+        .progress-stats .stat-value { color: #f0f6fc; font-weight: 600; font-size: 16px; }
+
+        /* Sections */
+        .burn-section { margin-bottom: 32px; }
+        .burn-section h2 { font-size: 16px; font-weight: 600; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+        .status-group { margin-bottom: 20px; }
+        .status-group h3 { font-size: 14px; color: #c9d1d9; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .status-count { background: #30363d; color: #8b949e; font-size: 11px; padding: 1px 7px; border-radius: 8px; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .status-dot.inProgress { background: #58a6ff; }
+        .status-dot.inReview { background: #a371f7; }
+        .status-dot.blocked { background: #f85149; }
+        .status-dot.done { background: #3fb950; }
+        .status-dot.todo { background: #8b949e; }
+
+        /* Ticket rows */
+        .ticket { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; background: #161b22; border: 1px solid #30363d; transition: border-color 0.2s; font-size: 13px; }
+        .ticket:hover { border-color: #58a6ff; }
+        .ticket-key { color: #58a6ff; font-weight: 500; min-width: 80px; text-decoration: none; }
+        .ticket-key:hover { text-decoration: underline; }
+        .ticket-summary { color: #c9d1d9; flex: 1; }
+        .ticket-assignee { color: #8b949e; font-size: 12px; min-width: 120px; text-align: right; }
+        .ticket-points { background: #21262d; color: #8b949e; font-size: 11px; padding: 2px 8px; border-radius: 8px; min-width: 24px; text-align: center; }
+        .ticket.blocked-row { border-left: 3px solid #f85149; }
+
+        /* Epic cards */
+        .epic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+        .epic-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+        .epic-card:hover { border-color: #58a6ff; }
+        .epic-key { color: #58a6ff; font-size: 12px; font-weight: 500; text-decoration: none; }
+        .epic-key:hover { text-decoration: underline; }
+        .epic-title { color: #f0f6fc; font-size: 14px; font-weight: 500; margin: 4px 0 8px 0; }
+        .epic-meta { color: #8b949e; font-size: 12px; margin-bottom: 8px; }
+        .epic-progress-bar { background: #21262d; border-radius: 4px; height: 8px; overflow: hidden; }
+        .epic-progress-fill { height: 100%; background: #238636; border-radius: 4px; }
+        .epic-progress-text { color: #8b949e; font-size: 11px; margin-top: 4px; }
+
+        /* Empty / loading */
+        .empty { color: #484f58; font-size: 14px; text-align: center; padding: 32px; }
+        .loading { color: #8b949e; text-align: center; padding: 48px; font-size: 14px; }
+
+        .back-link { color: #58a6ff; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ML Platform Command Center</h1>
+            <p class="subtitle">Data Science & ML Platform KPIs and Documentation</p>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html#kpis">KPIs</a>
+        <a href="index.html#docs">Documentation</a>
+        <a href="daily-burn.html" class="active">Daily Burn</a>
+    </nav>
+    <main>
+        <div class="burn-page">
+            <div id="loading" class="loading">Loading daily burn...</div>
+            <div id="content" style="display:none;">
+
+                <div class="burn-header">
+                    <div>
+                        <h1 id="burn-title">Daily Burn</h1>
+                        <div class="date" id="burn-date"></div>
+                        <div class="sprint-goal" id="sprint-goal"></div>
+                    </div>
+                    <div class="sprint-badge" id="sprint-badge"></div>
+                </div>
+
+                <!-- Sprint Progress -->
+                <div class="progress-section">
+                    <div class="progress-stats">
+                        <div class="stat"><span class="stat-value" id="done-points">0</span> pts done</div>
+                        <div class="stat"><span class="stat-value" id="total-points">0</span> pts total</div>
+                        <div class="stat"><span class="stat-value" id="days-remaining">—</span> days left</div>
+                        <div class="stat"><span class="stat-value" id="total-issues">0</span> issues</div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar green" id="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Blocked (always on top if any) -->
+                <div class="burn-section" id="blocked-section" style="display:none;">
+                    <h2>Blocked</h2>
+                    <div id="blocked-list"></div>
+                </div>
+
+                <!-- In Progress -->
+                <div class="burn-section" id="inprogress-section" style="display:none;">
+                    <h2>In Progress</h2>
+                    <div id="inprogress-list"></div>
+                </div>
+
+                <!-- In Review -->
+                <div class="burn-section" id="inreview-section" style="display:none;">
+                    <h2>In Review</h2>
+                    <div id="inreview-list"></div>
+                </div>
+
+                <!-- To Do -->
+                <div class="burn-section" id="todo-section" style="display:none;">
+                    <h2>To Do</h2>
+                    <div id="todo-list"></div>
+                </div>
+
+                <!-- Done -->
+                <div class="burn-section" id="done-section" style="display:none;">
+                    <h2>Done</h2>
+                    <div id="done-list"></div>
+                </div>
+
+                <!-- Epics -->
+                <div class="burn-section">
+                    <h2>Epics</h2>
+                    <div class="epic-grid" id="epic-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const JIRA_BASE = 'https://datavant.atlassian.net';
+
+        async function init() {
+            try {
+                const res = await fetch('snapshots/latest.json');
+                if (!res.ok) throw new Error('No snapshot found');
+                const data = await res.json();
+                render(data);
+            } catch (err) {
+                document.getElementById('loading').textContent = 'No daily burn snapshot yet. Run the ETL script to generate one.';
+            }
+        }
+
+        function render(data) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+
+            // Header
+            const genDate = new Date(data.generatedAt).toLocaleString('en-US', {
+                weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+            document.getElementById('burn-date').textContent = `Generated ${genDate}`;
+
+            if (data.sprint) {
+                document.getElementById('burn-title').textContent = `Daily Burn — ${data.sprint.name}`;
+                const endDate = data.sprint.endDate ? new Date(data.sprint.endDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+                document.getElementById('sprint-badge').textContent = endDate ? `Ends ${endDate}` : data.sprint.name;
+                if (data.sprint.goal) {
+                    document.getElementById('sprint-goal').textContent = `Goal: ${data.sprint.goal}`;
+                }
+            } else {
+                document.getElementById('burn-title').textContent = 'Daily Burn — No Active Sprint';
+                document.getElementById('sprint-badge').style.display = 'none';
+            }
+
+            // Progress
+            const s = data.summary || {};
+            document.getElementById('done-points').textContent = s.donePoints || 0;
+            document.getElementById('total-points').textContent = s.totalPoints || 0;
+            document.getElementById('days-remaining').textContent = s.daysRemaining !== null && s.daysRemaining !== undefined ? s.daysRemaining : '—';
+            document.getElementById('total-issues').textContent = s.totalIssues || 0;
+            const pct = s.completionPercent || 0;
+            const bar = document.getElementById('progress-bar');
+            bar.style.width = `${pct}%`;
+            bar.textContent = `${pct}%`;
+            bar.className = `progress-bar ${pct >= 50 ? 'green' : 'yellow'}`;
+
+            // Tickets by status
+            const tickets = data.tickets || {};
+            renderTicketSection('blocked', tickets.blocked || [], 'blocked-section', 'blocked-list', true);
+            renderTicketSection('inProgress', tickets.inProgress || [], 'inprogress-section', 'inprogress-list');
+            renderTicketSection('inReview', tickets.inReview || [], 'inreview-section', 'inreview-list');
+            renderTicketSection('todo', tickets.todo || [], 'todo-section', 'todo-list');
+            renderTicketSection('done', tickets.done || [], 'done-section', 'done-list');
+
+            // Epics
+            renderEpics(data.epics || []);
+        }
+
+        function renderTicketSection(statusClass, tickets, sectionId, listId, isBlocked) {
+            if (tickets.length === 0) return;
+            document.getElementById(sectionId).style.display = 'block';
+            const list = document.getElementById(listId);
+            list.innerHTML = tickets.map(t => `
+                <div class="ticket ${isBlocked ? 'blocked-row' : ''}">
+                    <a class="ticket-key" href="${JIRA_BASE}/browse/${t.key}" target="_blank">${t.key}</a>
+                    <span class="ticket-summary">${t.summary}</span>
+                    <span class="ticket-assignee">${t.assignee}</span>
+                    ${t.storyPoints ? `<span class="ticket-points">${t.storyPoints} pts</span>` : '<span class="ticket-points">—</span>'}
+                </div>
+            `).join('');
+        }
+
+        function renderEpics(epics) {
+            const list = document.getElementById('epic-list');
+            if (epics.length === 0) {
+                list.innerHTML = '<div class="empty">No active epics found.</div>';
+                return;
+            }
+            list.innerHTML = epics.map(e => {
+                const pct = e.totalIssues > 0 ? Math.round(e.doneIssues / e.totalIssues * 100) : 0;
+                return `
+                    <div class="epic-card">
+                        <a class="epic-key" href="${JIRA_BASE}/browse/${e.key}" target="_blank">${e.key}</a>
+                        <div class="epic-title">${e.summary}</div>
+                        <div class="epic-meta">${e.assignee} &bull; ${e.priority}</div>
+                        <div class="epic-progress-bar">
+                            <div class="epic-progress-fill" style="width: ${pct}%"></div>
+                        </div>
+                        <div class="epic-progress-text">${e.doneIssues}/${e.totalIssues} issues done (${pct}%)</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        init();
+    </script>
+</body>
+</html>
