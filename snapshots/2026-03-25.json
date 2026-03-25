@@ -1,6 +1,6 @@
 {
   "date": "2026-03-25",
-  "generatedAt": "2026-03-25T19:11:19.139453+00:00",
+  "generatedAt": "2026-03-25T19:22:57.074636+00:00",
   "sprint": {
     "id": 9242,
     "name": "03/12/2026 - 03/25/2026",
@@ -288,6 +288,12 @@
     "other": []
   },
   "epics": [],
+  "epicHealthSummary": {
+    "red": 0,
+    "yellow": 0,
+    "green": 0,
+    "future": 0
+  },
   "flowMetrics": {
     "leadTime": {
       "p50": 6.7,
