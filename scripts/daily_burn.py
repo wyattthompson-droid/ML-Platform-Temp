@@ -180,21 +180,41 @@ async def get_epics(session, config, headers):
     # Fetch ALL epics (not just active) for roadmap view
     jql = f'project = {project} AND issuetype = Epic ORDER BY priority ASC'
 
-    url = None
+    # Try POST search (new API) then GET v2 then GET v3
+    fields_list = f"summary,status,assignee,{sp_field},priority,duedate,labels,parent,fixVersions,created"
     data = None
-    for api_ver in ["2", "3"]:
-        url = f"{base}/rest/api/{api_ver}/search"
-        try:
-            data = await fetch_json(session, url, headers, {
-                "jql": jql, "maxResults": 100,
-                "fields": f"summary,status,assignee,{sp_field},priority,duedate,labels,parent,fixVersions,created"
-            })
-            break
-        except Exception as e:
-            if api_ver == "2":
-                continue
-            print(f"  Epic fetch failed: {e}")
-            return [], []
+    url = None
+
+    # POST-based search (preferred — GET search is deprecated/410 on some instances)
+    try:
+        post_url = f"{base}/rest/api/2/search"
+        async with session.post(post_url, headers=headers, json={
+            "jql": jql, "maxResults": 100, "fields": fields_list.split(",")
+        }) as resp:
+            if resp.status == 200:
+                data = await resp.json()
+                url = post_url
+    except Exception as e:
+        print(f"  POST search failed: {e}")
+
+    # Fallback to GET
+    if data is None:
+        for api_ver in ["2", "3"]:
+            url = f"{base}/rest/api/{api_ver}/search"
+            try:
+                data = await fetch_json(session, url, headers, {
+                    "jql": jql, "maxResults": 100, "fields": fields_list
+                })
+                break
+            except Exception as e:
+                if api_ver == "2":
+                    continue
+                print(f"  Epic fetch failed: {e}")
+                return [], []
+
+    if data is None:
+        print("  All epic fetch methods failed")
+        return [], []
 
     epics = []
     for issue in data.get("issues", []):
@@ -238,17 +258,25 @@ async def get_epics(session, config, headers):
             "targetQuarter": target_quarter,
         })
 
-    # Fetch child counts for each epic
+    # Fetch child counts for each epic (use POST search)
+    search_url = f"{base}/rest/api/2/search"
     for epic in epics:
         jql_children = f'"Epic Link" = {epic["key"]} OR parent = {epic["key"]}'
         try:
-            children_data = await fetch_json(session, url, headers, {
-                "jql": jql_children, "maxResults": 200, "fields": "status"
-            })
+            async with session.post(search_url, headers=headers, json={
+                "jql": jql_children, "maxResults": 200, "fields": ["status"]
+            }) as resp:
+                if resp.status == 200:
+                    children_data = await resp.json()
+                else:
+                    # Fallback to GET
+                    children_data = await fetch_json(session, search_url, headers, {
+                        "jql": jql_children, "maxResults": 200, "fields": "status"
+                    })
             children = children_data.get("issues", [])
             epic["totalIssues"] = len(children)
             epic["doneIssues"] = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
-        except Exception:
+        except Exception as e:
             epic["totalIssues"] = 0
             epic["doneIssues"] = 0
 
