@@ -239,12 +239,10 @@ async def get_epics(session, config, headers):
                     target_quarter = label
                     break
 
-        # Theme/initiative from parent or labels
-        theme = None
-        if parent:
-            theme = parent.get("fields", {}).get("summary", parent.get("key", ""))
-        elif labels:
-            theme = labels[0] if labels else None
+        # Parent (Milestone) info — we'll resolve the full chain after
+        parent_key = parent.get("key") if parent else None
+        parent_summary = parent.get("fields", {}).get("summary") if parent else None
+        parent_type = parent.get("fields", {}).get("issuetype", {}).get("name") if parent else None
 
         all_epics.append({
             "key": issue["key"],
@@ -257,7 +255,9 @@ async def get_epics(session, config, headers):
             "created": fields.get("created"),
             "labels": labels,
             "teams": epic_teams,
-            "theme": theme,
+            "parentKey": parent_key,
+            "parentSummary": parent_summary,
+            "parentType": parent_type,
             "targetQuarter": target_quarter,
         })
 
@@ -267,6 +267,58 @@ async def get_epics(session, config, headers):
         print(f"  Filtered to '{team_name}': {len(epics)} of {len(all_epics)} epics")
     else:
         epics = all_epics
+
+    # Resolve parent hierarchy: Epic → Milestone → Initiative
+    # Collect unique parent keys that need grandparent lookup
+    parent_keys = set(e["parentKey"] for e in epics if e.get("parentKey"))
+    grandparent_map = {}  # parentKey -> {key, summary, type, grandparentKey, grandparentSummary}
+
+    if parent_keys:
+        print(f"  Resolving {len(parent_keys)} parent issues for hierarchy...")
+        sem = asyncio.Semaphore(10)
+        async def fetch_parent(key):
+            async with sem:
+                try:
+                    issue_url = f"{base}/rest/api/2/issue/{key}?fields=summary,issuetype,parent"
+                    pdata = await fetch_json(session, issue_url, headers)
+                    pfields = pdata.get("fields", {})
+                    gp = pfields.get("parent")
+                    return key, {
+                        "key": key,
+                        "summary": pfields.get("summary", ""),
+                        "type": pfields.get("issuetype", {}).get("name", ""),
+                        "grandparentKey": gp.get("key") if gp else None,
+                        "grandparentSummary": gp.get("fields", {}).get("summary") if gp else None,
+                        "grandparentType": gp.get("fields", {}).get("issuetype", {}).get("name") if gp else None,
+                    }
+                except Exception as e:
+                    return key, None
+
+        results = await asyncio.gather(*[fetch_parent(k) for k in parent_keys])
+        for key, info in results:
+            if info:
+                grandparent_map[key] = info
+
+    # Attach hierarchy to each epic
+    for epic in epics:
+        pk = epic.get("parentKey")
+        if pk and pk in grandparent_map:
+            gp_info = grandparent_map[pk]
+            epic["milestone"] = gp_info["summary"]
+            epic["milestoneKey"] = gp_info["key"]
+            epic["milestoneType"] = gp_info["type"]
+            if gp_info.get("grandparentKey"):
+                epic["initiative"] = gp_info["grandparentSummary"]
+                epic["initiativeKey"] = gp_info["grandparentKey"]
+                epic["initiativeType"] = gp_info["grandparentType"]
+            else:
+                epic["initiative"] = None
+                epic["initiativeKey"] = None
+        else:
+            epic["milestone"] = epic.get("parentSummary")
+            epic["milestoneKey"] = pk
+            epic["initiative"] = None
+            epic["initiativeKey"] = None
 
     # Fetch child counts for each epic
     search_url = f"{base}/rest/api/3/search/jql"

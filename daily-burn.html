@@ -688,55 +688,110 @@
                 <div class="health-badge"><span class="health-dot future"></span><span class="health-count">${healthSummary.future || 0}</span> Future</div>
             `;
 
-            // Group by theme
-            const themes = {};
-            const unthemed = [];
+            // Build hierarchy: Initiative → Milestone → Epic
+            // Structure: { initiativeName: { milestones: { milestoneName: [epics] } } }
+            const hierarchy = {};
+            const noParent = [];
+
             epics.forEach(e => {
-                if (e.theme) {
-                    if (!themes[e.theme]) themes[e.theme] = [];
-                    themes[e.theme].push(e);
+                const initiative = e.initiative || null;
+                const milestone = e.milestone || null;
+
+                if (initiative) {
+                    const initKey = `${e.initiativeKey}|${initiative}`;
+                    if (!hierarchy[initKey]) hierarchy[initKey] = { key: e.initiativeKey, name: initiative, milestones: {} };
+                    const msKey = `${e.milestoneKey}|${milestone}`;
+                    if (!hierarchy[initKey].milestones[msKey]) hierarchy[initKey].milestones[msKey] = { key: e.milestoneKey, name: milestone, epics: [] };
+                    hierarchy[initKey].milestones[msKey].epics.push(e);
+                } else if (milestone) {
+                    // Milestone with no initiative parent — treat milestone as top level
+                    const msKey = `${e.milestoneKey}|${milestone}`;
+                    if (!hierarchy[msKey]) hierarchy[msKey] = { key: e.milestoneKey, name: milestone, milestones: null, directEpics: [] };
+                    if (!hierarchy[msKey].directEpics) hierarchy[msKey].directEpics = [];
+                    hierarchy[msKey].directEpics.push(e);
                 } else {
-                    unthemed.push(e);
+                    noParent.push(e);
                 }
             });
 
             const container = document.getElementById('epics-roadmap');
             let html = '';
 
-            // Themed groups
-            Object.entries(themes).sort((a, b) => a[0].localeCompare(b[0])).forEach(([theme, themeEpics]) => {
-                const totalStories = themeEpics.reduce((s, e) => s + (e.totalIssues || 0), 0);
-                const doneStories = themeEpics.reduce((s, e) => s + (e.doneIssues || 0), 0);
-                const themePct = totalStories > 0 ? Math.round(doneStories / totalStories * 100) : 0;
-                const worstHealth = getWorstHealth(themeEpics);
+            // Render hierarchy
+            Object.values(hierarchy).sort((a, b) => a.name.localeCompare(b.name)).forEach(group => {
+                if (group.milestones) {
+                    // Full Initiative → Milestone → Epic
+                    const allEpics = Object.values(group.milestones).flatMap(m => m.epics);
+                    const totalStories = allEpics.reduce((s, e) => s + (e.totalIssues || 0), 0);
+                    const doneStories = allEpics.reduce((s, e) => s + (e.doneIssues || 0), 0);
+                    const initPct = totalStories > 0 ? Math.round(doneStories / totalStories * 100) : 0;
+                    const worstHealth = getWorstHealth(allEpics);
 
-                html += `
-                <div class="theme-group">
-                    <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
-                        <span class="theme-toggle open">\u25B6</span>
-                        <span class="health-dot ${worstHealth}"></span>
-                        <span class="theme-name">${theme}</span>
-                        <span class="theme-stats">
-                            ${themeEpics.length} epics \u00B7 ${totalStories} stories \u00B7 ${doneStories} done (${themePct}%)
-                        </span>
-                    </div>
-                    <div class="theme-epics">
-                        ${themeEpics.map(e => renderEpicRow(e)).join('')}
-                    </div>
-                </div>`;
+                    html += `<div class="theme-group">
+                        <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
+                            <span class="theme-toggle open">\u25B6</span>
+                            <span class="health-dot ${worstHealth}"></span>
+                            <span class="theme-name">${group.name}</span>
+                            <span class="theme-stats">
+                                <span style="background:#21262d;padding:2px 6px;border-radius:4px;font-size:10px;color:#8b949e;">Initiative</span>
+                                ${allEpics.length} epics \u00B7 ${totalStories} stories \u00B7 ${doneStories} done (${initPct}%)
+                            </span>
+                        </div>
+                        <div class="theme-epics">`;
+
+                    // Milestones within initiative
+                    Object.values(group.milestones).sort((a, b) => a.name.localeCompare(b.name)).forEach(ms => {
+                        const msTotal = ms.epics.reduce((s, e) => s + (e.totalIssues || 0), 0);
+                        const msDone = ms.epics.reduce((s, e) => s + (e.doneIssues || 0), 0);
+                        const msPct = msTotal > 0 ? Math.round(msDone / msTotal * 100) : 0;
+                        const msHealth = getWorstHealth(ms.epics);
+
+                        html += `<div style="padding:8px 16px 4px 32px;border-bottom:1px solid #21262d;">
+                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                                <span class="health-dot ${msHealth}"></span>
+                                <a href="${JIRA_BASE}/browse/${ms.key}" target="_blank" style="color:#c9d1d9;font-weight:600;font-size:13px;text-decoration:none;">${ms.name}</a>
+                                <span style="background:#21262d;padding:2px 6px;border-radius:4px;font-size:10px;color:#8b949e;">Milestone</span>
+                                <span style="color:#8b949e;font-size:12px;margin-left:auto;">${ms.epics.length} epics \u00B7 ${msDone}/${msTotal} (${msPct}%)</span>
+                            </div>
+                            ${ms.epics.map(e => renderEpicRow(e)).join('')}
+                        </div>`;
+                    });
+
+                    html += `</div></div>`;
+                } else if (group.directEpics) {
+                    // Milestone with no initiative parent
+                    const totalStories = group.directEpics.reduce((s, e) => s + (e.totalIssues || 0), 0);
+                    const doneStories = group.directEpics.reduce((s, e) => s + (e.doneIssues || 0), 0);
+                    const grpPct = totalStories > 0 ? Math.round(doneStories / totalStories * 100) : 0;
+                    const worstHealth = getWorstHealth(group.directEpics);
+
+                    html += `<div class="theme-group">
+                        <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
+                            <span class="theme-toggle open">\u25B6</span>
+                            <span class="health-dot ${worstHealth}"></span>
+                            <span class="theme-name">${group.name}</span>
+                            <span class="theme-stats">
+                                <span style="background:#21262d;padding:2px 6px;border-radius:4px;font-size:10px;color:#8b949e;">Milestone</span>
+                                ${group.directEpics.length} epics \u00B7 ${totalStories} stories \u00B7 ${doneStories} done (${grpPct}%)
+                            </span>
+                        </div>
+                        <div class="theme-epics">
+                            ${group.directEpics.map(e => renderEpicRow(e)).join('')}
+                        </div>
+                    </div>`;
+                }
             });
 
-            // Unthemed
-            if (unthemed.length > 0) {
-                html += `
-                <div class="theme-group">
+            // Ungrouped epics (no parent at all)
+            if (noParent.length > 0) {
+                html += `<div class="theme-group">
                     <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
                         <span class="theme-toggle open">\u25B6</span>
-                        <span class="theme-name">Unthemed Epics</span>
-                        <span class="theme-stats">${unthemed.length} epics</span>
+                        <span class="theme-name">Ungrouped Epics</span>
+                        <span class="theme-stats">${noParent.length} epics</span>
                     </div>
                     <div class="theme-epics">
-                        ${unthemed.map(e => renderEpicRow(e)).join('')}
+                        ${noParent.map(e => renderEpicRow(e)).join('')}
                     </div>
                 </div>`;
             }
