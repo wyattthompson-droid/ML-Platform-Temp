@@ -1,6 +1,6 @@
 {
   "date": "2026-03-25",
-  "generatedAt": "2026-03-25T18:51:42.254517+00:00",
+  "generatedAt": "2026-03-25T19:11:19.139453+00:00",
   "sprint": {
     "id": 9242,
     "name": "03/12/2026 - 03/25/2026",
@@ -12,9 +12,15 @@
     "totalIssues": 14,
     "totalPoints": 28.0,
     "donePoints": 21.0,
-    "inProgressPoints": 7.0,
+    "inProgressPoints": 5.0,
+    "inReviewPoints": 2.0,
+    "blockedPoints": 0,
+    "todoPoints": 0,
+    "wontDoPoints": 0,
     "daysRemaining": 0,
-    "completionPercent": 75.0
+    "daysElapsed": 13,
+    "completionPercent": 75.0,
+    "throughput": 1.62
   },
   "tickets": {
     "todo": [
@@ -31,7 +37,10 @@
           "ML Platform"
         ],
         "created": "2026-03-10T18:30:47.947-0400",
-        "resolved": null
+        "resolved": null,
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": null
       }
     ],
     "inProgress": [
@@ -48,12 +57,17 @@
           "ML Platform"
         ],
         "created": "2026-02-25T17:44:28.853-0500",
-        "resolved": null
-      },
+        "resolved": null,
+        "startedAt": "2026-03-18T16:00:16.322-0400",
+        "blockedAt": null,
+        "completedAt": null
+      }
+    ],
+    "inReview": [
       {
         "key": "PLT-4183",
         "summary": "Single document reporting endpoints via databricks-svc and apxapi",
-        "status": "In Progress",
+        "status": "Code Review",
         "statusCategory": "In Progress",
         "assignee": "Marcus Webb",
         "issueType": "Task",
@@ -63,10 +77,12 @@
           "ML Platform"
         ],
         "created": "2026-03-11T18:20:36.235-0400",
-        "resolved": null
+        "resolved": null,
+        "startedAt": "2026-03-18T19:03:56.215-0400",
+        "blockedAt": null,
+        "completedAt": null
       }
     ],
-    "inReview": [],
     "blocked": [],
     "done": [
       {
@@ -82,7 +98,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T17:37:16.983-0400",
-        "resolved": "2026-03-13T16:01:48.617-0400"
+        "resolved": "2026-03-13T16:01:48.617-0400",
+        "startedAt": "2026-03-12T01:54:57.701-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-13T16:01:48.617-0400"
       },
       {
         "key": "PLT-4176",
@@ -97,7 +116,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T17:38:18.492-0400",
-        "resolved": "2026-03-18T09:56:20.473-0400"
+        "resolved": "2026-03-18T09:56:20.473-0400",
+        "startedAt": "2026-03-13T02:04:40.363-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-18T09:56:20.473-0400"
       },
       {
         "key": "PLT-4178",
@@ -112,7 +134,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T17:38:51.245-0400",
-        "resolved": "2026-03-25T12:01:09.963-0400"
+        "resolved": "2026-03-25T12:01:09.963-0400",
+        "startedAt": "2026-03-18T14:51:45.649-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-25T12:01:09.963-0400"
       },
       {
         "key": "PLT-4182",
@@ -127,7 +152,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T18:10:23.102-0400",
-        "resolved": "2026-03-19T13:09:32.255-0400"
+        "resolved": "2026-03-19T13:09:32.255-0400",
+        "startedAt": "2026-03-16T18:05:29.748-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-19T13:09:32.255-0400"
       },
       {
         "key": "PLT-4184",
@@ -142,7 +170,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T18:22:00.832-0400",
-        "resolved": "2026-03-16T18:05:37.925-0400"
+        "resolved": "2026-03-16T18:05:37.925-0400",
+        "startedAt": "2026-03-12T14:47:27.588-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-16T18:05:37.925-0400"
       },
       {
         "key": "PLT-4185",
@@ -157,7 +188,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T18:24:32.127-0400",
-        "resolved": "2026-03-17T11:37:52.231-0400"
+        "resolved": "2026-03-17T11:37:52.231-0400",
+        "startedAt": "2026-03-12T11:03:48.350-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-17T11:37:52.231-0400"
       },
       {
         "key": "PLT-4186",
@@ -172,7 +206,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T18:25:28.898-0400",
-        "resolved": "2026-03-18T13:01:25.028-0400"
+        "resolved": "2026-03-18T13:01:25.028-0400",
+        "startedAt": "2026-03-17T16:08:43.882-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-18T13:01:25.028-0400"
       },
       {
         "key": "PLT-4189",
@@ -187,7 +224,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T19:29:17.910-0400",
-        "resolved": "2026-03-18T16:00:13.503-0400"
+        "resolved": "2026-03-18T16:00:13.503-0400",
+        "startedAt": "2026-03-16T13:11:09.268-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-18T16:00:13.503-0400"
       },
       {
         "key": "PLT-4190",
@@ -202,7 +242,10 @@
           "ML Platform"
         ],
         "created": "2026-03-11T19:29:35.181-0400",
-        "resolved": "2026-03-19T17:55:51.611-0400"
+        "resolved": "2026-03-19T17:55:51.611-0400",
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": "2026-03-19T17:55:51.611-0400"
       },
       {
         "key": "PLT-4294",
@@ -217,7 +260,10 @@
           "ML Platform"
         ],
         "created": "2026-03-19T18:43:25.241-0400",
-        "resolved": "2026-03-23T14:00:53.619-0400"
+        "resolved": "2026-03-23T14:00:53.619-0400",
+        "startedAt": "2026-03-19T18:44:31.584-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-23T14:00:53.619-0400"
       },
       {
         "key": "PLT-4299",
@@ -232,10 +278,53 @@
           "ML Platform"
         ],
         "created": "2026-03-20T12:37:48.743-0400",
-        "resolved": "2026-03-20T12:38:43.780-0400"
+        "resolved": "2026-03-20T12:38:43.780-0400",
+        "startedAt": "2026-03-20T12:38:05.422-0400",
+        "blockedAt": null,
+        "completedAt": "2026-03-20T12:38:43.780-0400"
       }
     ],
+    "wontDo": [],
     "other": []
   },
-  "epics": []
+  "epics": [],
+  "flowMetrics": {
+    "leadTime": {
+      "p50": 6.7,
+      "p85": 7.9,
+      "p95": 10.9,
+      "values": [
+        0.0,
+        1.9,
+        3.8,
+        5.0,
+        5.7,
+        6.7,
+        6.8,
+        6.9,
+        7.8,
+        7.9,
+        13.8
+      ]
+    },
+    "cycleTime": {
+      "p50": 3.3,
+      "p85": 5.2,
+      "p95": 6.2,
+      "values": [
+        0.0,
+        0.9,
+        1.6,
+        2.1,
+        2.8,
+        3.8,
+        4.1,
+        5.0,
+        5.3,
+        6.9
+      ]
+    },
+    "flowEfficiency": 0.66,
+    "sampleSize": 11
+  }
 }
