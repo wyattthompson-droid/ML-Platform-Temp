@@ -178,10 +178,11 @@ async def get_epics(session, config, headers):
     sp_field = config["jira"]["fields"]["storyPoints"]
 
     # Fetch ALL epics (not just active) for roadmap view
+    teams_field = config["jira"]["fields"]["teams"]
+    team_name = config["jira"].get("teamName", "")
     jql = f'project = {project} AND issuetype = Epic ORDER BY priority ASC'
 
-    # Try POST search (new API) then GET v2 then GET v3
-    fields_list = f"summary,status,assignee,{sp_field},priority,duedate,labels,parent,fixVersions,created"
+    fields_list = f"summary,status,assignee,{sp_field},priority,duedate,labels,parent,fixVersions,created,{teams_field}"
     data = None
     url = None
 
@@ -213,13 +214,17 @@ async def get_epics(session, config, headers):
             print(f"  All epic fetch methods failed: {e}")
             return [], []
 
-    epics = []
+    all_epics = []
     for issue in data.get("issues", []):
         fields = issue["fields"]
         assignee = fields.get("assignee")
         parent = fields.get("parent")
         fix_versions = fields.get("fixVersions") or []
         labels = fields.get("labels") or []
+
+        # Extract teams
+        teams_raw = fields.get(teams_field) or []
+        epic_teams = [t.get("value", t.get("name", "")) for t in teams_raw] if isinstance(teams_raw, list) else []
 
         # Determine target quarter from fixVersions or labels
         target_quarter = None
@@ -241,7 +246,7 @@ async def get_epics(session, config, headers):
         elif labels:
             theme = labels[0] if labels else None
 
-        epics.append({
+        all_epics.append({
             "key": issue["key"],
             "summary": fields.get("summary", ""),
             "status": fields["status"]["name"],
@@ -251,9 +256,17 @@ async def get_epics(session, config, headers):
             "dueDate": fields.get("duedate"),
             "created": fields.get("created"),
             "labels": labels,
+            "teams": epic_teams,
             "theme": theme,
             "targetQuarter": target_quarter,
         })
+
+    # Filter to ML Platform team (if configured)
+    if team_name:
+        epics = [e for e in all_epics if team_name in e.get("teams", [])]
+        print(f"  Filtered to '{team_name}': {len(epics)} of {len(all_epics)} epics")
+    else:
+        epics = all_epics
 
     # Fetch child counts for each epic
     search_url = f"{base}/rest/api/3/search/jql"
