@@ -1,6 +1,6 @@
 {
   "date": "2026-03-25",
-  "generatedAt": "2026-03-25T20:56:32.784312+00:00",
+  "generatedAt": "2026-03-25T21:38:12.121282+00:00",
   "sprint": {
     "id": 9242,
     "name": "03/12/2026 - 03/25/2026",
@@ -23,26 +23,7 @@
     "throughput": 1.62
   },
   "tickets": {
-    "todo": [
-      {
-        "key": "PLT-4153",
-        "summary": "Support Ying for DAQARI Alerting",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Unassigned",
-        "issueType": "Task",
-        "priority": "Medium",
-        "storyPoints": null,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-03-10T18:30:47.947-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      }
-    ],
+    "todo": [],
     "inProgress": [
       {
         "key": "PLT-3904",
@@ -284,10 +265,56 @@
         "completedAt": "2026-03-20T12:38:43.780-0400"
       }
     ],
-    "wontDo": [],
+    "wontDo": [
+      {
+        "key": "PLT-4153",
+        "summary": "Support Ying for DAQARI Alerting",
+        "status": "Won't Do",
+        "statusCategory": "Done",
+        "assignee": "Unassigned",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 0.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-10T18:30:47.947-0400",
+        "resolved": "2026-03-25T17:15:44.212-0400",
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": "2026-03-25T17:15:44.212-0400"
+      }
+    ],
     "other": []
   },
   "epics": [
+    {
+      "key": "PLT-4364",
+      "summary": "SageMaker Integration",
+      "status": "To Do",
+      "statusCategory": "To Do",
+      "assignee": "Unassigned",
+      "priority": "Medium",
+      "dueDate": null,
+      "created": "2026-03-25T17:36:24.332-0400",
+      "labels": [],
+      "teams": [
+        "ML Platform"
+      ],
+      "parentKey": "PLT-4020",
+      "parentSummary": "Databricks Self-Service Platform",
+      "parentType": "Theme",
+      "targetQuarter": null,
+      "milestone": "Databricks Self-Service Platform",
+      "milestoneKey": "PLT-4020",
+      "milestoneType": "Theme",
+      "initiative": "Patient Data Lake ",
+      "initiativeKey": "INIT-54",
+      "initiativeType": "Initiative",
+      "totalIssues": 0,
+      "doneIssues": 0,
+      "health": "future"
+    },
     {
       "key": "PLT-4050",
       "summary": "HealthForms Docker-Based Deployment POC",
@@ -673,7 +700,7 @@
       "initiative": null,
       "initiativeKey": null,
       "totalIssues": 9,
-      "doneIssues": 7,
+      "doneIssues": 8,
       "health": "green"
     },
     {
@@ -761,7 +788,7 @@
     "red": 0,
     "yellow": 5,
     "green": 3,
-    "future": 9
+    "future": 10
   },
   "flowMetrics": {
     "leadTime": {
