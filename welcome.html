@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome — ML Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .welcome-page { max-width: 900px; margin: 0 auto; padding: 32px; }
+
+        /* Hero */
+        .hero { margin-bottom: 40px; }
+        .hero h1 { font-size: 32px; color: #f0f6fc; margin-bottom: 8px; }
+        .hero .tagline { font-size: 18px; color: #8b949e; line-height: 1.6; max-width: 700px; }
+
+        /* Mission */
+        .mission { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 32px; }
+        .mission h2 { font-size: 16px; color: #58a6ff; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .mission p { color: #c9d1d9; line-height: 1.7; font-size: 15px; }
+
+        /* What We Offer */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .service-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; transition: border-color 0.2s; }
+        .service-card:hover { border-color: #58a6ff; }
+        .service-icon { font-size: 28px; margin-bottom: 10px; }
+        .service-card h3 { font-size: 15px; color: #f0f6fc; margin-bottom: 6px; }
+        .service-card p { font-size: 13px; color: #8b949e; line-height: 1.6; }
+        .service-card .service-link { color: #58a6ff; font-size: 12px; text-decoration: none; margin-top: 10px; display: inline-block; }
+        .service-card .service-link:hover { text-decoration: underline; }
+
+        /* Audience sections */
+        .audience-section { margin-bottom: 32px; }
+        .audience-section h2 { font-size: 18px; color: #f0f6fc; margin-bottom: 16px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+        .audience-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+        .audience-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+        .audience-card h3 { font-size: 14px; color: #f0f6fc; margin-bottom: 6px; }
+        .audience-card p { font-size: 13px; color: #8b949e; line-height: 1.6; }
+
+        /* Team */
+        .team-section { margin-bottom: 32px; }
+        .team-section h2 { font-size: 18px; color: #f0f6fc; margin-bottom: 16px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .team-member { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; text-align: center; }
+        .team-member .name { color: #f0f6fc; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+        .team-member .role { color: #8b949e; font-size: 12px; }
+
+        /* Quick links */
+        .quick-links { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 32px; }
+        .quick-links h2 { font-size: 16px; color: #f0f6fc; margin-bottom: 12px; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+        .quick-link { color: #58a6ff; text-decoration: none; font-size: 13px; padding: 8px 12px; border-radius: 4px; display: block; }
+        .quick-link:hover { background: #21262d; text-decoration: underline; }
+
+        /* Contact */
+        .contact { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+        .contact h2 { font-size: 16px; color: #f0f6fc; margin-bottom: 8px; }
+        .contact p { color: #8b949e; font-size: 13px; line-height: 1.6; }
+        .contact a { color: #58a6ff; text-decoration: none; }
+        .contact a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ML Platform Command Center</h1>
+            <p class="subtitle">Data Science & ML Platform KPIs and Documentation</p>
+        </div>
+    </header>
+    <nav>
+        <a href="welcome.html" class="active">Welcome</a>
+        <a href="index.html#kpis">KPIs</a>
+        <a href="index.html#docs">Documentation</a>
+        <a href="daily-burn.html">Daily Burn</a>
+    </nav>
+    <main>
+        <div class="welcome-page">
+
+            <!-- Hero -->
+            <div class="hero">
+                <h1>Welcome to ML Platform</h1>
+                <p class="tagline">We build and operate the shared infrastructure that powers machine learning and AI across Datavant. Whether you're training models, running inference, or processing documents at scale, we're here to help you move faster.</p>
+            </div>
+
+            <!-- Mission -->
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Make it easy, fast, and cost-effective for any team at Datavant to build, deploy, and operate ML and AI workloads in production. We provide shared services so teams don't have to reinvent infrastructure — they can focus on solving business problems.</p>
+            </div>
+
+            <!-- What We Offer -->
+            <h2 style="font-size:18px; color:#f0f6fc; margin-bottom:16px; border-bottom:1px solid #30363d; padding-bottom:8px;">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#129302;</div>
+                    <h3>LLM Serving</h3>
+                    <p>Access Claude, GPT, Gemini, and open-source models through Databricks or AWS Bedrock. Built-in cost tracking, rate limiting, and endpoint isolation.</p>
+                    <a href="docs/bedrock-vs-databricks-pricing.html" class="service-link">Choosing a serving path &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128196;</div>
+                    <h3>OCR-as-a-Service</h3>
+                    <p>Centralized document processing with Tesseract, Textract, and VLM engines. Pick the right engine for your accuracy, throughput, and cost needs.</p>
+                    <a href="docs/ocr-decision-tree.html" class="service-link">OCR decision tree &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128202;</div>
+                    <h3>Model Deployment</h3>
+                    <p>Infrastructure for training, versioning, and deploying ML models to production. Databricks-native workflows with CI/CD integration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#127861;</div>
+                    <h3>Daiquiri Quality Scoring</h3>
+                    <p>Document quality scoring service currently at 5% of traffic in Request Manager. Evaluates document quality to improve downstream processing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128200;</div>
+                    <h3>Databricks Platform</h3>
+                    <p>Managed Databricks environment for ML workflows, experiment tracking, feature engineering, and data pipelines. Includes cost attribution and governance.</p>
+                    <a href="docs/model-availability.html" class="service-link">Model availability &amp; pricing &rarr;</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128101;</div>
+                    <h3>Data Science Enablement</h3>
+                    <p>Helping data science teams across the organization adopt ML best practices, provision infrastructure, and accelerate time-to-production.</p>
+                </div>
+            </div>
+
+            <!-- Who Is This For -->
+            <div class="audience-section">
+                <h2>Who Is This For?</h2>
+                <div class="audience-cards">
+                    <div class="audience-card">
+                        <h3>Engineers</h3>
+                        <p>Need to integrate an LLM into your application? Want to add OCR to your pipeline? Start with our documentation to find the right service, or reach out and we'll help you get set up.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Data Scientists</h3>
+                        <p>Looking to train, evaluate, or deploy a model? We provide the Databricks infrastructure, deployment pipelines, and production serving layer so you can focus on the science.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Product Managers</h3>
+                        <p>Exploring how ML or AI could solve a business problem? We can help you understand what's feasible, what infrastructure already exists, and how to get from prototype to production.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Leadership &amp; Compliance</h3>
+                        <p>Need visibility into ML costs, model governance, or AI usage across the org? Our KPI dashboard tracks production deployments, costs, and platform health in real time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <div class="links-grid">
+                    <a href="index.html#kpis" class="quick-link">&#128202; KPI Dashboard</a>
+                    <a href="daily-burn.html" class="quick-link">&#128293; Daily Burn (Sprint Status)</a>
+                    <a href="docs/bedrock-vs-databricks-pricing.html" class="quick-link">&#128176; LLM Serving Path Guide</a>
+                    <a href="docs/model-availability.html" class="quick-link">&#129302; Model Availability &amp; Pricing</a>
+                    <a href="docs/ocr-decision-tree.html" class="quick-link">&#128196; OCR Decision Tree</a>
+                    <a href="docs/user-personas.html" class="quick-link">&#128100; User Personas</a>
+                    <a href="https://datavant.atlassian.net/jira/software/c/projects/PLT/boards/781" class="quick-link" target="_blank">&#128203; JIRA Board (PLT)</a>
+                    <a href="https://datavant.atlassian.net" class="quick-link" target="_blank">&#127968; Datavant JIRA</a>
+                </div>
+            </div>
+
+            <!-- The Team -->
+            <div class="team-section">
+                <h2>The Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="name">Geraint Levan</div>
+                        <div class="role">Director, Engineering</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="name">Wyatt Thompson</div>
+                        <div class="role">Product Manager</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="name">Alex Nuccio</div>
+                        <div class="role">Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="name">Marcus Webb</div>
+                        <div class="role">Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="name">Rinat Ibrayev</div>
+                        <div class="role">Engineer</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact">
+                <h2>Need Help?</h2>
+                <p>Reach out to the ML Platform team on Slack or file a request on our <a href="https://datavant.atlassian.net/jira/software/c/projects/PLT/boards/781" target="_blank">JIRA board (PLT)</a>. We're happy to help you evaluate options, set up infrastructure, or troubleshoot production issues.</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
