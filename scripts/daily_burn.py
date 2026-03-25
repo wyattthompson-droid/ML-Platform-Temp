@@ -185,40 +185,33 @@ async def get_epics(session, config, headers):
     data = None
     url = None
 
-    # POST-based search (preferred — GET search is deprecated/410 on some instances)
+    # Use new /rest/api/3/search/jql endpoint (old /search is deprecated 410)
+    data = None
+    url = f"{base}/rest/api/3/search/jql"
     try:
-        post_url = f"{base}/rest/api/2/search"
-        async with session.post(post_url, headers=headers, json={
+        async with session.post(url, headers=headers, json={
             "jql": jql, "maxResults": 100, "fields": fields_list.split(",")
         }) as resp:
-            print(f"  POST search status: {resp.status}")
+            print(f"  Search API status: {resp.status}")
             if resp.status == 200:
                 data = await resp.json()
-                url = post_url
             else:
                 body = await resp.text()
-                print(f"  POST search response: {body[:300]}")
+                print(f"  Search API response: {body[:300]}")
     except Exception as e:
-        print(f"  POST search failed: {e}")
+        print(f"  Search API failed: {e}")
 
-    # Fallback to GET
+    # Fallback: try GET on /rest/api/2/search
     if data is None:
-        for api_ver in ["2", "3"]:
-            url = f"{base}/rest/api/{api_ver}/search"
-            try:
-                data = await fetch_json(session, url, headers, {
-                    "jql": jql, "maxResults": 100, "fields": fields_list
-                })
-                break
-            except Exception as e:
-                if api_ver == "2":
-                    continue
-                print(f"  Epic fetch failed: {e}")
-                return [], []
-
-    if data is None:
-        print("  All epic fetch methods failed")
-        return [], []
+        try:
+            fallback_url = f"{base}/rest/api/2/search"
+            data = await fetch_json(session, fallback_url, headers, {
+                "jql": jql, "maxResults": 100, "fields": fields_list
+            })
+            url = fallback_url
+        except Exception as e:
+            print(f"  All epic fetch methods failed: {e}")
+            return [], []
 
     epics = []
     for issue in data.get("issues", []):
@@ -262,8 +255,8 @@ async def get_epics(session, config, headers):
             "targetQuarter": target_quarter,
         })
 
-    # Fetch child counts for each epic (use POST search)
-    search_url = f"{base}/rest/api/2/search"
+    # Fetch child counts for each epic
+    search_url = f"{base}/rest/api/3/search/jql"
     for epic in epics:
         jql_children = f'"Epic Link" = {epic["key"]} OR parent = {epic["key"]}'
         try:
@@ -273,10 +266,7 @@ async def get_epics(session, config, headers):
                 if resp.status == 200:
                     children_data = await resp.json()
                 else:
-                    # Fallback to GET
-                    children_data = await fetch_json(session, search_url, headers, {
-                        "jql": jql_children, "maxResults": 200, "fields": "status"
-                    })
+                    children_data = {"issues": []}
             children = children_data.get("issues", [])
             epic["totalIssues"] = len(children)
             epic["doneIssues"] = sum(1 for c in children if c["fields"]["status"]["statusCategory"]["name"] == "Done")
