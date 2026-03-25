@@ -160,14 +160,6 @@
     "created_at": "2026-03-16T20:24:43Z"
   },
   {
-    "title": "EN-46997: Add CodeNavigatorSessionManager client",
-    "url": "https://github.com/Apixio/python-apxapi/pull/897",
-    "repo": "python-apxapi",
-    "author": "braga-apixio",
-    "merged_at": "2026-03-18T16:22:51Z",
-    "created_at": "2026-03-13T18:31:18Z"
-  },
-  {
     "title": "add basic logging for fine tuning run",
     "url": "https://github.com/Apixio/ml-qamodel/pull/29",
     "repo": "ml-qamodel",
@@ -302,13 +294,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-02-23T23:16:10Z",
     "created_at": "2026-02-23T18:40:46Z"
-  },
-  {
-    "title": "Remove moved block — fix external_model endpoint creation",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/262",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-02-23T18:30:55Z",
-    "created_at": "2026-02-23T18:24:28Z"
   }
 ]
