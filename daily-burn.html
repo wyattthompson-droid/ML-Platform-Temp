@@ -115,6 +115,58 @@
         .loading { color: #8b949e; text-align: center; padding: 48px; font-size: 14px; }
         .placeholder-msg { color: #484f58; font-size: 13px; text-align: center; padding: 40px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
 
+        /* Burn Tabs */
+        .burn-tabs { display: flex; gap: 0; margin-bottom: 24px; border-bottom: 1px solid #30363d; }
+        .burn-tab { color: #8b949e; padding: 10px 16px; font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; }
+        .burn-tab:hover { color: #f0f6fc; }
+        .burn-tab.active { color: #f0f6fc; border-bottom-color: #f78166; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Health badges */
+        .health-summary { display: flex; gap: 16px; margin-bottom: 20px; }
+        .health-badge { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #c9d1d9; }
+        .health-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .health-dot.red { background: #f85149; }
+        .health-dot.yellow { background: #d29922; }
+        .health-dot.green { background: #3fb950; }
+        .health-dot.future { background: #484f58; }
+        .health-count { font-weight: 700; font-size: 16px; color: #f0f6fc; }
+
+        /* Theme groups */
+        .theme-group { margin-bottom: 16px; }
+        .theme-header { background: #161b22; border: 1px solid #30363d; border-radius: 8px 8px 0 0; padding: 12px 16px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+        .theme-header:hover { border-color: #58a6ff; }
+        .theme-toggle { color: #8b949e; font-size: 12px; transition: transform 0.2s; }
+        .theme-toggle.open { transform: rotate(90deg); }
+        .theme-name { color: #f0f6fc; font-size: 14px; font-weight: 600; flex: 1; }
+        .theme-stats { color: #8b949e; font-size: 12px; display: flex; gap: 12px; align-items: center; }
+        .theme-epics { border: 1px solid #30363d; border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+        .theme-epics.collapsed { display: none; }
+
+        /* Epic row in theme */
+        .epic-row { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #21262d; font-size: 13px; }
+        .epic-row:last-child { border-bottom: none; }
+        .epic-row:hover { background: #161b2288; }
+        .epic-health { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .epic-health.red { background: #f85149; }
+        .epic-health.yellow { background: #d29922; }
+        .epic-health.green { background: #3fb950; }
+        .epic-health.future { background: #484f58; }
+        .epic-row-key { color: #58a6ff; font-weight: 500; min-width: 80px; text-decoration: none; }
+        .epic-row-key:hover { text-decoration: underline; }
+        .epic-row-summary { color: #c9d1d9; flex: 1; }
+        .epic-row-progress { width: 100px; }
+        .epic-row-pbar { background: #21262d; border-radius: 3px; height: 6px; overflow: hidden; }
+        .epic-row-pfill { height: 100%; border-radius: 3px; }
+        .epic-row-pfill.red { background: #f85149; }
+        .epic-row-pfill.yellow { background: #d29922; }
+        .epic-row-pfill.green { background: #3fb950; }
+        .epic-row-ptext { font-size: 10px; color: #8b949e; margin-top: 2px; }
+        .epic-row-assignee { color: #8b949e; font-size: 12px; min-width: 100px; text-align: right; }
+        .epic-row-due { color: #8b949e; font-size: 11px; min-width: 90px; text-align: right; }
+        .epic-row-due.overdue { color: #f85149; font-weight: 500; }
+
         @media (max-width: 768px) {
             .stat-cards-row { grid-template-columns: repeat(3, 1fr); }
             .flow-grid { grid-template-columns: repeat(2, 1fr); }
@@ -146,6 +198,15 @@
                     </div>
                     <div class="sprint-badge" id="sprint-badge"></div>
                 </div>
+
+                <!-- Burn Tabs -->
+                <div class="burn-tabs">
+                    <div class="burn-tab active" onclick="switchBurnTab('sprint')">Sprint</div>
+                    <div class="burn-tab" onclick="switchBurnTab('epics')">Initiatives &amp; Epics</div>
+                </div>
+
+                <!-- Sprint Tab -->
+                <div class="tab-content active" id="tab-sprint">
 
                 <!-- Stat Cards -->
                 <div class="stat-cards-row" id="stat-cards"></div>
@@ -219,8 +280,16 @@
                 <div class="burn-section" id="todo-section" style="display:none;"><h2>To Do</h2><div id="todo-list"></div></div>
                 <div class="burn-section" id="done-section" style="display:none;"><h2>Done</h2><div id="done-list"></div></div>
 
-                <!-- Epics -->
+                <!-- Epics (in sprint tab) -->
                 <div class="burn-section"><h2>Epics</h2><div class="epic-grid" id="epic-list"></div></div>
+
+                </div><!-- end tab-sprint -->
+
+                <!-- Epics/Initiatives Tab -->
+                <div class="tab-content" id="tab-epics">
+                    <div class="health-summary" id="health-summary"></div>
+                    <div id="epics-roadmap"></div>
+                </div>
             </div>
         </div>
     </main>
@@ -284,6 +353,7 @@
             renderWIPAging(data);
             renderTicketSections(data.tickets || {});
             renderEpics(data.epics || []);
+            renderEpicRoadmap(data.epics || [], data.epicHealthSummary || {});
         }
 
         // --- Header ---
@@ -597,6 +667,123 @@
                 const p = e.totalIssues > 0 ? Math.round(e.doneIssues / e.totalIssues * 100) : 0;
                 return `<div class="epic-card"><a class="epic-key" href="${JIRA_BASE}/browse/${e.key}" target="_blank">${e.key}</a><div class="epic-title">${e.summary}</div><div class="epic-meta">${e.assignee} \u2022 ${e.priority}</div><div class="epic-progress-bar"><div class="epic-progress-fill" style="width:${p}%"></div></div><div class="epic-progress-text">${e.doneIssues}/${e.totalIssues} done (${p}%)</div></div>`;
             }).join('');
+        }
+
+        // --- Tab Switching ---
+        function switchBurnTab(tab) {
+            document.querySelectorAll('.burn-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.burn-tab[onclick*="${tab}"]`).classList.add('active');
+            document.getElementById(`tab-${tab}`).classList.add('active');
+        }
+
+        // --- Epics Roadmap ---
+        function renderEpicRoadmap(epics, healthSummary) {
+            // Health summary
+            const hs = document.getElementById('health-summary');
+            hs.innerHTML = `
+                <div class="health-badge"><span class="health-dot red"></span><span class="health-count">${healthSummary.red || 0}</span> Red</div>
+                <div class="health-badge"><span class="health-dot yellow"></span><span class="health-count">${healthSummary.yellow || 0}</span> Yellow</div>
+                <div class="health-badge"><span class="health-dot green"></span><span class="health-count">${healthSummary.green || 0}</span> Green</div>
+                <div class="health-badge"><span class="health-dot future"></span><span class="health-count">${healthSummary.future || 0}</span> Future</div>
+            `;
+
+            // Group by theme
+            const themes = {};
+            const unthemed = [];
+            epics.forEach(e => {
+                if (e.theme) {
+                    if (!themes[e.theme]) themes[e.theme] = [];
+                    themes[e.theme].push(e);
+                } else {
+                    unthemed.push(e);
+                }
+            });
+
+            const container = document.getElementById('epics-roadmap');
+            let html = '';
+
+            // Themed groups
+            Object.entries(themes).sort((a, b) => a[0].localeCompare(b[0])).forEach(([theme, themeEpics]) => {
+                const totalStories = themeEpics.reduce((s, e) => s + (e.totalIssues || 0), 0);
+                const doneStories = themeEpics.reduce((s, e) => s + (e.doneIssues || 0), 0);
+                const themePct = totalStories > 0 ? Math.round(doneStories / totalStories * 100) : 0;
+                const worstHealth = getWorstHealth(themeEpics);
+
+                html += `
+                <div class="theme-group">
+                    <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
+                        <span class="theme-toggle open">\u25B6</span>
+                        <span class="health-dot ${worstHealth}"></span>
+                        <span class="theme-name">${theme}</span>
+                        <span class="theme-stats">
+                            ${themeEpics.length} epics \u00B7 ${totalStories} stories \u00B7 ${doneStories} done (${themePct}%)
+                        </span>
+                    </div>
+                    <div class="theme-epics">
+                        ${themeEpics.map(e => renderEpicRow(e)).join('')}
+                    </div>
+                </div>`;
+            });
+
+            // Unthemed
+            if (unthemed.length > 0) {
+                html += `
+                <div class="theme-group">
+                    <div class="theme-header" onclick="this.querySelector('.theme-toggle').classList.toggle('open'); this.nextElementSibling.classList.toggle('collapsed');">
+                        <span class="theme-toggle open">\u25B6</span>
+                        <span class="theme-name">Unthemed Epics</span>
+                        <span class="theme-stats">${unthemed.length} epics</span>
+                    </div>
+                    <div class="theme-epics">
+                        ${unthemed.map(e => renderEpicRow(e)).join('')}
+                    </div>
+                </div>`;
+            }
+
+            if (html === '') html = '<div class="empty">No epics found.</div>';
+            container.innerHTML = html;
+        }
+
+        function renderEpicRow(e) {
+            const p = e.totalIssues > 0 ? Math.round(e.doneIssues / e.totalIssues * 100) : 0;
+            const health = e.health || 'future';
+            const dueStr = e.dueDate ? formatDueDate(e.dueDate) : '';
+            const isOverdue = e.dueDate && new Date(e.dueDate) < new Date();
+            const qtr = e.targetQuarter ? `<span style="color:#484f58;font-size:11px;margin-left:6px;">${e.targetQuarter}</span>` : '';
+
+            return `
+                <div class="epic-row">
+                    <span class="epic-health ${health}"></span>
+                    <a class="epic-row-key" href="${JIRA_BASE}/browse/${e.key}" target="_blank">${e.key}</a>
+                    <span class="epic-row-summary">${e.summary}</span>
+                    <div class="epic-row-progress">
+                        <div class="epic-row-pbar"><div class="epic-row-pfill ${health}" style="width:${p}%"></div></div>
+                        <div class="epic-row-ptext">${e.doneIssues}/${e.totalIssues}${qtr}</div>
+                    </div>
+                    <span class="epic-row-assignee">${e.assignee}</span>
+                    <span class="epic-row-due ${isOverdue ? 'overdue' : ''}">${dueStr}</span>
+                </div>`;
+        }
+
+        function formatDueDate(dateStr) {
+            const d = new Date(dateStr + 'T00:00:00');
+            const now = new Date();
+            const diff = Math.round((d - now) / 86400000);
+            const formatted = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            if (diff < 0) return `due ${formatted} (${Math.abs(diff)}d overdue)`;
+            if (diff < 14) return `due ${formatted} (${diff}d)`;
+            return `due ${formatted}`;
+        }
+
+        function getWorstHealth(epics) {
+            const priority = { red: 0, yellow: 1, green: 2, future: 3 };
+            let worst = 'future';
+            epics.forEach(e => {
+                const h = e.health || 'future';
+                if (priority[h] < priority[worst]) worst = h;
+            });
+            return worst;
         }
 
         init();

@@ -176,34 +176,69 @@ async def get_epics(session, config, headers):
     base = config["jira"]["baseUrl"]
     project = config["jira"]["projectKey"]
     sp_field = config["jira"]["fields"]["storyPoints"]
-    jql = f'project = {project} AND issuetype = Epic AND status not in (Done, Closed, Resolved) ORDER BY priority ASC'
 
+    # Fetch ALL epics (not just active) for roadmap view
+    jql = f'project = {project} AND issuetype = Epic ORDER BY priority ASC'
+
+    url = None
+    data = None
     for api_ver in ["2", "3"]:
         url = f"{base}/rest/api/{api_ver}/search"
         try:
             data = await fetch_json(session, url, headers, {
-                "jql": jql, "maxResults": 50,
-                "fields": f"summary,status,assignee,{sp_field},priority"
+                "jql": jql, "maxResults": 100,
+                "fields": f"summary,status,assignee,{sp_field},priority,duedate,labels,parent,fixVersions,created"
             })
             break
         except Exception as e:
             if api_ver == "2":
                 continue
             print(f"  Epic fetch failed: {e}")
-            return []
+            return [], []
 
     epics = []
     for issue in data.get("issues", []):
         fields = issue["fields"]
         assignee = fields.get("assignee")
+        parent = fields.get("parent")
+        fix_versions = fields.get("fixVersions") or []
+        labels = fields.get("labels") or []
+
+        # Determine target quarter from fixVersions or labels
+        target_quarter = None
+        for fv in fix_versions:
+            name = fv.get("name", "")
+            if "Q" in name and "20" in name:
+                target_quarter = name
+                break
+        if not target_quarter:
+            for label in labels:
+                if "Q" in label and "20" in label:
+                    target_quarter = label
+                    break
+
+        # Theme/initiative from parent or labels
+        theme = None
+        if parent:
+            theme = parent.get("fields", {}).get("summary", parent.get("key", ""))
+        elif labels:
+            theme = labels[0] if labels else None
+
         epics.append({
             "key": issue["key"],
             "summary": fields.get("summary", ""),
             "status": fields["status"]["name"],
+            "statusCategory": fields["status"]["statusCategory"]["name"],
             "assignee": assignee["displayName"] if assignee else "Unassigned",
             "priority": fields.get("priority", {}).get("name", ""),
+            "dueDate": fields.get("duedate"),
+            "created": fields.get("created"),
+            "labels": labels,
+            "theme": theme,
+            "targetQuarter": target_quarter,
         })
 
+    # Fetch child counts for each epic
     for epic in epics:
         jql_children = f'"Epic Link" = {epic["key"]} OR parent = {epic["key"]}'
         try:
@@ -217,7 +252,57 @@ async def get_epics(session, config, headers):
             epic["totalIssues"] = 0
             epic["doneIssues"] = 0
 
-    return epics
+    # Compute health status for each epic
+    today = datetime.now(timezone.utc).date()
+    for epic in epics:
+        epic["health"] = compute_epic_health(epic, today)
+
+    # Separate active vs future
+    active_epics = [e for e in epics if e["statusCategory"] != "Done"]
+    done_epics = [e for e in epics if e["statusCategory"] == "Done"]
+
+    return active_epics, done_epics
+
+
+def compute_epic_health(epic, today):
+    """Compute Red/Yellow/Green health status for an epic."""
+    status_cat = epic.get("statusCategory", "")
+    if status_cat == "Done":
+        return "green"
+
+    due = epic.get("dueDate")
+    total = epic.get("totalIssues", 0)
+    done = epic.get("doneIssues", 0)
+    pct = (done / total * 100) if total > 0 else 0
+
+    if due:
+        try:
+            due_date = datetime.strptime(due, "%Y-%m-%d").date()
+            days_until_due = (due_date - today).days
+
+            if days_until_due < 0:
+                return "red"  # Overdue
+            elif days_until_due < 14 and pct < 70:
+                return "yellow"  # Due soon, behind pace
+            elif days_until_due < 30 and pct < 50:
+                return "yellow"  # Due in a month, less than half done
+        except (ValueError, TypeError):
+            pass
+
+    # No due date — check by progress
+    if total > 0 and pct < 25 and epic.get("created"):
+        try:
+            created = datetime.fromisoformat(epic["created"].replace("Z", "+00:00")).date()
+            age = (today - created).days
+            if age > 60 and pct < 25:
+                return "yellow"  # Old epic with little progress
+        except (ValueError, TypeError):
+            pass
+
+    if total > 0 and pct >= 50:
+        return "green"
+
+    return "future" if total == 0 else "yellow"
 
 
 # --- Categorization & Metrics ---
@@ -402,7 +487,7 @@ async def run_etl(date_override=None):
                 "date": today,
                 "generatedAt": datetime.now(timezone.utc).isoformat(),
                 "sprint": None, "tickets": {}, "summary": {},
-                "epics": [], "flowMetrics": {},
+                "epics": [], "epicHealthSummary": {"red": 0, "yellow": 0, "green": 0, "future": 0}, "flowMetrics": {},
             }
         else:
             sprint_id = sprint["id"]
@@ -443,8 +528,13 @@ async def run_etl(date_override=None):
 
             # Epics
             print("Fetching epics...")
-            epics = await get_epics(session, config, headers)
-            print(f"  Found {len(epics)} active epics")
+            active_epics, done_epics = await get_epics(session, config, headers)
+            print(f"  Found {len(active_epics)} active epics, {len(done_epics)} done")
+            # Health summary
+            health_counts = {"red": 0, "yellow": 0, "green": 0, "future": 0}
+            for e in active_epics:
+                health_counts[e.get("health", "future")] += 1
+            print(f"  Health: {health_counts}")
 
             snapshot = {
                 "date": today,
@@ -457,7 +547,8 @@ async def run_etl(date_override=None):
                 },
                 "summary": summary,
                 "tickets": categorized,
-                "epics": epics,
+                "epics": active_epics,
+                "epicHealthSummary": health_counts,
                 "flowMetrics": flow_metrics,
             }
 
