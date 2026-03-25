@@ -1,5 +1,77 @@
 [
   {
+    "title": "Upgrades jfartifactory Aurora cluster ",
+    "url": "https://github.com/Apixio/artifactory-tf/pull/4",
+    "repo": "artifactory-tf",
+    "author": "padraicwade-dv",
+    "merged_at": "2026-03-25T14:40:22Z",
+    "created_at": "2026-02-26T00:29:06Z"
+  },
+  {
+    "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/51",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-25T04:53:30Z",
+    "created_at": "2026-03-25T04:53:06Z"
+  },
+  {
+    "title": "Fix: apply serving endpoint permissions only on creation",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/50",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-25T04:19:19Z",
+    "created_at": "2026-03-25T04:16:22Z"
+  },
+  {
+    "title": "Fix: harden fine-tuning job and manage serving endpoint permissions",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/49",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-24T23:56:17Z",
+    "created_at": "2026-03-24T23:55:33Z"
+  },
+  {
+    "title": "Fix: harden fine-tuning job and manage serving endpoint via DAB",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/48",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-24T22:32:55Z",
+    "created_at": "2026-03-24T22:19:42Z"
+  },
+  {
+    "title": "Kaiser MA coverage dbt model",
+    "url": "https://github.com/Apixio/di-platform/pull/291",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-03-24T21:29:59Z",
+    "created_at": "2026-03-24T17:45:56Z"
+  },
+  {
+    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/36",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T21:29:05Z",
+    "created_at": "2026-03-24T20:02:37Z"
+  },
+  {
+    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
+    "url": "https://github.com/Apixio/ml-infdate/pull/32",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T18:20:28Z",
+    "created_at": "2026-03-18T18:12:16Z"
+  },
+  {
+    "title": "Kaiser MA coverage model",
+    "url": "https://github.com/Apixio/di-platform/pull/290",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-03-24T17:44:15Z",
+    "created_at": "2026-03-24T17:34:58Z"
+  },
+  {
     "title": "Dev -> main",
     "url": "https://github.com/Apixio/ml-qamodel/pull/46",
     "repo": "ml-qamodel",
@@ -86,6 +158,14 @@
     "author": "bilagan-apixio",
     "merged_at": "2026-03-18T17:23:07Z",
     "created_at": "2026-03-16T20:24:43Z"
+  },
+  {
+    "title": "EN-46997: Add CodeNavigatorSessionManager client",
+    "url": "https://github.com/Apixio/python-apxapi/pull/897",
+    "repo": "python-apxapi",
+    "author": "braga-apixio",
+    "merged_at": "2026-03-18T16:22:51Z",
+    "created_at": "2026-03-13T18:31:18Z"
   },
   {
     "title": "add basic logging for fine tuning run",
@@ -230,21 +310,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-02-23T18:30:55Z",
     "created_at": "2026-02-23T18:24:28Z"
-  },
-  {
-    "title": "Fix partner model endpoints — use external_model proxy",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/261",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-02-23T18:18:04Z",
-    "created_at": "2026-02-23T17:43:44Z"
-  },
-  {
-    "title": "Fix LLM endpoint: use workload_size for partner models",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/260",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-02-23T17:06:43Z",
-    "created_at": "2026-02-20T22:31:33Z"
   }
 ]
