@@ -1,0 +1,241 @@
+{
+  "date": "2026-03-25",
+  "generatedAt": "2026-03-25T18:51:42.254517+00:00",
+  "sprint": {
+    "id": 9242,
+    "name": "03/12/2026 - 03/25/2026",
+    "startDate": "2026-03-12T05:41:25.367Z",
+    "endDate": "2026-03-26T07:00:00.000Z",
+    "goal": ""
+  },
+  "summary": {
+    "totalIssues": 14,
+    "totalPoints": 28.0,
+    "donePoints": 21.0,
+    "inProgressPoints": 7.0,
+    "daysRemaining": 0,
+    "completionPercent": 75.0
+  },
+  "tickets": {
+    "todo": [
+      {
+        "key": "PLT-4153",
+        "summary": "Support Ying for DAQARI Alerting",
+        "status": "To Do",
+        "statusCategory": "To Do",
+        "assignee": "Unassigned",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": null,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-10T18:30:47.947-0400",
+        "resolved": null
+      }
+    ],
+    "inProgress": [
+      {
+        "key": "PLT-3904",
+        "summary": "Implementation: setting up MeatLAAT event driven workflow for retro",
+        "status": "In Progress",
+        "statusCategory": "In Progress",
+        "assignee": "Alex Nuccio",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 5.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-02-25T17:44:28.853-0500",
+        "resolved": null
+      },
+      {
+        "key": "PLT-4183",
+        "summary": "Single document reporting endpoints via databricks-svc and apxapi",
+        "status": "In Progress",
+        "statusCategory": "In Progress",
+        "assignee": "Marcus Webb",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T18:20:36.235-0400",
+        "resolved": null
+      }
+    ],
+    "inReview": [],
+    "blocked": [],
+    "done": [
+      {
+        "key": "PLT-4175",
+        "summary": "Test and release Scala 2.11 deprecation",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Rinat Ibrayev",
+        "issueType": "Story",
+        "priority": "High",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T17:37:16.983-0400",
+        "resolved": "2026-03-13T16:01:48.617-0400"
+      },
+      {
+        "key": "PLT-4176",
+        "summary": "Remove dependencies on Cerebro MySQL in signalmanager",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Rinat Ibrayev",
+        "issueType": "Story",
+        "priority": "High",
+        "storyPoints": 4.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T17:38:18.492-0400",
+        "resolved": "2026-03-18T09:56:20.473-0400"
+      },
+      {
+        "key": "PLT-4178",
+        "summary": "Cutover ML Reporting to new schemas",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Rinat Ibrayev",
+        "issueType": "Story",
+        "priority": "High",
+        "storyPoints": 1.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T17:38:51.245-0400",
+        "resolved": "2026-03-25T12:01:09.963-0400"
+      },
+      {
+        "key": "PLT-4182",
+        "summary": "Add UC Volume wheel publish action and workflow to ml-common-ci",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T18:10:23.102-0400",
+        "resolved": "2026-03-19T13:09:32.255-0400"
+      },
+      {
+        "key": "PLT-4184",
+        "summary": "DS Support \u2014 platform unblocking and ad-hoc enablement",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T18:22:00.832-0400",
+        "resolved": "2026-03-16T18:05:37.925-0400"
+      },
+      {
+        "key": "PLT-4185",
+        "summary": "Integrate Claude AI PR reviewer into ml-common-ci Databricks deploy workflow",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T18:24:32.127-0400",
+        "resolved": "2026-03-17T11:37:52.231-0400"
+      },
+      {
+        "key": "PLT-4186",
+        "summary": "Integrate Claude AI auto-diagnosis for failed Databricks bundle CI tasks",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T18:25:28.898-0400",
+        "resolved": "2026-03-18T13:01:25.028-0400"
+      },
+      {
+        "key": "PLT-4189",
+        "summary": "claude code onboarding",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Alex Nuccio",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T19:29:17.910-0400",
+        "resolved": "2026-03-18T16:00:13.503-0400"
+      },
+      {
+        "key": "PLT-4190",
+        "summary": "secure flag Q2",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Alex Nuccio",
+        "issueType": "Task",
+        "priority": "Medium",
+        "storyPoints": 1.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-11T19:29:35.181-0400",
+        "resolved": "2026-03-19T17:55:51.611-0400"
+      },
+      {
+        "key": "PLT-4294",
+        "summary": "ML Platform weekly cost report \u2014 Databricks cost reporting skill and Confluence automation",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": 3.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-19T18:43:25.241-0400",
+        "resolved": "2026-03-23T14:00:53.619-0400"
+      },
+      {
+        "key": "PLT-4299",
+        "summary": "DS support \u2014 GPU training dev experience sync and SageMaker alternative evaluation",
+        "status": "Done",
+        "statusCategory": "Done",
+        "assignee": "Marcus Webb",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": null,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-20T12:37:48.743-0400",
+        "resolved": "2026-03-20T12:38:43.780-0400"
+      }
+    ],
+    "other": []
+  },
+  "epics": []
+}
