@@ -16,14 +16,6 @@
     "created_at": "2026-03-23T21:57:28Z"
   },
   {
-    "title": "Upgrades jfartifactory Aurora cluster ",
-    "url": "https://github.com/Apixio/artifactory-tf/pull/4",
-    "repo": "artifactory-tf",
-    "author": "padraicwade-dv",
-    "merged_at": "2026-03-25T14:40:22Z",
-    "created_at": "2026-02-26T00:29:06Z"
-  },
-  {
     "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
     "url": "https://github.com/Apixio/ml-qamodel/pull/51",
     "repo": "ml-qamodel",
