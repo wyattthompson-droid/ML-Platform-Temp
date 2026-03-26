@@ -1,5 +1,21 @@
 [
   {
+    "title": "fix: retry concurrent merge conflicts in claim_requests",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/123",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-26T00:18:04Z",
+    "created_at": "2026-03-26T00:11:58Z"
+  },
+  {
+    "title": "EN-47116: Bronze ingestion pipeline - separate MA/ACA tables with overwrite strategy",
+    "url": "https://github.com/Apixio/ml-nexus/pull/3",
+    "repo": "ml-nexus",
+    "author": "prashantkadam-apixio",
+    "merged_at": "2026-03-25T19:52:33Z",
+    "created_at": "2026-03-23T21:57:28Z"
+  },
+  {
     "title": "Upgrades jfartifactory Aurora cluster ",
     "url": "https://github.com/Apixio/artifactory-tf/pull/4",
     "repo": "artifactory-tf",
@@ -160,6 +176,14 @@
     "created_at": "2026-03-16T20:24:43Z"
   },
   {
+    "title": "EN-46997: Add CodeNavigatorSessionManager client",
+    "url": "https://github.com/Apixio/python-apxapi/pull/897",
+    "repo": "python-apxapi",
+    "author": "braga-apixio",
+    "merged_at": "2026-03-18T16:22:51Z",
+    "created_at": "2026-03-13T18:31:18Z"
+  },
+  {
     "title": "add basic logging for fine tuning run",
     "url": "https://github.com/Apixio/ml-qamodel/pull/29",
     "repo": "ml-qamodel",
@@ -256,14 +280,6 @@
     "created_at": "2026-02-26T22:48:57Z"
   },
   {
-    "title": "Security aca models",
-    "url": "https://github.com/Apixio/di-platform/pull/248",
-    "repo": "di-platform",
-    "author": "dgolich-apixio",
-    "merged_at": "2026-03-05T22:58:14Z",
-    "created_at": "2026-03-05T19:04:31Z"
-  },
-  {
     "title": "fix: add workspace compliance tags to LLM tenant module",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/281",
     "repo": "databricks-ops-infra",
@@ -278,21 +294,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-05T20:54:27Z",
     "created_at": "2026-03-05T20:49:21Z"
-  },
-  {
-    "title": "[READY] remove all unused kaiser related models and tasklist models",
-    "url": "https://github.com/Apixio/di-platform/pull/245",
-    "repo": "di-platform",
-    "author": "ktapixio",
-    "merged_at": "2026-03-04T00:39:58Z",
-    "created_at": "2026-03-03T22:43:08Z"
-  },
-  {
-    "title": "Add test endpoints for all partner models",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/263",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-02-23T23:16:10Z",
-    "created_at": "2026-02-23T18:40:46Z"
   }
 ]
