@@ -1168,14 +1168,6 @@
     "created_at": "2026-03-17T18:45:34Z"
   },
   {
-    "title": "adding a new security group for chase center",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/12",
-    "repo": "chase-center-tf",
-    "author": "nithinkambam-apixio",
-    "merged_at": "2026-03-18T14:25:44Z",
-    "created_at": "2026-03-17T23:24:24Z"
-  },
-  {
     "title": "fix: display slack channel name not id",
     "url": "https://github.com/Apixio/cloud9/pull/305",
     "repo": "cloud9",
@@ -1382,14 +1374,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T20:27:30Z",
     "created_at": "2026-03-16T20:06:34Z"
-  },
-  {
-    "title": "fix: fixed sg to_port to postgres default port",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/11",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-16T20:22:19Z",
-    "created_at": "2026-03-16T17:33:27Z"
   },
   {
     "title": "CLOUD-4445: Add ECR repositories for crest-fe",
@@ -1726,14 +1710,6 @@
     "author": "dmytrobondarchuk-datavant",
     "merged_at": "2026-03-11T17:31:33Z",
     "created_at": "2026-03-05T15:58:59Z"
-  },
-  {
-    "title": "adding module for front end ecr repos",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/10",
-    "repo": "chase-center-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-11T16:55:09Z",
-    "created_at": "2026-03-10T23:01:29Z"
   },
   {
     "title": "adding parameters",
@@ -2336,14 +2312,6 @@
     "created_at": "2026-03-04T19:08:15Z"
   },
   {
-    "title": "fix(aurora-staging): update reader instance class to db.t4g.medium",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/9",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T20:21:37Z",
-    "created_at": "2026-03-04T19:54:51Z"
-  },
-  {
     "title": "CLOUD-1759: migrate apixio-cv2-io-stg to terraform",
     "url": "https://github.com/Apixio/platform-backend-tf/pull/17",
     "repo": "platform-backend-tf",
@@ -2352,28 +2320,12 @@
     "created_at": "2026-03-03T20:37:04Z"
   },
   {
-    "title": "fix(aurora-staging): update master password format",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/8",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T19:32:13Z",
-    "created_at": "2026-03-04T18:22:44Z"
-  },
-  {
     "title": "add policies for dev and etl-ra-prd",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/276",
     "repo": "databricks-ops-infra",
     "author": "Ming-Apixio",
     "merged_at": "2026-03-04T18:49:04Z",
     "created_at": "2026-03-04T17:59:02Z"
-  },
-  {
-    "title": "feat(aurora-staging): deploy Aurora PostgreSQL cluster for staging",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/7",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T18:15:56Z",
-    "created_at": "2026-02-27T19:22:52Z"
   },
   {
     "title": "create new compute policy for docsearch",
@@ -2680,14 +2632,6 @@
     "created_at": "2026-02-25T05:09:26Z"
   },
   {
-    "title": "feat(ecr): add ECR Cloud9 module, variables and related tags",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/6",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-02-26T00:50:26Z",
-    "created_at": "2026-02-25T19:05:07Z"
-  },
-  {
     "title": "dev -> main",
     "url": "https://github.com/Apixio/ml-retrosp/pull/104",
     "repo": "ml-retrosp",
@@ -2744,14 +2688,6 @@
     "created_at": "2026-02-25T22:13:50Z"
   },
   {
-    "title": "feat(ecr): add ECR workspace with base files",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/5",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-02-25T22:45:07Z",
-    "created_at": "2026-02-25T18:40:11Z"
-  },
-  {
     "title": "Al entra enablement",
     "url": "https://github.com/Apixio/cloud9/pull/288",
     "repo": "cloud9",
@@ -2782,14 +2718,6 @@
     "author": "dv-mmounts",
     "merged_at": "2026-02-25T21:43:34Z",
     "created_at": "2026-02-25T21:16:51Z"
-  },
-  {
-    "title": "feat(iam): Created IAM role for the chase-center application in stg",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/3",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-02-25T21:32:01Z",
-    "created_at": "2026-02-24T23:25:16Z"
   },
   {
     "title": "[CN] EN46539 - Add some defaults search filters for my search ",
@@ -2830,14 +2758,6 @@
     "author": "vmourzenok-dv",
     "merged_at": "2026-02-25T20:51:07Z",
     "created_at": "2026-02-25T20:49:11Z"
-  },
-  {
-    "title": "Update appPlatformVersion to 15.0.28",
-    "url": "https://github.com/Apixio/apx-patientsvc/pull/872",
-    "repo": "apx-patientsvc",
-    "author": "eguo-apixio",
-    "merged_at": "2026-02-25T20:38:54Z",
-    "created_at": "2026-02-25T18:35:18Z"
   },
   {
     "title": "En 45596 vm rds prd",
@@ -3006,14 +2926,6 @@
     "author": "kmcgovern-apixio",
     "merged_at": "2026-02-24T18:51:15Z",
     "created_at": "2026-02-20T22:31:30Z"
-  },
-  {
-    "title": "Created staging folders and subdirectories",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/2",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-02-24T18:02:06Z",
-    "created_at": "2026-02-23T22:49:14Z"
   },
   {
     "title": "En 44499 icd hcc mapping",
