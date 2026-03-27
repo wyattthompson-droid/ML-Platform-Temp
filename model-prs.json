@@ -1,11 +1,11 @@
 [
   {
-    "title": "PLT-4183: add per-document ML predictions endpoint to databricks-svc",
-    "url": "https://github.com/Apixio/apx-signalmanager/pull/1390",
-    "repo": "apx-signalmanager",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-26T20:36:44Z",
-    "created_at": "2026-03-23T20:31:34Z"
+    "title": "adding documents models",
+    "url": "https://github.com/Apixio/di-platform/pull/299",
+    "repo": "di-platform",
+    "author": "agopishetty-apixio",
+    "merged_at": "2026-03-27T16:02:05Z",
+    "created_at": "2026-03-27T15:54:09Z"
   },
   {
     "title": "Fix submit button logic for no-HCC-reject charts with predictions",
@@ -16,44 +16,12 @@
     "created_at": "2026-03-20T04:05:04Z"
   },
   {
-    "title": "fix: retry concurrent merge conflicts in claim_requests",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/123",
-    "repo": "ml-retrosp",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-26T00:18:04Z",
-    "created_at": "2026-03-26T00:11:58Z"
-  },
-  {
-    "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/51",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T04:53:30Z",
-    "created_at": "2026-03-25T04:53:06Z"
-  },
-  {
-    "title": "Fix: apply serving endpoint permissions only on creation",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/50",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T04:19:19Z",
-    "created_at": "2026-03-25T04:16:22Z"
-  },
-  {
-    "title": "Fix: harden fine-tuning job and manage serving endpoint permissions",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/49",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-24T23:56:17Z",
-    "created_at": "2026-03-24T23:55:33Z"
-  },
-  {
-    "title": "Fix: harden fine-tuning job and manage serving endpoint via DAB",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/48",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-24T22:32:55Z",
-    "created_at": "2026-03-24T22:19:42Z"
+    "title": "Upgrades jfartifactory Aurora cluster ",
+    "url": "https://github.com/Apixio/artifactory-tf/pull/4",
+    "repo": "artifactory-tf",
+    "author": "padraicwade-dv",
+    "merged_at": "2026-03-25T14:40:22Z",
+    "created_at": "2026-02-26T00:29:06Z"
   },
   {
     "title": "Kaiser MA coverage dbt model",
@@ -64,76 +32,12 @@
     "created_at": "2026-03-24T17:45:56Z"
   },
   {
-    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/36",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-24T21:29:05Z",
-    "created_at": "2026-03-24T20:02:37Z"
-  },
-  {
-    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
-    "url": "https://github.com/Apixio/ml-infdate/pull/32",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-24T18:20:28Z",
-    "created_at": "2026-03-18T18:12:16Z"
-  },
-  {
     "title": "Kaiser MA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/290",
     "repo": "di-platform",
     "author": "naditya-apixio",
     "merged_at": "2026-03-24T17:44:15Z",
     "created_at": "2026-03-24T17:34:58Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/46",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-22T23:58:23Z",
-    "created_at": "2026-03-22T23:56:03Z"
-  },
-  {
-    "title": "Fix: move LoRA merge/save outside TorchDistributor",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/45",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-22T23:46:20Z",
-    "created_at": "2026-03-22T23:40:27Z"
-  },
-  {
-    "title": "Fix: 4-bit QLoRA to prevent OOM on prod data",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/43",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T03:21:41Z",
-    "created_at": "2026-03-20T03:21:10Z"
-  },
-  {
-    "title": "Refactor: DDP training via TorchDistributor",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/41",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T01:30:14Z",
-    "created_at": "2026-03-20T01:27:48Z"
-  },
-  {
-    "title": "Add etlraprd deploy workflow",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/37",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T23:06:43Z",
-    "created_at": "2026-03-19T22:45:50Z"
-  },
-  {
-    "title": "Fix: recreate endpoint for custom model deployment",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/35",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T19:58:09Z",
-    "created_at": "2026-03-19T19:51:16Z"
   },
   {
     "title": "Healthfirst aca models",
@@ -144,84 +48,12 @@
     "created_at": "2026-03-19T16:43:33Z"
   },
   {
-    "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
-    "url": "https://github.com/Apixio/ml-common-ci/pull/43",
-    "repo": "ml-common-ci",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-19T17:09:18Z",
-    "created_at": "2026-03-18T22:09:37Z"
-  },
-  {
-    "title": "Fix: replace served entities instead of merging for Provisioned Throughput endpoints",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/33",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T00:37:35Z",
-    "created_at": "2026-03-19T00:36:40Z"
-  },
-  {
-    "title": "Fix: switch endpoint config to Provisioned Throughput fields",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/32",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T00:06:25Z",
-    "created_at": "2026-03-18T23:42:36Z"
-  },
-  {
-    "title": "Switch to GPU_MEDIUM + vLLM-optimized serving for fine-tuned LLaMA endpoint",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/31",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-18T22:31:06Z",
-    "created_at": "2026-03-18T21:56:04Z"
-  },
-  {
-    "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
-    "url": "https://github.com/Apixio/ml-common-ci/pull/42",
-    "repo": "ml-common-ci",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-18T21:16:45Z",
-    "created_at": "2026-03-18T20:36:59Z"
-  },
-  {
     "title": "added provider specialty getter for annotation model",
     "url": "https://github.com/Apixio/mono/pull/3630",
     "repo": "mono",
     "author": "bilagan-apixio",
     "merged_at": "2026-03-18T17:23:07Z",
     "created_at": "2026-03-16T20:24:43Z"
-  },
-  {
-    "title": "add basic logging for fine tuning run",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/29",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T22:48:56Z",
-    "created_at": "2026-03-17T22:48:38Z"
-  },
-  {
-    "title": "updated policy secret values for fine tuning job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/25",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T19:05:27Z",
-    "created_at": "2026-03-17T19:04:26Z"
-  },
-  {
-    "title": "fix model serving error for fine tuned llama model",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/24",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-16T22:54:16Z",
-    "created_at": "2026-03-16T22:52:44Z"
-  },
-  {
-    "title": "feat: Adding the application properties model (CLOUD-4818) and slackbot UI (CLOUD-4819)",
-    "url": "https://github.com/Apixio/cloud9/pull/303",
-    "repo": "cloud9",
-    "author": "kealanmurphy-dv",
-    "merged_at": "2026-03-16T17:13:24Z",
-    "created_at": "2026-03-12T14:13:46Z"
   },
   {
     "title": "Cambia onboard 20260315",
