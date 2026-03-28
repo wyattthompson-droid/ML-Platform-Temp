@@ -16,12 +16,12 @@
     "created_at": "2026-03-20T04:05:04Z"
   },
   {
-    "title": "Upgrades jfartifactory Aurora cluster ",
-    "url": "https://github.com/Apixio/artifactory-tf/pull/4",
-    "repo": "artifactory-tf",
-    "author": "padraicwade-dv",
-    "merged_at": "2026-03-25T14:40:22Z",
-    "created_at": "2026-02-26T00:29:06Z"
+    "title": "fix: retry concurrent merge conflicts in claim_requests",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/123",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-26T00:18:04Z",
+    "created_at": "2026-03-26T00:11:58Z"
   },
   {
     "title": "Kaiser MA coverage dbt model",
@@ -86,14 +86,6 @@
     "author": "ktapixio",
     "merged_at": "2026-03-10T19:44:32Z",
     "created_at": "2026-03-10T16:48:11Z"
-  },
-  {
-    "title": "fix to prevent model failure",
-    "url": "https://github.com/Apixio/di-platform/pull/260",
-    "repo": "di-platform",
-    "author": "dgolich-apixio",
-    "merged_at": "2026-03-10T17:17:14Z",
-    "created_at": "2026-03-10T17:15:13Z"
   },
   {
     "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
