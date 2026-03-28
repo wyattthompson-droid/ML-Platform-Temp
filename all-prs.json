@@ -336,6 +336,14 @@
     "created_at": "2026-03-26T16:31:43Z"
   },
   {
+    "title": "Include DI to docset creation",
+    "url": "https://github.com/Apixio/apx-databricks/pull/686",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-26T18:41:00Z",
+    "created_at": "2026-03-23T14:30:29Z"
+  },
+  {
     "title": "CLOUD-5341: creating project block for code navigator workqueue service",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/115",
     "repo": "tfc-bootstrap",
@@ -414,6 +422,22 @@
     "author": "emar-apixio",
     "merged_at": "2026-03-25T23:46:28Z",
     "created_at": "2026-03-25T20:34:29Z"
+  },
+  {
+    "title": "Structured data automation file ingestion",
+    "url": "https://github.com/Apixio/apx-databricks/pull/680",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-25T23:04:02Z",
+    "created_at": "2026-03-11T17:14:47Z"
+  },
+  {
+    "title": "PLT-4204 : Post process job + integration changes",
+    "url": "https://github.com/Apixio/apx-databricks/pull/684",
+    "repo": "apx-databricks",
+    "author": "jgomez-apixio",
+    "merged_at": "2026-03-25T23:02:54Z",
+    "created_at": "2026-03-13T19:48:21Z"
   },
   {
     "title": "Di 2900 archon slack notification",
@@ -592,6 +616,14 @@
     "created_at": "2026-03-24T19:34:14Z"
   },
   {
+    "title": "demographics validation",
+    "url": "https://github.com/Apixio/apx-databricks/pull/674",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-25T02:44:53Z",
+    "created_at": "2026-03-02T22:12:39Z"
+  },
+  {
     "title": "Re-enable Doc Search V1 in Nexus ",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4244",
     "repo": "apx-launchpad",
@@ -622,6 +654,14 @@
     "author": "akulkarni-apixio",
     "merged_at": "2026-03-24T20:53:49Z",
     "created_at": "2026-03-24T17:04:12Z"
+  },
+  {
+    "title": "Demographic slack notification",
+    "url": "https://github.com/Apixio/apx-databricks/pull/678",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-24T20:52:29Z",
+    "created_at": "2026-03-09T15:26:54Z"
   },
   {
     "title": "Release 5.32.13",
@@ -800,22 +840,6 @@
     "created_at": "2026-03-16T18:39:26Z"
   },
   {
-    "title": "EN-47155-npi-stg-del",
-    "url": "https://github.com/Apixio/npi-tf/pull/41",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-23T19:32:40Z",
-    "created_at": "2026-03-23T19:15:05Z"
-  },
-  {
-    "title": "En 47155 npi stg del",
-    "url": "https://github.com/Apixio/npi-tf/pull/40",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-23T19:09:11Z",
-    "created_at": "2026-03-20T18:40:19Z"
-  },
-  {
     "title": "CLOUD-4445: Add S3 uiassets policies to crest-fe IAM roles",
     "url": "https://github.com/Apixio/crest-tf/pull/42",
     "repo": "crest-tf",
@@ -950,6 +974,14 @@
     "author": "pparasnis-apixio",
     "merged_at": "2026-03-19T22:35:21Z",
     "created_at": "2026-01-05T02:00:11Z"
+  },
+  {
+    "title": "PLT-4178: Use ml schema.",
+    "url": "https://github.com/Apixio/apx-databricks/pull/685",
+    "repo": "apx-databricks",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-03-19T22:21:20Z",
+    "created_at": "2026-03-19T18:59:15Z"
   },
   {
     "title": "PLT-4178: Use ml schema.",
@@ -1336,14 +1368,6 @@
     "created_at": "2026-03-09T04:37:58Z"
   },
   {
-    "title": "Changed the STG node config to reduce the volume size",
-    "url": "https://github.com/Apixio/npi-tf/pull/39",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T18:57:35Z",
-    "created_at": "2026-03-13T18:52:08Z"
-  },
-  {
     "title": "[CN] Adding in Trakstar",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4222",
     "repo": "apx-launchpad",
@@ -1352,36 +1376,12 @@
     "created_at": "2026-03-13T17:47:35Z"
   },
   {
-    "title": "Added new NPI open search domain with 3.3 version for PRD",
-    "url": "https://github.com/Apixio/npi-tf/pull/37",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T15:51:49Z",
-    "created_at": "2026-03-13T15:28:55Z"
-  },
-  {
     "title": "En 46230 sm apikeys",
     "url": "https://github.com/Apixio/mono/pull/3588",
     "repo": "mono",
     "author": "sfmccarty",
     "merged_at": "2026-03-13T12:01:41Z",
     "created_at": "2026-02-06T16:00:14Z"
-  },
-  {
-    "title": "Added new NPI open search domain with 3.3 version for PRD",
-    "url": "https://github.com/Apixio/npi-tf/pull/36",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T01:10:56Z",
-    "created_at": "2026-03-13T01:03:11Z"
-  },
-  {
-    "title": "EN-46473-NPI-opensearch-prd-33",
-    "url": "https://github.com/Apixio/npi-tf/pull/35",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T00:44:51Z",
-    "created_at": "2026-03-10T15:51:13Z"
   },
   {
     "title": "Bcbstn medical claims provider type",
@@ -1432,12 +1432,36 @@
     "created_at": "2026-03-12T17:32:03Z"
   },
   {
+    "title": "fixed schema cast error in ml cost job",
+    "url": "https://github.com/Apixio/apx-databricks/pull/683",
+    "repo": "apx-databricks",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-12T20:40:55Z",
+    "created_at": "2026-03-12T20:26:06Z"
+  },
+  {
+    "title": "deduped aws costs from ml cost job",
+    "url": "https://github.com/Apixio/apx-databricks/pull/682",
+    "repo": "apx-databricks",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-12T20:01:33Z",
+    "created_at": "2026-03-12T19:59:02Z"
+  },
+  {
     "title": "Chase Management: Projects tab",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4214",
     "repo": "apx-launchpad",
     "author": "dblattner-apixio",
     "merged_at": "2026-03-12T18:05:20Z",
     "created_at": "2026-03-10T22:59:02Z"
+  },
+  {
+    "title": "Table Sync job ",
+    "url": "https://github.com/Apixio/apx-databricks/pull/679",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-12T17:55:13Z",
+    "created_at": "2026-03-11T00:15:21Z"
   },
   {
     "title": "Add Snowflake grants for clinical platform_silver tables",
@@ -1494,6 +1518,14 @@
     "author": "sfmccarty",
     "merged_at": "2026-03-11T21:46:02Z",
     "created_at": "2026-03-11T21:35:40Z"
+  },
+  {
+    "title": "added cost tracking per cluster tables",
+    "url": "https://github.com/Apixio/apx-databricks/pull/681",
+    "repo": "apx-databricks",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-11T21:22:17Z",
+    "created_at": "2026-03-11T21:05:00Z"
   },
   {
     "title": "archive unused dbt models",
@@ -1736,14 +1768,6 @@
     "created_at": "2026-03-06T19:59:16Z"
   },
   {
-    "title": "En 46472 stg - Added Root ARN for given role",
-    "url": "https://github.com/Apixio/npi-tf/pull/34",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-09T15:20:10Z",
-    "created_at": "2026-03-08T01:12:57Z"
-  },
-  {
     "title": "EN-46104: Use API call that defines allowed chart moves instead of using a hard coded list",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4174",
     "repo": "apx-launchpad",
@@ -1784,6 +1808,14 @@
     "created_at": "2026-03-06T20:46:59Z"
   },
   {
+    "title": "add pds 6078 in staging",
+    "url": "https://github.com/Apixio/apx-databricks/pull/676",
+    "repo": "apx-databricks",
+    "author": "tbu-apixio",
+    "merged_at": "2026-03-06T19:40:47Z",
+    "created_at": "2026-03-06T19:39:00Z"
+  },
+  {
     "title": "PLT-3698: DBU Spend Analysis + CYA Asset Claim Report",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/271",
     "repo": "databricks-ops-infra",
@@ -1806,14 +1838,6 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-06T17:05:16Z",
     "created_at": "2026-03-06T16:56:49Z"
-  },
-  {
-    "title": "Remove access policy statements from OpenSearch config",
-    "url": "https://github.com/Apixio/npi-tf/pull/33",
-    "repo": "npi-tf",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-03-06T15:49:02Z",
-    "created_at": "2026-03-06T15:32:09Z"
   },
   {
     "title": "CLOUD-1850: migrate apx-cardinal-flink-batch-stg-state to terraform",
@@ -2016,22 +2040,6 @@
     "created_at": "2026-03-03T20:09:34Z"
   },
   {
-    "title": "EN-46472-STG-ROLE",
-    "url": "https://github.com/Apixio/npi-tf/pull/30",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-03T19:28:36Z",
-    "created_at": "2026-03-03T19:20:52Z"
-  },
-  {
-    "title": "New Role mapping",
-    "url": "https://github.com/Apixio/npi-tf/pull/29",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-03T19:10:28Z",
-    "created_at": "2026-03-02T19:43:30Z"
-  },
-  {
     "title": "CLOUD-4667: Add prd and stg workspace configurations",
     "url": "https://github.com/Apixio/workqueue-tf/pull/1",
     "repo": "workqueue-tf",
@@ -2064,6 +2072,14 @@
     "created_at": "2026-02-27T21:12:28Z"
   },
   {
+    "title": "Disable Raw ingester notification and Add side load job",
+    "url": "https://github.com/Apixio/apx-databricks/pull/670",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-02T21:15:18Z",
+    "created_at": "2026-02-24T20:02:44Z"
+  },
+  {
     "title": "add JDBI PHI deserializer for LocalDate type",
     "url": "https://github.com/Apixio/coding-core-utils/pull/13",
     "repo": "coding-core-utils",
@@ -2094,6 +2110,14 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-02T19:23:10Z",
     "created_at": "2026-03-02T16:45:22Z"
+  },
+  {
+    "title": "Allow merge operation for document_meta",
+    "url": "https://github.com/Apixio/apx-databricks/pull/671",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-03-02T17:22:10Z",
+    "created_at": "2026-02-24T20:05:04Z"
   },
   {
     "title": "add group to dev workspace",
