@@ -640,6 +640,14 @@
     "created_at": "2026-03-24T17:45:56Z"
   },
   {
+    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/36",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T21:29:05Z",
+    "created_at": "2026-03-24T20:02:37Z"
+  },
+  {
     "title": "EN-45206: DOS Bulk Search support",
     "url": "https://github.com/Apixio/mono/pull/3639",
     "repo": "mono",
@@ -702,6 +710,14 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-24T19:30:41Z",
     "created_at": "2026-03-24T02:55:24Z"
+  },
+  {
+    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
+    "url": "https://github.com/Apixio/ml-infdate/pull/32",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T18:20:28Z",
+    "created_at": "2026-03-18T18:12:16Z"
   },
   {
     "title": "Kaiser MA coverage model",
@@ -1736,6 +1752,14 @@
     "created_at": "2026-03-09T18:22:13Z"
   },
   {
+    "title": "Added join logic to prevent missing rows",
+    "url": "https://github.com/Apixio/ml-infdate/pull/27",
+    "repo": "ml-infdate",
+    "author": "yjiang-apixio",
+    "merged_at": "2026-03-09T17:55:17Z",
+    "created_at": "2026-03-04T22:47:07Z"
+  },
+  {
     "title": "Release 5.32.7",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4213",
     "repo": "apx-launchpad",
@@ -2150,53 +2174,5 @@
     "author": "vmourzenok-dv",
     "merged_at": "2026-02-27T17:11:59Z",
     "created_at": "2026-02-27T17:08:49Z"
-  },
-  {
-    "title": "EN-46727: add more connectors for busy destination",
-    "url": "https://github.com/Apixio/transfer-service-tf/pull/33",
-    "repo": "transfer-service-tf",
-    "author": "jamesnakashian-apixio",
-    "merged_at": "2026-02-26T21:53:10Z",
-    "created_at": "2026-02-26T16:51:52Z"
-  },
-  {
-    "title": "PLT-3883 - Add IRR SPs for Data-Science",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/269",
-    "repo": "databricks-ops-infra",
-    "author": "dv-mmounts",
-    "merged_at": "2026-02-26T20:45:10Z",
-    "created_at": "2026-02-26T17:40:39Z"
-  },
-  {
-    "title": "SCIK-2461 create catalog views and final feature exploration",
-    "url": "https://github.com/Apixio/ml-df-matching/pull/5",
-    "repo": "ml-df-matching",
-    "author": "diegoramallo-apixio",
-    "merged_at": "2026-02-26T20:42:52Z",
-    "created_at": "2026-02-26T15:14:53Z"
-  },
-  {
-    "title": "PLT-3790 - Fix SP Permission reapplication",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/270",
-    "repo": "databricks-ops-infra",
-    "author": "dv-mmounts",
-    "merged_at": "2026-02-26T20:42:46Z",
-    "created_at": "2026-02-26T17:43:13Z"
-  },
-  {
-    "title": "En 45596 import",
-    "url": "https://github.com/Apixio/crest-tf/pull/32",
-    "repo": "crest-tf",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-02-26T19:13:39Z",
-    "created_at": "2026-02-26T18:51:11Z"
-  },
-  {
-    "title": "En 45596 import",
-    "url": "https://github.com/Apixio/crest-tf/pull/31",
-    "repo": "crest-tf",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-02-26T18:47:25Z",
-    "created_at": "2026-02-26T18:44:55Z"
   }
 ]
