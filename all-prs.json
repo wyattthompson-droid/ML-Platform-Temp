@@ -2118,29 +2118,5 @@
     "author": "alanli-datavant",
     "merged_at": "2026-03-02T17:22:10Z",
     "created_at": "2026-02-24T20:05:04Z"
-  },
-  {
-    "title": "add group to dev workspace",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/273",
-    "repo": "databricks-ops-infra",
-    "author": "Ming-Apixio",
-    "merged_at": "2026-02-27T22:57:58Z",
-    "created_at": "2026-02-27T22:52:48Z"
-  },
-  {
-    "title": "create new group risk analytics",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/272",
-    "repo": "databricks-ops-infra",
-    "author": "Ming-Apixio",
-    "merged_at": "2026-02-27T21:09:50Z",
-    "created_at": "2026-02-27T18:31:43Z"
-  },
-  {
-    "title": "version bump to fix import workflow tmpl",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/104",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-02-27T19:35:32Z",
-    "created_at": "2026-02-27T19:33:04Z"
   }
 ]
