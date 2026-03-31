@@ -1,5 +1,125 @@
 [
   {
+    "title": "Bump cryptography from 41.0.3 to 46.0.6",
+    "url": "https://github.com/Apixio/ml-icddet/pull/93",
+    "repo": "ml-icddet",
+    "author": "dependabot[bot]",
+    "merged_at": "2026-03-31T18:32:04Z",
+    "created_at": "2026-03-28T09:50:27Z"
+  },
+  {
+    "title": "Bump requests from 2.32.4 to 2.33.0",
+    "url": "https://github.com/Apixio/ml-icddet/pull/91",
+    "repo": "ml-icddet",
+    "author": "dependabot[bot]",
+    "merged_at": "2026-03-31T18:30:52Z",
+    "created_at": "2026-03-26T16:30:35Z"
+  },
+  {
+    "title": "Bump pygments from 2.19.2 to 2.20.0",
+    "url": "https://github.com/Apixio/ml-icddet/pull/94",
+    "repo": "ml-icddet",
+    "author": "dependabot[bot]",
+    "merged_at": "2026-03-31T18:30:19Z",
+    "created_at": "2026-03-30T19:22:06Z"
+  },
+  {
+    "title": "Bump sqlparse from 0.5.3 to 0.5.4",
+    "url": "https://github.com/Apixio/ml-icddet/pull/87",
+    "repo": "ml-icddet",
+    "author": "dependabot[bot]",
+    "merged_at": "2026-03-31T18:29:08Z",
+    "created_at": "2026-02-13T18:53:21Z"
+  },
+  {
+    "title": "Scik 2595 cleandev",
+    "url": "https://github.com/Apixio/ml-icddet/pull/92",
+    "repo": "ml-icddet",
+    "author": "akulkarni-apixio",
+    "merged_at": "2026-03-31T18:27:42Z",
+    "created_at": "2026-03-27T22:32:07Z"
+  },
+  {
+    "title": "Release 5.32.15",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4256",
+    "repo": "apx-launchpad",
+    "author": "bilagan-apixio",
+    "merged_at": "2026-03-31T17:59:55Z",
+    "created_at": "2026-03-26T22:32:21Z"
+  },
+  {
+    "title": "claude review workflow rollout to single repo",
+    "url": "https://github.com/Apixio/tfc-bootstrap/pull/126",
+    "repo": "tfc-bootstrap",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-03-31T17:46:47Z",
+    "created_at": "2026-03-30T21:20:07Z"
+  },
+  {
+    "title": "clean up and pause",
+    "url": "https://github.com/Apixio/di-platform/pull/313",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-31T16:36:38Z",
+    "created_at": "2026-03-31T16:35:30Z"
+  },
+  {
+    "title": "Split dashboard into pre-subtraction and post-subtraction metrics",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/76",
+    "repo": "ml-llmfp",
+    "author": "xchen-apixio",
+    "merged_at": "2026-03-31T16:35:43Z",
+    "created_at": "2026-02-16T17:55:54Z"
+  },
+  {
+    "title": "Fix/en 47244 csv trailing spaces",
+    "url": "https://github.com/Apixio/mono/pull/3651",
+    "repo": "mono",
+    "author": "luizalcantara-apixio",
+    "merged_at": "2026-03-31T16:31:03Z",
+    "created_at": "2026-03-30T23:23:04Z"
+  },
+  {
+    "title": "Crest/output file api integration",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4261",
+    "repo": "apx-launchpad",
+    "author": "tejaswini1107-hub",
+    "merged_at": "2026-03-31T16:07:32Z",
+    "created_at": "2026-03-31T15:15:13Z"
+  },
+  {
+    "title": "Initial draft for delivery serttings page",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4260",
+    "repo": "apx-launchpad",
+    "author": "tejaswini1107-hub",
+    "merged_at": "2026-03-31T16:07:05Z",
+    "created_at": "2026-03-30T17:01:26Z"
+  },
+  {
+    "title": "Release 4.29.0",
+    "url": "https://github.com/Apixio/python-apxapi/pull/904",
+    "repo": "python-apxapi",
+    "author": "hithaishi-apixio",
+    "merged_at": "2026-03-31T15:52:35Z",
+    "created_at": "2026-03-31T15:37:55Z"
+  },
+  {
+    "title": "CLOUD-4809 use prefix",
+    "url": "https://github.com/Apixio/crest-tf/pull/46",
+    "repo": "crest-tf",
+    "author": "vmourzenok-dv",
+    "merged_at": "2026-03-31T15:43:42Z",
+    "created_at": "2026-03-31T13:28:17Z"
+  },
+  {
+    "title": "expose apikeys APIs",
+    "url": "https://github.com/Apixio/python-apxapi/pull/895",
+    "repo": "python-apxapi",
+    "author": "hithaishi-apixio",
+    "merged_at": "2026-03-31T15:27:42Z",
+    "created_at": "2026-02-26T16:30:39Z"
+  },
+  {
     "title": "CLOUD-4809: Add IAM user and S3 policy for MOVEit integration",
     "url": "https://github.com/Apixio/crest-tf/pull/45",
     "repo": "crest-tf",
@@ -208,30 +328,6 @@
     "created_at": "2026-03-23T20:24:13Z"
   },
   {
-    "title": "Stg infrastructure",
-    "url": "https://github.com/Apixio/lando-tf/pull/4",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T22:47:23Z",
-    "created_at": "2026-03-27T21:06:22Z"
-  },
-  {
-    "title": "updating stuff",
-    "url": "https://github.com/Apixio/lando-tf/pull/6",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:38:09Z",
-    "created_at": "2026-03-27T22:36:55Z"
-  },
-  {
-    "title": "adding stg workspace",
-    "url": "https://github.com/Apixio/lando-tf/pull/5",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:21:55Z",
-    "created_at": "2026-03-27T22:19:27Z"
-  },
-  {
     "title": "fixing ownership for removed team",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/124",
     "repo": "tfc-bootstrap",
@@ -278,22 +374,6 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-27T21:29:32Z",
     "created_at": "2026-03-27T20:31:24Z"
-  },
-  {
-    "title": "Update CODEOWNERS",
-    "url": "https://github.com/Apixio/lando-tf/pull/3",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T20:43:21Z",
-    "created_at": "2026-03-27T20:42:10Z"
-  },
-  {
-    "title": "Remove SAST workflow",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/889",
-    "repo": "apx-workqueue",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-03-27T20:32:51Z",
-    "created_at": "2026-03-27T18:45:01Z"
   },
   {
     "title": "EN-45207: DOS Extraction Admin config",
@@ -726,22 +806,6 @@
     "author": "eguo-apixio",
     "merged_at": "2026-03-25T22:04:16Z",
     "created_at": "2026-02-26T00:47:43Z"
-  },
-  {
-    "title": "Auto release PR 1.1.105",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/888",
-    "repo": "apx-workqueue",
-    "author": "apixio-readonly",
-    "merged_at": "2026-03-25T22:01:52Z",
-    "created_at": "2026-03-25T21:42:01Z"
-  },
-  {
-    "title": "En 46632 token redis a",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/886",
-    "repo": "apx-workqueue",
-    "author": "pparasnis-apixio",
-    "merged_at": "2026-03-25T21:16:44Z",
-    "created_at": "2026-03-10T19:25:04Z"
   },
   {
     "title": "fix: route admin set-owner through admin endpoint",
@@ -1240,6 +1304,14 @@
     "created_at": "2026-03-09T18:46:48Z"
   },
   {
+    "title": "update loader config",
+    "url": "https://github.com/Apixio/application-configs/pull/2735",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-23T17:15:22Z",
+    "created_at": "2026-03-23T17:03:25Z"
+  },
+  {
     "title": "Adding isBillable project property",
     "url": "https://github.com/Apixio/mono/pull/3643",
     "repo": "mono",
@@ -1624,14 +1696,6 @@
     "created_at": "2026-01-28T00:15:14Z"
   },
   {
-    "title": "EN-46829: use new app platform",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/887",
-    "repo": "apx-workqueue",
-    "author": "emoreno-apixio",
-    "merged_at": "2026-03-18T22:54:20Z",
-    "created_at": "2026-03-18T22:48:27Z"
-  },
-  {
     "title": "Switch to GPU_MEDIUM + vLLM-optimized serving for fine-tuned LLaMA endpoint",
     "url": "https://github.com/Apixio/ml-qamodel/pull/31",
     "repo": "ml-qamodel",
@@ -1670,6 +1734,14 @@
     "author": "gtang-apixio",
     "merged_at": "2026-03-18T21:40:52Z",
     "created_at": "2026-03-18T21:01:29Z"
+  },
+  {
+    "title": "update loader for new pds",
+    "url": "https://github.com/Apixio/application-configs/pull/2734",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-18T21:10:33Z",
+    "created_at": "2026-03-18T21:05:53Z"
   },
   {
     "title": "Release 4.28.0",
@@ -1968,14 +2040,6 @@
     "created_at": "2026-03-16T19:56:20Z"
   },
   {
-    "title": "Add RDS security groups for entityv2 prod replication",
-    "url": "https://github.com/Apixio/bi-data-replication-tf/pull/29",
-    "repo": "bi-data-replication-tf",
-    "author": "chopkinsAtDatavant",
-    "merged_at": "2026-03-16T19:30:54Z",
-    "created_at": "2026-03-16T19:11:28Z"
-  },
-  {
     "title": "Adding some actions into datadog",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4219",
     "repo": "apx-launchpad",
@@ -2038,6 +2102,30 @@
     "author": "mlagusker-apixio",
     "merged_at": "2026-03-14T00:39:51Z",
     "created_at": "2026-03-09T04:37:58Z"
+  },
+  {
+    "title": "PLT-4143 : MySql 8 PRD changes",
+    "url": "https://github.com/Apixio/application-configs/pull/2731",
+    "repo": "application-configs",
+    "author": "jgomez-apixio",
+    "merged_at": "2026-03-13T23:54:16Z",
+    "created_at": "2026-03-13T00:33:13Z"
+  },
+  {
+    "title": "add 4042 pds to stg loader conf",
+    "url": "https://github.com/Apixio/application-configs/pull/2733",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-13T23:23:45Z",
+    "created_at": "2026-03-13T23:22:23Z"
+  },
+  {
+    "title": "add 6044 pds to stg loader conf",
+    "url": "https://github.com/Apixio/application-configs/pull/2732",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-13T20:15:47Z",
+    "created_at": "2026-03-13T19:52:57Z"
   },
   {
     "title": "Changed the STG node config to reduce the volume size",
@@ -2248,6 +2336,14 @@
     "created_at": "2026-03-11T21:35:40Z"
   },
   {
+    "title": "Add CLAUDE_APIKEY upload workflow to AWS Secrets Manager",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/53",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-03-11T21:39:17Z",
+    "created_at": "2026-03-11T21:25:07Z"
+  },
+  {
     "title": "added cost tracking per cluster tables",
     "url": "https://github.com/Apixio/apx-databricks/pull/681",
     "repo": "apx-databricks",
@@ -2286,6 +2382,14 @@
     "author": "jkaur-apixio",
     "merged_at": "2026-03-11T19:38:46Z",
     "created_at": "2026-02-02T22:37:27Z"
+  },
+  {
+    "title": "PLT-4009 : Modify mysql 8 config",
+    "url": "https://github.com/Apixio/application-configs/pull/2730",
+    "repo": "application-configs",
+    "author": "jgomez-apixio",
+    "merged_at": "2026-03-11T19:38:41Z",
+    "created_at": "2026-03-11T19:33:29Z"
   },
   {
     "title": "CLOUD-1747: migrate apixio-backups-kafka-topics to terraform",
@@ -2334,14 +2438,6 @@
     "author": "jasonroschke-apixio",
     "merged_at": "2026-03-11T16:55:09Z",
     "created_at": "2026-03-10T23:01:29Z"
-  },
-  {
-    "title": "adding parameters",
-    "url": "https://github.com/Apixio/di-platform/pull/266",
-    "repo": "di-platform",
-    "author": "agopishetty-apixio",
-    "merged_at": "2026-03-11T16:19:59Z",
-    "created_at": "2026-03-11T00:45:06Z"
   },
   {
     "title": "CLOUD-1804: migrate apixio-logs to terraform",
@@ -2430,22 +2526,6 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-10T21:30:12Z",
     "created_at": "2026-03-10T20:25:24Z"
-  },
-  {
-    "title": "[DM] Move reporting under CN section",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4201",
-    "repo": "apx-launchpad",
-    "author": "jkaur-apixio",
-    "merged_at": "2026-03-10T19:59:38Z",
-    "created_at": "2026-02-26T22:12:42Z"
-  },
-  {
-    "title": "EN-46424/46426: Add bulk unpark to HelpCenter; default dashboard to doc metrics",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4190",
-    "repo": "apx-launchpad",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-03-10T19:41:07Z",
-    "created_at": "2026-02-18T05:44:41Z"
   },
   {
     "title": "CLOUD-1751: migrate apixio-backups-stg-ohio to terraform",
@@ -2560,14 +2640,6 @@
     "created_at": "2026-03-04T22:47:07Z"
   },
   {
-    "title": "Release 5.32.7",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4213",
-    "repo": "apx-launchpad",
-    "author": "emoreno-apixio",
-    "merged_at": "2026-03-09T17:54:03Z",
-    "created_at": "2026-03-09T15:07:17Z"
-  },
-  {
     "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/286",
     "repo": "databricks-ops-infra",
@@ -2616,12 +2688,12 @@
     "created_at": "2026-03-07T00:22:44Z"
   },
   {
-    "title": "EN-46104: Use API call that defines allowed chart moves instead of using a hard coded list",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4174",
-    "repo": "apx-launchpad",
-    "author": "emoreno-apixio",
-    "merged_at": "2026-03-07T02:23:28Z",
-    "created_at": "2026-02-05T18:58:26Z"
+    "title": "add 10001002 pds to loader s3 loader config",
+    "url": "https://github.com/Apixio/application-configs/pull/2729",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-09T03:48:23Z",
+    "created_at": "2026-03-08T21:47:22Z"
   },
   {
     "title": "removed tfc cloud job and it's references..",
@@ -2702,14 +2774,6 @@
     "author": "vmourzenok-dv",
     "merged_at": "2026-03-06T15:49:02Z",
     "created_at": "2026-03-06T15:32:09Z"
-  },
-  {
-    "title": "Release 5.32.6",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4210",
-    "repo": "apx-launchpad",
-    "author": "jkaur-apixio",
-    "merged_at": "2026-03-05T23:51:19Z",
-    "created_at": "2026-03-05T20:17:01Z"
   },
   {
     "title": "fix: add workspace compliance tags to LLM tenant module",
@@ -2824,6 +2888,14 @@
     "created_at": "2026-03-02T19:04:20Z"
   },
   {
+    "title": "update loader conf",
+    "url": "https://github.com/Apixio/application-configs/pull/2728",
+    "repo": "application-configs",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-03-04T21:43:17Z",
+    "created_at": "2026-03-04T20:57:34Z"
+  },
+  {
     "title": "Merge HS failure handling logic to `main`",
     "url": "https://github.com/Apixio/ml-daqari/pull/51",
     "repo": "ml-daqari",
@@ -2862,6 +2934,14 @@
     "author": "Ming-Apixio",
     "merged_at": "2026-03-04T18:49:04Z",
     "created_at": "2026-03-04T17:59:02Z"
+  },
+  {
+    "title": "chore: remove stale workflow files",
+    "url": "https://github.com/Apixio/terraform-aws-dynamodb-table/pull/3",
+    "repo": "terraform-aws-dynamodb-table",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-03-04T18:42:53Z",
+    "created_at": "2026-03-04T18:00:19Z"
   },
   {
     "title": "feat(aurora-staging): deploy Aurora PostgreSQL cluster for staging",
@@ -2960,12 +3040,28 @@
     "created_at": "2026-03-03T17:02:37Z"
   },
   {
+    "title": "PLT-3897 Authorize CDR SDK Repo",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/52",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-03-03T17:04:20Z",
+    "created_at": "2026-03-03T16:41:56Z"
+  },
+  {
     "title": "En 46623 sm restacl retry",
     "url": "https://github.com/Apixio/mono/pull/3612",
     "repo": "mono",
     "author": "sfmccarty",
     "merged_at": "2026-03-03T14:54:04Z",
     "created_at": "2026-02-27T21:12:28Z"
+  },
+  {
+    "title": "Adding PDS for S3 loading capability",
+    "url": "https://github.com/Apixio/application-configs/pull/2727",
+    "repo": "application-configs",
+    "author": "gkrishnan-apixio",
+    "merged_at": "2026-03-02T23:14:04Z",
+    "created_at": "2026-03-02T23:00:08Z"
   },
   {
     "title": "Disable Raw ingester notification and Add side load job",
