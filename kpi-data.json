@@ -3,11 +3,11 @@
     {
       "id": "model-updates-prod",
       "label": "Model Updates in Production",
-      "value": 39,
-      "previousValue": 10,
+      "value": 38,
+      "previousValue": 7,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-03-31 19:05 UTC",
+      "lastUpdated": "2026-04-01 02:51 UTC",
       "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
     }
   ],
@@ -47,11 +47,11 @@
     {
       "id": "num-prs",
       "label": "Number of PRs",
-      "value": 389,
-      "previousValue": 214,
+      "value": 390,
+      "previousValue": 184,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-03-31 19:05 UTC",
+      "lastUpdated": "2026-04-01 02:51 UTC",
       "description": "Pull requests opened (rolling 30 days)"
     },
     {
@@ -67,11 +67,11 @@
     {
       "id": "deployment-time",
       "label": "Deployment Time (PR to Prod)",
-      "value": 65,
-      "previousValue": 38,
+      "value": 64,
+      "previousValue": 42,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-03-31 19:05 UTC",
+      "lastUpdated": "2026-04-01 02:51 UTC",
       "description": "Average time from PR open to merge on main"
     },
     {
