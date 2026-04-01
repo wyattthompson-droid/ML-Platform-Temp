@@ -1,5 +1,45 @@
 [
   {
+    "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-01T18:11:57Z",
+    "created_at": "2026-03-31T22:57:40Z"
+  },
+  {
+    "title": "Ignore project mapping with IGNORED state",
+    "url": "https://github.com/Apixio/apx-databricks/pull/689",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-04-01T18:03:21Z",
+    "created_at": "2026-04-01T15:51:46Z"
+  },
+  {
+    "title": "fixed duplicate rows in llm post source table",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/135",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-01T18:01:06Z",
+    "created_at": "2026-04-01T17:59:18Z"
+  },
+  {
+    "title": "Create chase center service principal",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/305",
+    "repo": "databricks-ops-infra",
+    "author": "nithinkambam-apixio",
+    "merged_at": "2026-04-01T15:44:59Z",
+    "created_at": "2026-03-26T21:20:55Z"
+  },
+  {
+    "title": "SCIK-2554 training optimization and experiment design",
+    "url": "https://github.com/Apixio/ml-df-matching/pull/8",
+    "repo": "ml-df-matching",
+    "author": "diegoramallo-apixio",
+    "merged_at": "2026-04-01T13:30:57Z",
+    "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
     "title": "feat: add admin environment-deregister command (CLOUD-5235)",
     "url": "https://github.com/Apixio/cloud9/pull/318",
     "repo": "cloud9",
@@ -456,14 +496,6 @@
     "created_at": "2026-03-30T16:55:38Z"
   },
   {
-    "title": "Upgrade to Postgres 17.7",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/18",
-    "repo": "chase-center-tf",
-    "author": "MHova",
-    "merged_at": "2026-03-30T17:13:40Z",
-    "created_at": "2026-03-30T16:27:27Z"
-  },
-  {
     "title": "Restore event-driven meatlaat workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/131",
     "repo": "ml-retrosp",
@@ -680,14 +712,6 @@
     "created_at": "2026-03-25T19:17:58Z"
   },
   {
-    "title": "CLOUD-3868: creating stg iam role for chase-center-fe service",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/17",
-    "repo": "chase-center-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-26T21:54:47Z",
-    "created_at": "2026-03-26T21:42:42Z"
-  },
-  {
     "title": "feat: run MARX batch inference in expraprd on PR to main",
     "url": "https://github.com/Apixio/ml-retrosp/pull/129",
     "repo": "ml-retrosp",
@@ -702,14 +726,6 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-26T21:08:34Z",
     "created_at": "2026-03-26T20:59:52Z"
-  },
-  {
-    "title": "CLOUD-3868: adding rouite53.tf module and definining chasecenter subdomains",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/16",
-    "repo": "chase-center-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-26T20:37:16Z",
-    "created_at": "2026-03-26T19:46:29Z"
   },
   {
     "title": "added subtraction table to llm_fp task",
@@ -752,28 +768,12 @@
     "created_at": "2026-03-20T04:05:04Z"
   },
   {
-    "title": "Cloud 5346 restore postgres",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/15",
-    "repo": "chase-center-tf",
-    "author": "MHova",
-    "merged_at": "2026-03-26T19:22:33Z",
-    "created_at": "2026-03-26T19:01:37Z"
-  },
-  {
     "title": "Crest output file configs column drag and drop issue fixed",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4253",
     "repo": "apx-launchpad",
     "author": "tejaswini1107-hub",
     "merged_at": "2026-03-26T19:22:30Z",
     "created_at": "2026-03-26T16:31:43Z"
-  },
-  {
-    "title": "fix: \"delete\" postgres configs",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/14",
-    "repo": "chase-center-tf",
-    "author": "MHova",
-    "merged_at": "2026-03-26T18:48:36Z",
-    "created_at": "2026-03-26T18:13:24Z"
   },
   {
     "title": "Include DI to docset creation",
@@ -806,14 +806,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-26T18:00:37Z",
     "created_at": "2026-03-26T17:07:15Z"
-  },
-  {
-    "title": "Fix database name",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/13",
-    "repo": "chase-center-tf",
-    "author": "MHova",
-    "merged_at": "2026-03-26T17:59:05Z",
-    "created_at": "2026-03-24T22:05:47Z"
   },
   {
     "title": "fix: publish only on tag creation",
@@ -1920,14 +1912,6 @@
     "created_at": "2026-03-13T18:31:18Z"
   },
   {
-    "title": "adding a new security group for chase center",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/12",
-    "repo": "chase-center-tf",
-    "author": "nithinkambam-apixio",
-    "merged_at": "2026-03-18T14:25:44Z",
-    "created_at": "2026-03-17T23:24:24Z"
-  },
-  {
     "title": "fix: display slack channel name not id",
     "url": "https://github.com/Apixio/cloud9/pull/305",
     "repo": "cloud9",
@@ -2126,14 +2110,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T20:27:30Z",
     "created_at": "2026-03-16T20:06:34Z"
-  },
-  {
-    "title": "fix: fixed sg to_port to postgres default port",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/11",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-16T20:22:19Z",
-    "created_at": "2026-03-16T17:33:27Z"
   },
   {
     "title": "CLOUD-4445: Add ECR repositories for crest-fe",
@@ -2470,14 +2446,6 @@
     "author": "dmytrobondarchuk-datavant",
     "merged_at": "2026-03-11T17:31:33Z",
     "created_at": "2026-03-05T15:58:59Z"
-  },
-  {
-    "title": "adding module for front end ecr repos",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/10",
-    "repo": "chase-center-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-11T16:55:09Z",
-    "created_at": "2026-03-10T23:01:29Z"
   },
   {
     "title": "CLOUD-1804: migrate apixio-logs to terraform",
@@ -2936,28 +2904,12 @@
     "created_at": "2026-03-04T19:08:15Z"
   },
   {
-    "title": "fix(aurora-staging): update reader instance class to db.t4g.medium",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/9",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T20:21:37Z",
-    "created_at": "2026-03-04T19:54:51Z"
-  },
-  {
     "title": "CLOUD-1759: migrate apixio-cv2-io-stg to terraform",
     "url": "https://github.com/Apixio/platform-backend-tf/pull/17",
     "repo": "platform-backend-tf",
     "author": "dmai-apixio",
     "merged_at": "2026-03-04T20:12:07Z",
     "created_at": "2026-03-03T20:37:04Z"
-  },
-  {
-    "title": "fix(aurora-staging): update master password format",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/8",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T19:32:13Z",
-    "created_at": "2026-03-04T18:22:44Z"
   },
   {
     "title": "add policies for dev and etl-ra-prd",
@@ -2974,14 +2926,6 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-04T18:42:53Z",
     "created_at": "2026-03-04T18:00:19Z"
-  },
-  {
-    "title": "feat(aurora-staging): deploy Aurora PostgreSQL cluster for staging",
-    "url": "https://github.com/Apixio/chase-center-tf/pull/7",
-    "repo": "chase-center-tf",
-    "author": "aashokkumar-apixio",
-    "merged_at": "2026-03-04T18:15:56Z",
-    "created_at": "2026-02-27T19:22:52Z"
   },
   {
     "title": "create new compute policy for docsearch",
@@ -3046,6 +2990,14 @@
     "author": "sfmccarty",
     "merged_at": "2026-03-03T21:02:08Z",
     "created_at": "2026-03-03T20:09:34Z"
+  },
+  {
+    "title": "CLOUD-4667: Add prd and stg workspace configurations",
+    "url": "https://github.com/Apixio/launchpad-tf/pull/1",
+    "repo": "launchpad-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-03-03T18:34:47Z",
+    "created_at": "2026-03-03T04:04:16Z"
   },
   {
     "title": "EN-46786-moveit-s3",
@@ -3126,13 +3078,5 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-02T19:23:10Z",
     "created_at": "2026-03-02T16:45:22Z"
-  },
-  {
-    "title": "Allow merge operation for document_meta",
-    "url": "https://github.com/Apixio/apx-databricks/pull/671",
-    "repo": "apx-databricks",
-    "author": "alanli-datavant",
-    "merged_at": "2026-03-02T17:22:10Z",
-    "created_at": "2026-02-24T20:05:04Z"
   }
 ]
