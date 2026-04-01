@@ -1,5 +1,13 @@
 [
   {
+    "title": "fix: add ref to skills checkout to avoid default branch API lookup",
+    "url": "https://github.com/Apixio/action-claude-review/pull/3",
+    "repo": "action-claude-review",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-01T03:29:08Z",
+    "created_at": "2026-03-31T18:24:14Z"
+  },
+  {
     "title": "added is billable to icd project creation",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4251",
     "repo": "apx-launchpad",
