@@ -1,5 +1,21 @@
 [
   {
+    "title": "feat: add pod and environment_type custom property support",
+    "url": "https://github.com/Apixio/tfc-bootstrap/pull/127",
+    "repo": "tfc-bootstrap",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-04-02T10:19:33Z",
+    "created_at": "2026-04-01T16:35:00Z"
+  },
+  {
+    "title": "feat: migrate all Docker images to Chainguard base images",
+    "url": "https://github.com/Apixio/cloud9/pull/319",
+    "repo": "cloud9",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-04-02T09:55:36Z",
+    "created_at": "2026-03-30T19:22:47Z"
+  },
+  {
     "title": "[CN] Remove default filters for client viewer",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4263",
     "repo": "apx-launchpad",
@@ -358,14 +374,6 @@
     "author": "mlagusker-apixio",
     "merged_at": "2026-03-31T20:14:11Z",
     "created_at": "2026-03-31T20:14:02Z"
-  },
-  {
-    "title": "update production loader",
-    "url": "https://github.com/Apixio/application-configs/pull/2736",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-31T20:09:59Z",
-    "created_at": "2026-03-31T19:04:07Z"
   },
   {
     "title": "En 47104 is billable create project",
@@ -1528,14 +1536,6 @@
     "created_at": "2026-03-09T18:46:48Z"
   },
   {
-    "title": "update loader config",
-    "url": "https://github.com/Apixio/application-configs/pull/2735",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-23T17:15:22Z",
-    "created_at": "2026-03-23T17:03:25Z"
-  },
-  {
     "title": "Adding isBillable project property",
     "url": "https://github.com/Apixio/mono/pull/3643",
     "repo": "mono",
@@ -1968,14 +1968,6 @@
     "created_at": "2026-03-18T21:01:29Z"
   },
   {
-    "title": "update loader for new pds",
-    "url": "https://github.com/Apixio/application-configs/pull/2734",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-18T21:10:33Z",
-    "created_at": "2026-03-18T21:05:53Z"
-  },
-  {
     "title": "EN-46829: pass in accepted code dos instead of None",
     "url": "https://github.com/Apixio/mono/pull/3628",
     "repo": "mono",
@@ -2248,30 +2240,6 @@
     "created_at": "2026-03-16T17:00:55Z"
   },
   {
-    "title": "PLT-4143 : MySql 8 PRD changes",
-    "url": "https://github.com/Apixio/application-configs/pull/2731",
-    "repo": "application-configs",
-    "author": "jgomez-apixio",
-    "merged_at": "2026-03-13T23:54:16Z",
-    "created_at": "2026-03-13T00:33:13Z"
-  },
-  {
-    "title": "add 4042 pds to stg loader conf",
-    "url": "https://github.com/Apixio/application-configs/pull/2733",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-13T23:23:45Z",
-    "created_at": "2026-03-13T23:22:23Z"
-  },
-  {
-    "title": "add 6044 pds to stg loader conf",
-    "url": "https://github.com/Apixio/application-configs/pull/2732",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-13T20:15:47Z",
-    "created_at": "2026-03-13T19:52:57Z"
-  },
-  {
     "title": "[CN] Adding in Trakstar",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4222",
     "repo": "apx-launchpad",
@@ -2448,14 +2416,6 @@
     "created_at": "2026-02-02T22:37:27Z"
   },
   {
-    "title": "PLT-4009 : Modify mysql 8 config",
-    "url": "https://github.com/Apixio/application-configs/pull/2730",
-    "repo": "application-configs",
-    "author": "jgomez-apixio",
-    "merged_at": "2026-03-11T19:38:41Z",
-    "created_at": "2026-03-11T19:33:29Z"
-  },
-  {
     "title": "EN-46595 Load projects and clients from API for report queue",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4212",
     "repo": "apx-launchpad",
@@ -2560,6 +2520,14 @@
     "created_at": "2026-03-09T19:09:34Z"
   },
   {
+    "title": "CLOUD-4700: Add support for varied storage classes",
+    "url": "https://github.com/Apixio/terraform-aws-s3/pull/11",
+    "repo": "terraform-aws-s3",
+    "author": "mcln-dv",
+    "merged_at": "2026-03-09T18:25:56Z",
+    "created_at": "2026-03-09T18:10:27Z"
+  },
+  {
     "title": "update llm version & bump to 20% bottom icds",
     "url": "https://github.com/Apixio/ml-retrosp/pull/112",
     "repo": "ml-retrosp",
@@ -2606,14 +2574,6 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-09T17:28:16Z",
     "created_at": "2026-03-06T19:59:16Z"
-  },
-  {
-    "title": "add 10001002 pds to loader s3 loader config",
-    "url": "https://github.com/Apixio/application-configs/pull/2729",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-09T03:48:23Z",
-    "created_at": "2026-03-08T21:47:22Z"
   },
   {
     "title": "removed tfc cloud job and it's references..",
@@ -2790,14 +2750,6 @@
     "author": "jamesnakashian-apixio",
     "merged_at": "2026-03-04T22:07:18Z",
     "created_at": "2026-03-02T19:04:20Z"
-  },
-  {
-    "title": "update loader conf",
-    "url": "https://github.com/Apixio/application-configs/pull/2728",
-    "repo": "application-configs",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-04T21:43:17Z",
-    "created_at": "2026-03-04T20:57:34Z"
   },
   {
     "title": "add policies for dev and etl-ra-prd",
