@@ -1,5 +1,29 @@
 [
   {
+    "title": "[CN] Remove default filters for client viewer",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4263",
+    "repo": "apx-launchpad",
+    "author": "jkaur-apixio",
+    "merged_at": "2026-04-02T04:41:42Z",
+    "created_at": "2026-03-31T16:51:27Z"
+  },
+  {
+    "title": "feat: add ElastiCache Redis for lando STG Celery broker",
+    "url": "https://github.com/Apixio/lando-tf/pull/9",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T03:09:56Z",
+    "created_at": "2026-04-02T03:06:56Z"
+  },
+  {
+    "title": "feat: add Vault roles/policies and ElastiCache Redis for lando STG",
+    "url": "https://github.com/Apixio/lando-tf/pull/8",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T03:02:42Z",
+    "created_at": "2026-04-02T02:20:14Z"
+  },
+  {
     "title": "Restore Event-driven",
     "url": "https://github.com/Apixio/ml-retrosp/pull/132",
     "repo": "ml-retrosp",
@@ -2446,14 +2470,6 @@
     "author": "dmytrobondarchuk-datavant",
     "merged_at": "2026-03-11T18:17:26Z",
     "created_at": "2026-03-11T17:31:10Z"
-  },
-  {
-    "title": "EN-46598 Add schedule configuration for report generation",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4209",
-    "repo": "apx-launchpad",
-    "author": "dmytrobondarchuk-datavant",
-    "merged_at": "2026-03-11T17:31:33Z",
-    "created_at": "2026-03-05T15:58:59Z"
   },
   {
     "title": "Auditor release 0311",
