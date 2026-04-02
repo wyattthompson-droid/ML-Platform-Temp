@@ -1,5 +1,13 @@
 [
   {
+    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
+    "url": "https://github.com/Apixio/ml-icddet/pull/95",
+    "repo": "ml-icddet",
+    "author": "wchang-apixio",
+    "merged_at": "2026-04-01T22:07:50Z",
+    "created_at": "2026-03-31T17:07:36Z"
+  },
+  {
     "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
     "repo": "ml-ops-infra",
@@ -30,14 +38,6 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-30T20:01:00Z",
     "created_at": "2026-03-30T18:53:14Z"
-  },
-  {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
   },
   {
     "title": "adding documents models",
@@ -224,14 +224,6 @@
     "created_at": "2026-03-16T20:24:43Z"
   },
   {
-    "title": "EN-46997: Add CodeNavigatorSessionManager client",
-    "url": "https://github.com/Apixio/python-apxapi/pull/897",
-    "repo": "python-apxapi",
-    "author": "braga-apixio",
-    "merged_at": "2026-03-18T16:22:51Z",
-    "created_at": "2026-03-13T18:31:18Z"
-  },
-  {
     "title": "add basic logging for fine tuning run",
     "url": "https://github.com/Apixio/ml-qamodel/pull/29",
     "repo": "ml-qamodel",
@@ -262,14 +254,6 @@
     "author": "kealanmurphy-dv",
     "merged_at": "2026-03-16T17:13:24Z",
     "created_at": "2026-03-12T14:13:46Z"
-  },
-  {
-    "title": "Cambia onboard 20260315",
-    "url": "https://github.com/Apixio/di-platform/pull/272",
-    "repo": "di-platform",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-16T14:54:24Z",
-    "created_at": "2026-03-16T04:15:51Z"
   },
   {
     "title": "[CN] EN46077 - update modelBypassReason filter name to modelBypassReasons",
