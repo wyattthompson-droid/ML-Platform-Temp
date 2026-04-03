@@ -1,5 +1,93 @@
 [
   {
+    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
+    "url": "https://github.com/Apixio/ml-infdate/pull/43",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-03T18:10:25Z",
+    "created_at": "2026-04-03T17:59:29Z"
+  },
+  {
+    "title": "PLT-4376 Permissions and module refactor for ARNs",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/72",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T17:33:02Z",
+    "created_at": "2026-04-03T17:28:37Z"
+  },
+  {
+    "title": "PLT-4376 Scope KMS permissions to specific key ARNs",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/71",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T17:15:10Z",
+    "created_at": "2026-04-03T17:12:28Z"
+  },
+  {
+    "title": "Archon slack notification 20260403",
+    "url": "https://github.com/Apixio/di-platform/pull/325",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-03T17:02:34Z",
+    "created_at": "2026-04-03T16:42:31Z"
+  },
+  {
+    "title": "PLT-4376 Fix network SG S3 access",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/70",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T16:45:46Z",
+    "created_at": "2026-04-03T16:43:02Z"
+  },
+  {
+    "title": "feat: GPU fallback inference for event-driven MeatLAAT",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/138",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-03T16:33:19Z",
+    "created_at": "2026-04-02T23:08:24Z"
+  },
+  {
+    "title": "PLT-4376 sgmk dev",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/69",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T16:27:05Z",
+    "created_at": "2026-04-03T16:23:04Z"
+  },
+  {
+    "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T16:16:34Z",
+    "created_at": "2026-04-03T16:13:01Z"
+  },
+  {
+    "title": "PLT-4376 sgmk dev",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/67",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:49:17Z",
+    "created_at": "2026-04-03T15:42:11Z"
+  },
+  {
+    "title": "Add SageMaker job actions to execution role base policy",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/66",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:25:39Z",
+    "created_at": "2026-04-03T15:22:19Z"
+  },
+  {
+    "title": "PLT-4376 Allow execution roles to pass themselves to SageMaker",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/65",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:10:41Z",
+    "created_at": "2026-04-03T15:08:06Z"
+  },
+  {
     "title": "Allow IRSA role to assume lando-readonly in member accounts",
     "url": "https://github.com/Apixio/lando-tf/pull/12",
     "repo": "lando-tf",
@@ -1416,6 +1504,14 @@
     "created_at": "2026-03-24T19:34:14Z"
   },
   {
+    "title": "add vpc endpoint for argo in tools",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/35",
+    "repo": "cloud9-tf",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-03-25T14:38:59Z",
+    "created_at": "2026-03-25T02:19:16Z"
+  },
+  {
     "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
     "url": "https://github.com/Apixio/ml-qamodel/pull/51",
     "repo": "ml-qamodel",
@@ -1448,6 +1544,14 @@
     "created_at": "2026-03-02T22:12:39Z"
   },
   {
+    "title": "NLB for argocd mgmt-prd",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/34",
+    "repo": "cloud9-tf",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-03-25T01:56:40Z",
+    "created_at": "2026-03-24T22:18:57Z"
+  },
+  {
     "title": "Fix: harden fine-tuning job and manage serving endpoint permissions",
     "url": "https://github.com/Apixio/ml-qamodel/pull/49",
     "repo": "ml-qamodel",
@@ -1470,6 +1574,14 @@
     "author": "gtang-apixio",
     "merged_at": "2026-03-24T22:27:17Z",
     "created_at": "2026-03-24T20:31:15Z"
+  },
+  {
+    "title": "NLB for argocd mgmt-stg",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/33",
+    "repo": "cloud9-tf",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-03-24T22:16:02Z",
+    "created_at": "2026-03-24T22:06:40Z"
   },
   {
     "title": "Kaiser MA coverage dbt model",
@@ -1656,12 +1768,28 @@
     "created_at": "2026-03-16T23:55:06Z"
   },
   {
+    "title": "Al fix tools dev acct number",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/32",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-23T21:58:23Z",
+    "created_at": "2026-03-23T19:36:46Z"
+  },
+  {
     "title": "admin commands for manual email addition for user",
     "url": "https://github.com/Apixio/cloud9/pull/309",
     "repo": "cloud9",
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-23T21:05:53Z",
     "created_at": "2026-03-19T21:01:34Z"
+  },
+  {
+    "title": "Al add port 8443",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/31",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-23T19:08:12Z",
+    "created_at": "2026-03-23T13:00:00Z"
   },
   {
     "title": "CLOUD-4445: Add S3 uiassets policies to crest-fe IAM roles",
@@ -1718,6 +1846,14 @@
     "author": "miked-datavant",
     "merged_at": "2026-03-23T13:07:53Z",
     "created_at": "2026-03-20T17:11:48Z"
+  },
+  {
+    "title": "Al add port 8443",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/30",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-23T12:44:31Z",
+    "created_at": "2026-03-23T12:39:56Z"
   },
   {
     "title": "Al fix service",
@@ -1790,6 +1926,22 @@
     "author": "Ming-Apixio",
     "merged_at": "2026-03-20T19:14:11Z",
     "created_at": "2026-03-20T18:09:14Z"
+  },
+  {
+    "title": "Al add port 8443",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/29",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-20T18:57:51Z",
+    "created_at": "2026-03-20T18:53:29Z"
+  },
+  {
+    "title": "Al add port 8443",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/28",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-20T18:29:16Z",
+    "created_at": "2026-03-20T17:23:34Z"
   },
   {
     "title": "Fix gender being passed in the DOB.",
@@ -1894,6 +2046,14 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-19T23:18:18Z",
     "created_at": "2026-03-19T23:17:38Z"
+  },
+  {
+    "title": "Al fix sg rules",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/27",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-19T23:18:07Z",
+    "created_at": "2026-03-19T14:57:49Z"
   },
   {
     "title": "Dev -> main",
@@ -2112,12 +2272,28 @@
     "created_at": "2026-03-18T21:05:53Z"
   },
   {
+    "title": "Al fix vpc endpoint",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/25",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-18T20:32:51Z",
+    "created_at": "2026-03-18T20:29:30Z"
+  },
+  {
     "title": "EN-46829: pass in accepted code dos instead of None",
     "url": "https://github.com/Apixio/mono/pull/3628",
     "repo": "mono",
     "author": "emoreno-apixio",
     "merged_at": "2026-03-18T20:28:45Z",
     "created_at": "2026-03-12T00:10:12Z"
+  },
+  {
+    "title": "Al reenable tls",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/23",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-18T20:02:48Z",
+    "created_at": "2026-03-18T16:48:48Z"
   },
   {
     "title": "removed OKTA idp provider",
@@ -2158,6 +2334,14 @@
     "author": "vmourzenok-dv",
     "merged_at": "2026-03-18T16:27:24Z",
     "created_at": "2026-03-18T15:08:18Z"
+  },
+  {
+    "title": "Al reenable tls",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/22",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-18T15:54:05Z",
+    "created_at": "2026-03-17T18:45:34Z"
   },
   {
     "title": "fix: display slack channel name not id",
@@ -2248,6 +2432,14 @@
     "created_at": "2026-03-17T18:03:23Z"
   },
   {
+    "title": "Al reenable tls",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/21",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-17T18:23:57Z",
+    "created_at": "2026-03-17T13:31:23Z"
+  },
+  {
     "title": "En 46715 remove npi cluster",
     "url": "https://github.com/Apixio/mono/pull/3633",
     "repo": "mono",
@@ -2286,14 +2478,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T22:54:16Z",
     "created_at": "2026-03-16T22:52:44Z"
-  },
-  {
-    "title": "Archon extract fix",
-    "url": "https://github.com/Apixio/di-platform/pull/276",
-    "repo": "di-platform",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-03-16T21:52:29Z",
-    "created_at": "2026-03-16T21:52:15Z"
   },
   {
     "title": "Improved ACL proxy logging + bugfix",
@@ -2446,6 +2630,22 @@
     "author": "alanli-datavant",
     "merged_at": "2026-03-12T16:34:09Z",
     "created_at": "2026-03-12T15:06:12Z"
+  },
+  {
+    "title": "Al reenable tls",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/20",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-12T16:09:55Z",
+    "created_at": "2026-03-12T15:50:19Z"
+  },
+  {
+    "title": "Al reenable tls",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/19",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-12T15:43:14Z",
+    "created_at": "2026-03-12T15:29:07Z"
   },
   {
     "title": "CLOUD-3076: fixed invalid args error to register app env's before deploy",
@@ -2792,14 +2992,6 @@
     "created_at": "2026-02-26T22:48:57Z"
   },
   {
-    "title": "fix: removed duplicate release flow",
-    "url": "https://github.com/Apixio/terraform-aws-sqs/pull/7",
-    "repo": "terraform-aws-sqs",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-06T18:49:07Z",
-    "created_at": "2026-03-06T17:38:54Z"
-  },
-  {
     "title": "feat: import data-ml-platform-cost-usage SPN into IaC (PLT-4065)",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/283",
     "repo": "databricks-ops-infra",
@@ -2872,6 +3064,14 @@
     "created_at": "2026-03-04T21:50:33Z"
   },
   {
+    "title": "AL: re-enable TLS and HTTPS",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/18",
+    "repo": "cloud9-tf",
+    "author": "adalundhe",
+    "merged_at": "2026-03-05T04:32:47Z",
+    "created_at": "2026-03-05T03:37:09Z"
+  },
+  {
     "title": "CLOUD-1820: migrate apixio-s3-access-logs-oregon to terraform",
     "url": "https://github.com/Apixio/platform-backend-tf/pull/21",
     "repo": "platform-backend-tf",
@@ -2904,22 +3104,6 @@
     "created_at": "2026-03-04T22:48:12Z"
   },
   {
-    "title": "fix: added/updated go root files",
-    "url": "https://github.com/Apixio/terraform-aws-sqs/pull/6",
-    "repo": "terraform-aws-sqs",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-04T22:49:18Z",
-    "created_at": "2026-03-04T22:47:21Z"
-  },
-  {
-    "title": "fix: added root main go file to support script workflow",
-    "url": "https://github.com/Apixio/terraform-aws-vpc-security-group/pull/5",
-    "repo": "terraform-aws-vpc-security-group",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-04T22:42:39Z",
-    "created_at": "2026-03-04T22:37:33Z"
-  },
-  {
     "title": "EN-46767: Bulk Search optimizations",
     "url": "https://github.com/Apixio/mono/pull/3613",
     "repo": "mono",
@@ -2950,53 +3134,5 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-04T20:12:07Z",
     "created_at": "2026-03-03T20:37:04Z"
-  },
-  {
-    "title": "add policies for dev and etl-ra-prd",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/276",
-    "repo": "databricks-ops-infra",
-    "author": "Ming-Apixio",
-    "merged_at": "2026-03-04T18:49:04Z",
-    "created_at": "2026-03-04T17:59:02Z"
-  },
-  {
-    "title": "chore: remove stale workflow files",
-    "url": "https://github.com/Apixio/terraform-aws-vpc-security-group/pull/4",
-    "repo": "terraform-aws-vpc-security-group",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-04T18:49:01Z",
-    "created_at": "2026-03-04T17:59:35Z"
-  },
-  {
-    "title": "chore: remove stale workflow files",
-    "url": "https://github.com/Apixio/terraform-aws-dynamodb-table/pull/3",
-    "repo": "terraform-aws-dynamodb-table",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-04T18:42:53Z",
-    "created_at": "2026-03-04T18:00:19Z"
-  },
-  {
-    "title": "create new compute policy for docsearch",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/275",
-    "repo": "databricks-ops-infra",
-    "author": "MingFang-datavant",
-    "merged_at": "2026-03-04T17:40:10Z",
-    "created_at": "2026-03-03T19:33:22Z"
-  },
-  {
-    "title": "User Manager feature Dao code",
-    "url": "https://github.com/Apixio/mono/pull/3616",
-    "repo": "mono",
-    "author": "hithaishi-apixio",
-    "merged_at": "2026-03-04T17:25:56Z",
-    "created_at": "2026-03-04T16:54:33Z"
-  },
-  {
-    "title": "feat: Add datavant application type",
-    "url": "https://github.com/Apixio/cloud9/pull/298",
-    "repo": "cloud9",
-    "author": "kealanmurphy-dv",
-    "merged_at": "2026-03-04T15:23:40Z",
-    "created_at": "2026-03-04T14:49:17Z"
   }
 ]
