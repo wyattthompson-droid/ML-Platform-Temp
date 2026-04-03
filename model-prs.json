@@ -32,6 +32,14 @@
     "created_at": "2026-03-31T22:57:40Z"
   },
   {
+    "title": "SCIK-2554 training optimization and experiment design",
+    "url": "https://github.com/Apixio/ml-df-matching/pull/8",
+    "repo": "ml-df-matching",
+    "author": "diegoramallo-apixio",
+    "merged_at": "2026-04-01T13:30:57Z",
+    "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
     "title": "Successfully served T5 model through job",
     "url": "https://github.com/Apixio/ml-qamodel/pull/54",
     "repo": "ml-qamodel",
