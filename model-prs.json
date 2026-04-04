@@ -1,5 +1,29 @@
 [
   {
+    "title": "KP ACA coverage model",
+    "url": "https://github.com/Apixio/di-platform/pull/328",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-04-03T21:53:56Z",
+    "created_at": "2026-04-03T21:44:34Z"
+  },
+  {
+    "title": "PLT-4376 Add model registry permissions",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T21:40:37Z",
+    "created_at": "2026-04-03T21:36:49Z"
+  },
+  {
+    "title": "kp aca coverage model",
+    "url": "https://github.com/Apixio/di-platform/pull/327",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-04-03T21:31:55Z",
+    "created_at": "2026-04-03T21:21:20Z"
+  },
+  {
     "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
     "url": "https://github.com/Apixio/ml-infdate/pull/43",
     "repo": "ml-infdate",
@@ -96,20 +120,20 @@
     "created_at": "2026-03-30T18:53:14Z"
   },
   {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
-  },
-  {
     "title": "adding documents models",
     "url": "https://github.com/Apixio/di-platform/pull/299",
     "repo": "di-platform",
     "author": "agopishetty-apixio",
     "merged_at": "2026-03-27T16:02:05Z",
     "created_at": "2026-03-27T15:54:09Z"
+  },
+  {
+    "title": "PLT-4183: add per-document ML predictions endpoint to databricks-svc",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1390",
+    "repo": "apx-signalmanager",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-03-26T20:36:44Z",
+    "created_at": "2026-03-23T20:31:34Z"
   },
   {
     "title": "Fix submit button logic for no-HCC-reject charts with predictions",
