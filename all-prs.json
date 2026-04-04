@@ -3062,21 +3062,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-05T19:13:26Z",
     "created_at": "2026-03-04T21:50:33Z"
-  },
-  {
-    "title": "AL: re-enable TLS and HTTPS",
-    "url": "https://github.com/Apixio/cloud9-tf/pull/18",
-    "repo": "cloud9-tf",
-    "author": "adalundhe",
-    "merged_at": "2026-03-05T04:32:47Z",
-    "created_at": "2026-03-05T03:37:09Z"
-  },
-  {
-    "title": "CLOUD-1820: migrate apixio-s3-access-logs-oregon to terraform",
-    "url": "https://github.com/Apixio/platform-backend-tf/pull/21",
-    "repo": "platform-backend-tf",
-    "author": "dmai-apixio",
-    "merged_at": "2026-03-05T03:01:27Z",
-    "created_at": "2026-03-03T21:17:22Z"
   }
 ]
