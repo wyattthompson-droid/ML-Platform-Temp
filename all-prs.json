@@ -3006,37 +3006,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-06T18:51:29Z",
     "created_at": "2026-02-26T22:48:57Z"
-  },
-  {
-    "title": "feat: import data-ml-platform-cost-usage SPN into IaC (PLT-4065)",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/283",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-03-06T18:19:13Z",
-    "created_at": "2026-03-06T17:24:26Z"
-  },
-  {
-    "title": "fix: include USE_CATALOG and BROWSE in ontology catalog grants (PLT-4067)",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/282",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-03-06T17:05:16Z",
-    "created_at": "2026-03-06T16:56:49Z"
-  },
-  {
-    "title": "AL: add deploy identity verification",
-    "url": "https://github.com/Apixio/cloud9/pull/295",
-    "repo": "cloud9",
-    "author": "adalundhe",
-    "merged_at": "2026-03-06T16:43:56Z",
-    "created_at": "2026-03-02T22:17:56Z"
-  },
-  {
-    "title": "Config changes",
-    "url": "https://github.com/Apixio/apx-signalmanager/pull/1386",
-    "repo": "apx-signalmanager",
-    "author": "ribrayev-apixio",
-    "merged_at": "2026-03-06T16:15:03Z",
-    "created_at": "2026-03-06T15:41:43Z"
   }
 ]
