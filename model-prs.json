@@ -350,13 +350,5 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-09T17:28:16Z",
     "created_at": "2026-03-06T19:59:16Z"
-  },
-  {
-    "title": "PLT-3698: DBU Spend Analysis + CYA Asset Claim Report",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/271",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-03-06T18:51:29Z",
-    "created_at": "2026-02-26T22:48:57Z"
   }
 ]
