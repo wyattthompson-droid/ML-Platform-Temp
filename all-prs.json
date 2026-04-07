@@ -1,5 +1,101 @@
 [
   {
+    "title": "Modify claimstype type to string",
+    "url": "https://github.com/Apixio/python-scripts/pull/1952",
+    "repo": "python-scripts",
+    "author": "jkaur-apixio",
+    "merged_at": "2026-04-07T02:16:45Z",
+    "created_at": "2026-04-01T20:18:15Z"
+  },
+  {
+    "title": "AL: add enterprise install callback",
+    "url": "https://github.com/Apixio/cloud9/pull/325",
+    "repo": "cloud9",
+    "author": "adalundhe",
+    "merged_at": "2026-04-07T01:09:23Z",
+    "created_at": "2026-04-06T17:43:20Z"
+  },
+  {
+    "title": "change claimsType type",
+    "url": "https://github.com/Apixio/python-scripts/pull/1954",
+    "repo": "python-scripts",
+    "author": "gdeshpande-apixio",
+    "merged_at": "2026-04-06T22:37:16Z",
+    "created_at": "2026-04-06T22:24:53Z"
+  },
+  {
+    "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/326",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-06T22:36:20Z",
+    "created_at": "2026-04-03T15:43:44Z"
+  },
+  {
+    "title": "fix: remediate canonical_exp_prd grant drift",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/327",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-06T22:29:37Z",
+    "created_at": "2026-04-03T16:02:13Z"
+  },
+  {
+    "title": "CLOUD-5197: feat: extend Port.io AWS integration to all 22 commercial accounts",
+    "url": "https://github.com/Apixio/port-tf/pull/25",
+    "repo": "port-tf",
+    "author": "mcln-dv",
+    "merged_at": "2026-04-06T21:50:56Z",
+    "created_at": "2026-04-02T16:14:20Z"
+  },
+  {
+    "title": "Add teammates to RA group",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/329",
+    "repo": "databricks-ops-infra",
+    "author": "MHova",
+    "merged_at": "2026-04-06T21:33:44Z",
+    "created_at": "2026-04-06T21:06:03Z"
+  },
+  {
+    "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/146",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-06T20:46:04Z",
+    "created_at": "2026-04-06T19:49:56Z"
+  },
+  {
+    "title": "Remove imoAuth and truCode configuration",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1664",
+    "repo": "apx-sessionmanager",
+    "author": "bilagan-apixio",
+    "merged_at": "2026-04-06T20:15:04Z",
+    "created_at": "2026-04-01T19:12:16Z"
+  },
+  {
+    "title": "Consul key update value",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/9",
+    "repo": "chase-center-fe",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-04-06T19:59:41Z",
+    "created_at": "2026-04-06T19:59:23Z"
+  },
+  {
+    "title": "Release 5.32.17",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4285",
+    "repo": "apx-launchpad",
+    "author": "gtang-apixio",
+    "merged_at": "2026-04-06T19:30:47Z",
+    "created_at": "2026-04-06T17:33:51Z"
+  },
+  {
+    "title": "[CN] Ensure congrats msg covers whole screen",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4262",
+    "repo": "apx-launchpad",
+    "author": "jkaur-apixio",
+    "merged_at": "2026-04-06T19:26:10Z",
+    "created_at": "2026-03-31T16:51:10Z"
+  },
+  {
     "title": "[READY] DI 3043 - Add internal_external flag for kaiser medical claims and repoint dev validated view",
     "url": "https://github.com/Apixio/di-platform/pull/330",
     "repo": "di-platform",
@@ -160,22 +256,6 @@
     "created_at": "2026-04-03T18:17:40Z"
   },
   {
-    "title": "PLT-4376 Fix Codeowners",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/76",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T22:39:02Z",
-    "created_at": "2026-04-03T22:38:21Z"
-  },
-  {
-    "title": "PLT-4376 Add github step summary output",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/75",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T22:07:57Z",
-    "created_at": "2026-04-03T21:44:39Z"
-  },
-  {
     "title": "KP ACA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/328",
     "repo": "di-platform",
@@ -190,14 +270,6 @@
     "author": "dmytrobondarchuk-datavant",
     "merged_at": "2026-04-03T21:48:20Z",
     "created_at": "2026-04-03T21:46:34Z"
-  },
-  {
-    "title": "PLT-4376 Add model registry permissions",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T21:40:37Z",
-    "created_at": "2026-04-03T21:36:49Z"
   },
   {
     "title": "only cleanup staged rows for docs that succeed",
@@ -232,52 +304,12 @@
     "created_at": "2026-04-03T20:30:10Z"
   },
   {
-    "title": "Update README and CLAUDE.md",
-    "url": "https://github.com/Apixio/ml-infdate/pull/44",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-03T20:23:43Z",
-    "created_at": "2026-04-03T20:14:46Z"
-  },
-  {
-    "title": "PLT-4376 Tag permissions",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/73",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T20:16:21Z",
-    "created_at": "2026-04-03T20:10:51Z"
-  },
-  {
     "title": "add realm api user for mgmt-stg",
     "url": "https://github.com/Apixio/cloud9-tf/pull/36",
     "repo": "cloud9-tf",
     "author": "jdonnelly-apixio",
     "merged_at": "2026-04-03T19:18:16Z",
     "created_at": "2026-04-03T18:20:59Z"
-  },
-  {
-    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
-    "url": "https://github.com/Apixio/ml-infdate/pull/43",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-03T18:10:25Z",
-    "created_at": "2026-04-03T17:59:29Z"
-  },
-  {
-    "title": "PLT-4376 Permissions and module refactor for ARNs",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/72",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T17:33:02Z",
-    "created_at": "2026-04-03T17:28:37Z"
-  },
-  {
-    "title": "PLT-4376 Scope KMS permissions to specific key ARNs",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/71",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T17:15:10Z",
-    "created_at": "2026-04-03T17:12:28Z"
   },
   {
     "title": "Archon slack notification 20260403",
@@ -288,76 +320,12 @@
     "created_at": "2026-04-03T16:42:31Z"
   },
   {
-    "title": "PLT-4376 Fix network SG S3 access",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/70",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T16:45:46Z",
-    "created_at": "2026-04-03T16:43:02Z"
-  },
-  {
     "title": "feat: GPU fallback inference for event-driven MeatLAAT",
     "url": "https://github.com/Apixio/ml-retrosp/pull/138",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-04-03T16:33:19Z",
     "created_at": "2026-04-02T23:08:24Z"
-  },
-  {
-    "title": "PLT-4376 sgmk dev",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/69",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T16:27:05Z",
-    "created_at": "2026-04-03T16:23:04Z"
-  },
-  {
-    "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T16:16:34Z",
-    "created_at": "2026-04-03T16:13:01Z"
-  },
-  {
-    "title": "PLT-4376 sgmk dev",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/67",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T15:49:17Z",
-    "created_at": "2026-04-03T15:42:11Z"
-  },
-  {
-    "title": "Add SageMaker job actions to execution role base policy",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/66",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T15:25:39Z",
-    "created_at": "2026-04-03T15:22:19Z"
-  },
-  {
-    "title": "PLT-4376 Allow execution roles to pass themselves to SageMaker",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/65",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T15:10:41Z",
-    "created_at": "2026-04-03T15:08:06Z"
-  },
-  {
-    "title": "Allow IRSA role to assume lando-readonly in member accounts",
-    "url": "https://github.com/Apixio/lando-tf/pull/12",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-03T02:42:22Z",
-    "created_at": "2026-04-03T02:40:25Z"
-  },
-  {
-    "title": "Merge dev into main",
-    "url": "https://github.com/Apixio/ml-icddet/pull/98",
-    "repo": "ml-icddet",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-04-03T01:11:52Z",
-    "created_at": "2026-04-01T23:14:32Z"
   },
   {
     "title": "datavalidation new date format checks added",
@@ -368,36 +336,12 @@
     "created_at": "2026-04-03T00:25:16Z"
   },
   {
-    "title": "PLT-4376 Sagemaker role binding",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/64",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T23:04:19Z",
-    "created_at": "2026-04-02T22:59:26Z"
-  },
-  {
-    "title": "Fix IAM role description - replace em dash with hyphen",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/63",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T22:43:02Z",
-    "created_at": "2026-04-02T22:39:22Z"
-  },
-  {
     "title": "Critical Dependency upgrade - simple-git",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4249",
     "repo": "apx-launchpad",
     "author": "dblattner-apixio",
     "merged_at": "2026-04-02T22:19:58Z",
     "created_at": "2026-03-24T23:40:03Z"
-  },
-  {
-    "title": "PLT-4376 Add functional execution roles with per-role extra policy support",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/62",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T21:52:29Z",
-    "created_at": "2026-04-02T21:43:58Z"
   },
   {
     "title": "EN-47126 support multiple downloads",
@@ -424,14 +368,6 @@
     "created_at": "2026-04-02T20:06:47Z"
   },
   {
-    "title": "DsPy finetuning code",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/56",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-04-02T20:40:40Z",
-    "created_at": "2026-04-02T20:40:27Z"
-  },
-  {
     "title": "dev -> main",
     "url": "https://github.com/Apixio/ml-retrosp/pull/137",
     "repo": "ml-retrosp",
@@ -440,36 +376,12 @@
     "created_at": "2026-04-02T20:06:24Z"
   },
   {
-    "title": "PLT-4376 Fix studio dev to use app-dev VPC and correct network values",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/61",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T20:09:46Z",
-    "created_at": "2026-04-02T20:07:37Z"
-  },
-  {
     "title": "add subtraction table to remainder of retro workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/136",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-04-02T20:06:06Z",
     "created_at": "2026-04-02T20:04:31Z"
-  },
-  {
-    "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/37",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-02T20:05:36Z",
-    "created_at": "2026-03-25T14:02:59Z"
-  },
-  {
-    "title": "PLT-4376 Switch to IAM for now",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/60",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T20:02:35Z",
-    "created_at": "2026-04-02T19:57:52Z"
   },
   {
     "title": "PLT-4056 add daqari SLA monitoring to databricks",
@@ -488,14 +400,6 @@
     "created_at": "2026-04-02T15:33:52Z"
   },
   {
-    "title": "PLT-4376 Plan studio",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/59",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T19:35:14Z",
-    "created_at": "2026-04-02T17:14:53Z"
-  },
-  {
     "title": "added is billable to icd project creation (#4251)",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4273",
     "repo": "apx-launchpad",
@@ -510,14 +414,6 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-04-02T19:11:40Z",
     "created_at": "2026-04-01T01:38:09Z"
-  },
-  {
-    "title": "Auto release PR 1.1.106",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/891",
-    "repo": "apx-workqueue",
-    "author": "apixio-readonly",
-    "merged_at": "2026-04-02T18:53:37Z",
-    "created_at": "2026-04-02T18:48:57Z"
   },
   {
     "title": "Change create flow to use \"next\" instead of \"save\"",
@@ -544,22 +440,6 @@
     "created_at": "2026-04-02T17:17:18Z"
   },
   {
-    "title": "En 46632 token redis a",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/890",
-    "repo": "apx-workqueue",
-    "author": "skonduru-apixio",
-    "merged_at": "2026-04-02T18:23:27Z",
-    "created_at": "2026-04-02T18:13:31Z"
-  },
-  {
-    "title": "feat: add HTTPS listener with wildcard cert and HTTP→HTTPS redirect",
-    "url": "https://github.com/Apixio/lando-tf/pull/11",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T18:15:48Z",
-    "created_at": "2026-04-02T18:13:06Z"
-  },
-  {
     "title": "RMBU Alerting ",
     "url": "https://github.com/Apixio/ml-daqari/pull/57",
     "repo": "ml-daqari",
@@ -576,14 +456,6 @@
     "created_at": "2026-04-02T16:12:52Z"
   },
   {
-    "title": "fix: name target group lando-api-k8s-stg for elb-inject controller",
-    "url": "https://github.com/Apixio/lando-tf/pull/10",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T16:21:57Z",
-    "created_at": "2026-04-02T16:18:40Z"
-  },
-  {
     "title": "Adding api calls for crest",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4268",
     "repo": "apx-launchpad",
@@ -598,14 +470,6 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-04-02T16:07:51Z",
     "created_at": "2026-04-02T15:57:26Z"
-  },
-  {
-    "title": "PLT-4376 Use app-dev networks",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/58",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T15:54:46Z",
-    "created_at": "2026-04-02T15:42:34Z"
   },
   {
     "title": "Remove pds filter for new loader",
@@ -640,36 +504,12 @@
     "created_at": "2026-03-31T16:51:27Z"
   },
   {
-    "title": "feat: add ElastiCache Redis for lando STG Celery broker",
-    "url": "https://github.com/Apixio/lando-tf/pull/9",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T03:09:56Z",
-    "created_at": "2026-04-02T03:06:56Z"
-  },
-  {
-    "title": "feat: add Vault roles/policies and ElastiCache Redis for lando STG",
-    "url": "https://github.com/Apixio/lando-tf/pull/8",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T03:02:42Z",
-    "created_at": "2026-04-02T02:20:14Z"
-  },
-  {
     "title": "Restore Event-driven",
     "url": "https://github.com/Apixio/ml-retrosp/pull/132",
     "repo": "ml-retrosp",
     "author": "mwebb-datavant",
     "merged_at": "2026-04-02T00:29:37Z",
     "created_at": "2026-03-30T17:09:19Z"
-  },
-  {
-    "title": "Sync/dev main",
-    "url": "https://github.com/Apixio/ml-icddet/pull/97",
-    "repo": "ml-icddet",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-04-01T23:13:44Z",
-    "created_at": "2026-04-01T22:36:31Z"
   },
   {
     "title": "[READY] make dev dataflow orchestrator to run every hour",
@@ -694,14 +534,6 @@
     "author": "gkrishnan-apixio",
     "merged_at": "2026-04-01T22:24:31Z",
     "created_at": "2026-04-01T22:00:02Z"
-  },
-  {
-    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
-    "url": "https://github.com/Apixio/ml-icddet/pull/95",
-    "repo": "ml-icddet",
-    "author": "wchang-apixio",
-    "merged_at": "2026-04-01T22:07:50Z",
-    "created_at": "2026-03-31T17:07:36Z"
   },
   {
     "title": "PLT-4376 Try Sagemaker",
@@ -736,20 +568,12 @@
     "created_at": "2026-04-01T19:15:59Z"
   },
   {
-    "title": "Add other applies",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/57",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-01T21:10:00Z",
-    "created_at": "2026-04-01T20:47:44Z"
-  },
-  {
-    "title": "Fix ECR apply",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/56",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-01T20:11:36Z",
-    "created_at": "2026-04-01T19:54:21Z"
+    "title": "chore: remove redundant mappings",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/8",
+    "repo": "chase-center-fe",
+    "author": "aashokkumar-apixio",
+    "merged_at": "2026-04-01T20:37:02Z",
+    "created_at": "2026-04-01T20:35:31Z"
   },
   {
     "title": "PLT-4221 - Add DBT token rotation for data-integrations-dbt-dev",
@@ -774,22 +598,6 @@
     "author": "smylavarapu-apixio",
     "merged_at": "2026-04-01T19:48:57Z",
     "created_at": "2026-04-01T19:46:11Z"
-  },
-  {
-    "title": "Add IAM apply",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/55",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-01T19:16:48Z",
-    "created_at": "2026-04-01T19:02:27Z"
-  },
-  {
-    "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-01T18:11:57Z",
-    "created_at": "2026-03-31T22:57:40Z"
   },
   {
     "title": "Ignore project mapping with IGNORED state",
@@ -846,6 +654,14 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-04-01T00:43:56Z",
     "created_at": "2026-03-25T20:51:29Z"
+  },
+  {
+    "title": "feat: ambassador mappings for frontend",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/7",
+    "repo": "chase-center-fe",
+    "author": "aashokkumar-apixio",
+    "merged_at": "2026-03-31T22:51:50Z",
+    "created_at": "2026-03-31T20:58:30Z"
   },
   {
     "title": "EN-47388: Add ml-nexus-pipeline service principal",
@@ -952,46 +768,6 @@
     "created_at": "2026-03-31T15:47:32Z"
   },
   {
-    "title": "Bump cryptography from 41.0.3 to 46.0.6",
-    "url": "https://github.com/Apixio/ml-icddet/pull/93",
-    "repo": "ml-icddet",
-    "author": "dependabot[bot]",
-    "merged_at": "2026-03-31T18:32:04Z",
-    "created_at": "2026-03-28T09:50:27Z"
-  },
-  {
-    "title": "Bump requests from 2.32.4 to 2.33.0",
-    "url": "https://github.com/Apixio/ml-icddet/pull/91",
-    "repo": "ml-icddet",
-    "author": "dependabot[bot]",
-    "merged_at": "2026-03-31T18:30:52Z",
-    "created_at": "2026-03-26T16:30:35Z"
-  },
-  {
-    "title": "Bump pygments from 2.19.2 to 2.20.0",
-    "url": "https://github.com/Apixio/ml-icddet/pull/94",
-    "repo": "ml-icddet",
-    "author": "dependabot[bot]",
-    "merged_at": "2026-03-31T18:30:19Z",
-    "created_at": "2026-03-30T19:22:06Z"
-  },
-  {
-    "title": "Bump sqlparse from 0.5.3 to 0.5.4",
-    "url": "https://github.com/Apixio/ml-icddet/pull/87",
-    "repo": "ml-icddet",
-    "author": "dependabot[bot]",
-    "merged_at": "2026-03-31T18:29:08Z",
-    "created_at": "2026-02-13T18:53:21Z"
-  },
-  {
-    "title": "Scik 2595 cleandev",
-    "url": "https://github.com/Apixio/ml-icddet/pull/92",
-    "repo": "ml-icddet",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-03-31T18:27:42Z",
-    "created_at": "2026-03-27T22:32:07Z"
-  },
-  {
     "title": "Release 5.32.15",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4256",
     "repo": "apx-launchpad",
@@ -1038,30 +814,6 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-03-31T16:07:05Z",
     "created_at": "2026-03-30T17:01:26Z"
-  },
-  {
-    "title": "Successfully served T5 model through job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/54",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-03-30T22:03:01Z",
-    "created_at": "2026-03-30T22:02:52Z"
-  },
-  {
-    "title": "Remove create_empty_output_df: v1 leftover no longer used",
-    "url": "https://github.com/Apixio/ml-infdate/pull/42",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-30T20:22:41Z",
-    "created_at": "2026-03-30T20:13:48Z"
-  },
-  {
-    "title": "Add empty input short-circuit to scoring pipeline steps",
-    "url": "https://github.com/Apixio/ml-infdate/pull/40",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-30T20:01:00Z",
-    "created_at": "2026-03-30T18:53:14Z"
   },
   {
     "title": "PLT-4391: Fix IAM tag validation error",
@@ -1192,30 +944,6 @@
     "created_at": "2026-03-26T16:59:14Z"
   },
   {
-    "title": "Stg infrastructure",
-    "url": "https://github.com/Apixio/lando-tf/pull/4",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T22:47:23Z",
-    "created_at": "2026-03-27T21:06:22Z"
-  },
-  {
-    "title": "updating stuff",
-    "url": "https://github.com/Apixio/lando-tf/pull/6",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:38:09Z",
-    "created_at": "2026-03-27T22:36:55Z"
-  },
-  {
-    "title": "adding stg workspace",
-    "url": "https://github.com/Apixio/lando-tf/pull/5",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:21:55Z",
-    "created_at": "2026-03-27T22:19:27Z"
-  },
-  {
     "title": "fixing ownership for removed team",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/124",
     "repo": "tfc-bootstrap",
@@ -1240,20 +968,12 @@
     "created_at": "2026-03-27T18:49:16Z"
   },
   {
-    "title": "Update CODEOWNERS",
-    "url": "https://github.com/Apixio/lando-tf/pull/3",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T20:43:21Z",
-    "created_at": "2026-03-27T20:42:10Z"
-  },
-  {
-    "title": "Remove SAST workflow",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/889",
-    "repo": "apx-workqueue",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-03-27T20:32:51Z",
-    "created_at": "2026-03-27T18:45:01Z"
+    "title": "Cloud9 config updates 2",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/6",
+    "repo": "chase-center-fe",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-03-27T20:25:20Z",
+    "created_at": "2026-03-27T20:00:08Z"
   },
   {
     "title": "EN-45207: DOS Extraction Admin config",
@@ -1286,6 +1006,22 @@
     "author": "agopishetty-apixio",
     "merged_at": "2026-03-27T19:16:07Z",
     "created_at": "2026-03-27T19:11:25Z"
+  },
+  {
+    "title": "Remove SAST workflow",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1663",
+    "repo": "apx-sessionmanager",
+    "author": "deckardmehdy-apixio",
+    "merged_at": "2026-03-27T18:47:04Z",
+    "created_at": "2026-03-27T18:40:35Z"
+  },
+  {
+    "title": "Cloud9 serviceAccount config updates",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/5",
+    "repo": "chase-center-fe",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-03-27T18:16:18Z",
+    "created_at": "2026-03-27T18:15:02Z"
   },
   {
     "title": "feat: add terraform-snowflake-admin module repository",
@@ -1664,22 +1400,6 @@
     "created_at": "2026-02-26T00:47:43Z"
   },
   {
-    "title": "Auto release PR 1.1.105",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/888",
-    "repo": "apx-workqueue",
-    "author": "apixio-readonly",
-    "merged_at": "2026-03-25T22:01:52Z",
-    "created_at": "2026-03-25T21:42:01Z"
-  },
-  {
-    "title": "En 46632 token redis a",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/886",
-    "repo": "apx-workqueue",
-    "author": "pparasnis-apixio",
-    "merged_at": "2026-03-25T21:16:44Z",
-    "created_at": "2026-03-10T19:25:04Z"
-  },
-  {
     "title": "fix: route admin set-owner through admin endpoint",
     "url": "https://github.com/Apixio/cloud9/pull/316",
     "repo": "cloud9",
@@ -1718,6 +1438,14 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-25T20:15:42Z",
     "created_at": "2026-03-25T20:12:35Z"
+  },
+  {
+    "title": "EN-47116: Bronze ingestion pipeline - separate MA/ACA tables with overwrite strategy",
+    "url": "https://github.com/Apixio/ml-nexus/pull/3",
+    "repo": "ml-nexus",
+    "author": "prashantkadam-apixio",
+    "merged_at": "2026-03-25T19:52:33Z",
+    "created_at": "2026-03-23T21:57:28Z"
   },
   {
     "title": "En 46597 view settings",
@@ -1824,28 +1552,12 @@
     "created_at": "2026-03-25T02:19:16Z"
   },
   {
-    "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/51",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T04:53:30Z",
-    "created_at": "2026-03-25T04:53:06Z"
-  },
-  {
     "title": "Skip compute on empty batches for rmbu and healthsource",
     "url": "https://github.com/Apixio/ml-daqari/pull/53",
     "repo": "ml-daqari",
     "author": "anuccio-apixio",
     "merged_at": "2026-03-25T04:19:55Z",
     "created_at": "2026-03-23T22:11:51Z"
-  },
-  {
-    "title": "Fix: apply serving endpoint permissions only on creation",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/50",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T04:19:19Z",
-    "created_at": "2026-03-25T04:16:22Z"
   },
   {
     "title": "demographics validation",
@@ -1862,22 +1574,6 @@
     "author": "kmcgovern-apixio",
     "merged_at": "2026-03-25T01:56:40Z",
     "created_at": "2026-03-24T22:18:57Z"
-  },
-  {
-    "title": "Fix: harden fine-tuning job and manage serving endpoint permissions",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/49",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-24T23:56:17Z",
-    "created_at": "2026-03-24T23:55:33Z"
-  },
-  {
-    "title": "Fix: harden fine-tuning job and manage serving endpoint via DAB",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/48",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-24T22:32:55Z",
-    "created_at": "2026-03-24T22:19:42Z"
   },
   {
     "title": "Re-enable Doc Search V1 in Nexus ",
@@ -1904,28 +1600,12 @@
     "created_at": "2026-03-24T17:45:56Z"
   },
   {
-    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/36",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-24T21:29:05Z",
-    "created_at": "2026-03-24T20:02:37Z"
-  },
-  {
     "title": "EN-45206: DOS Bulk Search support",
     "url": "https://github.com/Apixio/mono/pull/3639",
     "repo": "mono",
     "author": "jamesnakashian-apixio",
     "merged_at": "2026-03-24T21:16:25Z",
     "created_at": "2026-03-19T15:37:42Z"
-  },
-  {
-    "title": "Scik 2563 remap",
-    "url": "https://github.com/Apixio/ml-icddet/pull/90",
-    "repo": "ml-icddet",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-03-24T20:53:49Z",
-    "created_at": "2026-03-24T17:04:12Z"
   },
   {
     "title": "Demographic slack notification",
@@ -1960,14 +1640,6 @@
     "created_at": "2026-03-20T22:17:53Z"
   },
   {
-    "title": "fix permissions on serving endpoint and write folder",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/47",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-24T20:04:41Z",
-    "created_at": "2026-03-24T20:01:06Z"
-  },
-  {
     "title": "CLOUD-5136: Add clinical-data-platform project",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/114",
     "repo": "tfc-bootstrap",
@@ -1982,14 +1654,6 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-24T19:30:41Z",
     "created_at": "2026-03-24T02:55:24Z"
-  },
-  {
-    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
-    "url": "https://github.com/Apixio/ml-infdate/pull/32",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-24T18:20:28Z",
-    "created_at": "2026-03-18T18:12:16Z"
   },
   {
     "title": "Kaiser MA coverage model",
@@ -2096,14 +1760,6 @@
     "created_at": "2026-03-23T22:00:46Z"
   },
   {
-    "title": "Scik 2469 evalprod",
-    "url": "https://github.com/Apixio/ml-icddet/pull/89",
-    "repo": "ml-icddet",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-03-23T22:02:11Z",
-    "created_at": "2026-03-16T23:55:06Z"
-  },
-  {
     "title": "Al fix tools dev acct number",
     "url": "https://github.com/Apixio/cloud9-tf/pull/32",
     "repo": "cloud9-tf",
@@ -2134,6 +1790,14 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-23T21:05:53Z",
     "created_at": "2026-03-19T21:01:34Z"
+  },
+  {
+    "title": "CLOUD-1905: migrate apx-workqueue-projects-archive-stg to terraform",
+    "url": "https://github.com/Apixio/workqueue-tf/pull/6",
+    "repo": "workqueue-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-03-23T20:53:18Z",
+    "created_at": "2026-03-16T18:39:26Z"
   },
   {
     "title": "Al add port 8443",
@@ -2198,22 +1862,6 @@
     "author": "adalundhe",
     "merged_at": "2026-03-23T12:03:41Z",
     "created_at": "2026-03-20T22:25:52Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/46",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-22T23:58:23Z",
-    "created_at": "2026-03-22T23:56:03Z"
-  },
-  {
-    "title": "Fix: move LoRA merge/save outside TorchDistributor",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/45",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-22T23:46:20Z",
-    "created_at": "2026-03-22T23:40:27Z"
   },
   {
     "title": "add back self trust",
@@ -2328,44 +1976,12 @@
     "created_at": "2026-03-19T23:51:52Z"
   },
   {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/44",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T03:22:06Z",
-    "created_at": "2026-03-20T03:21:59Z"
-  },
-  {
-    "title": "Fix: 4-bit QLoRA to prevent OOM on prod data",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/43",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T03:21:41Z",
-    "created_at": "2026-03-20T03:21:10Z"
-  },
-  {
     "title": "fixed invalid_args error for slack commands",
     "url": "https://github.com/Apixio/cloud9/pull/307",
     "repo": "cloud9",
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-20T03:20:23Z",
     "created_at": "2026-03-18T02:34:12Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/42",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T02:41:57Z",
-    "created_at": "2026-03-20T02:41:49Z"
-  },
-  {
-    "title": "Refactor: DDP training via TorchDistributor",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/41",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-20T01:30:14Z",
-    "created_at": "2026-03-20T01:27:48Z"
   },
   {
     "title": "Centene cumulative report",
@@ -2376,44 +1992,12 @@
     "created_at": "2026-03-19T22:54:16Z"
   },
   {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/40",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T23:19:12Z",
-    "created_at": "2026-03-19T23:18:31Z"
-  },
-  {
-    "title": "Fix: use Science cluster policy for etlraprd target",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/39",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T23:18:18Z",
-    "created_at": "2026-03-19T23:17:38Z"
-  },
-  {
     "title": "Al fix sg rules",
     "url": "https://github.com/Apixio/cloud9-tf/pull/27",
     "repo": "cloud9-tf",
     "author": "adalundhe",
     "merged_at": "2026-03-19T23:18:07Z",
     "created_at": "2026-03-19T14:57:49Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/38",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T23:08:13Z",
-    "created_at": "2026-03-19T23:06:56Z"
-  },
-  {
-    "title": "Add etlraprd deploy workflow",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/37",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T23:06:43Z",
-    "created_at": "2026-03-19T22:45:50Z"
   },
   {
     "title": "Cn sm change",
@@ -2430,22 +2014,6 @@
     "author": "ribrayev-apixio",
     "merged_at": "2026-03-19T22:21:20Z",
     "created_at": "2026-03-19T18:59:15Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/36",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T20:26:25Z",
-    "created_at": "2026-03-19T20:25:11Z"
-  },
-  {
-    "title": "Fix: recreate endpoint for custom model deployment",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/35",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T19:58:09Z",
-    "created_at": "2026-03-19T19:51:16Z"
   },
   {
     "title": "PLT-4178: Use ml schema.",
@@ -2528,30 +2096,6 @@
     "created_at": "2026-03-19T02:30:33Z"
   },
   {
-    "title": "fix closed parenthesis typo",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/34",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T01:04:40Z",
-    "created_at": "2026-03-19T01:04:29Z"
-  },
-  {
-    "title": "Fix: replace served entities instead of merging for Provisioned Throughput endpoints",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/33",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T00:37:35Z",
-    "created_at": "2026-03-19T00:36:40Z"
-  },
-  {
-    "title": "Fix: switch endpoint config to Provisioned Throughput fields",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/32",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-19T00:06:25Z",
-    "created_at": "2026-03-18T23:42:36Z"
-  },
-  {
     "title": "En 45545 billtype extension",
     "url": "https://github.com/Apixio/mono/pull/3581",
     "repo": "mono",
@@ -2560,20 +2104,12 @@
     "created_at": "2026-01-28T00:15:14Z"
   },
   {
-    "title": "EN-46829: use new app platform",
-    "url": "https://github.com/Apixio/apx-workqueue/pull/887",
-    "repo": "apx-workqueue",
+    "title": "EN-46829: use new app platform version",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1662",
+    "repo": "apx-sessionmanager",
     "author": "emoreno-apixio",
-    "merged_at": "2026-03-18T22:54:20Z",
-    "created_at": "2026-03-18T22:48:27Z"
-  },
-  {
-    "title": "Switch to GPU_MEDIUM + vLLM-optimized serving for fine-tuned LLaMA endpoint",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/31",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-18T22:31:06Z",
-    "created_at": "2026-03-18T21:56:04Z"
+    "merged_at": "2026-03-18T22:56:10Z",
+    "created_at": "2026-03-17T23:52:55Z"
   },
   {
     "title": "PLT-4178: Use ml_gold schema.",
@@ -2600,20 +2136,20 @@
     "created_at": "2026-03-18T21:43:52Z"
   },
   {
-    "title": "Show multiple MBIs in Chart & Patient View + Update Bulk Search Multi-column row limit to 10,000",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4232",
-    "repo": "apx-launchpad",
-    "author": "gtang-apixio",
-    "merged_at": "2026-03-18T21:40:52Z",
-    "created_at": "2026-03-18T21:01:29Z"
-  },
-  {
     "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
     "url": "https://github.com/Apixio/ml-common-ci/pull/42",
     "repo": "ml-common-ci",
     "author": "mwebb-datavant",
     "merged_at": "2026-03-18T21:16:45Z",
     "created_at": "2026-03-18T20:36:59Z"
+  },
+  {
+    "title": "CLOUD-1903: migrate apx-workqueue-consumer-stg-state to terraform",
+    "url": "https://github.com/Apixio/workqueue-tf/pull/5",
+    "repo": "workqueue-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-03-18T21:03:40Z",
+    "created_at": "2026-03-16T18:25:48Z"
   },
   {
     "title": "Al fix vpc endpoint",
@@ -2648,14 +2184,6 @@
     "created_at": "2026-03-16T18:27:38Z"
   },
   {
-    "title": "Fix VENDOR_LEAD SAR access check in navigator routes",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4223",
-    "repo": "apx-launchpad",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-03-18T18:18:11Z",
-    "created_at": "2026-03-13T21:40:24Z"
-  },
-  {
     "title": "added provider specialty getter for annotation model",
     "url": "https://github.com/Apixio/mono/pull/3630",
     "repo": "mono",
@@ -2664,12 +2192,12 @@
     "created_at": "2026-03-16T20:24:43Z"
   },
   {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/30",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-18T16:49:47Z",
-    "created_at": "2026-03-17T22:49:33Z"
+    "title": "CLOUD-1981: migrate prospective-svc-stg to terraform",
+    "url": "https://github.com/Apixio/prospective-tf/pull/12",
+    "repo": "prospective-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-03-18T16:53:59Z",
+    "created_at": "2026-03-16T14:53:38Z"
   },
   {
     "title": "PLT-4186 Claude Auto Debugging",
@@ -2696,12 +2224,12 @@
     "created_at": "2026-03-16T17:57:30Z"
   },
   {
-    "title": "add basic logging for fine tuning run",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/29",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T22:48:56Z",
-    "created_at": "2026-03-17T22:48:38Z"
+    "title": "Auto release PR 1.8.141",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1661",
+    "repo": "apx-sessionmanager",
+    "author": "apixio-readonly",
+    "merged_at": "2026-03-17T23:17:20Z",
+    "created_at": "2026-03-17T23:08:18Z"
   },
   {
     "title": "PLT-4176: Remove Cerebro DAO.",
@@ -2712,20 +2240,20 @@
     "created_at": "2026-03-16T21:56:52Z"
   },
   {
-    "title": "fallback to updating existing endpoint",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/28",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T21:32:24Z",
-    "created_at": "2026-03-17T21:31:22Z"
+    "title": "En 46715 remove npi cluster",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1658",
+    "repo": "apx-sessionmanager",
+    "author": "skonduru-apixio",
+    "merged_at": "2026-03-17T21:33:40Z",
+    "created_at": "2026-03-04T00:51:46Z"
   },
   {
-    "title": "updated experiment path",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/27",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T20:58:02Z",
-    "created_at": "2026-03-17T20:51:29Z"
+    "title": "Cassandra Host Migration",
+    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1659",
+    "repo": "apx-sessionmanager",
+    "author": "deckardmehdy-apixio",
+    "merged_at": "2026-03-17T21:07:55Z",
+    "created_at": "2026-03-12T23:38:46Z"
   },
   {
     "title": "feat: Add slackbot deploy identity verification consumer and integration",
@@ -2734,14 +2262,6 @@
     "author": "kmcgovern-apixio",
     "merged_at": "2026-03-17T20:34:41Z",
     "created_at": "2026-03-09T21:36:48Z"
-  },
-  {
-    "title": "updated policy secret values for fine tuning job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/25",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-17T19:05:27Z",
-    "created_at": "2026-03-17T19:04:26Z"
   },
   {
     "title": "Auto release PR 15.0.38",
@@ -2792,14 +2312,6 @@
     "created_at": "2026-03-16T20:09:39Z"
   },
   {
-    "title": "fix model serving error for fine tuned llama model",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/24",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-16T22:54:16Z",
-    "created_at": "2026-03-16T22:52:44Z"
-  },
-  {
     "title": "Improved ACL proxy logging + bugfix",
     "url": "https://github.com/Apixio/mono/pull/3631",
     "repo": "mono",
@@ -2808,12 +2320,28 @@
     "created_at": "2026-03-16T20:34:06Z"
   },
   {
+    "title": "CLOUD-5051: refactor and add prod workspace",
+    "url": "https://github.com/Apixio/prospective-tf/pull/13",
+    "repo": "prospective-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-03-16T20:41:25Z",
+    "created_at": "2026-03-16T17:56:37Z"
+  },
+  {
     "title": "dev -> main",
     "url": "https://github.com/Apixio/ml-retrosp/pull/118",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T20:27:30Z",
     "created_at": "2026-03-16T20:06:34Z"
+  },
+  {
+    "title": "Add RDS security groups for entityv2 prod replication",
+    "url": "https://github.com/Apixio/bi-data-replication-tf/pull/29",
+    "repo": "bi-data-replication-tf",
+    "author": "chopkinsAtDatavant",
+    "merged_at": "2026-03-16T19:30:54Z",
+    "created_at": "2026-03-16T19:11:28Z"
   },
   {
     "title": "feat: Adding the application properties model (CLOUD-4818) and slackbot UI (CLOUD-4819)",
@@ -2830,14 +2358,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T17:03:12Z",
     "created_at": "2026-03-16T17:00:55Z"
-  },
-  {
-    "title": "Dev -> main",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/23",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-13T18:02:06Z",
-    "created_at": "2026-03-12T21:53:30Z"
   },
   {
     "title": "En 46230 sm apikeys",
@@ -2862,14 +2382,6 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-03-12T21:34:41Z",
     "created_at": "2026-03-12T17:32:03Z"
-  },
-  {
-    "title": "changed sp secret to science sp",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/21",
-    "repo": "ml-qamodel",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-12T21:16:01Z",
-    "created_at": "2026-03-12T21:13:31Z"
   },
   {
     "title": "PLT-3899: Deprecate Scala 2.11",
@@ -2992,14 +2504,6 @@
     "created_at": "2026-03-11T21:30:20Z"
   },
   {
-    "title": "Add CLAUDE_APIKEY upload workflow to AWS Secrets Manager",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/53",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-11T21:39:17Z",
-    "created_at": "2026-03-11T21:25:07Z"
-  },
-  {
     "title": "added cost tracking per cluster tables",
     "url": "https://github.com/Apixio/apx-databricks/pull/681",
     "repo": "apx-databricks",
@@ -3056,6 +2560,14 @@
     "created_at": "2026-03-10T19:34:41Z"
   },
   {
+    "title": "setting up repo for cloud9 front end deployment",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/4",
+    "repo": "chase-center-fe",
+    "author": "jasonroschke-apixio",
+    "merged_at": "2026-03-10T22:52:10Z",
+    "created_at": "2026-03-10T22:28:16Z"
+  },
+  {
     "title": "Added OpenSearchClinet healthcheck source changed",
     "url": "https://github.com/Apixio/mono/pull/3621",
     "repo": "mono",
@@ -3110,14 +2622,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-09T18:24:12Z",
     "created_at": "2026-03-09T18:22:13Z"
-  },
-  {
-    "title": "Added join logic to prevent missing rows",
-    "url": "https://github.com/Apixio/ml-infdate/pull/27",
-    "repo": "ml-infdate",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-03-09T17:55:17Z",
-    "created_at": "2026-03-04T22:47:07Z"
   },
   {
     "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
