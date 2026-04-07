@@ -48,6 +48,14 @@
     "created_at": "2026-04-03T21:21:20Z"
   },
   {
+    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
+    "url": "https://github.com/Apixio/ml-infdate/pull/43",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-03T18:10:25Z",
+    "created_at": "2026-04-03T17:59:29Z"
+  },
+  {
     "title": "feat: GPU fallback inference for event-driven MeatLAAT",
     "url": "https://github.com/Apixio/ml-retrosp/pull/138",
     "repo": "ml-retrosp",
@@ -56,12 +64,28 @@
     "created_at": "2026-04-02T23:08:24Z"
   },
   {
+    "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/37",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-02T20:05:36Z",
+    "created_at": "2026-03-25T14:02:59Z"
+  },
+  {
     "title": "SCIK-2554 training optimization and experiment design",
     "url": "https://github.com/Apixio/ml-df-matching/pull/8",
     "repo": "ml-df-matching",
     "author": "diegoramallo-apixio",
     "merged_at": "2026-04-01T13:30:57Z",
     "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
+    "title": "Add empty input short-circuit to scoring pipeline steps",
+    "url": "https://github.com/Apixio/ml-infdate/pull/40",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-30T20:01:00Z",
+    "created_at": "2026-03-30T18:53:14Z"
   },
   {
     "title": "Improve patient name matching in document splitter",
@@ -118,6 +142,22 @@
     "author": "naditya-apixio",
     "merged_at": "2026-03-24T21:29:59Z",
     "created_at": "2026-03-24T17:45:56Z"
+  },
+  {
+    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/36",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T21:29:05Z",
+    "created_at": "2026-03-24T20:02:37Z"
+  },
+  {
+    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
+    "url": "https://github.com/Apixio/ml-infdate/pull/32",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T18:20:28Z",
+    "created_at": "2026-03-18T18:12:16Z"
   },
   {
     "title": "Kaiser MA coverage model",
