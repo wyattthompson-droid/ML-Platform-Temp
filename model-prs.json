@@ -1,5 +1,45 @@
 [
   {
+    "title": "Fix OOM in pre step: replace collect_list+join with applyInPandas",
+    "url": "https://github.com/Apixio/ml-infdate/pull/49",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-07T18:54:51Z",
+    "created_at": "2026-04-07T18:41:57Z"
+  },
+  {
+    "title": "fix: grant execution roles read access to shared SageMaker session bucket",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/77",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-07T18:39:45Z",
+    "created_at": "2026-04-07T18:34:55Z"
+  },
+  {
+    "title": "KP coverage model updates",
+    "url": "https://github.com/Apixio/di-platform/pull/336",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-04-07T17:43:38Z",
+    "created_at": "2026-04-07T17:42:50Z"
+  },
+  {
+    "title": "Feature/di 2994 kp coverage models",
+    "url": "https://github.com/Apixio/di-platform/pull/335",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-04-07T17:41:43Z",
+    "created_at": "2026-04-07T17:40:27Z"
+  },
+  {
+    "title": "Add content size logging, CHANGELOG, and version bump to 1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/48",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-07T17:31:40Z",
+    "created_at": "2026-04-07T17:01:20Z"
+  },
+  {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/326",
     "repo": "databricks-ops-infra",
@@ -24,20 +64,20 @@
     "created_at": "2026-04-06T19:49:56Z"
   },
   {
-    "title": "feat: Add module scaffold and snowflake-org-accounts submodule",
-    "url": "https://github.com/Apixio/terraform-snowflake-admin/pull/1",
-    "repo": "terraform-snowflake-admin",
-    "author": "AGillon",
-    "merged_at": "2026-04-06T18:31:16Z",
-    "created_at": "2026-03-30T20:25:38Z"
-  },
-  {
     "title": "KP ACA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/328",
     "repo": "di-platform",
     "author": "naditya-apixio",
     "merged_at": "2026-04-03T21:53:56Z",
     "created_at": "2026-04-03T21:44:34Z"
+  },
+  {
+    "title": "PLT-4376 Add model registry permissions",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T21:40:37Z",
+    "created_at": "2026-04-03T21:36:49Z"
   },
   {
     "title": "kp aca coverage model",
@@ -64,12 +104,52 @@
     "created_at": "2026-04-02T23:08:24Z"
   },
   {
+    "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T16:16:34Z",
+    "created_at": "2026-04-03T16:13:01Z"
+  },
+  {
+    "title": "Add SageMaker job actions to execution role base policy",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/66",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:25:39Z",
+    "created_at": "2026-04-03T15:22:19Z"
+  },
+  {
+    "title": "PLT-4376 Allow execution roles to pass themselves to SageMaker",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/65",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:10:41Z",
+    "created_at": "2026-04-03T15:08:06Z"
+  },
+  {
     "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
     "url": "https://github.com/Apixio/ml-infdate/pull/37",
     "repo": "ml-infdate",
     "author": "evancanfield-apixio",
     "merged_at": "2026-04-02T20:05:36Z",
     "created_at": "2026-03-25T14:02:59Z"
+  },
+  {
+    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
+    "url": "https://github.com/Apixio/ml-icddet/pull/95",
+    "repo": "ml-icddet",
+    "author": "wchang-apixio",
+    "merged_at": "2026-04-01T22:07:50Z",
+    "created_at": "2026-03-31T17:07:36Z"
+  },
+  {
+    "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-01T18:11:57Z",
+    "created_at": "2026-03-31T22:57:40Z"
   },
   {
     "title": "SCIK-2554 training optimization and experiment design",
@@ -86,14 +166,6 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-30T20:01:00Z",
     "created_at": "2026-03-30T18:53:14Z"
-  },
-  {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
   },
   {
     "title": "adding documents models",
@@ -166,30 +238,6 @@
     "author": "naditya-apixio",
     "merged_at": "2026-03-24T17:44:15Z",
     "created_at": "2026-03-24T17:34:58Z"
-  },
-  {
-    "title": "Healthfirst aca models",
-    "url": "https://github.com/Apixio/di-platform/pull/281",
-    "repo": "di-platform",
-    "author": "dgolich-apixio",
-    "merged_at": "2026-03-19T19:10:34Z",
-    "created_at": "2026-03-19T16:43:33Z"
-  },
-  {
-    "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
-    "url": "https://github.com/Apixio/ml-common-ci/pull/43",
-    "repo": "ml-common-ci",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-19T17:09:18Z",
-    "created_at": "2026-03-18T22:09:37Z"
-  },
-  {
-    "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
-    "url": "https://github.com/Apixio/ml-common-ci/pull/42",
-    "repo": "ml-common-ci",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-18T21:16:45Z",
-    "created_at": "2026-03-18T20:36:59Z"
   },
   {
     "title": "added provider specialty getter for annotation model",
