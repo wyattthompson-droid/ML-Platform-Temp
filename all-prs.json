@@ -1,5 +1,13 @@
 [
   {
+    "title": "feat: add argument constraint enforcement to module restrictions",
+    "url": "https://github.com/Apixio/terraform-module-enforcer/pull/5",
+    "repo": "terraform-module-enforcer",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-04-07T09:52:28Z",
+    "created_at": "2026-04-03T15:28:07Z"
+  },
+  {
     "title": "Add a datacy to move a chart btn for qa automation testing",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4188",
     "repo": "apx-launchpad",
@@ -214,14 +222,6 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-04-06T16:42:17Z",
     "created_at": "2026-04-06T16:37:38Z"
-  },
-  {
-    "title": "fix(generate-imports): generate import blocks for all SG rule resources",
-    "url": "https://github.com/Apixio/terraform-aws-vpc-security-group/pull/6",
-    "repo": "terraform-aws-vpc-security-group",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-06T15:35:48Z",
-    "created_at": "2026-04-03T21:52:38Z"
   },
   {
     "title": "Auto release PR 3.1.8",
