@@ -1,5 +1,37 @@
 [
   {
+    "title": "PLT-4589 security: remove CodeArtifact access from SageMaker execution roles",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/81",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-08T18:00:40Z",
+    "created_at": "2026-04-08T17:02:48Z"
+  },
+  {
+    "title": "Add Reconciliation Script",
+    "url": "https://github.com/Apixio/python-scripts/pull/1953",
+    "repo": "python-scripts",
+    "author": "deckardmehdy-apixio",
+    "merged_at": "2026-04-08T17:50:33Z",
+    "created_at": "2026-04-06T19:11:57Z"
+  },
+  {
+    "title": "Release 1.2.1: stratified sampling, page cap parameters, content size logging",
+    "url": "https://github.com/Apixio/ml-infdate/pull/47",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-08T16:39:20Z",
+    "created_at": "2026-04-07T14:24:07Z"
+  },
+  {
+    "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
+    "url": "https://github.com/Apixio/di-platform/pull/337",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-08T16:35:26Z",
+    "created_at": "2026-04-08T04:34:27Z"
+  },
+  {
     "title": "feat: initial inference framework with config-driven workflow generator",
     "url": "https://github.com/Apixio/ml-inference-framework/pull/1",
     "repo": "ml-inference-framework",
@@ -62,22 +94,6 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-04-07T17:31:40Z",
     "created_at": "2026-04-07T17:01:20Z"
-  },
-  {
-    "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/326",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-04-06T22:36:20Z",
-    "created_at": "2026-04-03T15:43:44Z"
-  },
-  {
-    "title": "fix: remediate canonical_exp_prd grant drift",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/327",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-04-06T22:29:37Z",
-    "created_at": "2026-04-03T16:02:13Z"
   },
   {
     "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
@@ -206,6 +222,14 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-30T20:01:00Z",
     "created_at": "2026-03-30T18:53:14Z"
+  },
+  {
+    "title": "Improve patient name matching in document splitter",
+    "url": "https://github.com/Apixio/ml-daqari/pull/52",
+    "repo": "ml-daqari",
+    "author": "askeahey",
+    "merged_at": "2026-03-30T18:32:33Z",
+    "created_at": "2026-03-19T21:53:54Z"
   },
   {
     "title": "adding documents models",
@@ -438,21 +462,5 @@
     "author": "kealanmurphy-dv",
     "merged_at": "2026-03-16T17:13:24Z",
     "created_at": "2026-03-12T14:13:46Z"
-  },
-  {
-    "title": "Add Snowflake grants for ontology_dev.mapping_bronze.billtype_model",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/286",
-    "repo": "databricks-ops-infra",
-    "author": "alanli-datavant",
-    "merged_at": "2026-03-09T17:37:03Z",
-    "created_at": "2026-03-09T16:52:38Z"
-  },
-  {
-    "title": "fix: resolve ETL workspace drift from provider constraint and missing workload_size (PLT-3878)",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/285",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-03-09T17:28:16Z",
-    "created_at": "2026-03-06T19:59:16Z"
   }
 ]
