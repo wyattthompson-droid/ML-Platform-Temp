@@ -1,5 +1,13 @@
 [
   {
+    "title": "PLT-4288: Log4j2 upgrade",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1395",
+    "repo": "apx-signalmanager",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-04-08T05:25:57Z",
+    "created_at": "2026-04-08T02:05:55Z"
+  },
+  {
     "title": "fix: added support for object-lock-configs",
     "url": "https://github.com/Apixio/terraform-aws-s3/pull/13",
     "repo": "terraform-aws-s3",
