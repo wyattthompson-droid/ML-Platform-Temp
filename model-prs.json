@@ -152,6 +152,14 @@
     "created_at": "2026-04-03T15:08:06Z"
   },
   {
+    "title": "DsPy finetuning code",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/56",
+    "repo": "ml-qamodel",
+    "author": "yjiang-apixio",
+    "merged_at": "2026-04-02T20:40:40Z",
+    "created_at": "2026-04-02T20:40:27Z"
+  },
+  {
     "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
     "url": "https://github.com/Apixio/ml-infdate/pull/37",
     "repo": "ml-infdate",
@@ -182,6 +190,14 @@
     "author": "diegoramallo-apixio",
     "merged_at": "2026-04-01T13:30:57Z",
     "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
+    "title": "Successfully served T5 model through job",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/54",
+    "repo": "ml-qamodel",
+    "author": "yjiang-apixio",
+    "merged_at": "2026-03-30T22:03:01Z",
+    "created_at": "2026-03-30T22:02:52Z"
   },
   {
     "title": "Add empty input short-circuit to scoring pipeline steps",
@@ -232,6 +248,38 @@
     "created_at": "2026-03-23T21:57:28Z"
   },
   {
+    "title": "Deploy fine-tuning fixes to exp-ra and etl workspaces",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/51",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-25T04:53:30Z",
+    "created_at": "2026-03-25T04:53:06Z"
+  },
+  {
+    "title": "Fix: apply serving endpoint permissions only on creation",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/50",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-25T04:19:19Z",
+    "created_at": "2026-03-25T04:16:22Z"
+  },
+  {
+    "title": "Fix: harden fine-tuning job and manage serving endpoint permissions",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/49",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-24T23:56:17Z",
+    "created_at": "2026-03-24T23:55:33Z"
+  },
+  {
+    "title": "Fix: harden fine-tuning job and manage serving endpoint via DAB",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/48",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-24T22:32:55Z",
+    "created_at": "2026-03-24T22:19:42Z"
+  },
+  {
     "title": "Kaiser MA coverage dbt model",
     "url": "https://github.com/Apixio/di-platform/pull/291",
     "repo": "di-platform",
@@ -264,12 +312,84 @@
     "created_at": "2026-03-24T17:34:58Z"
   },
   {
+    "title": "Dev -> main",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/46",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-22T23:58:23Z",
+    "created_at": "2026-03-22T23:56:03Z"
+  },
+  {
+    "title": "Fix: move LoRA merge/save outside TorchDistributor",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/45",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-22T23:46:20Z",
+    "created_at": "2026-03-22T23:40:27Z"
+  },
+  {
+    "title": "Fix: 4-bit QLoRA to prevent OOM on prod data",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/43",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-20T03:21:41Z",
+    "created_at": "2026-03-20T03:21:10Z"
+  },
+  {
+    "title": "Refactor: DDP training via TorchDistributor",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/41",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-20T01:30:14Z",
+    "created_at": "2026-03-20T01:27:48Z"
+  },
+  {
+    "title": "Add etlraprd deploy workflow",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/37",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-19T23:06:43Z",
+    "created_at": "2026-03-19T22:45:50Z"
+  },
+  {
+    "title": "Fix: recreate endpoint for custom model deployment",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/35",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-19T19:58:09Z",
+    "created_at": "2026-03-19T19:51:16Z"
+  },
+  {
     "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
     "url": "https://github.com/Apixio/ml-common-ci/pull/43",
     "repo": "ml-common-ci",
     "author": "mwebb-datavant",
     "merged_at": "2026-03-19T17:09:18Z",
     "created_at": "2026-03-18T22:09:37Z"
+  },
+  {
+    "title": "Fix: replace served entities instead of merging for Provisioned Throughput endpoints",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/33",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-19T00:37:35Z",
+    "created_at": "2026-03-19T00:36:40Z"
+  },
+  {
+    "title": "Fix: switch endpoint config to Provisioned Throughput fields",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/32",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-19T00:06:25Z",
+    "created_at": "2026-03-18T23:42:36Z"
+  },
+  {
+    "title": "Switch to GPU_MEDIUM + vLLM-optimized serving for fine-tuned LLaMA endpoint",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/31",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-18T22:31:06Z",
+    "created_at": "2026-03-18T21:56:04Z"
   },
   {
     "title": "PLT-4182: Add UC Volume wheel publish action and workflow",
@@ -286,6 +406,30 @@
     "author": "bilagan-apixio",
     "merged_at": "2026-03-18T17:23:07Z",
     "created_at": "2026-03-16T20:24:43Z"
+  },
+  {
+    "title": "add basic logging for fine tuning run",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/29",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-17T22:48:56Z",
+    "created_at": "2026-03-17T22:48:38Z"
+  },
+  {
+    "title": "updated policy secret values for fine tuning job",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/25",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-17T19:05:27Z",
+    "created_at": "2026-03-17T19:04:26Z"
+  },
+  {
+    "title": "fix model serving error for fine tuned llama model",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/24",
+    "repo": "ml-qamodel",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-16T22:54:16Z",
+    "created_at": "2026-03-16T22:52:44Z"
   },
   {
     "title": "feat: Adding the application properties model (CLOUD-4818) and slackbot UI (CLOUD-4819)",
