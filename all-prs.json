@@ -1,5 +1,13 @@
 [
   {
+    "title": "feat: add AWS Secrets Manager secrets and IRSA permissions for ESO mi…",
+    "url": "https://github.com/Apixio/lando-tf/pull/14",
+    "repo": "lando-tf",
+    "author": "jeffreydols-apixio",
+    "merged_at": "2026-04-09T10:41:15Z",
+    "created_at": "2026-04-09T01:54:23Z"
+  },
+  {
     "title": "Bug fix on proxied 'and' permissions",
     "url": "https://github.com/Apixio/mono/pull/3658",
     "repo": "mono",
