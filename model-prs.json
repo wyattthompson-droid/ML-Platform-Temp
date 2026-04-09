@@ -8,6 +8,14 @@
     "created_at": "2026-04-08T17:02:48Z"
   },
   {
+    "title": "Add Reconciliation Script",
+    "url": "https://github.com/Apixio/python-scripts/pull/1953",
+    "repo": "python-scripts",
+    "author": "deckardmehdy-apixio",
+    "merged_at": "2026-04-08T17:50:33Z",
+    "created_at": "2026-04-06T19:11:57Z"
+  },
+  {
     "title": "Release 1.2.1: stratified sampling, page cap parameters, content size logging",
     "url": "https://github.com/Apixio/ml-infdate/pull/47",
     "repo": "ml-infdate",
@@ -240,14 +248,6 @@
     "created_at": "2026-03-23T20:31:34Z"
   },
   {
-    "title": "Fix submit button logic for no-HCC-reject charts with predictions",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4235",
-    "repo": "apx-launchpad",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-03-26T19:24:11Z",
-    "created_at": "2026-03-20T04:05:04Z"
-  },
-  {
     "title": "fix: retry concurrent merge conflicts in claim_requests",
     "url": "https://github.com/Apixio/ml-retrosp/pull/123",
     "repo": "ml-retrosp",
@@ -302,5 +302,13 @@
     "author": "bilagan-apixio",
     "merged_at": "2026-03-18T17:23:07Z",
     "created_at": "2026-03-16T20:24:43Z"
+  },
+  {
+    "title": "feat: Adding the application properties model (CLOUD-4818) and slackbot UI (CLOUD-4819)",
+    "url": "https://github.com/Apixio/cloud9/pull/303",
+    "repo": "cloud9",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-03-16T17:13:24Z",
+    "created_at": "2026-03-12T14:13:46Z"
   }
 ]
