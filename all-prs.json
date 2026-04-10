@@ -1,5 +1,13 @@
 [
   {
+    "title": "feat: add confluence-sync tool and CI workflow",
+    "url": "https://github.com/Apixio/cloud9/pull/327",
+    "repo": "cloud9",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-10T03:49:27Z",
+    "created_at": "2026-04-09T22:38:24Z"
+  },
+  {
     "title": "Add Data Platform team to RnD group",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/336",
     "repo": "databricks-ops-infra",
@@ -2878,13 +2886,5 @@
     "author": "nsadineni-apixio",
     "merged_at": "2026-03-11T13:47:35Z",
     "created_at": "2026-03-06T17:16:57Z"
-  },
-  {
-    "title": "Auto release PR 15.0.34",
-    "url": "https://github.com/Apixio/mono/pull/3623",
-    "repo": "mono",
-    "author": "apixio-readonly",
-    "merged_at": "2026-03-11T03:08:08Z",
-    "created_at": "2026-03-10T19:34:41Z"
   }
 ]
