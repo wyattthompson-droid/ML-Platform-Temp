@@ -1,11 +1,11 @@
 [
   {
-    "title": "PLT-4589 security: remove CodeArtifact access from SageMaker execution roles",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/81",
-    "repo": "ml-ops-infra",
+    "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/150",
+    "repo": "ml-retrosp",
     "author": "mwebb-datavant",
-    "merged_at": "2026-04-08T18:00:40Z",
-    "created_at": "2026-04-08T17:02:48Z"
+    "merged_at": "2026-04-09T22:12:56Z",
+    "created_at": "2026-04-09T22:05:52Z"
   },
   {
     "title": "Add Reconciliation Script",
@@ -32,36 +32,12 @@
     "created_at": "2026-04-08T04:34:27Z"
   },
   {
-    "title": "feat: add ml-inference-framework to OIDC trust",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/80",
-    "repo": "ml-ops-infra",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-07T22:51:38Z",
-    "created_at": "2026-04-07T22:50:17Z"
-  },
-  {
-    "title": "feat(monitoring): pre-create CloudWatch log groups for all common SageMaker step types",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/79",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-07T22:48:22Z",
-    "created_at": "2026-04-07T22:34:02Z"
-  },
-  {
     "title": "Fix OOM in pre step: replace collect_list+join with applyInPandas",
     "url": "https://github.com/Apixio/ml-infdate/pull/49",
     "repo": "ml-infdate",
     "author": "evancanfield-apixio",
     "merged_at": "2026-04-07T18:54:51Z",
     "created_at": "2026-04-07T18:41:57Z"
-  },
-  {
-    "title": "fix: grant execution roles read access to shared SageMaker session bucket",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/77",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-07T18:39:45Z",
-    "created_at": "2026-04-07T18:34:55Z"
   },
   {
     "title": "KP coverage model updates",
@@ -128,14 +104,6 @@
     "created_at": "2026-04-03T21:44:34Z"
   },
   {
-    "title": "PLT-4376 Add model registry permissions",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T21:40:37Z",
-    "created_at": "2026-04-03T21:36:49Z"
-  },
-  {
     "title": "kp aca coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/327",
     "repo": "di-platform",
@@ -160,30 +128,6 @@
     "created_at": "2026-04-02T23:08:24Z"
   },
   {
-    "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T16:16:34Z",
-    "created_at": "2026-04-03T16:13:01Z"
-  },
-  {
-    "title": "Add SageMaker job actions to execution role base policy",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/66",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T15:25:39Z",
-    "created_at": "2026-04-03T15:22:19Z"
-  },
-  {
-    "title": "PLT-4376 Allow execution roles to pass themselves to SageMaker",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/65",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T15:10:41Z",
-    "created_at": "2026-04-03T15:08:06Z"
-  },
-  {
     "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
     "url": "https://github.com/Apixio/ml-infdate/pull/37",
     "repo": "ml-infdate",
@@ -198,14 +142,6 @@
     "author": "wchang-apixio",
     "merged_at": "2026-04-01T22:07:50Z",
     "created_at": "2026-03-31T17:07:36Z"
-  },
-  {
-    "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-01T18:11:57Z",
-    "created_at": "2026-03-31T22:57:40Z"
   },
   {
     "title": "SCIK-2554 training optimization and experiment design",
@@ -264,14 +200,6 @@
     "created_at": "2026-03-23T21:57:28Z"
   },
   {
-    "title": "Kaiser MA coverage dbt model",
-    "url": "https://github.com/Apixio/di-platform/pull/291",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-03-24T21:29:59Z",
-    "created_at": "2026-03-24T17:45:56Z"
-  },
-  {
     "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
     "url": "https://github.com/Apixio/ml-infdate/pull/36",
     "repo": "ml-infdate",
@@ -286,14 +214,6 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-24T18:20:28Z",
     "created_at": "2026-03-18T18:12:16Z"
-  },
-  {
-    "title": "Kaiser MA coverage model",
-    "url": "https://github.com/Apixio/di-platform/pull/290",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-03-24T17:44:15Z",
-    "created_at": "2026-03-24T17:34:58Z"
   },
   {
     "title": "added provider specialty getter for annotation model",
