@@ -136,14 +136,6 @@
     "created_at": "2026-03-25T14:02:59Z"
   },
   {
-    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
-    "url": "https://github.com/Apixio/ml-icddet/pull/95",
-    "repo": "ml-icddet",
-    "author": "wchang-apixio",
-    "merged_at": "2026-04-01T22:07:50Z",
-    "created_at": "2026-03-31T17:07:36Z"
-  },
-  {
     "title": "SCIK-2554 training optimization and experiment design",
     "url": "https://github.com/Apixio/ml-df-matching/pull/8",
     "repo": "ml-df-matching",
@@ -174,14 +166,6 @@
     "author": "agopishetty-apixio",
     "merged_at": "2026-03-27T16:02:05Z",
     "created_at": "2026-03-27T15:54:09Z"
-  },
-  {
-    "title": "PLT-4183: add per-document ML predictions endpoint to databricks-svc",
-    "url": "https://github.com/Apixio/apx-signalmanager/pull/1390",
-    "repo": "apx-signalmanager",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-26T20:36:44Z",
-    "created_at": "2026-03-23T20:31:34Z"
   },
   {
     "title": "fix: retry concurrent merge conflicts in claim_requests",
