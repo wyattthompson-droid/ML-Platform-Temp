@@ -2870,45 +2870,5 @@
     "author": "sfmccarty",
     "merged_at": "2026-03-13T12:01:41Z",
     "created_at": "2026-02-06T16:00:14Z"
-  },
-  {
-    "title": "Added new NPI open search domain with 3.3 version for PRD",
-    "url": "https://github.com/Apixio/npi-tf/pull/36",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T01:10:56Z",
-    "created_at": "2026-03-13T01:03:11Z"
-  },
-  {
-    "title": "EN-46473-NPI-opensearch-prd-33",
-    "url": "https://github.com/Apixio/npi-tf/pull/35",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T00:44:51Z",
-    "created_at": "2026-03-10T15:51:13Z"
-  },
-  {
-    "title": "Remove replaceWhere option from AWS cost tracking scripts",
-    "url": "https://github.com/Apixio/ml-common-ci/pull/39",
-    "repo": "ml-common-ci",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-03-12T20:48:24Z",
-    "created_at": "2026-03-12T19:23:10Z"
-  },
-  {
-    "title": "fixed schema cast error in ml cost job",
-    "url": "https://github.com/Apixio/apx-databricks/pull/683",
-    "repo": "apx-databricks",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-12T20:40:55Z",
-    "created_at": "2026-03-12T20:26:06Z"
-  },
-  {
-    "title": "deduped aws costs from ml cost job",
-    "url": "https://github.com/Apixio/apx-databricks/pull/682",
-    "repo": "apx-databricks",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-12T20:01:33Z",
-    "created_at": "2026-03-12T19:59:02Z"
   }
 ]
