@@ -2854,13 +2854,5 @@
     "author": "sgopalakrishnan-dv",
     "merged_at": "2026-03-13T18:57:35Z",
     "created_at": "2026-03-13T18:52:08Z"
-  },
-  {
-    "title": "Added new NPI open search domain with 3.3 version for PRD",
-    "url": "https://github.com/Apixio/npi-tf/pull/37",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T15:51:49Z",
-    "created_at": "2026-03-13T15:28:55Z"
   }
 ]
