@@ -172,10 +172,10 @@ jobs:
           # Push to deploy time: average minutes from run created to run completed (successful runs only)
           DEPLOY_STATS=$(echo "$RUNS_30D" | jq '
             [.workflow_runs[] | select(.name == "Deploy Feature Branch" and .conclusion == "success") |
-              {minutes: ((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 60}
-            ] | if length > 0 then {avg: ([.[].minutes] | add / length), count: length} else {avg: null, count: 0} end
+              {minutes: (((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) | (. / 60))}
+            ] | if length > 0 then {avg: (([.[].minutes] | add) / ([.[].minutes] | length)), count: length} else {avg: null, count: 0} end
           ')
-          PUSH_TO_DEPLOY=$(echo "$DEPLOY_STATS" | jq '.avg | if . != null then (. * 10 | round / 10) else null end')
+          PUSH_TO_DEPLOY=$(echo "$DEPLOY_STATS" | jq '.avg | if . != null then ((. * 10 | round) / 10) else null end')
 
           # Prior period CI stats (30-60 days ago)
           RUNS_PRIOR=$(gh api "/repos/$ORG/ml-daqari/actions/runs?created=$SIXTY_DAYS_AGO..$THIRTY_DAYS_AGO&per_page=100" 2>/dev/null || echo '{"workflow_runs":[]}')
@@ -195,8 +195,8 @@ jobs:
 
           DEPLOY_STATS_PRIOR=$(echo "$RUNS_PRIOR" | jq '
             [.workflow_runs[] | select(.name == "Deploy Feature Branch" and .conclusion == "success") |
-              {minutes: ((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 60}
-            ] | if length > 0 then {avg: ([.[].minutes] | add / length), count: length} else {avg: null, count: 0} end
+              {minutes: (((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) | (. / 60))}
+            ] | if length > 0 then {avg: (([.[].minutes] | add) / ([.[].minutes] | length)), count: length} else {avg: null, count: 0} end
           ')
           PUSH_TO_DEPLOY_PRIOR=$(echo "$DEPLOY_STATS_PRIOR" | jq '.avg | if . != null then (. * 10 | round / 10) else null end')
 
@@ -222,7 +222,7 @@ jobs:
               PR_CREATED=$(echo "$CURRENT_MERGED" | jq -r --argjson num "$PR_NUM" '.[] | select(.number == $num) | .created_at')
               if [ -n "$FIRST_REVIEW" ] && [ -n "$PR_CREATED" ]; then
                 WAIT_HRS=$(echo "$REVIEWS" | jq --arg created "$PR_CREATED" '
-                  ((.[0].submitted_at | fromdateiso8601) - ($created | fromdateiso8601)) / 3600
+                  ((.[0].submitted_at | fromdateiso8601) - ($created | fromdateiso8601)) | (. / 3600)
                 ' 2>/dev/null || echo "0")
                 if [ "$WAIT_HRS" != "0" ] && [ "$WAIT_HRS" != "null" ]; then
                   TOTAL_REVIEW_WAIT=$(echo "$TOTAL_REVIEW_WAIT + $WAIT_HRS" | bc)
