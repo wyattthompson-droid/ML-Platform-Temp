@@ -2838,21 +2838,5 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T17:03:12Z",
     "created_at": "2026-03-16T17:00:55Z"
-  },
-  {
-    "title": "CLOUD-4999: migrating prd rds sg to prd workspace",
-    "url": "https://github.com/Apixio/entityv2-tf/pull/15",
-    "repo": "entityv2-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-13T22:07:58Z",
-    "created_at": "2026-03-13T21:36:58Z"
-  },
-  {
-    "title": "Changed the STG node config to reduce the volume size",
-    "url": "https://github.com/Apixio/npi-tf/pull/39",
-    "repo": "npi-tf",
-    "author": "sgopalakrishnan-dv",
-    "merged_at": "2026-03-13T18:57:35Z",
-    "created_at": "2026-03-13T18:52:08Z"
   }
 ]
