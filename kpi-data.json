@@ -7,7 +7,7 @@
       "previousValue": 3,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-13 02:56 UTC",
+      "lastUpdated": "2026-04-13 08:09 UTC",
       "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
     }
   ],
@@ -48,10 +48,10 @@
       "id": "num-prs",
       "label": "Number of PRs",
       "value": 355,
-      "previousValue": 189,
+      "previousValue": 187,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-13 02:56 UTC",
+      "lastUpdated": "2026-04-13 08:09 UTC",
       "description": "Pull requests opened (rolling 30 days)"
     },
     {
@@ -71,7 +71,7 @@
       "previousValue": 27,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-04-13 02:56 UTC",
+      "lastUpdated": "2026-04-13 08:09 UTC",
       "description": "Average time from PR open to merge on main"
     },
     {
