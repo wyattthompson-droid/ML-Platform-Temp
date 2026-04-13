@@ -1,5 +1,61 @@
 [
   {
+    "title": "add script to setup provider registry",
+    "url": "https://github.com/Apixio/tfc-bootstrap/pull/137",
+    "repo": "tfc-bootstrap",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-13T18:54:45Z",
+    "created_at": "2026-04-13T18:46:23Z"
+  },
+  {
+    "title": "[Nexus] Dates of Service Extraction ",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4264",
+    "repo": "apx-launchpad",
+    "author": "gtang-apixio",
+    "merged_at": "2026-04-13T17:57:20Z",
+    "created_at": "2026-03-31T17:27:22Z"
+  },
+  {
+    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-13T17:56:21Z",
+    "created_at": "2026-04-10T17:28:55Z"
+  },
+  {
+    "title": "File Validation Fixes",
+    "url": "https://github.com/Apixio/di-platform/pull/348",
+    "repo": "di-platform",
+    "author": "gkrishnan-apixio",
+    "merged_at": "2026-04-13T17:49:12Z",
+    "created_at": "2026-04-11T02:28:40Z"
+  },
+  {
+    "title": "docs: fix set-owner group ambiguity",
+    "url": "https://github.com/Apixio/cloud9/pull/330",
+    "repo": "cloud9",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-13T17:10:36Z",
+    "created_at": "2026-04-13T15:49:25Z"
+  },
+  {
+    "title": "feat: random_pwd with template",
+    "url": "https://github.com/Apixio/terraform-aws-secret-manager/pull/4",
+    "repo": "terraform-aws-secret-manager",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-13T16:18:35Z",
+    "created_at": "2026-04-13T15:52:44Z"
+  },
+  {
+    "title": "ACL proxy fix:  returning not-found code to caller",
+    "url": "https://github.com/Apixio/mono/pull/3663",
+    "repo": "mono",
+    "author": "sfmccarty",
+    "merged_at": "2026-04-13T15:08:35Z",
+    "created_at": "2026-04-12T21:38:00Z"
+  },
+  {
     "title": "En 47320 force reboot by using a new instance type",
     "url": "https://github.com/Apixio/code-navigator-tf/pull/21",
     "repo": "code-navigator-tf",
@@ -384,14 +440,6 @@
     "created_at": "2026-04-08T15:44:46Z"
   },
   {
-    "title": "feat: add AWS Secrets Manager secrets and IRSA permissions for ESO mi…",
-    "url": "https://github.com/Apixio/lando-tf/pull/14",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-04-09T10:41:15Z",
-    "created_at": "2026-04-09T01:54:23Z"
-  },
-  {
     "title": "Bug fix on proxied 'and' permissions",
     "url": "https://github.com/Apixio/mono/pull/3658",
     "repo": "mono",
@@ -720,14 +768,6 @@
     "created_at": "2026-04-07T20:46:08Z"
   },
   {
-    "title": "Add execute-api:Invoke permission for REALM API Gateway",
-    "url": "https://github.com/Apixio/lando-tf/pull/13",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-07T20:49:58Z",
-    "created_at": "2026-04-07T20:47:25Z"
-  },
-  {
     "title": "Update table data in redux upon patient highlights filtering",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4289",
     "repo": "apx-launchpad",
@@ -848,6 +888,14 @@
     "created_at": "2026-04-07T17:18:11Z"
   },
   {
+    "title": "fix: update tags module to version supporting mgmt-stg and mgmt-prd",
+    "url": "https://github.com/Apixio/terraform-aws-secret-manager/pull/3",
+    "repo": "terraform-aws-secret-manager",
+    "author": "adalundhe",
+    "merged_at": "2026-04-07T17:03:52Z",
+    "created_at": "2026-04-07T16:52:36Z"
+  },
+  {
     "title": "Add in data cy constants for annotation form ",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4287",
     "repo": "apx-launchpad",
@@ -870,6 +918,14 @@
     "author": "dv-mmounts",
     "merged_at": "2026-04-07T16:50:43Z",
     "created_at": "2026-04-03T18:57:48Z"
+  },
+  {
+    "title": "added module and import script",
+    "url": "https://github.com/Apixio/terraform-aws-secret-manager/pull/1",
+    "repo": "terraform-aws-secret-manager",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-07T15:22:13Z",
+    "created_at": "2026-04-03T17:22:07Z"
   },
   {
     "title": "Add min/max_pages_per_doc parameters to dataset sample job ",
@@ -1048,14 +1104,6 @@
     "created_at": "2026-04-06T16:55:05Z"
   },
   {
-    "title": "Add new props: reviewType, and zeroPredictionThrottleRate",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4271",
-    "repo": "apx-launchpad",
-    "author": "emoreno-apixio",
-    "merged_at": "2026-04-06T16:56:01Z",
-    "created_at": "2026-04-01T20:39:01Z"
-  },
-  {
     "title": "cleanup temp tables in all cases in finalize",
     "url": "https://github.com/Apixio/ml-retrosp/pull/143",
     "repo": "ml-retrosp",
@@ -1160,14 +1208,6 @@
     "created_at": "2026-04-02T23:08:24Z"
   },
   {
-    "title": "Allow IRSA role to assume lando-readonly in member accounts",
-    "url": "https://github.com/Apixio/lando-tf/pull/12",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-03T02:42:22Z",
-    "created_at": "2026-04-03T02:40:25Z"
-  },
-  {
     "title": "datavalidation new date format checks added",
     "url": "https://github.com/Apixio/di-platform/pull/324",
     "repo": "di-platform",
@@ -1240,14 +1280,6 @@
     "created_at": "2026-04-02T17:17:18Z"
   },
   {
-    "title": "feat: add HTTPS listener with wildcard cert and HTTP→HTTPS redirect",
-    "url": "https://github.com/Apixio/lando-tf/pull/11",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T18:15:48Z",
-    "created_at": "2026-04-02T18:13:06Z"
-  },
-  {
     "title": "RMBU Alerting ",
     "url": "https://github.com/Apixio/ml-daqari/pull/57",
     "repo": "ml-daqari",
@@ -1262,14 +1294,6 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-04-02T16:41:40Z",
     "created_at": "2026-04-02T16:12:52Z"
-  },
-  {
-    "title": "fix: name target group lando-api-k8s-stg for elb-inject controller",
-    "url": "https://github.com/Apixio/lando-tf/pull/10",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T16:21:57Z",
-    "created_at": "2026-04-02T16:18:40Z"
   },
   {
     "title": "new repo for secret manager and claude rollout for all repo's",
@@ -1302,22 +1326,6 @@
     "author": "kealanmurphy-dv",
     "merged_at": "2026-04-02T09:55:36Z",
     "created_at": "2026-03-30T19:22:47Z"
-  },
-  {
-    "title": "feat: add ElastiCache Redis for lando STG Celery broker",
-    "url": "https://github.com/Apixio/lando-tf/pull/9",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T03:09:56Z",
-    "created_at": "2026-04-02T03:06:56Z"
-  },
-  {
-    "title": "feat: add Vault roles/policies and ElastiCache Redis for lando STG",
-    "url": "https://github.com/Apixio/lando-tf/pull/8",
-    "repo": "lando-tf",
-    "author": "datavant-org-tooling[bot]",
-    "merged_at": "2026-04-02T03:02:42Z",
-    "created_at": "2026-04-02T02:20:14Z"
   },
   {
     "title": "Restore Event-driven",
@@ -1736,30 +1744,6 @@
     "created_at": "2026-03-23T20:24:13Z"
   },
   {
-    "title": "Stg infrastructure",
-    "url": "https://github.com/Apixio/lando-tf/pull/4",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T22:47:23Z",
-    "created_at": "2026-03-27T21:06:22Z"
-  },
-  {
-    "title": "updating stuff",
-    "url": "https://github.com/Apixio/lando-tf/pull/6",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:38:09Z",
-    "created_at": "2026-03-27T22:36:55Z"
-  },
-  {
-    "title": "adding stg workspace",
-    "url": "https://github.com/Apixio/lando-tf/pull/5",
-    "repo": "lando-tf",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-27T22:21:55Z",
-    "created_at": "2026-03-27T22:19:27Z"
-  },
-  {
     "title": "fixing ownership for removed team",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/124",
     "repo": "tfc-bootstrap",
@@ -1782,14 +1766,6 @@
     "author": "vigneshnadar-apixio",
     "merged_at": "2026-03-27T21:51:27Z",
     "created_at": "2026-03-27T18:49:16Z"
-  },
-  {
-    "title": "Update CODEOWNERS",
-    "url": "https://github.com/Apixio/lando-tf/pull/3",
-    "repo": "lando-tf",
-    "author": "jeffreydols-apixio",
-    "merged_at": "2026-03-27T20:43:21Z",
-    "created_at": "2026-03-27T20:42:10Z"
   },
   {
     "title": "Add lando TFC project",
@@ -1894,14 +1870,6 @@
     "author": "agopishetty-apixio",
     "merged_at": "2026-03-27T14:37:24Z",
     "created_at": "2026-03-27T14:34:14Z"
-  },
-  {
-    "title": "remove nulls",
-    "url": "https://github.com/Apixio/di-platform/pull/297",
-    "repo": "di-platform",
-    "author": "agopishetty-apixio",
-    "merged_at": "2026-03-27T14:33:13Z",
-    "created_at": "2026-03-27T04:47:20Z"
   },
   {
     "title": "PLT-4386 - Add remaining Data-ML-Platform SPs in exp + etl",

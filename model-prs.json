@@ -1,5 +1,13 @@
 [
   {
+    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-13T17:56:21Z",
+    "created_at": "2026-04-10T17:28:55Z"
+  },
+  {
     "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/149",
     "repo": "ml-retrosp",
