@@ -1,29 +1,70 @@
 {
-  "date": "2026-04-13",
-  "generatedAt": "2026-04-13T15:20:13.154995+00:00",
+  "date": "2026-03-30",
+  "generatedAt": "2026-03-30T19:21:53.464651+00:00",
   "sprint": {
-    "id": 20740,
-    "name": "04/09/2026 - 04/22/2026",
-    "startDate": "2026-04-09T00:00:00.000Z",
-    "endDate": "2026-04-22T00:00:00.000Z",
+    "id": 9243,
+    "name": "03/26/2026 - 04/08/2026",
+    "startDate": "2026-03-26T01:09:00.847Z",
+    "endDate": "2026-04-09T07:00:00.000Z",
     "goal": ""
   },
   "summary": {
-    "totalIssues": 16,
-    "totalPoints": 29.0,
-    "donePoints": 1.0,
-    "inProgressPoints": 10.0,
+    "totalIssues": 11,
+    "totalPoints": 22.0,
+    "donePoints": 0,
+    "inProgressPoints": 8.0,
     "inReviewPoints": 0,
     "blockedPoints": 0,
-    "todoPoints": 18.0,
+    "todoPoints": 14.0,
     "wontDoPoints": 0,
-    "daysRemaining": 8,
+    "daysRemaining": 9,
     "daysElapsed": 4,
-    "completionPercent": 3.4,
-    "throughput": 0.25
+    "completionPercent": 0.0,
+    "throughput": 0.0
   },
   "tickets": {
     "todo": [
+      {
+        "key": "PLT-2062",
+        "summary": "Sprint Marker (ignore)",
+        "status": "To Do",
+        "statusCategory": "To Do",
+        "assignee": "Obaid Ebadi",
+        "issueType": "Task",
+        "priority": "Lowest",
+        "storyPoints": null,
+        "teams": [
+          "BOTS",
+          "Data Integrations",
+          "Data Ops",
+          "Data Platform",
+          "Data Production Support",
+          "ML Platform"
+        ],
+        "created": "2025-10-07T14:30:19.748-0400",
+        "resolved": null,
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": null
+      },
+      {
+        "key": "PLT-4266",
+        "summary": "Spike for for Bring your own Bucket Model ",
+        "status": "To Do",
+        "statusCategory": "To Do",
+        "assignee": "Rinat Ibrayev",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": 3.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-16T15:46:40.530-0400",
+        "resolved": null,
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": null
+      },
       {
         "key": "PLT-4370",
         "summary": "Delete old retro jobs from apx-databricks",
@@ -43,6 +84,42 @@
         "completedAt": null
       },
       {
+        "key": "PLT-4371",
+        "summary": "Subtraction incorporation into retro workflows",
+        "status": "To Do",
+        "statusCategory": "To Do",
+        "assignee": "Marcus Webb",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": 1.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-25T18:11:57.939-0400",
+        "resolved": null,
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": null
+      },
+      {
+        "key": "PLT-4372",
+        "summary": "DOS model integration in retro",
+        "status": "To Do",
+        "statusCategory": "To Do",
+        "assignee": "Marcus Webb",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": 2.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-25T18:11:59.074-0400",
+        "resolved": null,
+        "startedAt": null,
+        "blockedAt": null,
+        "completedAt": null
+      },
+      {
         "key": "PLT-4373",
         "summary": "Meatlaat inference workflow integration for remaining workflows (ACA, V24V28)",
         "status": "To Do",
@@ -50,7 +127,7 @@
         "assignee": "Alex Nuccio",
         "issueType": "Story",
         "priority": "Medium",
-        "storyPoints": 1.0,
+        "storyPoints": 2.0,
         "teams": [
           "ML Platform"
         ],
@@ -61,126 +138,36 @@
         "completedAt": null
       },
       {
-        "key": "PLT-4633",
-        "summary": "Spike: Decoupling Pager from Tesseract OCR pipeline",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Rinat Ibrayev",
-        "issueType": "Spike",
-        "priority": "Medium",
-        "storyPoints": 2.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-08T16:53:19.143-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4553",
-        "summary": "OCR Republish API doesn't work",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Rinat Ibrayev",
-        "issueType": "Bug",
-        "priority": "Medium",
-        "storyPoints": 1.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-06T12:31:18.713-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4557",
-        "summary": "databricks_svc.progress_report \u2014 Add patient_uuid, rename document_id \u2192 document_uuid and patient_id \u2192 patient_uuid in response",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Rinat Ibrayev",
-        "issueType": "Task",
-        "priority": "Medium",
-        "storyPoints": 3.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-06T18:09:45.198-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4545",
-        "summary": "ml-demomodelb: Add reference branches for SageMaker training approaches 1-3",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Marcus Webb",
-        "issueType": "Story",
-        "priority": "Medium",
-        "storyPoints": 3.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-03T18:55:57.353-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4618",
-        "summary": "DOS model implementation",
+        "key": "PLT-4374",
+        "summary": "Model inference workflow template configured for Meatlaat",
         "status": "To Do",
         "statusCategory": "To Do",
         "assignee": "Alex Nuccio",
         "issueType": "Story",
         "priority": "Medium",
-        "storyPoints": 3.0,
+        "storyPoints": 4.0,
         "teams": [
           "ML Platform"
         ],
-        "created": "2026-04-08T15:09:24.815-0400",
+        "created": "2026-03-25T18:12:01.708-0400",
         "resolved": null,
         "startedAt": null,
         "blockedAt": null,
         "completedAt": null
       },
       {
-        "key": "PLT-4627",
-        "summary": "Migrate Databricks/ML-ops Terraform (mlops-infra) to Terraform Cloud and align GHA workflows with SageMaker pattern",
+        "key": "PLT-4378",
+        "summary": "DS Support",
         "status": "To Do",
         "statusCategory": "To Do",
         "assignee": "Marcus Webb",
-        "issueType": "Story",
+        "issueType": "Task",
         "priority": "Medium",
         "storyPoints": 2.0,
         "teams": [
           "ML Platform"
         ],
-        "created": "2026-04-08T15:56:30.407-0400",
-        "resolved": null,
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4634",
-        "summary": "Set up fine-tuned DAQARI model evaluation notebook as published Databricks job",
-        "status": "To Do",
-        "statusCategory": "To Do",
-        "assignee": "Alex Nuccio",
-        "issueType": "Task",
-        "priority": "Medium",
-        "storyPoints": 3.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-08T16:53:26.659-0400",
+        "created": "2026-03-25T18:27:12.282-0400",
         "resolved": null,
         "startedAt": null,
         "blockedAt": null,
@@ -189,138 +176,64 @@
     ],
     "inProgress": [
       {
-        "key": "PLT-4266",
-        "summary": "Architecture Design: CDR / OCR Integration",
+        "key": "PLT-4288",
+        "summary": "Reduce logging in Spark OCR and OCR controller",
         "status": "In Progress",
         "statusCategory": "In Progress",
         "assignee": "Rinat Ibrayev",
+        "issueType": "Story",
+        "priority": "High",
+        "storyPoints": 3.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-18T14:56:56.359-0400",
+        "resolved": null,
+        "startedAt": "2026-03-26T15:46:39.374-0400",
+        "blockedAt": null,
+        "completedAt": null
+      },
+      {
+        "key": "PLT-4375",
+        "summary": "Update team/compute tagging to align with Datavant org policies",
+        "status": "In Progress",
+        "statusCategory": "In Progress",
+        "assignee": "Marcus Webb",
+        "issueType": "Story",
+        "priority": "Medium",
+        "storyPoints": 1.0,
+        "teams": [
+          "ML Platform"
+        ],
+        "created": "2026-03-25T18:12:02.960-0400",
+        "resolved": null,
+        "startedAt": "2026-03-26T12:23:45.843-0400",
+        "blockedAt": null,
+        "completedAt": null
+      },
+      {
+        "key": "PLT-4376",
+        "summary": "Spike: SageMaker integration plan",
+        "status": "In Progress",
+        "statusCategory": "In Progress",
+        "assignee": "Marcus Webb",
         "issueType": "Story",
         "priority": "Medium",
         "storyPoints": 4.0,
         "teams": [
           "ML Platform"
         ],
-        "created": "2026-03-16T15:46:40.530-0400",
+        "created": "2026-03-25T18:12:04.169-0400",
         "resolved": null,
-        "startedAt": "2026-04-08T20:17:37.992-0400",
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4585",
-        "summary": "Spike: Investigate SageMaker managed MLflow tracking server",
-        "status": "In Progress",
-        "statusCategory": "In Progress",
-        "assignee": "Marcus Webb",
-        "issueType": "Spike",
-        "priority": "Medium",
-        "storyPoints": 3.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-08T10:43:36.572-0400",
-        "resolved": null,
-        "startedAt": "2026-04-10T11:43:12.004-0400",
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4586",
-        "summary": "Swap retrosp batch-inference SPs and cluster policies to payer-coding vertical",
-        "status": "In Progress",
-        "statusCategory": "In Progress",
-        "assignee": "Marcus Webb",
-        "issueType": "Story",
-        "priority": "Medium",
-        "storyPoints": 2.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-08T11:01:00.422-0400",
-        "resolved": null,
-        "startedAt": "2026-04-09T10:56:50.512-0400",
-        "blockedAt": null,
-        "completedAt": null
-      },
-      {
-        "key": "PLT-4632",
-        "summary": "Expand databricks-svc alerts for failed docsets beyond IllegalArgumentException",
-        "status": "In Progress",
-        "statusCategory": "In Progress",
-        "assignee": "Alex Nuccio",
-        "issueType": "Story",
-        "priority": "Medium",
-        "storyPoints": 1.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-08T16:53:08.952-0400",
-        "resolved": null,
-        "startedAt": "2026-04-09T14:30:33.279-0400",
+        "startedAt": "2026-03-30T10:53:05.382-0400",
         "blockedAt": null,
         "completedAt": null
       }
     ],
     "inReview": [],
     "blocked": [],
-    "done": [
-      {
-        "key": "PLT-4415",
-        "summary": "add Datadog over signalmanager/databrick-svc for INC-1337",
-        "status": "Duplicate",
-        "statusCategory": "Done",
-        "assignee": "Alex Nuccio",
-        "issueType": "Story",
-        "priority": "Medium",
-        "storyPoints": 0.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-03-27T13:32:00.996-0400",
-        "resolved": "2026-04-08T18:13:40.554-0400",
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": "2026-04-08T18:13:40.554-0400"
-      },
-      {
-        "key": "PLT-4669",
-        "summary": "prepare-bundle: bundle name not overridden on PR close targeting dev/main, causing live jobs to be deleted",
-        "status": "Done",
-        "statusCategory": "Done",
-        "assignee": "Marcus Webb",
-        "issueType": "Bug",
-        "priority": "Medium",
-        "storyPoints": 1.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-04-10T12:24:35.060-0400",
-        "resolved": "2026-04-10T14:03:49.345-0400",
-        "startedAt": null,
-        "blockedAt": null,
-        "completedAt": "2026-04-10T14:03:49.345-0400"
-      }
-    ],
-    "wontDo": [
-      {
-        "key": "PLT-4372",
-        "summary": "DOS model integration in retro",
-        "status": "Won't Do",
-        "statusCategory": "Done",
-        "assignee": "Marcus Webb",
-        "issueType": "Story",
-        "priority": "Medium",
-        "storyPoints": 0.0,
-        "teams": [
-          "ML Platform"
-        ],
-        "created": "2026-03-25T18:11:59.074-0400",
-        "resolved": "2026-04-09T17:28:48.033-0400",
-        "startedAt": "2026-03-31T13:35:05.211-0400",
-        "blockedAt": "2026-04-07T11:33:41.241-0400",
-        "completedAt": "2026-04-09T17:28:48.033-0400"
-      }
-    ],
+    "done": [],
+    "wontDo": [],
     "other": []
   },
   "epics": [
@@ -329,7 +242,7 @@
       "summary": "KTLO Q2 - 2026 ML Platform",
       "status": "To Do",
       "statusCategory": "To Do",
-      "assignee": "Wyatt Thompson",
+      "assignee": "Unassigned",
       "priority": "Medium",
       "dueDate": null,
       "created": "2026-03-25T18:21:26.036-0400",
@@ -345,8 +258,8 @@
       "milestoneKey": null,
       "initiative": null,
       "initiativeKey": null,
-      "totalIssues": 7,
-      "doneIssues": 3,
+      "totalIssues": 2,
+      "doneIssues": 0,
       "health": "yellow"
     },
     {
@@ -363,17 +276,17 @@
         "ML Platform"
       ],
       "parentKey": "PLT-4020",
-      "parentSummary": "Better Self-Service Platform",
+      "parentSummary": "Databricks Self-Service Platform",
       "parentType": "Theme",
       "targetQuarter": null,
-      "milestone": "Better Self-Service Platform",
+      "milestone": "Databricks Self-Service Platform",
       "milestoneKey": "PLT-4020",
       "milestoneType": "Theme",
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 19,
-      "doneIssues": 2,
+      "totalIssues": 1,
+      "doneIssues": 0,
       "health": "yellow"
     },
     {
@@ -399,7 +312,7 @@
       "milestoneKey": "INIT-48",
       "milestoneType": "Theme",
       "initiative": "Advance Patient Access",
-      "initiativeKey": "DVI-60",
+      "initiativeKey": "INIT-24",
       "initiativeType": "Initiative",
       "totalIssues": 0,
       "doneIssues": 0,
@@ -428,7 +341,7 @@
       "milestoneKey": "INIT-35",
       "milestoneType": "Theme",
       "initiative": "Optimize Data Foundation Matching + Payer Routing",
-      "initiativeKey": "DVI-62",
+      "initiativeKey": "INIT-23",
       "initiativeType": "Initiative",
       "totalIssues": 0,
       "doneIssues": 0,
@@ -457,11 +370,11 @@
       "milestoneKey": "INIT-34",
       "milestoneType": "Theme",
       "initiative": "Drive Health Data Nexus Growth",
-      "initiativeKey": "DVI-64",
+      "initiativeKey": "INIT-22",
       "initiativeType": "Initiative",
       "totalIssues": 0,
       "doneIssues": 0,
-      "health": "yellow"
+      "health": "future"
     },
     {
       "key": "PLT-4046",
@@ -486,7 +399,7 @@
       "milestoneKey": "PLT-4047",
       "milestoneType": "Theme",
       "initiative": "Reduce Cost Per Chart",
-      "initiativeKey": "DVI-55",
+      "initiativeKey": "INIT-26",
       "initiativeType": "Initiative",
       "totalIssues": 0,
       "doneIssues": 0,
@@ -515,11 +428,11 @@
       "milestoneKey": "INIT-100",
       "milestoneType": "Theme",
       "initiative": "Modernize Provider Operations",
-      "initiativeKey": "DVI-57",
+      "initiativeKey": "INIT-25",
       "initiativeType": "Initiative",
-      "totalIssues": 1,
+      "totalIssues": 0,
       "doneIssues": 0,
-      "health": "yellow"
+      "health": "future"
     },
     {
       "key": "PLT-4040",
@@ -544,9 +457,9 @@
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 5,
+      "totalIssues": 0,
       "doneIssues": 0,
-      "health": "yellow"
+      "health": "future"
     },
     {
       "key": "PLT-4038",
@@ -555,7 +468,7 @@
       "statusCategory": "To Do",
       "assignee": "Unassigned",
       "priority": "Medium",
-      "dueDate": "2026-04-29",
+      "dueDate": "2026-06-24",
       "created": "2026-03-03T21:44:15.363-0500",
       "labels": [],
       "teams": [
@@ -571,18 +484,18 @@
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 7,
-      "doneIssues": 3,
+      "totalIssues": 2,
+      "doneIssues": 0,
       "health": "yellow"
     },
     {
       "key": "PLT-4034",
-      "summary": "Model Data Lineage and Governance \u2014 Atlan Integration",
+      "summary": "Model Data Lineage & Governance (Atlan)",
       "status": "To Do",
       "statusCategory": "To Do",
       "assignee": "Unassigned",
       "priority": "Medium",
-      "dueDate": "2026-07-01",
+      "dueDate": "2026-05-27",
       "created": "2026-03-03T21:35:39.044-0500",
       "labels": [],
       "teams": [
@@ -598,7 +511,7 @@
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 9,
+      "totalIssues": 2,
       "doneIssues": 0,
       "health": "yellow"
     },
@@ -609,7 +522,7 @@
       "statusCategory": "To Do",
       "assignee": "Unassigned",
       "priority": "Medium",
-      "dueDate": "2026-07-01",
+      "dueDate": "2026-05-27",
       "created": "2026-03-03T21:31:10.885-0500",
       "labels": [],
       "teams": [
@@ -625,9 +538,9 @@
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 7,
+      "totalIssues": 0,
       "doneIssues": 0,
-      "health": "yellow"
+      "health": "future"
     },
     {
       "key": "PLT-4031",
@@ -636,7 +549,7 @@
       "statusCategory": "To Do",
       "assignee": "Unassigned",
       "priority": "Medium",
-      "dueDate": "2026-06-17",
+      "dueDate": "2026-04-29",
       "created": "2026-03-03T21:30:38.432-0500",
       "labels": [],
       "teams": [
@@ -652,9 +565,9 @@
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 6,
+      "totalIssues": 0,
       "doneIssues": 0,
-      "health": "yellow"
+      "health": "future"
     },
     {
       "key": "PLT-4029",
@@ -670,10 +583,10 @@
         "ML Platform"
       ],
       "parentKey": "PLT-4020",
-      "parentSummary": "Better Self-Service Platform",
+      "parentSummary": "Databricks Self-Service Platform",
       "parentType": "Theme",
       "targetQuarter": null,
-      "milestone": "Better Self-Service Platform",
+      "milestone": "Databricks Self-Service Platform",
       "milestoneKey": "PLT-4020",
       "milestoneType": "Theme",
       "initiative": "Patient Data Lake ",
@@ -685,7 +598,7 @@
     },
     {
       "key": "PLT-4025",
-      "summary": "Implement ML Platform Inference Framework (v1)",
+      "summary": "Implement ML Platform CLI (v1)",
       "status": "To Do",
       "statusCategory": "To Do",
       "assignee": "Unassigned",
@@ -697,16 +610,16 @@
         "ML Platform"
       ],
       "parentKey": "PLT-4020",
-      "parentSummary": "Better Self-Service Platform",
+      "parentSummary": "Databricks Self-Service Platform",
       "parentType": "Theme",
       "targetQuarter": null,
-      "milestone": "Better Self-Service Platform",
+      "milestone": "Databricks Self-Service Platform",
       "milestoneKey": "PLT-4020",
       "milestoneType": "Theme",
       "initiative": "Patient Data Lake ",
       "initiativeKey": "INIT-54",
       "initiativeType": "Initiative",
-      "totalIssues": 8,
+      "totalIssues": 3,
       "doneIssues": 0,
       "health": "yellow"
     },
@@ -726,10 +639,10 @@
         "ML Platform"
       ],
       "parentKey": "PLT-4020",
-      "parentSummary": "Better Self-Service Platform",
+      "parentSummary": "Databricks Self-Service Platform",
       "parentType": "Theme",
       "targetQuarter": "ML_Q2_2026",
-      "milestone": "Better Self-Service Platform",
+      "milestone": "Databricks Self-Service Platform",
       "milestoneKey": "PLT-4020",
       "milestoneType": "Theme",
       "initiative": "Patient Data Lake ",
@@ -767,19 +680,16 @@
   ],
   "epicHealthSummary": {
     "red": 0,
-    "yellow": 11,
+    "yellow": 6,
     "green": 1,
-    "future": 4
+    "future": 9
   },
   "flowMetrics": {
     "leadTime": {
-      "p50": 6.1,
-      "p85": 10.4,
-      "p95": 11.6,
-      "values": [
-        0.1,
-        12.2
-      ]
+      "p50": null,
+      "p85": null,
+      "p95": null,
+      "values": []
     },
     "cycleTime": {
       "p50": null,
@@ -788,6 +698,6 @@
       "values": []
     },
     "flowEfficiency": null,
-    "sampleSize": 2
+    "sampleSize": 0
   }
 }
