@@ -147,6 +147,7 @@ function formatValue(value, unit) {
     if (unit === '$') return `$${Number(value).toLocaleString()}`;
     if (unit === 'ms') return `${value}ms`;
     if (unit === 'hrs') return `${value}h`;
+    if (unit === 'min') return `${value}m`;
     if (unit === 'docs/hr') return `${Number(value).toLocaleString()}/hr`;
     if (unit === '$/doc') return `$${value}`;
     return Number(value).toLocaleString();

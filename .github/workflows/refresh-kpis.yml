@@ -146,6 +146,100 @@ jobs:
 
           UPDATED=$(date -u +"%Y-%m-%d %H:%M UTC")
 
+          # --- DS Velocity Metrics ---
+          # Fetch CI first-pass rate and push-to-deploy time from ml-daqari GitHub Actions
+          echo "Fetching DS velocity metrics from ml-daqari..."
+
+          # Get workflow runs from the last 30 days (feature branch deploys)
+          RUNS_30D=$(gh api "/repos/$ORG/ml-daqari/actions/runs?created=>=$THIRTY_DAYS_AGO&per_page=100" 2>/dev/null || echo '{"workflow_runs":[]}')
+
+          # CI first-pass rate: count feature branch runs, check how many succeeded on first attempt
+          # Group by head_sha — if the first run for a sha succeeded, it's a first-pass success
+          CI_STATS=$(echo "$RUNS_30D" | jq '
+            [.workflow_runs[] | select(.name == "Deploy Feature Branch")] |
+            group_by(.head_sha) |
+            map({sha: .[0].head_sha, first_result: (sort_by(.created_at) | .[0].conclusion)}) |
+            {total: length, passed: [.[] | select(.first_result == "success")] | length}
+          ')
+          CI_TOTAL=$(echo "$CI_STATS" | jq '.total')
+          CI_PASSED=$(echo "$CI_STATS" | jq '.passed')
+          if [ "$CI_TOTAL" -gt 0 ]; then
+            CI_FIRST_PASS=$(echo "scale=0; $CI_PASSED * 100 / $CI_TOTAL" | bc)
+          else
+            CI_FIRST_PASS="null"
+          fi
+
+          # Push to deploy time: average minutes from run created to run completed (successful runs only)
+          DEPLOY_STATS=$(echo "$RUNS_30D" | jq '
+            [.workflow_runs[] | select(.name == "Deploy Feature Branch" and .conclusion == "success") |
+              {minutes: ((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 60}
+            ] | if length > 0 then {avg: ([.[].minutes] | add / length), count: length} else {avg: null, count: 0} end
+          ')
+          PUSH_TO_DEPLOY=$(echo "$DEPLOY_STATS" | jq '.avg | if . != null then (. * 10 | round / 10) else null end')
+
+          # Prior period CI stats (30-60 days ago)
+          RUNS_PRIOR=$(gh api "/repos/$ORG/ml-daqari/actions/runs?created=$SIXTY_DAYS_AGO..$THIRTY_DAYS_AGO&per_page=100" 2>/dev/null || echo '{"workflow_runs":[]}')
+          CI_STATS_PRIOR=$(echo "$RUNS_PRIOR" | jq '
+            [.workflow_runs[] | select(.name == "Deploy Feature Branch")] |
+            group_by(.head_sha) |
+            map({sha: .[0].head_sha, first_result: (sort_by(.created_at) | .[0].conclusion)}) |
+            {total: length, passed: [.[] | select(.first_result == "success")] | length}
+          ')
+          CI_TOTAL_PRIOR=$(echo "$CI_STATS_PRIOR" | jq '.total')
+          CI_PASSED_PRIOR=$(echo "$CI_STATS_PRIOR" | jq '.passed')
+          if [ "$CI_TOTAL_PRIOR" -gt 0 ]; then
+            CI_FIRST_PASS_PRIOR=$(echo "scale=0; $CI_PASSED_PRIOR * 100 / $CI_TOTAL_PRIOR" | bc)
+          else
+            CI_FIRST_PASS_PRIOR="null"
+          fi
+
+          DEPLOY_STATS_PRIOR=$(echo "$RUNS_PRIOR" | jq '
+            [.workflow_runs[] | select(.name == "Deploy Feature Branch" and .conclusion == "success") |
+              {minutes: ((.updated_at | fromdateiso8601) - (.created_at | fromdateiso8601)) / 60}
+            ] | if length > 0 then {avg: ([.[].minutes] | add / length), count: length} else {avg: null, count: 0} end
+          ')
+          PUSH_TO_DEPLOY_PRIOR=$(echo "$DEPLOY_STATS_PRIOR" | jq '.avg | if . != null then (. * 10 | round / 10) else null end')
+
+          # PR review wait time: hours from PR created to first review
+          echo "Fetching PR review wait times..."
+          TOTAL_REVIEW_WAIT=0
+          REVIEW_COUNT=0
+          PRIOR_REVIEW_WAIT=0
+          PRIOR_REVIEW_COUNT=0
+
+          for REPO in $REPOS; do
+            # Get merged PRs with reviews
+            MERGED_PRS=$(gh api "/repos/$ORG/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=30" 2>/dev/null || echo '[]')
+            IS_ARRAY=$(echo "$MERGED_PRS" | jq 'if type == "array" then "yes" else "no" end' 2>/dev/null || echo '"no"')
+            if [ "$IS_ARRAY" != '"yes"' ]; then continue; fi
+
+            CURRENT_MERGED=$(echo "$MERGED_PRS" | jq --arg since "$THIRTY_DAYS_AGO" '[.[] | select(.merged_at != null and .merged_at >= $since)]')
+            PR_NUMBERS=$(echo "$CURRENT_MERGED" | jq -r '.[].number')
+
+            for PR_NUM in $PR_NUMBERS; do
+              REVIEWS=$(gh api "/repos/$ORG/$REPO/pulls/$PR_NUM/reviews?per_page=1" 2>/dev/null || echo '[]')
+              FIRST_REVIEW=$(echo "$REVIEWS" | jq -r '.[0].submitted_at // empty' 2>/dev/null)
+              PR_CREATED=$(echo "$CURRENT_MERGED" | jq -r --argjson num "$PR_NUM" '.[] | select(.number == $num) | .created_at')
+              if [ -n "$FIRST_REVIEW" ] && [ -n "$PR_CREATED" ]; then
+                WAIT_HRS=$(echo "$REVIEWS" | jq --arg created "$PR_CREATED" '
+                  ((.[0].submitted_at | fromdateiso8601) - ($created | fromdateiso8601)) / 3600
+                ' 2>/dev/null || echo "0")
+                if [ "$WAIT_HRS" != "0" ] && [ "$WAIT_HRS" != "null" ]; then
+                  TOTAL_REVIEW_WAIT=$(echo "$TOTAL_REVIEW_WAIT + $WAIT_HRS" | bc)
+                  REVIEW_COUNT=$((REVIEW_COUNT + 1))
+                fi
+              fi
+            done
+          done
+
+          if [ "$REVIEW_COUNT" -gt 0 ]; then
+            AVG_REVIEW_WAIT=$(echo "scale=0; $TOTAL_REVIEW_WAIT / $REVIEW_COUNT" | bc)
+          else
+            AVG_REVIEW_WAIT="null"
+          fi
+
+          echo "CI First-Pass: ${CI_FIRST_PASS}%, Push-to-Deploy: ${PUSH_TO_DEPLOY}m, Review Wait: ${AVG_REVIEW_WAIT}h"
+
           # Update kpi-data.json
           jq \
             --argjson current_prs "$CURRENT_PRS" \
@@ -154,6 +248,11 @@ jobs:
             --argjson model_prior "$MODEL_PRIOR" \
             --argjson avg_merge "$AVG_MERGE_HOURS" \
             --argjson prior_merge "$PRIOR_AVG_MERGE_HOURS" \
+            --argjson ci_first_pass "$CI_FIRST_PASS" \
+            --argjson ci_first_pass_prior "$CI_FIRST_PASS_PRIOR" \
+            --argjson push_deploy "$PUSH_TO_DEPLOY" \
+            --argjson push_deploy_prior "$PUSH_TO_DEPLOY_PRIOR" \
+            --argjson review_wait "$AVG_REVIEW_WAIT" \
             --arg updated "$UPDATED" \
             '
             .northstar[0].value = $model_current |
@@ -164,7 +263,15 @@ jobs:
             (.leading[] | select(.id == "num-prs")).lastUpdated = $updated |
             (.leading[] | select(.id == "deployment-time")).value = $avg_merge |
             (.leading[] | select(.id == "deployment-time")).previousValue = $prior_merge |
-            (.leading[] | select(.id == "deployment-time")).lastUpdated = $updated
+            (.leading[] | select(.id == "deployment-time")).lastUpdated = $updated |
+            (.leading[] | select(.id == "ci-first-pass-rate")).value = $ci_first_pass |
+            (.leading[] | select(.id == "ci-first-pass-rate")).previousValue = $ci_first_pass_prior |
+            (.leading[] | select(.id == "ci-first-pass-rate")).lastUpdated = $updated |
+            (.leading[] | select(.id == "push-to-deploy-time")).value = $push_deploy |
+            (.leading[] | select(.id == "push-to-deploy-time")).previousValue = $push_deploy_prior |
+            (.leading[] | select(.id == "push-to-deploy-time")).lastUpdated = $updated |
+            (.leading[] | select(.id == "pr-review-wait-time")).value = $review_wait |
+            (.leading[] | select(.id == "pr-review-wait-time")).lastUpdated = $updated
             ' kpi-data.json > kpi-data.tmp && mv kpi-data.tmp kpi-data.json
 
           # Sort detail files by merge date (newest first)

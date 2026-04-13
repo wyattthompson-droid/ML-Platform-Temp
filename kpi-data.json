@@ -35,14 +35,34 @@
   ],
   "leading": [
     {
-      "id": "deploy-success-rate",
-      "label": "Deploy Success Rate",
+      "id": "ci-first-pass-rate",
+      "label": "CI First-Pass Rate",
       "value": null,
       "previousValue": null,
       "unit": "%",
       "source": "github",
       "lastUpdated": null,
-      "description": "Percentage of successful CI/CD deployments"
+      "description": "Percentage of feature branch pushes that pass CI on first attempt (rolling 30 days)"
+    },
+    {
+      "id": "push-to-deploy-time",
+      "label": "Push to Deploy Time",
+      "value": null,
+      "previousValue": null,
+      "unit": "min",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Average minutes from git push to Databricks deploy complete (rolling 30 days)"
+    },
+    {
+      "id": "pr-review-wait-time",
+      "label": "PR Review Wait Time",
+      "value": null,
+      "previousValue": null,
+      "unit": "hrs",
+      "source": "github",
+      "lastUpdated": null,
+      "description": "Average hours from PR opened to first review (rolling 30 days)"
     },
     {
       "id": "num-prs",
