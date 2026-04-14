@@ -1,5 +1,13 @@
 [
   {
+    "title": "docs: document missing slackbot commands and manifest limitations",
+    "url": "https://github.com/Apixio/cloud9/pull/332",
+    "repo": "cloud9",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-14T05:08:42Z",
+    "created_at": "2026-04-13T22:49:00Z"
+  },
+  {
     "title": "AL: fix api urls",
     "url": "https://github.com/Apixio/cloud9/pull/333",
     "repo": "cloud9",
@@ -384,28 +392,12 @@
     "created_at": "2026-04-09T22:04:09Z"
   },
   {
-    "title": "fix: update OIDC subjects for 6 shortened integration IDs",
-    "url": "https://github.com/Apixio/port-tf/pull/31",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-09T21:54:31Z",
-    "created_at": "2026-04-08T22:23:10Z"
-  },
-  {
     "title": "removed accuracy tab, added client auditor to anno history filtering …",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4301",
     "repo": "apx-launchpad",
     "author": "bilagan-apixio",
     "merged_at": "2026-04-09T21:49:59Z",
     "created_at": "2026-04-09T20:56:10Z"
-  },
-  {
-    "title": "fix: update integration IDs for 6 shortened Port Saas integrations",
-    "url": "https://github.com/Apixio/port-tf/pull/32",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-09T21:19:04Z",
-    "created_at": "2026-04-09T18:47:47Z"
   },
   {
     "title": "Refactored code nav sm queries to point to new sm service",
@@ -632,14 +624,6 @@
     "created_at": "2026-04-08T20:07:03Z"
   },
   {
-    "title": "fix: correct Port prod org namespace in OIDC trust policies",
-    "url": "https://github.com/Apixio/port-tf/pull/30",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-08T20:04:57Z",
-    "created_at": "2026-04-08T19:58:46Z"
-  },
-  {
     "title": "Update the values for reviewType",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4296",
     "repo": "apx-launchpad",
@@ -848,14 +832,6 @@
     "created_at": "2026-04-07T22:34:02Z"
   },
   {
-    "title": "fix: update OIDC subjects to prod Port org ID across all 22 accounts",
-    "url": "https://github.com/Apixio/port-tf/pull/29",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-07T21:55:59Z",
-    "created_at": "2026-04-07T20:48:23Z"
-  },
-  {
     "title": "Release 5.32.18",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4291",
     "repo": "apx-launchpad",
@@ -888,22 +864,6 @@
     "created_at": "2026-04-07T20:06:51Z"
   },
   {
-    "title": "fix: also override email format on awsAccount blueprint",
-    "url": "https://github.com/Apixio/port-tf/pull/28",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-07T19:55:58Z",
-    "created_at": "2026-04-07T19:51:48Z"
-  },
-  {
-    "title": "fix: override arn format on awsAccount blueprint to avoid forbidden_f…",
-    "url": "https://github.com/Apixio/port-tf/pull/27",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-07T19:45:05Z",
-    "created_at": "2026-04-07T19:29:57Z"
-  },
-  {
     "title": "EN-47490 url params",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4290",
     "repo": "apx-launchpad",
@@ -934,14 +894,6 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-04-07T18:54:51Z",
     "created_at": "2026-04-07T18:41:57Z"
-  },
-  {
-    "title": "fix: import pre-existing blueprints in prod and dev Port orgs",
-    "url": "https://github.com/Apixio/port-tf/pull/26",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-07T18:53:00Z",
-    "created_at": "2026-04-06T22:06:54Z"
   },
   {
     "title": "fix: grant execution roles read access to shared SageMaker session bucket",
@@ -1110,14 +1062,6 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-04-06T22:29:37Z",
     "created_at": "2026-04-03T16:02:13Z"
-  },
-  {
-    "title": "CLOUD-5197: feat: extend Port.io AWS integration to all 22 commercial accounts",
-    "url": "https://github.com/Apixio/port-tf/pull/25",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-06T21:50:56Z",
-    "created_at": "2026-04-02T16:14:20Z"
   },
   {
     "title": "Add teammates to RA group",
@@ -1864,6 +1808,14 @@
     "created_at": "2026-03-31T16:35:30Z"
   },
   {
+    "title": "Split dashboard into pre-subtraction and post-subtraction metrics",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/76",
+    "repo": "ml-llmfp",
+    "author": "xchen-apixio",
+    "merged_at": "2026-03-31T16:35:43Z",
+    "created_at": "2026-02-16T17:55:54Z"
+  },
+  {
     "title": "Fix/en 47244 csv trailing spaces",
     "url": "https://github.com/Apixio/mono/pull/3651",
     "repo": "mono",
@@ -2224,6 +2176,22 @@
     "created_at": "2026-03-26T20:06:07Z"
   },
   {
+    "title": "dev -> main",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/99",
+    "repo": "ml-llmfp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-26T19:48:36Z",
+    "created_at": "2026-03-26T19:39:43Z"
+  },
+  {
+    "title": "update sql warehouses",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/98",
+    "repo": "ml-llmfp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-26T19:39:23Z",
+    "created_at": "2026-03-26T19:34:57Z"
+  },
+  {
     "title": "new repo for claude review action",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/116",
     "repo": "tfc-bootstrap",
@@ -2240,6 +2208,14 @@
     "created_at": "2026-03-23T14:30:29Z"
   },
   {
+    "title": "dev -> main",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/94",
+    "repo": "ml-llmfp",
+    "author": "ahmedbalogun-apixio",
+    "merged_at": "2026-03-26T18:23:38Z",
+    "created_at": "2026-03-18T14:50:46Z"
+  },
+  {
     "title": "CLOUD-5341: creating project block for code navigator workqueue service",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/115",
     "repo": "tfc-bootstrap",
@@ -2248,12 +2224,28 @@
     "created_at": "2026-03-26T18:05:18Z"
   },
   {
+    "title": "Optimize subtraction blacklist filter performance",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/96",
+    "repo": "ml-llmfp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-03-26T18:00:37Z",
+    "created_at": "2026-03-26T17:07:15Z"
+  },
+  {
     "title": "fix: publish only on tag creation",
     "url": "https://github.com/Apixio/cloud9/pull/317",
     "repo": "cloud9",
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-26T17:03:13Z",
     "created_at": "2026-03-26T15:36:23Z"
+  },
+  {
+    "title": "Feat/subtraction blacklist",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/95",
+    "repo": "ml-llmfp",
+    "author": "xchen-apixio",
+    "merged_at": "2026-03-26T15:32:50Z",
+    "created_at": "2026-03-24T22:23:03Z"
   },
   {
     "title": "dev -> main",
@@ -2960,6 +2952,14 @@
     "created_at": "2026-03-16T20:09:39Z"
   },
   {
+    "title": "Compute Policy Update ",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/93",
+    "repo": "ml-llmfp",
+    "author": "ahmedbalogun-apixio",
+    "merged_at": "2026-03-17T15:06:15Z",
+    "created_at": "2026-03-16T19:33:38Z"
+  },
+  {
     "title": "Improved ACL proxy logging + bugfix",
     "url": "https://github.com/Apixio/mono/pull/3631",
     "repo": "mono",
@@ -2984,11 +2984,27 @@
     "created_at": "2026-03-12T14:13:46Z"
   },
   {
+    "title": "Update service principals and expraprd warehouse_id",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/92",
+    "repo": "ml-llmfp",
+    "author": "xchen-apixio",
+    "merged_at": "2026-03-16T17:07:20Z",
+    "created_at": "2026-03-16T15:33:22Z"
+  },
+  {
     "title": "updated llmfp version",
     "url": "https://github.com/Apixio/ml-retrosp/pull/117",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-03-16T17:03:12Z",
     "created_at": "2026-03-16T17:00:55Z"
+  },
+  {
+    "title": "Add filtering for only codesystems under the current insurance program",
+    "url": "https://github.com/Apixio/ml-llmfp/pull/91",
+    "repo": "ml-llmfp",
+    "author": "xchen-apixio",
+    "merged_at": "2026-03-16T15:19:38Z",
+    "created_at": "2026-03-11T20:35:07Z"
   }
 ]
