@@ -9,6 +9,16 @@
       "source": "github",
       "lastUpdated": "2026-04-13 23:57 UTC",
       "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
+    },
+    {
+      "id": "iteration-cycle-time",
+      "label": "Iteration Cycle Time",
+      "value": "—",
+      "previousValue": null,
+      "unit": "min",
+      "source": "manual",
+      "lastUpdated": "Awaiting instrumentation",
+      "description": "Time from initiating a code change to receiving first execution feedback. Composed of three loops: ICT-Notebook (cell edit to result, target <30s), ICT-CI (git push to deploy complete, target <10min), ICT-Production (deploy to validated results, target <60min). Measures how fast data scientists can iterate on model changes."
     }
   ],
   "lagging": [
