@@ -1,5 +1,29 @@
 [
   {
+    "title": "chore: add new services to lando ecrs",
+    "url": "https://github.com/Apixio/lando-tf/pull/15",
+    "repo": "lando-tf",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-04-15T12:58:02Z",
+    "created_at": "2026-04-15T12:43:51Z"
+  },
+  {
+    "title": "feat: add datasouces",
+    "url": "https://github.com/Apixio/terraform-provider-realm/pull/4",
+    "repo": "terraform-provider-realm",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-15T12:43:26Z",
+    "created_at": "2026-04-14T19:48:04Z"
+  },
+  {
+    "title": "fix: compact json to a single line",
+    "url": "https://github.com/Apixio/actions-build-utils/pull/12",
+    "repo": "actions-build-utils",
+    "author": "kealanmurphy-dv",
+    "merged_at": "2026-04-15T11:41:46Z",
+    "created_at": "2026-04-15T11:39:47Z"
+  },
+  {
     "title": "update stg loader",
     "url": "https://github.com/Apixio/application-configs/pull/2739",
     "repo": "application-configs",
@@ -552,6 +576,14 @@
     "created_at": "2026-04-08T15:44:46Z"
   },
   {
+    "title": "feat: add AWS Secrets Manager secrets and IRSA permissions for ESO mi…",
+    "url": "https://github.com/Apixio/lando-tf/pull/14",
+    "repo": "lando-tf",
+    "author": "jeffreydols-apixio",
+    "merged_at": "2026-04-09T10:41:15Z",
+    "created_at": "2026-04-09T01:54:23Z"
+  },
+  {
     "title": "Bug fix on proxied 'and' permissions",
     "url": "https://github.com/Apixio/mono/pull/3658",
     "repo": "mono",
@@ -870,6 +902,14 @@
     "author": "gtang-apixio",
     "merged_at": "2026-04-07T21:33:38Z",
     "created_at": "2026-04-07T20:46:08Z"
+  },
+  {
+    "title": "Add execute-api:Invoke permission for REALM API Gateway",
+    "url": "https://github.com/Apixio/lando-tf/pull/13",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-07T20:49:58Z",
+    "created_at": "2026-04-07T20:47:25Z"
   },
   {
     "title": "Update table data in redux upon patient highlights filtering",
@@ -1248,6 +1288,14 @@
     "created_at": "2026-04-02T23:08:24Z"
   },
   {
+    "title": "Allow IRSA role to assume lando-readonly in member accounts",
+    "url": "https://github.com/Apixio/lando-tf/pull/12",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-03T02:42:22Z",
+    "created_at": "2026-04-03T02:40:25Z"
+  },
+  {
     "title": "datavalidation new date format checks added",
     "url": "https://github.com/Apixio/di-platform/pull/324",
     "repo": "di-platform",
@@ -1336,6 +1384,14 @@
     "created_at": "2026-04-02T17:17:18Z"
   },
   {
+    "title": "feat: add HTTPS listener with wildcard cert and HTTP→HTTPS redirect",
+    "url": "https://github.com/Apixio/lando-tf/pull/11",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T18:15:48Z",
+    "created_at": "2026-04-02T18:13:06Z"
+  },
+  {
     "title": "RMBU Alerting ",
     "url": "https://github.com/Apixio/ml-daqari/pull/57",
     "repo": "ml-daqari",
@@ -1360,6 +1416,14 @@
     "created_at": "2026-04-02T16:12:52Z"
   },
   {
+    "title": "fix: name target group lando-api-k8s-stg for elb-inject controller",
+    "url": "https://github.com/Apixio/lando-tf/pull/10",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T16:21:57Z",
+    "created_at": "2026-04-02T16:18:40Z"
+  },
+  {
     "title": "new repo for secret manager and claude rollout for all repo's",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/129",
     "repo": "tfc-bootstrap",
@@ -1382,6 +1446,22 @@
     "author": "kealanmurphy-dv",
     "merged_at": "2026-04-02T10:19:33Z",
     "created_at": "2026-04-01T16:35:00Z"
+  },
+  {
+    "title": "feat: add ElastiCache Redis for lando STG Celery broker",
+    "url": "https://github.com/Apixio/lando-tf/pull/9",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T03:09:56Z",
+    "created_at": "2026-04-02T03:06:56Z"
+  },
+  {
+    "title": "feat: add Vault roles/policies and ElastiCache Redis for lando STG",
+    "url": "https://github.com/Apixio/lando-tf/pull/8",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-02T03:02:42Z",
+    "created_at": "2026-04-02T02:20:14Z"
   },
   {
     "title": "Restore Event-driven",
@@ -1776,6 +1856,30 @@
     "created_at": "2026-03-26T16:59:14Z"
   },
   {
+    "title": "Stg infrastructure",
+    "url": "https://github.com/Apixio/lando-tf/pull/4",
+    "repo": "lando-tf",
+    "author": "jeffreydols-apixio",
+    "merged_at": "2026-03-27T22:47:23Z",
+    "created_at": "2026-03-27T21:06:22Z"
+  },
+  {
+    "title": "updating stuff",
+    "url": "https://github.com/Apixio/lando-tf/pull/6",
+    "repo": "lando-tf",
+    "author": "jasonroschke-apixio",
+    "merged_at": "2026-03-27T22:38:09Z",
+    "created_at": "2026-03-27T22:36:55Z"
+  },
+  {
+    "title": "adding stg workspace",
+    "url": "https://github.com/Apixio/lando-tf/pull/5",
+    "repo": "lando-tf",
+    "author": "jasonroschke-apixio",
+    "merged_at": "2026-03-27T22:21:55Z",
+    "created_at": "2026-03-27T22:19:27Z"
+  },
+  {
     "title": "fixing ownership for removed team",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/124",
     "repo": "tfc-bootstrap",
@@ -1798,6 +1902,14 @@
     "author": "vigneshnadar-apixio",
     "merged_at": "2026-03-27T21:51:27Z",
     "created_at": "2026-03-27T18:49:16Z"
+  },
+  {
+    "title": "Update CODEOWNERS",
+    "url": "https://github.com/Apixio/lando-tf/pull/3",
+    "repo": "lando-tf",
+    "author": "jeffreydols-apixio",
+    "merged_at": "2026-03-27T20:43:21Z",
+    "created_at": "2026-03-27T20:42:10Z"
   },
   {
     "title": "Add lando TFC project",
@@ -2504,14 +2616,6 @@
     "created_at": "2026-03-18T16:48:48Z"
   },
   {
-    "title": "CLOUD-1878: migrate apx-metrics-flink-stg-state to terraform",
-    "url": "https://github.com/Apixio/metrics-tf/pull/11",
-    "repo": "metrics-tf",
-    "author": "dmai-apixio",
-    "merged_at": "2026-03-18T17:59:50Z",
-    "created_at": "2026-03-16T17:25:43Z"
-  },
-  {
     "title": "added provider specialty getter for annotation model",
     "url": "https://github.com/Apixio/mono/pull/3630",
     "repo": "mono",
@@ -2614,14 +2718,6 @@
     "author": "dmai-apixio",
     "merged_at": "2026-03-16T18:55:38Z",
     "created_at": "2026-03-16T14:56:49Z"
-  },
-  {
-    "title": "CLOUD-1877: migrate apx-metrics-consumer-stg-state to terraform",
-    "url": "https://github.com/Apixio/metrics-tf/pull/12",
-    "repo": "metrics-tf",
-    "author": "dmai-apixio",
-    "merged_at": "2026-03-16T18:50:26Z",
-    "created_at": "2026-03-16T17:44:51Z"
   },
   {
     "title": "CLOUD-1858: migrate apx-chart-svc-storage-stg to terraform",
