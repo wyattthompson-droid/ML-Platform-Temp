@@ -1,5 +1,13 @@
 [
   {
+    "title": "refactor: extract step definitions into steps.py",
+    "url": "https://github.com/Apixio/ml-demomodelb/pull/9",
+    "repo": "ml-demomodelb",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-16T17:52:45Z",
+    "created_at": "2026-04-16T17:50:46Z"
+  },
+  {
     "title": "Bcbstn ma document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/354",
     "repo": "di-platform",
@@ -70,30 +78,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-13T20:59:41Z",
     "created_at": "2026-04-13T20:43:44Z"
-  },
-  {
-    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
-    "repo": "ml-retrosp",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-13T17:56:21Z",
-    "created_at": "2026-04-10T17:28:55Z"
-  },
-  {
-    "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/149",
-    "repo": "ml-retrosp",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-10T16:13:18Z",
-    "created_at": "2026-04-09T20:29:28Z"
-  },
-  {
-    "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/150",
-    "repo": "ml-retrosp",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-09T22:12:56Z",
-    "created_at": "2026-04-09T22:05:52Z"
   },
   {
     "title": "PLT-4589 security: remove CodeArtifact access from SageMaker execution roles",
@@ -176,14 +160,6 @@
     "created_at": "2026-04-03T16:02:13Z"
   },
   {
-    "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/146",
-    "repo": "ml-retrosp",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-06T20:46:04Z",
-    "created_at": "2026-04-06T19:49:56Z"
-  },
-  {
     "title": "KP ACA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/328",
     "repo": "di-platform",
@@ -206,14 +182,6 @@
     "author": "naditya-apixio",
     "merged_at": "2026-04-03T21:31:55Z",
     "created_at": "2026-04-03T21:21:20Z"
-  },
-  {
-    "title": "feat: GPU fallback inference for event-driven MeatLAAT",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/138",
-    "repo": "ml-retrosp",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-03T16:33:19Z",
-    "created_at": "2026-04-02T23:08:24Z"
   },
   {
     "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
@@ -270,14 +238,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-03-26T20:36:44Z",
     "created_at": "2026-03-23T20:31:34Z"
-  },
-  {
-    "title": "fix: retry concurrent merge conflicts in claim_requests",
-    "url": "https://github.com/Apixio/ml-retrosp/pull/123",
-    "repo": "ml-retrosp",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-26T00:18:04Z",
-    "created_at": "2026-03-26T00:11:58Z"
   },
   {
     "title": "EN-47116: Bronze ingestion pipeline - separate MA/ACA tables with overwrite strategy",
