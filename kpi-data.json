@@ -3,11 +3,11 @@
     {
       "id": "model-updates-prod",
       "label": "Model Updates in Production",
-      "value": 41,
-      "previousValue": 4,
+      "value": 37,
+      "previousValue": 3,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
     },
     {
@@ -47,11 +47,11 @@
     {
       "id": "ci-first-pass-rate",
       "label": "CI First-Pass Rate",
-      "value": 75,
-      "previousValue": 90,
+      "value": 78,
+      "previousValue": 86,
       "unit": "%",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Percentage of feature branch pushes that pass CI on first attempt (rolling 30 days)"
     },
     {
@@ -61,27 +61,27 @@
       "previousValue": 4,
       "unit": "min",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Average minutes from git push to Databricks deploy complete (rolling 30 days)"
     },
     {
       "id": "pr-review-wait-time",
       "label": "PR Review Wait Time",
-      "value": 23,
+      "value": 22,
       "previousValue": null,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Average hours from PR opened to first review (rolling 30 days)"
     },
     {
       "id": "num-prs",
       "label": "Number of PRs",
-      "value": 365,
-      "previousValue": 129,
+      "value": 362,
+      "previousValue": 115,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Pull requests opened (rolling 30 days)"
     },
     {
@@ -97,11 +97,11 @@
     {
       "id": "deployment-time",
       "label": "Deployment Time (PR to Prod)",
-      "value": 51,
-      "previousValue": 49,
+      "value": 49,
+      "previousValue": 53,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-04-17 13:25 UTC",
+      "lastUpdated": "2026-04-17 19:05 UTC",
       "description": "Average time from PR open to merge on main"
     },
     {
