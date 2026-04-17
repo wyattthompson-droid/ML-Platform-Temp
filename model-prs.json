@@ -40,6 +40,14 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
+    "title": "v1.2.2: null content guard, content_was_null flag, pre-step input validation",
+    "url": "https://github.com/Apixio/ml-infdate/pull/60",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-14T20:23:34Z",
+    "created_at": "2026-04-14T17:26:34Z"
+  },
+  {
     "title": "middle last subset fixed",
     "url": "https://github.com/Apixio/ml-daqari/pull/60",
     "repo": "ml-daqari",
@@ -96,6 +104,14 @@
     "created_at": "2026-04-06T19:11:57Z"
   },
   {
+    "title": "Release 1.2.1: stratified sampling, page cap parameters, content size logging",
+    "url": "https://github.com/Apixio/ml-infdate/pull/47",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-08T16:39:20Z",
+    "created_at": "2026-04-07T14:24:07Z"
+  },
+  {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
     "url": "https://github.com/Apixio/di-platform/pull/337",
     "repo": "di-platform",
@@ -120,6 +136,14 @@
     "created_at": "2026-04-07T22:34:02Z"
   },
   {
+    "title": "Fix OOM in pre step: replace collect_list+join with applyInPandas",
+    "url": "https://github.com/Apixio/ml-infdate/pull/49",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-07T18:54:51Z",
+    "created_at": "2026-04-07T18:41:57Z"
+  },
+  {
     "title": "fix: grant execution roles read access to shared SageMaker session bucket",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/77",
     "repo": "ml-ops-infra",
@@ -142,6 +166,14 @@
     "author": "naditya-apixio",
     "merged_at": "2026-04-07T17:41:43Z",
     "created_at": "2026-04-07T17:40:27Z"
+  },
+  {
+    "title": "Add content size logging, CHANGELOG, and version bump to 1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/48",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-07T17:31:40Z",
+    "created_at": "2026-04-07T17:01:20Z"
   },
   {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
@@ -184,6 +216,14 @@
     "created_at": "2026-04-03T21:21:20Z"
   },
   {
+    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
+    "url": "https://github.com/Apixio/ml-infdate/pull/43",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-03T18:10:25Z",
+    "created_at": "2026-04-03T17:59:29Z"
+  },
+  {
     "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
     "repo": "ml-ops-infra",
@@ -208,6 +248,14 @@
     "created_at": "2026-04-03T15:08:06Z"
   },
   {
+    "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/37",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-04-02T20:05:36Z",
+    "created_at": "2026-03-25T14:02:59Z"
+  },
+  {
     "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
     "repo": "ml-ops-infra",
@@ -222,6 +270,14 @@
     "author": "diegoramallo-apixio",
     "merged_at": "2026-04-01T13:30:57Z",
     "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
+    "title": "Add empty input short-circuit to scoring pipeline steps",
+    "url": "https://github.com/Apixio/ml-infdate/pull/40",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-30T20:01:00Z",
+    "created_at": "2026-03-30T18:53:14Z"
   },
   {
     "title": "Improve patient name matching in document splitter",
@@ -246,6 +302,22 @@
     "author": "prashantkadam-apixio",
     "merged_at": "2026-03-25T19:52:33Z",
     "created_at": "2026-03-23T21:57:28Z"
+  },
+  {
+    "title": "Fill source attribution, dos_source fallbacks, SP fixes — v1.2.1",
+    "url": "https://github.com/Apixio/ml-infdate/pull/36",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T21:29:05Z",
+    "created_at": "2026-03-24T20:02:37Z"
+  },
+  {
+    "title": "v1.2.0: workflow scoring pipeline, updated output schema, model registration improvements",
+    "url": "https://github.com/Apixio/ml-infdate/pull/32",
+    "repo": "ml-infdate",
+    "author": "evancanfield-apixio",
+    "merged_at": "2026-03-24T18:20:28Z",
+    "created_at": "2026-03-18T18:12:16Z"
   },
   {
     "title": "added provider specialty getter for annotation model",
