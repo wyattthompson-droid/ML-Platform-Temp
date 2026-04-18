@@ -1,11 +1,19 @@
 [
   {
-    "title": "refactor: extract step definitions into steps.py",
-    "url": "https://github.com/Apixio/ml-demomodelb/pull/9",
-    "repo": "ml-demomodelb",
+    "title": "PLT-4627 chore: post-TFC migration cleanup",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/91",
+    "repo": "ml-ops-infra",
     "author": "mwebb-datavant",
-    "merged_at": "2026-04-16T17:52:45Z",
-    "created_at": "2026-04-16T17:50:46Z"
+    "merged_at": "2026-04-17T21:26:53Z",
+    "created_at": "2026-04-17T20:00:40Z"
+  },
+  {
+    "title": "PLT-4627 feat(cicd): migrate cicd + infra modules to Terraform Cloud",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/90",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-17T19:57:07Z",
+    "created_at": "2026-04-17T19:09:39Z"
   },
   {
     "title": "Bcbstn ma document silver model",
