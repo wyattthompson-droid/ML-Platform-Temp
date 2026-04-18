@@ -2894,13 +2894,5 @@
     "author": "ribrayev-apixio",
     "merged_at": "2026-03-19T22:21:20Z",
     "created_at": "2026-03-19T18:59:15Z"
-  },
-  {
-    "title": "SCIK-2491 create offline feature store and validation",
-    "url": "https://github.com/Apixio/ml-df-matching/pull/7",
-    "repo": "ml-df-matching",
-    "author": "diegoramallo-apixio",
-    "merged_at": "2026-03-19T02:48:08Z",
-    "created_at": "2026-03-19T02:47:22Z"
   }
 ]
