@@ -2862,13 +2862,5 @@
     "author": "adalundhe",
     "merged_at": "2026-03-20T14:32:42Z",
     "created_at": "2026-03-19T23:51:52Z"
-  },
-  {
-    "title": "fixed invalid_args error for slack commands",
-    "url": "https://github.com/Apixio/cloud9/pull/307",
-    "repo": "cloud9",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-03-20T03:20:23Z",
-    "created_at": "2026-03-18T02:34:12Z"
   }
 ]
