@@ -2870,29 +2870,5 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-20T03:20:23Z",
     "created_at": "2026-03-18T02:34:12Z"
-  },
-  {
-    "title": "Al fix sg rules",
-    "url": "https://github.com/Apixio/cloud9-tf/pull/27",
-    "repo": "cloud9-tf",
-    "author": "adalundhe",
-    "merged_at": "2026-03-19T23:18:07Z",
-    "created_at": "2026-03-19T14:57:49Z"
-  },
-  {
-    "title": "Cn sm change",
-    "url": "https://github.com/Apixio/mono/pull/3558",
-    "repo": "mono",
-    "author": "pparasnis-apixio",
-    "merged_at": "2026-03-19T22:35:21Z",
-    "created_at": "2026-01-05T02:00:11Z"
-  },
-  {
-    "title": "PLT-4178: Use ml schema.",
-    "url": "https://github.com/Apixio/apx-databricks/pull/685",
-    "repo": "apx-databricks",
-    "author": "ribrayev-apixio",
-    "merged_at": "2026-03-19T22:21:20Z",
-    "created_at": "2026-03-19T18:59:15Z"
   }
 ]
