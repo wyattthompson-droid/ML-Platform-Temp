@@ -1,5 +1,125 @@
 [
   {
+    "title": "rename the asset bundle",
+    "url": "https://github.com/Apixio/di-platform/pull/362",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-21T01:56:18Z",
+    "created_at": "2026-04-21T01:56:05Z"
+  },
+  {
+    "title": "Di 2556 cdr registration for databricks",
+    "url": "https://github.com/Apixio/di-platform/pull/349",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-21T01:51:37Z",
+    "created_at": "2026-04-13T02:32:01Z"
+  },
+  {
+    "title": "Di 3083 code nav",
+    "url": "https://github.com/Apixio/di-platform/pull/359",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-21T00:01:59Z",
+    "created_at": "2026-04-20T03:43:55Z"
+  },
+  {
+    "title": "add code_navigator_teardown asset bundle",
+    "url": "https://github.com/Apixio/di-platform/pull/360",
+    "repo": "di-platform",
+    "author": "mlagusker-apixio",
+    "merged_at": "2026-04-21T00:01:52Z",
+    "created_at": "2026-04-20T03:58:29Z"
+  },
+  {
+    "title": "Adding Unknown Gender type into valid list.",
+    "url": "https://github.com/Apixio/di-platform/pull/361",
+    "repo": "di-platform",
+    "author": "gkrishnan-apixio",
+    "merged_at": "2026-04-20T23:16:49Z",
+    "created_at": "2026-04-20T23:13:25Z"
+  },
+  {
+    "title": "add db_etl_structured_recovery job",
+    "url": "https://github.com/Apixio/apx-databricks/pull/698",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-04-20T22:53:17Z",
+    "created_at": "2026-04-17T18:44:26Z"
+  },
+  {
+    "title": "rename has_ocr to has_clean_page",
+    "url": "https://github.com/Apixio/apx-databricks/pull/697",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-04-20T22:53:02Z",
+    "created_at": "2026-04-15T14:46:02Z"
+  },
+  {
+    "title": "EN-47557 Upgrade flink to 2.1.1",
+    "url": "https://github.com/Apixio/coding-core-utils/pull/20",
+    "repo": "coding-core-utils",
+    "author": "vmourzenok-dv",
+    "merged_at": "2026-04-20T22:20:52Z",
+    "created_at": "2026-04-20T20:47:04Z"
+  },
+  {
+    "title": "feat(exp-ra-prd): add external-caller SP for match-scoring-service app (PLT-3131)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/354",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-20T21:35:04Z",
+    "created_at": "2026-04-20T18:45:14Z"
+  },
+  {
+    "title": "Chase management - chase project",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4323",
+    "repo": "apx-launchpad",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-04-20T21:32:18Z",
+    "created_at": "2026-04-17T20:45:12Z"
+  },
+  {
+    "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/355",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-20T20:43:29Z",
+    "created_at": "2026-04-20T19:57:02Z"
+  },
+  {
+    "title": "Plt 4719 timeout retry",
+    "url": "https://github.com/Apixio/apx-loader/pull/423",
+    "repo": "apx-loader",
+    "author": "jgomez-apixio",
+    "merged_at": "2026-04-20T20:33:04Z",
+    "created_at": "2026-04-20T19:55:14Z"
+  },
+  {
+    "title": "PLT-4618 import clincial_prd catalog into terraform",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/353",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-04-20T20:16:50Z",
+    "created_at": "2026-04-20T17:02:41Z"
+  },
+  {
+    "title": "import the vpc peering between databricks to cdr in staging",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/345",
+    "repo": "databricks-ops-infra",
+    "author": "Ming-Apixio",
+    "merged_at": "2026-04-20T20:16:21Z",
+    "created_at": "2026-04-15T22:26:28Z"
+  },
+  {
+    "title": "fix: correct exp-ra-prd workspace drift (prerequisite for PLT-4586)",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/351",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-20T19:21:23Z",
+    "created_at": "2026-04-17T17:46:57Z"
+  },
+  {
     "title": "EN-47619 Add Endor Labs security scan workflow",
     "url": "https://github.com/Apixio/apx-workqueue/pull/893",
     "repo": "apx-workqueue",
@@ -168,28 +288,12 @@
     "created_at": "2026-04-17T17:20:32Z"
   },
   {
-    "title": "add gh varset by default",
-    "url": "https://github.com/Apixio/github-administration-tf/pull/4",
-    "repo": "github-administration-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T17:23:21Z",
-    "created_at": "2026-04-17T17:18:20Z"
-  },
-  {
     "title": "add in repo for confluence sync",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/144",
     "repo": "tfc-bootstrap",
     "author": "kmcgovern-apixio",
     "merged_at": "2026-04-17T17:05:41Z",
     "created_at": "2026-04-17T17:00:12Z"
-  },
-  {
-    "title": "fix cpserv and add cpsoft team repo",
-    "url": "https://github.com/Apixio/github-administration-tf/pull/3",
-    "repo": "github-administration-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T16:51:41Z",
-    "created_at": "2026-04-17T15:56:18Z"
   },
   {
     "title": "bump project varset version and add additional projvarsets for ghadmin",
@@ -206,30 +310,6 @@
     "author": "agopishetty-apixio",
     "merged_at": "2026-04-17T16:37:17Z",
     "created_at": "2026-04-17T02:54:31Z"
-  },
-  {
-    "title": "Update Routing % Comments for ICD Project",
-    "url": "https://github.com/Apixio/python-scripts/pull/1958",
-    "repo": "python-scripts",
-    "author": "kcecena-apixio",
-    "merged_at": "2026-04-17T15:43:54Z",
-    "created_at": "2026-04-16T23:45:36Z"
-  },
-  {
-    "title": "create cpserv team repo",
-    "url": "https://github.com/Apixio/github-administration-tf/pull/2",
-    "repo": "github-administration-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T14:41:26Z",
-    "created_at": "2026-04-17T14:14:27Z"
-  },
-  {
-    "title": "create first workspace.. i think",
-    "url": "https://github.com/Apixio/github-administration-tf/pull/1",
-    "repo": "github-administration-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T14:08:27Z",
-    "created_at": "2026-04-17T13:57:28Z"
   },
   {
     "title": "init github-administration-tf",
@@ -352,14 +432,6 @@
     "created_at": "2026-04-15T22:19:45Z"
   },
   {
-    "title": "Adding demandid to icd payload",
-    "url": "https://github.com/Apixio/python-scripts/pull/1956",
-    "repo": "python-scripts",
-    "author": "hithaishi-apixio",
-    "merged_at": "2026-04-15T21:27:50Z",
-    "created_at": "2026-04-15T17:35:03Z"
-  },
-  {
     "title": "rename to curana and add document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/353",
     "repo": "di-platform",
@@ -398,14 +470,6 @@
     "author": "adalundhe",
     "merged_at": "2026-04-15T18:47:02Z",
     "created_at": "2026-04-15T18:34:06Z"
-  },
-  {
-    "title": "Add Include_no_hcc_client_qa property for code nav project creation",
-    "url": "https://github.com/Apixio/python-scripts/pull/1957",
-    "repo": "python-scripts",
-    "author": "denisrojas-apixio",
-    "merged_at": "2026-04-15T18:34:19Z",
-    "created_at": "2026-04-15T18:01:09Z"
   },
   {
     "title": "PLT-4242 - Add pull request reference for databricks-ops-infra",
@@ -678,14 +742,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-13T20:59:41Z",
     "created_at": "2026-04-13T20:43:44Z"
-  },
-  {
-    "title": "Add QA Exception Phase % For WQ Routing",
-    "url": "https://github.com/Apixio/python-scripts/pull/1955",
-    "repo": "python-scripts",
-    "author": "kcecena-apixio",
-    "merged_at": "2026-04-13T20:48:04Z",
-    "created_at": "2026-04-13T20:33:00Z"
   },
   {
     "title": "allow platform-actions TFC project access to images-prod",
@@ -1176,14 +1232,6 @@
     "created_at": "2026-04-08T17:02:48Z"
   },
   {
-    "title": "Add Reconciliation Script",
-    "url": "https://github.com/Apixio/python-scripts/pull/1953",
-    "repo": "python-scripts",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-04-08T17:50:33Z",
-    "created_at": "2026-04-06T19:11:57Z"
-  },
-  {
     "title": "security: resolve ansi-regex, qs, fast-xml-parser, basic-ftp, node-forge vulnerabilities",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4279",
     "repo": "apx-launchpad",
@@ -1368,14 +1416,6 @@
     "created_at": "2026-04-07T18:49:58Z"
   },
   {
-    "title": "Crest/en 47243/user roles",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4288",
-    "repo": "apx-launchpad",
-    "author": "tejaswini1107-hub",
-    "merged_at": "2026-04-07T18:54:52Z",
-    "created_at": "2026-04-07T16:29:55Z"
-  },
-  {
     "title": "fix: import pre-existing blueprints in prod and dev Port orgs",
     "url": "https://github.com/Apixio/port-tf/pull/26",
     "repo": "port-tf",
@@ -1464,28 +1504,12 @@
     "created_at": "2026-04-07T02:41:41Z"
   },
   {
-    "title": "Modify claimstype type to string",
-    "url": "https://github.com/Apixio/python-scripts/pull/1952",
-    "repo": "python-scripts",
-    "author": "jkaur-apixio",
-    "merged_at": "2026-04-07T02:16:45Z",
-    "created_at": "2026-04-01T20:18:15Z"
-  },
-  {
     "title": "AL: add enterprise install callback",
     "url": "https://github.com/Apixio/cloud9/pull/325",
     "repo": "cloud9",
     "author": "adalundhe",
     "merged_at": "2026-04-07T01:09:23Z",
     "created_at": "2026-04-06T17:43:20Z"
-  },
-  {
-    "title": "change claimsType type",
-    "url": "https://github.com/Apixio/python-scripts/pull/1954",
-    "repo": "python-scripts",
-    "author": "gdeshpande-apixio",
-    "merged_at": "2026-04-06T22:37:16Z",
-    "created_at": "2026-04-06T22:24:53Z"
   },
   {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
@@ -2096,6 +2120,14 @@
     "created_at": "2026-03-31T17:00:07Z"
   },
   {
+    "title": "Protect against Slack rate limits",
+    "url": "https://github.com/Apixio/coding-core-utils/pull/17",
+    "repo": "coding-core-utils",
+    "author": "andrewtautges-apixio",
+    "merged_at": "2026-03-31T20:37:36Z",
+    "created_at": "2026-03-31T20:12:08Z"
+  },
+  {
     "title": "release dbt fixes",
     "url": "https://github.com/Apixio/di-platform/pull/317",
     "repo": "di-platform",
@@ -2200,14 +2232,6 @@
     "created_at": "2026-03-30T18:41:46Z"
   },
   {
-    "title": "PLT-4391: Add IAM user for MOVEit S3 access (dev)",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/304",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-03-30T18:46:37Z",
-    "created_at": "2026-03-26T21:15:23Z"
-  },
-  {
     "title": "Fix",
     "url": "https://github.com/Apixio/di-platform/pull/311",
     "repo": "di-platform",
@@ -2216,60 +2240,12 @@
     "created_at": "2026-03-30T18:41:01Z"
   },
   {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/310",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T18:40:32Z",
-    "created_at": "2026-03-30T18:37:49Z"
-  },
-  {
     "title": "Improve patient name matching in document splitter",
     "url": "https://github.com/Apixio/ml-daqari/pull/52",
     "repo": "ml-daqari",
     "author": "askeahey",
     "merged_at": "2026-03-30T18:32:33Z",
     "created_at": "2026-03-19T21:53:54Z"
-  },
-  {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/308",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T18:31:14Z",
-    "created_at": "2026-03-30T18:17:30Z"
-  },
-  {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/309",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T18:24:44Z",
-    "created_at": "2026-03-30T18:21:44Z"
-  },
-  {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/307",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T18:16:47Z",
-    "created_at": "2026-03-30T18:15:09Z"
-  },
-  {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/306",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T17:57:25Z",
-    "created_at": "2026-03-30T17:53:25Z"
-  },
-  {
-    "title": "remove testing computes from ml group",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/301",
-    "repo": "databricks-ops-infra",
-    "author": "Ming-Apixio",
-    "merged_at": "2026-03-30T15:31:33Z",
-    "created_at": "2026-03-26T16:59:14Z"
   },
   {
     "title": "fixing ownership for removed team",
@@ -2304,6 +2280,14 @@
     "created_at": "2026-03-27T19:26:21Z"
   },
   {
+    "title": "explicitly register event level",
+    "url": "https://github.com/Apixio/coding-core-utils/pull/16",
+    "repo": "coding-core-utils",
+    "author": "andrewtautges-apixio",
+    "merged_at": "2026-03-27T18:53:02Z",
+    "created_at": "2026-03-27T18:28:27Z"
+  },
+  {
     "title": "Remove SAST workflow",
     "url": "https://github.com/Apixio/apx-sessionmanager/pull/1663",
     "repo": "apx-sessionmanager",
@@ -2334,22 +2318,6 @@
     "author": "jamesnakashian-apixio",
     "merged_at": "2026-03-27T15:12:48Z",
     "created_at": "2026-03-25T21:20:47Z"
-  },
-  {
-    "title": "PLT-4386 - Add remaining Data-ML-Platform SPs in exp + etl",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/302",
-    "repo": "databricks-ops-infra",
-    "author": "dv-mmounts",
-    "merged_at": "2026-03-27T13:23:30Z",
-    "created_at": "2026-03-26T18:58:28Z"
-  },
-  {
-    "title": "PLT-3553 - Adding Foreign Catalog to deploy population-aurora",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/303",
-    "repo": "databricks-ops-infra",
-    "author": "dv-mmounts",
-    "merged_at": "2026-03-27T13:17:13Z",
-    "created_at": "2026-03-26T19:30:52Z"
   },
   {
     "title": "EN-46509: Support multiple providers in CSV download",
@@ -2520,14 +2488,6 @@
     "created_at": "2026-03-24T19:00:00Z"
   },
   {
-    "title": "Ming plt 4166 add service principals",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/300",
-    "repo": "databricks-ops-infra",
-    "author": "Ming-Apixio",
-    "merged_at": "2026-03-25T21:03:59Z",
-    "created_at": "2026-03-25T18:48:22Z"
-  },
-  {
     "title": "EN-47116: Bronze ingestion pipeline - separate MA/ACA tables with overwrite strategy",
     "url": "https://github.com/Apixio/ml-nexus/pull/3",
     "repo": "ml-nexus",
@@ -2558,6 +2518,14 @@
     "author": "apixio-readonly",
     "merged_at": "2026-03-25T17:04:39Z",
     "created_at": "2026-03-25T16:30:24Z"
+  },
+  {
+    "title": "protect against nulls in result logging sink",
+    "url": "https://github.com/Apixio/coding-core-utils/pull/15",
+    "repo": "coding-core-utils",
+    "author": "andrewtautges-apixio",
+    "merged_at": "2026-03-25T16:06:28Z",
+    "created_at": "2026-03-24T22:28:51Z"
   },
   {
     "title": "CLOUD-1934: migrate com-datavant-088921318242-terraform to terraform",
@@ -2718,14 +2686,6 @@
     "author": "adalundhe",
     "merged_at": "2026-03-23T19:08:12Z",
     "created_at": "2026-03-23T13:00:00Z"
-  },
-  {
-    "title": "make patient fetch docs parallel",
-    "url": "https://github.com/Apixio/python-scripts/pull/1948",
-    "repo": "python-scripts",
-    "author": "braga-apixio",
-    "merged_at": "2026-03-23T18:41:15Z",
-    "created_at": "2026-03-09T18:46:48Z"
   },
   {
     "title": "Adding isBillable project property",

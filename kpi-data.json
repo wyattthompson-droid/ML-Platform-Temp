@@ -7,7 +7,7 @@
       "previousValue": 3,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Checkpoints, artifacts, and model PRs merged (rolling 30 days)"
     },
     {
@@ -51,7 +51,7 @@
       "previousValue": 76,
       "unit": "%",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Percentage of feature branch pushes that pass CI on first attempt (rolling 30 days)"
     },
     {
@@ -61,7 +61,7 @@
       "previousValue": 3.9,
       "unit": "min",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Average minutes from git push to Databricks deploy complete (rolling 30 days)"
     },
     {
@@ -71,17 +71,17 @@
       "previousValue": null,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Average hours from PR opened to first review (rolling 30 days)"
     },
     {
       "id": "num-prs",
       "label": "Number of PRs",
-      "value": 347,
-      "previousValue": 141,
+      "value": 342,
+      "previousValue": 138,
       "unit": "",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Pull requests opened (rolling 30 days)"
     },
     {
@@ -97,11 +97,11 @@
     {
       "id": "deployment-time",
       "label": "Deployment Time (PR to Prod)",
-      "value": 43,
-      "previousValue": 86,
+      "value": 44,
+      "previousValue": 84,
       "unit": "hrs",
       "source": "github",
-      "lastUpdated": "2026-04-20 19:10 UTC",
+      "lastUpdated": "2026-04-21 02:50 UTC",
       "description": "Average time from PR open to merge on main"
     },
     {

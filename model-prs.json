@@ -1,5 +1,13 @@
 [
   {
+    "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/355",
+    "repo": "databricks-ops-infra",
+    "author": "daviddelsol-cloud",
+    "merged_at": "2026-04-20T20:43:29Z",
+    "created_at": "2026-04-20T19:57:02Z"
+  },
+  {
     "title": "PLT-4627 chore: post-TFC migration cleanup",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/91",
     "repo": "ml-ops-infra",
@@ -86,14 +94,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-08T18:00:40Z",
     "created_at": "2026-04-08T17:02:48Z"
-  },
-  {
-    "title": "Add Reconciliation Script",
-    "url": "https://github.com/Apixio/python-scripts/pull/1953",
-    "repo": "python-scripts",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-04-08T17:50:33Z",
-    "created_at": "2026-04-06T19:11:57Z"
   },
   {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
