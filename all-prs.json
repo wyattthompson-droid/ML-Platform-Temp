@@ -1,5 +1,37 @@
 [
   {
+    "title": "Manifest bug fix",
+    "url": "https://github.com/Apixio/data_integrations/pull/2212",
+    "repo": "data_integrations",
+    "author": "agopishetty-apixio",
+    "merged_at": "2026-04-22T13:44:53Z",
+    "created_at": "2026-04-08T16:19:51Z"
+  },
+  {
+    "title": "Fix: use 'prod' for environment tag (validation constraint)",
+    "url": "https://github.com/Apixio/lando-tf/pull/19",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-22T13:35:51Z",
+    "created_at": "2026-04-22T13:30:30Z"
+  },
+  {
+    "title": "Add lando-prd workspace to Terraform Cloud",
+    "url": "https://github.com/Apixio/lando-tf/pull/18",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-22T13:27:20Z",
+    "created_at": "2026-04-22T13:25:17Z"
+  },
+  {
+    "title": "Production infrastructure for Lando",
+    "url": "https://github.com/Apixio/lando-tf/pull/17",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-22T13:21:48Z",
+    "created_at": "2026-04-22T13:19:58Z"
+  },
+  {
     "title": "EN-47791 CREST fix: loading report columns on edit",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4328",
     "repo": "apx-launchpad",
@@ -246,22 +278,6 @@
     "author": "jdonnelly-apixio",
     "merged_at": "2026-04-20T15:12:26Z",
     "created_at": "2026-04-20T13:52:38Z"
-  },
-  {
-    "title": "feat(repos): scaffold apixio workspace and add k8s-resources-exporter",
-    "url": "https://github.com/Apixio/cloud-platform-services-team-tf/pull/2",
-    "repo": "cloud-platform-services-team-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-20T14:43:08Z",
-    "created_at": "2026-04-20T14:11:55Z"
-  },
-  {
-    "title": "repo workspace init",
-    "url": "https://github.com/Apixio/cloud-platform-services-team-tf/pull/1",
-    "repo": "cloud-platform-services-team-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-20T13:57:36Z",
-    "created_at": "2026-04-17T17:52:23Z"
   },
   {
     "title": "Auto release PR 15.0.57",
@@ -2366,21 +2382,5 @@
     "author": "sfmccarty",
     "merged_at": "2026-03-23T14:04:23Z",
     "created_at": "2026-03-23T13:43:27Z"
-  },
-  {
-    "title": "En 47061 sm apikeys fixes",
-    "url": "https://github.com/Apixio/mono/pull/3638",
-    "repo": "mono",
-    "author": "sfmccarty",
-    "merged_at": "2026-03-23T13:39:08Z",
-    "created_at": "2026-03-19T13:34:07Z"
-  },
-  {
-    "title": "Al add port 8443",
-    "url": "https://github.com/Apixio/cloud9-tf/pull/30",
-    "repo": "cloud9-tf",
-    "author": "adalundhe",
-    "merged_at": "2026-03-23T12:44:31Z",
-    "created_at": "2026-03-23T12:39:56Z"
   }
 ]
