@@ -1,5 +1,61 @@
 [
   {
+    "title": "[CN] EN47648 adding last provider functionality for manual add",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4327",
+    "repo": "apx-launchpad",
+    "author": "jkaur-apixio",
+    "merged_at": "2026-04-22T23:16:58Z",
+    "created_at": "2026-04-20T23:28:13Z"
+  },
+  {
+    "title": "Chase mgt retrieval",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4336",
+    "repo": "apx-launchpad",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-04-22T21:44:44Z",
+    "created_at": "2026-04-22T21:19:19Z"
+  },
+  {
+    "title": "Release 5.32.21",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4335",
+    "repo": "apx-launchpad",
+    "author": "emoreno-apixio",
+    "merged_at": "2026-04-22T21:34:36Z",
+    "created_at": "2026-04-22T20:48:19Z"
+  },
+  {
+    "title": "Endor scan gh workflow",
+    "url": "https://github.com/Apixio/chase-center-fe/pull/12",
+    "repo": "chase-center-fe",
+    "author": "dblattner-apixio",
+    "merged_at": "2026-04-22T21:28:42Z",
+    "created_at": "2026-04-22T18:15:18Z"
+  },
+  {
+    "title": "Split API and portal into separate ALB target groups",
+    "url": "https://github.com/Apixio/lando-tf/pull/22",
+    "repo": "lando-tf",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-04-22T21:22:22Z",
+    "created_at": "2026-04-22T19:56:58Z"
+  },
+  {
+    "title": "Chart transfer fix",
+    "url": "https://github.com/Apixio/di-platform/pull/364",
+    "repo": "di-platform",
+    "author": "smylavarapu-apixio",
+    "merged_at": "2026-04-22T21:15:50Z",
+    "created_at": "2026-04-22T21:14:50Z"
+  },
+  {
+    "title": "EN-47541 - Use chainguard base image for npi svc",
+    "url": "https://github.com/Apixio/apx-npi/pull/123",
+    "repo": "apx-npi",
+    "author": "sgopalakrishnan-dv",
+    "merged_at": "2026-04-22T20:53:55Z",
+    "created_at": "2026-04-17T18:53:48Z"
+  },
+  {
     "title": "EN-47867 EN-47794 EN-47866 - fixes for Crest",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4334",
     "repo": "apx-launchpad",
@@ -336,28 +392,12 @@
     "created_at": "2026-04-20T18:33:01Z"
   },
   {
-    "title": "Add Endor Labs security scanning workflow (EN-47618)",
-    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1665",
-    "repo": "apx-sessionmanager",
-    "author": "braga-apixio",
-    "merged_at": "2026-04-20T18:59:32Z",
-    "created_at": "2026-04-20T18:31:42Z"
-  },
-  {
     "title": "PLT-1942 recover files from feature/PLT-1942",
     "url": "https://github.com/Apixio/apx-databricks/pull/699",
     "repo": "apx-databricks",
     "author": "emar-apixio",
     "merged_at": "2026-04-20T18:31:41Z",
     "created_at": "2026-04-17T22:03:44Z"
-  },
-  {
-    "title": "Added final HS table",
-    "url": "https://github.com/Apixio/ml-daqari/pull/61",
-    "repo": "ml-daqari",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-04-20T18:23:07Z",
-    "created_at": "2026-04-15T00:15:36Z"
   },
   {
     "title": "feat(projects): add k8s-resources-exporter TFC project",
@@ -678,14 +718,6 @@
     "author": "dv-mmounts",
     "merged_at": "2026-04-14T19:52:33Z",
     "created_at": "2026-04-14T16:03:04Z"
-  },
-  {
-    "title": "middle last subset fixed",
-    "url": "https://github.com/Apixio/ml-daqari/pull/60",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-04-14T19:34:41Z",
-    "created_at": "2026-04-14T13:06:55Z"
   },
   {
     "title": "EN-47639 CREST - Add extract settings to client delivery settings",
@@ -1040,14 +1072,6 @@
     "created_at": "2026-04-01T19:41:36Z"
   },
   {
-    "title": "adding package version as a job parameter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/58",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-04-09T14:09:23Z",
-    "created_at": "2026-04-08T15:44:46Z"
-  },
-  {
     "title": "feat: add AWS Secrets Manager secrets and IRSA permissions for ESO mi…",
     "url": "https://github.com/Apixio/lando-tf/pull/14",
     "repo": "lando-tf",
@@ -1184,20 +1208,20 @@
     "created_at": "2026-04-08T19:58:46Z"
   },
   {
-    "title": "Update the values for reviewType",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4296",
-    "repo": "apx-launchpad",
-    "author": "emoreno-apixio",
-    "merged_at": "2026-04-08T19:57:03Z",
-    "created_at": "2026-04-08T18:34:56Z"
-  },
-  {
     "title": "PLT-4304 - Adding ses role for data integrations",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/330",
     "repo": "databricks-ops-infra",
     "author": "dv-mmounts",
     "merged_at": "2026-04-08T19:56:44Z",
     "created_at": "2026-04-08T19:25:44Z"
+  },
+  {
+    "title": "SCIK-2597 build online feature store and prep endpoint",
+    "url": "https://github.com/Apixio/ml-df-matching/pull/9",
+    "repo": "ml-df-matching",
+    "author": "diegoramallo-apixio",
+    "merged_at": "2026-04-08T19:56:05Z",
+    "created_at": "2026-04-08T19:55:47Z"
   },
   {
     "title": "[READY] DI-2893 add data platform file drop task",
@@ -1230,22 +1254,6 @@
     "author": "nithinkambam-apixio",
     "merged_at": "2026-04-08T17:59:08Z",
     "created_at": "2026-04-08T01:54:02Z"
-  },
-  {
-    "title": "security: resolve ansi-regex, qs, fast-xml-parser, basic-ftp, node-forge vulnerabilities",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4279",
-    "repo": "apx-launchpad",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-04-08T17:49:40Z",
-    "created_at": "2026-04-03T00:22:23Z"
-  },
-  {
-    "title": "EN-47262 Remove IMO search UI components and HTTP layer",
-    "url": "https://github.com/Apixio/apx-launchpad/pull/4269",
-    "repo": "apx-launchpad",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-04-08T17:18:17Z",
-    "created_at": "2026-04-01T18:51:23Z"
   },
   {
     "title": "Binary file handling and performance fix",
@@ -1486,14 +1494,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-06T20:46:04Z",
     "created_at": "2026-04-06T19:49:56Z"
-  },
-  {
-    "title": "Remove imoAuth and truCode configuration",
-    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1664",
-    "repo": "apx-sessionmanager",
-    "author": "bilagan-apixio",
-    "merged_at": "2026-04-06T20:15:04Z",
-    "created_at": "2026-04-01T19:12:16Z"
   },
   {
     "title": "Consul key update value",
@@ -1752,14 +1752,6 @@
     "created_at": "2026-04-02T18:13:06Z"
   },
   {
-    "title": "RMBU Alerting ",
-    "url": "https://github.com/Apixio/ml-daqari/pull/57",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-04-02T18:08:47Z",
-    "created_at": "2026-03-31T16:59:11Z"
-  },
-  {
     "title": "PLT-4391: Add S3 versioning permissions for moveit-di-dev",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/325",
     "repo": "databricks-ops-infra",
@@ -1926,6 +1918,14 @@
     "author": "nithinkambam-apixio",
     "merged_at": "2026-04-01T15:44:59Z",
     "created_at": "2026-03-26T21:20:55Z"
+  },
+  {
+    "title": "SCIK-2554 training optimization and experiment design",
+    "url": "https://github.com/Apixio/ml-df-matching/pull/8",
+    "repo": "ml-df-matching",
+    "author": "diegoramallo-apixio",
+    "merged_at": "2026-04-01T13:30:57Z",
+    "created_at": "2026-04-01T13:27:05Z"
   },
   {
     "title": "Fix",
@@ -2096,22 +2096,6 @@
     "created_at": "2026-03-30T18:41:46Z"
   },
   {
-    "title": "Fix",
-    "url": "https://github.com/Apixio/di-platform/pull/311",
-    "repo": "di-platform",
-    "author": "nsadineni-apixio",
-    "merged_at": "2026-03-30T18:41:58Z",
-    "created_at": "2026-03-30T18:41:01Z"
-  },
-  {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
-  },
-  {
     "title": "Restore event-driven meatlaat workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/131",
     "repo": "ml-retrosp",
@@ -2206,14 +2190,6 @@
     "author": "andrewtautges-apixio",
     "merged_at": "2026-03-27T18:53:02Z",
     "created_at": "2026-03-27T18:28:27Z"
-  },
-  {
-    "title": "Remove SAST workflow",
-    "url": "https://github.com/Apixio/apx-sessionmanager/pull/1663",
-    "repo": "apx-sessionmanager",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-03-27T18:47:04Z",
-    "created_at": "2026-03-27T18:40:35Z"
   },
   {
     "title": "Cloud9 serviceAccount config updates",
@@ -2488,22 +2464,6 @@
     "created_at": "2026-03-23T21:57:28Z"
   },
   {
-    "title": "dev -> main",
-    "url": "https://github.com/Apixio/ml-daqari/pull/55",
-    "repo": "ml-daqari",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T18:25:25Z",
-    "created_at": "2026-03-25T18:20:53Z"
-  },
-  {
-    "title": "Update compute policy IDs to Science team policies",
-    "url": "https://github.com/Apixio/ml-daqari/pull/54",
-    "repo": "ml-daqari",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T17:17:29Z",
-    "created_at": "2026-03-25T17:07:53Z"
-  },
-  {
     "title": "Auto release PR 15.0.44",
     "url": "https://github.com/Apixio/mono/pull/3645",
     "repo": "mono",
@@ -2518,14 +2478,6 @@
     "author": "andrewtautges-apixio",
     "merged_at": "2026-03-25T16:06:28Z",
     "created_at": "2026-03-24T22:28:51Z"
-  },
-  {
-    "title": "Skip compute on empty batches for rmbu and healthsource",
-    "url": "https://github.com/Apixio/ml-daqari/pull/53",
-    "repo": "ml-daqari",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-03-25T04:19:55Z",
-    "created_at": "2026-03-23T22:11:51Z"
   },
   {
     "title": "demographics validation",
@@ -2582,45 +2534,5 @@
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-24T18:20:28Z",
     "created_at": "2026-03-18T18:12:16Z"
-  },
-  {
-    "title": "add org team import",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/112",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-03-24T00:09:52Z",
-    "created_at": "2026-03-23T22:21:25Z"
-  },
-  {
-    "title": "WQ Auth",
-    "url": "https://github.com/Apixio/mono/pull/3632",
-    "repo": "mono",
-    "author": "pparasnis-apixio",
-    "merged_at": "2026-03-24T00:03:03Z",
-    "created_at": "2026-03-17T05:51:16Z"
-  },
-  {
-    "title": "fixup broken team apply from #105",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/111",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-03-23T22:17:14Z",
-    "created_at": "2026-03-23T22:00:46Z"
-  },
-  {
-    "title": "Add Derek Blattner to risk analytics team",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/110",
-    "repo": "tfc-bootstrap",
-    "author": "MHova",
-    "merged_at": "2026-03-23T21:52:15Z",
-    "created_at": "2026-03-23T21:11:24Z"
-  },
-  {
-    "title": "[DAT-6526] chore: new tfc project for snowflake account admin",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/109",
-    "repo": "tfc-bootstrap",
-    "author": "AGillon",
-    "merged_at": "2026-03-23T21:18:37Z",
-    "created_at": "2026-03-23T19:22:07Z"
   }
 ]

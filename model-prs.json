@@ -32,14 +32,6 @@
     "created_at": "2026-04-14T17:26:34Z"
   },
   {
-    "title": "middle last subset fixed",
-    "url": "https://github.com/Apixio/ml-daqari/pull/60",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-04-14T19:34:41Z",
-    "created_at": "2026-04-14T13:06:55Z"
-  },
-  {
     "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
     "url": "https://github.com/Apixio/ml-retrosp/pull/151",
     "repo": "ml-retrosp",
@@ -176,20 +168,20 @@
     "created_at": "2026-03-25T14:02:59Z"
   },
   {
+    "title": "SCIK-2554 training optimization and experiment design",
+    "url": "https://github.com/Apixio/ml-df-matching/pull/8",
+    "repo": "ml-df-matching",
+    "author": "diegoramallo-apixio",
+    "merged_at": "2026-04-01T13:30:57Z",
+    "created_at": "2026-04-01T13:27:05Z"
+  },
+  {
     "title": "Add empty input short-circuit to scoring pipeline steps",
     "url": "https://github.com/Apixio/ml-infdate/pull/40",
     "repo": "ml-infdate",
     "author": "evancanfield-apixio",
     "merged_at": "2026-03-30T20:01:00Z",
     "created_at": "2026-03-30T18:53:14Z"
-  },
-  {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
   },
   {
     "title": "fix: retry concurrent merge conflicts in claim_requests",
