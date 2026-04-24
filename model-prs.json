@@ -1,5 +1,21 @@
 [
   {
+    "title": "Scoring perf: skip redundant count, TF32 matmul, coo copy cleanup",
+    "url": "https://github.com/Apixio/ml-icddet/pull/106",
+    "repo": "ml-icddet",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-24T17:19:18Z",
+    "created_at": "2026-04-24T17:05:41Z"
+  },
+  {
+    "title": "fix(networks): correct MLflow VPC endpoint service name",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/92",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-24T13:56:37Z",
+    "created_at": "2026-04-23T23:04:14Z"
+  },
+  {
     "title": "CLOUD-000: add migration reference for Port.io → new platform rebuild",
     "url": "https://github.com/Apixio/port-tf/pull/39",
     "repo": "port-tf",
@@ -256,20 +272,20 @@
     "created_at": "2026-04-03T15:08:06Z"
   },
   {
+    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
+    "url": "https://github.com/Apixio/ml-icddet/pull/95",
+    "repo": "ml-icddet",
+    "author": "wchang-apixio",
+    "merged_at": "2026-04-01T22:07:50Z",
+    "created_at": "2026-03-31T17:07:36Z"
+  },
+  {
     "title": "PLT-4376: SageMaker MLOps infrastructure — dev workspaces and modules",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/54",
     "repo": "ml-ops-infra",
     "author": "mwebb-datavant",
     "merged_at": "2026-04-01T18:11:57Z",
     "created_at": "2026-03-31T22:57:40Z"
-  },
-  {
-    "title": "SCIK-2554 training optimization and experiment design",
-    "url": "https://github.com/Apixio/ml-df-matching/pull/8",
-    "repo": "ml-df-matching",
-    "author": "diegoramallo-apixio",
-    "merged_at": "2026-04-01T13:30:57Z",
-    "created_at": "2026-04-01T13:27:05Z"
   },
   {
     "title": "fix: retry concurrent merge conflicts in claim_requests",
