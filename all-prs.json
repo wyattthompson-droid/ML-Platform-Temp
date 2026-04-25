@@ -2502,21 +2502,5 @@
     "author": "vivekkovi-cmyk",
     "merged_at": "2026-03-26T19:25:17Z",
     "created_at": "2026-03-26T18:25:44Z"
-  },
-  {
-    "title": "Include DI in the report api",
-    "url": "https://github.com/Apixio/apx-signalmanager/pull/1391",
-    "repo": "apx-signalmanager",
-    "author": "alanli-datavant",
-    "merged_at": "2026-03-26T18:51:39Z",
-    "created_at": "2026-03-25T16:57:46Z"
-  },
-  {
-    "title": "CLOUD-5341: creating project block for code navigator workqueue service",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/115",
-    "repo": "tfc-bootstrap",
-    "author": "jasonroschke-apixio",
-    "merged_at": "2026-03-26T18:11:29Z",
-    "created_at": "2026-03-26T18:05:18Z"
   }
 ]
