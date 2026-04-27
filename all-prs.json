@@ -1,5 +1,13 @@
 [
   {
+    "title": "fix(workspaces): bump tfe provider to ~> 0.74",
+    "url": "https://github.com/Apixio/cloud9-proxy-tf/pull/22",
+    "repo": "cloud9-proxy-tf",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-27T12:59:43Z",
+    "created_at": "2026-04-21T13:52:08Z"
+  },
+  {
     "title": "EN-47833 fix: enable submit when no-code reject is overturned",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4340",
     "repo": "apx-launchpad",
@@ -166,6 +174,14 @@
     "author": "dblattner-apixio",
     "merged_at": "2026-04-23T17:21:53Z",
     "created_at": "2026-04-23T17:21:02Z"
+  },
+  {
+    "title": "Revert \"fix: TFC is not happy since the gh outage (#20)\"",
+    "url": "https://github.com/Apixio/cloud9-proxy-tf/pull/21",
+    "repo": "cloud9-proxy-tf",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-23T16:27:08Z",
+    "created_at": "2026-02-09T21:39:09Z"
   },
   {
     "title": "[CN] EN47648 adding last provider functionality for manual add",
@@ -1958,14 +1974,6 @@
     "author": "nithinkambam-apixio",
     "merged_at": "2026-04-01T15:44:59Z",
     "created_at": "2026-03-26T21:20:55Z"
-  },
-  {
-    "title": "feat!: add pod and environment_type variables and bump module to v2.0.0",
-    "url": "https://github.com/Apixio/terraform-github-gha-repository/pull/7",
-    "repo": "terraform-github-gha-repository",
-    "author": "kealanmurphy-dv",
-    "merged_at": "2026-04-01T15:20:45Z",
-    "created_at": "2026-04-01T11:17:00Z"
   },
   {
     "title": "Fix",
