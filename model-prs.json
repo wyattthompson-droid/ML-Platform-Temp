@@ -1,19 +1,19 @@
 [
   {
+    "title": "DAT-7062 feat(llm-tenant): add provisioned_pt endpoint type for model-unit PT API",
+    "url": "https://github.com/Apixio/databricks-ops-infra/pull/368",
+    "repo": "databricks-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-27T22:21:38Z",
+    "created_at": "2026-04-27T22:14:50Z"
+  },
+  {
     "title": "DAT-7062 feat(llm-tenants): add llm-fp provisioned throughput endpoints",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/366",
     "repo": "databricks-ops-infra",
     "author": "mwebb-datavant",
     "merged_at": "2026-04-27T19:26:18Z",
     "created_at": "2026-04-27T17:42:53Z"
-  },
-  {
-    "title": "Scoring perf: skip redundant count, TF32 matmul, coo copy cleanup",
-    "url": "https://github.com/Apixio/ml-icddet/pull/106",
-    "repo": "ml-icddet",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-24T17:19:18Z",
-    "created_at": "2026-04-24T17:05:41Z"
   },
   {
     "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
@@ -48,14 +48,6 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
-    "title": "v1.2.2: null content guard, content_was_null flag, pre-step input validation",
-    "url": "https://github.com/Apixio/ml-infdate/pull/60",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-14T20:23:34Z",
-    "created_at": "2026-04-14T17:26:34Z"
-  },
-  {
     "title": "middle last subset fixed",
     "url": "https://github.com/Apixio/ml-daqari/pull/60",
     "repo": "ml-daqari",
@@ -64,28 +56,12 @@
     "created_at": "2026-04-14T13:06:55Z"
   },
   {
-    "title": "Release 1.2.1: stratified sampling, page cap parameters, content size logging",
-    "url": "https://github.com/Apixio/ml-infdate/pull/47",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-08T16:39:20Z",
-    "created_at": "2026-04-07T14:24:07Z"
-  },
-  {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
     "url": "https://github.com/Apixio/di-platform/pull/337",
     "repo": "di-platform",
     "author": "mlagusker-apixio",
     "merged_at": "2026-04-08T16:35:26Z",
     "created_at": "2026-04-08T04:34:27Z"
-  },
-  {
-    "title": "Fix OOM in pre step: replace collect_list+join with applyInPandas",
-    "url": "https://github.com/Apixio/ml-infdate/pull/49",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-07T18:54:51Z",
-    "created_at": "2026-04-07T18:41:57Z"
   },
   {
     "title": "KP coverage model updates",
@@ -102,14 +78,6 @@
     "author": "naditya-apixio",
     "merged_at": "2026-04-07T17:41:43Z",
     "created_at": "2026-04-07T17:40:27Z"
-  },
-  {
-    "title": "Add content size logging, CHANGELOG, and version bump to 1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/48",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-07T17:31:40Z",
-    "created_at": "2026-04-07T17:01:20Z"
   },
   {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
@@ -144,14 +112,6 @@
     "created_at": "2026-04-03T21:21:20Z"
   },
   {
-    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
-    "url": "https://github.com/Apixio/ml-infdate/pull/43",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-03T18:10:25Z",
-    "created_at": "2026-04-03T17:59:29Z"
-  },
-  {
     "title": "DsPy finetuning code",
     "url": "https://github.com/Apixio/ml-qamodel/pull/56",
     "repo": "ml-qamodel",
@@ -160,36 +120,12 @@
     "created_at": "2026-04-02T20:40:27Z"
   },
   {
-    "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/37",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-02T20:05:36Z",
-    "created_at": "2026-03-25T14:02:59Z"
-  },
-  {
-    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
-    "url": "https://github.com/Apixio/ml-icddet/pull/95",
-    "repo": "ml-icddet",
-    "author": "wchang-apixio",
-    "merged_at": "2026-04-01T22:07:50Z",
-    "created_at": "2026-03-31T17:07:36Z"
-  },
-  {
     "title": "Successfully served T5 model through job",
     "url": "https://github.com/Apixio/ml-qamodel/pull/54",
     "repo": "ml-qamodel",
     "author": "yjiang-apixio",
     "merged_at": "2026-03-30T22:03:01Z",
     "created_at": "2026-03-30T22:02:52Z"
-  },
-  {
-    "title": "Add empty input short-circuit to scoring pipeline steps",
-    "url": "https://github.com/Apixio/ml-infdate/pull/40",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-03-30T20:01:00Z",
-    "created_at": "2026-03-30T18:53:14Z"
   },
   {
     "title": "Improve patient name matching in document splitter",
