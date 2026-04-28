@@ -24,14 +24,6 @@
     "created_at": "2026-04-20T19:57:02Z"
   },
   {
-    "title": "refactor: extract step definitions into steps.py",
-    "url": "https://github.com/Apixio/ml-demomodelb/pull/9",
-    "repo": "ml-demomodelb",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-16T17:52:45Z",
-    "created_at": "2026-04-16T17:50:46Z"
-  },
-  {
     "title": "Bcbstn ma document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/354",
     "repo": "di-platform",
@@ -48,12 +40,28 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
-    "title": "middle last subset fixed",
-    "url": "https://github.com/Apixio/ml-daqari/pull/60",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-04-14T19:34:41Z",
-    "created_at": "2026-04-14T13:06:55Z"
+    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-13T17:56:21Z",
+    "created_at": "2026-04-10T17:28:55Z"
+  },
+  {
+    "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/149",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-10T16:13:18Z",
+    "created_at": "2026-04-09T20:29:28Z"
+  },
+  {
+    "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/150",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-09T22:12:56Z",
+    "created_at": "2026-04-09T22:05:52Z"
   },
   {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
@@ -96,6 +104,22 @@
     "created_at": "2026-04-03T16:02:13Z"
   },
   {
+    "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/146",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-06T20:46:04Z",
+    "created_at": "2026-04-06T19:49:56Z"
+  },
+  {
+    "title": "feat: Add module scaffold and snowflake-org-accounts submodule",
+    "url": "https://github.com/Apixio/terraform-snowflake-admin/pull/1",
+    "repo": "terraform-snowflake-admin",
+    "author": "AGillon",
+    "merged_at": "2026-04-06T18:31:16Z",
+    "created_at": "2026-03-30T20:25:38Z"
+  },
+  {
     "title": "KP ACA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/328",
     "repo": "di-platform",
@@ -112,27 +136,11 @@
     "created_at": "2026-04-03T21:21:20Z"
   },
   {
-    "title": "DsPy finetuning code",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/56",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-04-02T20:40:40Z",
-    "created_at": "2026-04-02T20:40:27Z"
-  },
-  {
-    "title": "Successfully served T5 model through job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/54",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-03-30T22:03:01Z",
-    "created_at": "2026-03-30T22:02:52Z"
-  },
-  {
-    "title": "Improve patient name matching in document splitter",
-    "url": "https://github.com/Apixio/ml-daqari/pull/52",
-    "repo": "ml-daqari",
-    "author": "askeahey",
-    "merged_at": "2026-03-30T18:32:33Z",
-    "created_at": "2026-03-19T21:53:54Z"
+    "title": "feat: GPU fallback inference for event-driven MeatLAAT",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/138",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-03T16:33:19Z",
+    "created_at": "2026-04-02T23:08:24Z"
   }
 ]
