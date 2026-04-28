@@ -1,5 +1,29 @@
 [
   {
+    "title": "version bump",
+    "url": "https://github.com/Apixio/tfc-bootstrap/pull/149",
+    "repo": "tfc-bootstrap",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-28T14:13:59Z",
+    "created_at": "2026-04-27T21:21:13Z"
+  },
+  {
+    "title": "feat(ecr): add cloud9 ecr module for k8s-resources-exporter",
+    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/3",
+    "repo": "k8s-resources-exporter-tf",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-28T14:08:10Z",
+    "created_at": "2026-04-27T15:28:38Z"
+  },
+  {
+    "title": "feat!: add registry-id to required tags",
+    "url": "https://github.com/Apixio/terraform-aws-ecr/pull/7",
+    "repo": "terraform-aws-ecr",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-28T13:35:17Z",
+    "created_at": "2026-04-27T17:33:21Z"
+  },
+  {
     "title": "fix path for std file",
     "url": "https://github.com/Apixio/di-platform/pull/369",
     "repo": "di-platform",
@@ -184,6 +208,14 @@
     "created_at": "2026-04-24T19:18:48Z"
   },
   {
+    "title": "feat(workspaces): add ecr workspace",
+    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/2",
+    "repo": "k8s-resources-exporter-tf",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-27T14:22:54Z",
+    "created_at": "2026-04-27T14:18:27Z"
+  },
+  {
     "title": "EN-47833 fix: enable submit when no-code reject is overturned",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4340",
     "repo": "apx-launchpad",
@@ -334,6 +366,14 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-04-22T15:21:12Z",
     "created_at": "2026-04-21T21:19:30Z"
+  },
+  {
+    "title": "feat(workspaces): define workspaces per cluster",
+    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/1",
+    "repo": "k8s-resources-exporter-tf",
+    "author": "jdonnelly-apixio",
+    "merged_at": "2026-04-22T15:20:12Z",
+    "created_at": "2026-04-21T13:41:47Z"
   },
   {
     "title": "add terraform import for ai_prd",
