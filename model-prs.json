@@ -16,6 +16,14 @@
     "created_at": "2026-04-27T17:42:53Z"
   },
   {
+    "title": "Scoring perf: skip redundant count, TF32 matmul, coo copy cleanup",
+    "url": "https://github.com/Apixio/ml-icddet/pull/106",
+    "repo": "ml-icddet",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-24T17:19:18Z",
+    "created_at": "2026-04-24T17:05:41Z"
+  },
+  {
     "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/355",
     "repo": "databricks-ops-infra",
@@ -40,6 +48,14 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
+    "title": "Add GHA IAM role and shared secrets for images-prod",
+    "url": "https://github.com/Apixio/platform-actions-tf/pull/2",
+    "repo": "platform-actions-tf",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-13T21:24:02Z",
+    "created_at": "2026-04-13T20:02:43Z"
+  },
+  {
     "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
     "url": "https://github.com/Apixio/ml-retrosp/pull/151",
     "repo": "ml-retrosp",
@@ -62,6 +78,14 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-09T22:12:56Z",
     "created_at": "2026-04-09T22:05:52Z"
+  },
+  {
+    "title": "Add Reconciliation Script",
+    "url": "https://github.com/Apixio/python-scripts/pull/1953",
+    "repo": "python-scripts",
+    "author": "deckardmehdy-apixio",
+    "merged_at": "2026-04-08T17:50:33Z",
+    "created_at": "2026-04-06T19:11:57Z"
   },
   {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
@@ -112,14 +136,6 @@
     "created_at": "2026-04-06T19:49:56Z"
   },
   {
-    "title": "feat: Add module scaffold and snowflake-org-accounts submodule",
-    "url": "https://github.com/Apixio/terraform-snowflake-admin/pull/1",
-    "repo": "terraform-snowflake-admin",
-    "author": "AGillon",
-    "merged_at": "2026-04-06T18:31:16Z",
-    "created_at": "2026-03-30T20:25:38Z"
-  },
-  {
     "title": "KP ACA coverage model",
     "url": "https://github.com/Apixio/di-platform/pull/328",
     "repo": "di-platform",
@@ -128,19 +144,35 @@
     "created_at": "2026-04-03T21:44:34Z"
   },
   {
-    "title": "kp aca coverage model",
-    "url": "https://github.com/Apixio/di-platform/pull/327",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-04-03T21:31:55Z",
-    "created_at": "2026-04-03T21:21:20Z"
-  },
-  {
     "title": "feat: GPU fallback inference for event-driven MeatLAAT",
     "url": "https://github.com/Apixio/ml-retrosp/pull/138",
     "repo": "ml-retrosp",
     "author": "anuccio-apixio",
     "merged_at": "2026-04-03T16:33:19Z",
     "created_at": "2026-04-02T23:08:24Z"
+  },
+  {
+    "title": "DsPy finetuning code",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/56",
+    "repo": "ml-qamodel",
+    "author": "yjiang-apixio",
+    "merged_at": "2026-04-02T20:40:40Z",
+    "created_at": "2026-04-02T20:40:27Z"
+  },
+  {
+    "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
+    "url": "https://github.com/Apixio/ml-icddet/pull/95",
+    "repo": "ml-icddet",
+    "author": "wchang-apixio",
+    "merged_at": "2026-04-01T22:07:50Z",
+    "created_at": "2026-03-31T17:07:36Z"
+  },
+  {
+    "title": "Successfully served T5 model through job",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/54",
+    "repo": "ml-qamodel",
+    "author": "yjiang-apixio",
+    "merged_at": "2026-03-30T22:03:01Z",
+    "created_at": "2026-03-30T22:02:52Z"
   }
 ]
