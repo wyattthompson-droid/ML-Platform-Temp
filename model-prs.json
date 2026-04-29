@@ -1,5 +1,29 @@
 [
   {
+    "title": "feat: detect unauthorized cross-account access via provider blocks and workspace env vars",
+    "url": "https://github.com/Apixio/terraform-module-enforcer/pull/6",
+    "repo": "terraform-module-enforcer",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-29T18:50:34Z",
+    "created_at": "2026-04-29T03:22:27Z"
+  },
+  {
+    "title": "feat: add MLflow tracking and model registration",
+    "url": "https://github.com/Apixio/ml-demomodelb/pull/10",
+    "repo": "ml-demomodelb",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-29T17:30:25Z",
+    "created_at": "2026-04-29T17:10:52Z"
+  },
+  {
+    "title": "SCIK-2695: Add ChartQA evaluation Databricks job",
+    "url": "https://github.com/Apixio/ml-qamodel/pull/59",
+    "repo": "ml-qamodel",
+    "author": "akulkarni-apixio",
+    "merged_at": "2026-04-29T17:01:23Z",
+    "created_at": "2026-04-28T22:40:58Z"
+  },
+  {
     "title": "Scoring perf: dynamic per-batch padding + length bucketing + configurable precision",
     "url": "https://github.com/Apixio/ml-icddet/pull/109",
     "repo": "ml-icddet",
@@ -32,12 +56,28 @@
     "created_at": "2026-04-24T17:05:41Z"
   },
   {
+    "title": "CLOUD-000: add migration reference for Port.io → new platform rebuild",
+    "url": "https://github.com/Apixio/port-tf/pull/39",
+    "repo": "port-tf",
+    "author": "mcln-dv",
+    "merged_at": "2026-04-23T16:32:35Z",
+    "created_at": "2026-04-22T15:17:12Z"
+  },
+  {
     "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/355",
     "repo": "databricks-ops-infra",
     "author": "daviddelsol-cloud",
     "merged_at": "2026-04-20T20:43:29Z",
     "created_at": "2026-04-20T19:57:02Z"
+  },
+  {
+    "title": "refactor: extract step definitions into steps.py",
+    "url": "https://github.com/Apixio/ml-demomodelb/pull/9",
+    "repo": "ml-demomodelb",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-16T17:52:45Z",
+    "created_at": "2026-04-16T17:50:46Z"
   },
   {
     "title": "Bcbstn ma document silver model",
@@ -142,14 +182,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-06T20:46:04Z",
     "created_at": "2026-04-06T19:49:56Z"
-  },
-  {
-    "title": "KP ACA coverage model",
-    "url": "https://github.com/Apixio/di-platform/pull/328",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-04-03T21:53:56Z",
-    "created_at": "2026-04-03T21:44:34Z"
   },
   {
     "title": "feat: GPU fallback inference for event-driven MeatLAAT",
