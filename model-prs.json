@@ -1,5 +1,13 @@
 [
   {
+    "title": "Scoring perf: dynamic per-batch padding + length bucketing + configurable precision",
+    "url": "https://github.com/Apixio/ml-icddet/pull/109",
+    "repo": "ml-icddet",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-29T05:56:18Z",
+    "created_at": "2026-04-28T22:41:28Z"
+  },
+  {
     "title": "DAT-7062 feat(llm-tenant): add provisioned_pt endpoint type for model-unit PT API",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/368",
     "repo": "databricks-ops-infra",
