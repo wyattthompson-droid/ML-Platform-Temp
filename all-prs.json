@@ -1,5 +1,69 @@
 [
   {
+    "title": "fix: validate scan inputs early to surface missing pod-name and tenant config",
+    "url": "https://github.com/Apixio/actions-build-utils/pull/14",
+    "repo": "actions-build-utils",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-30T02:38:48Z",
+    "created_at": "2026-04-30T02:16:22Z"
+  },
+  {
+    "title": "CLOUD-5884: add dv-registry-id tag to port-tf accounts",
+    "url": "https://github.com/Apixio/port-tf/pull/40",
+    "repo": "port-tf",
+    "author": "mcln-dv",
+    "merged_at": "2026-04-29T22:17:38Z",
+    "created_at": "2026-04-29T18:12:49Z"
+  },
+  {
+    "title": "PLT-4713 document_observabiltiy bundle to jar v.6.3.6",
+    "url": "https://github.com/Apixio/apx-databricks/pull/703",
+    "repo": "apx-databricks",
+    "author": "emar-apixio",
+    "merged_at": "2026-04-29T22:16:07Z",
+    "created_at": "2026-04-29T22:08:38Z"
+  },
+  {
+    "title": "defaults aws-managed-key for container",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/60",
+    "repo": "cloud9-tf",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-29T20:36:04Z",
+    "created_at": "2026-04-29T20:14:58Z"
+  },
+  {
+    "title": "changes",
+    "url": "https://github.com/Apixio/di-platform/pull/382",
+    "repo": "di-platform",
+    "author": "smylavarapu-apixio",
+    "merged_at": "2026-04-29T20:30:35Z",
+    "created_at": "2026-04-29T20:26:31Z"
+  },
+  {
+    "title": "feat: CLOUD-5884: add dv-registry-id tag and bump module pins",
+    "url": "https://github.com/Apixio/platform-actions-tf/pull/4",
+    "repo": "platform-actions-tf",
+    "author": "mcln-dv",
+    "merged_at": "2026-04-29T20:20:47Z",
+    "created_at": "2026-04-28T22:55:33Z"
+  },
+  {
+    "title": "Nassembly reference md file",
+    "url": "https://github.com/Apixio/mono/pull/3672",
+    "repo": "mono",
+    "author": "alanli-datavant",
+    "merged_at": "2026-04-29T20:13:01Z",
+    "created_at": "2026-04-27T20:51:30Z"
+  },
+  {
+    "title": "first pass the secreat-container to hold master pwd",
+    "url": "https://github.com/Apixio/cloud9-tf/pull/59",
+    "repo": "cloud9-tf",
+    "author": "vivekkovi-cmyk",
+    "merged_at": "2026-04-29T20:09:55Z",
+    "created_at": "2026-04-29T18:52:14Z"
+  },
+  {
     "title": "Auto release PR 1.8.143",
     "url": "https://github.com/Apixio/apx-sessionmanager/pull/1669",
     "repo": "apx-sessionmanager",
@@ -160,14 +224,6 @@
     "created_at": "2026-04-28T18:38:58Z"
   },
   {
-    "title": "feat!: CLOUD-5884 add registry-id (dv-registry-id) tag support",
-    "url": "https://github.com/Apixio/aws-eks-oidc-connector/pull/3",
-    "repo": "aws-eks-oidc-connector",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-28T22:10:14Z",
-    "created_at": "2026-04-28T20:09:56Z"
-  },
-  {
     "title": "Kaiser naming convention change",
     "url": "https://github.com/Apixio/di-platform/pull/370",
     "repo": "di-platform",
@@ -190,14 +246,6 @@
     "author": "gtang-apixio",
     "merged_at": "2026-04-28T19:39:52Z",
     "created_at": "2026-04-16T16:38:45Z"
-  },
-  {
-    "title": "CLOUD-5883: bump wrapper modules and tag every resource with registry-id",
-    "url": "https://github.com/Apixio/cloud9-proxy-tf/pull/23",
-    "repo": "cloud9-proxy-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-28T19:37:50Z",
-    "created_at": "2026-04-28T16:11:29Z"
   },
   {
     "title": "rollout new template to gha repo's",
@@ -376,14 +424,6 @@
     "created_at": "2026-04-27T17:42:53Z"
   },
   {
-    "title": "feat: Add composite action and reusable workflow for Confluence sync",
-    "url": "https://github.com/Apixio/action-confluence-sync/pull/1",
-    "repo": "action-confluence-sync",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-27T18:04:28Z",
-    "created_at": "2026-04-21T13:58:01Z"
-  },
-  {
     "title": "EN-47908: adding Nexus chatbot service principals",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/359",
     "repo": "databricks-ops-infra",
@@ -430,14 +470,6 @@
     "author": "jdonnelly-apixio",
     "merged_at": "2026-04-27T14:22:54Z",
     "created_at": "2026-04-27T14:18:27Z"
-  },
-  {
-    "title": "fix(workspaces): bump tfe provider to ~> 0.74",
-    "url": "https://github.com/Apixio/cloud9-proxy-tf/pull/22",
-    "repo": "cloud9-proxy-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-27T12:59:43Z",
-    "created_at": "2026-04-21T13:52:08Z"
   },
   {
     "title": "EN-47833 fix: enable submit when no-code reject is overturned",
@@ -576,14 +608,6 @@
     "created_at": "2026-04-22T15:17:12Z"
   },
   {
-    "title": "Revert \"fix: TFC is not happy since the gh outage (#20)\"",
-    "url": "https://github.com/Apixio/cloud9-proxy-tf/pull/21",
-    "repo": "cloud9-proxy-tf",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-23T16:27:08Z",
-    "created_at": "2026-02-09T21:39:09Z"
-  },
-  {
     "title": "fix: handle confluence-sync update_page errors gracefully",
     "url": "https://github.com/Apixio/cloud9/pull/328",
     "repo": "cloud9",
@@ -638,6 +662,14 @@
     "author": "smylavarapu-apixio",
     "merged_at": "2026-04-22T21:15:50Z",
     "created_at": "2026-04-22T21:14:50Z"
+  },
+  {
+    "title": "EN-47541 - Use chainguard base image for npi svc",
+    "url": "https://github.com/Apixio/apx-npi/pull/123",
+    "repo": "apx-npi",
+    "author": "sgopalakrishnan-dv",
+    "merged_at": "2026-04-22T20:53:55Z",
+    "created_at": "2026-04-17T18:53:48Z"
   },
   {
     "title": "EN-47867 EN-47794 EN-47866 - fixes for Crest",
@@ -1000,14 +1032,6 @@
     "created_at": "2026-04-17T02:54:31Z"
   },
   {
-    "title": "Update Routing % Comments for ICD Project",
-    "url": "https://github.com/Apixio/python-scripts/pull/1958",
-    "repo": "python-scripts",
-    "author": "kcecena-apixio",
-    "merged_at": "2026-04-17T15:43:54Z",
-    "created_at": "2026-04-16T23:45:36Z"
-  },
-  {
     "title": "init github-administration-tf",
     "url": "https://github.com/Apixio/tfc-bootstrap/pull/142",
     "repo": "tfc-bootstrap",
@@ -1022,6 +1046,14 @@
     "author": "jdonnelly-apixio",
     "merged_at": "2026-04-17T13:05:26Z",
     "created_at": "2026-04-16T15:17:43Z"
+  },
+  {
+    "title": "PLT-4693: Multiple libraries for loading PDF",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1398",
+    "repo": "apx-signalmanager",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-04-16T22:57:10Z",
+    "created_at": "2026-04-16T14:54:17Z"
   },
   {
     "title": "removed import files",
@@ -1128,14 +1160,6 @@
     "created_at": "2026-04-15T22:51:04Z"
   },
   {
-    "title": "Adding demandid to icd payload",
-    "url": "https://github.com/Apixio/python-scripts/pull/1956",
-    "repo": "python-scripts",
-    "author": "hithaishi-apixio",
-    "merged_at": "2026-04-15T21:27:50Z",
-    "created_at": "2026-04-15T17:35:03Z"
-  },
-  {
     "title": "rename to curana and add document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/353",
     "repo": "di-platform",
@@ -1174,14 +1198,6 @@
     "author": "adalundhe",
     "merged_at": "2026-04-15T18:47:02Z",
     "created_at": "2026-04-15T18:34:06Z"
-  },
-  {
-    "title": "Add Include_no_hcc_client_qa property for code nav project creation",
-    "url": "https://github.com/Apixio/python-scripts/pull/1957",
-    "repo": "python-scripts",
-    "author": "denisrojas-apixio",
-    "merged_at": "2026-04-15T18:34:19Z",
-    "created_at": "2026-04-15T18:01:09Z"
   },
   {
     "title": "Changed infra-config to use isolated tokens server",
@@ -1432,14 +1448,6 @@
     "created_at": "2026-04-13T20:02:43Z"
   },
   {
-    "title": "Add QA Exception Phase % For WQ Routing",
-    "url": "https://github.com/Apixio/python-scripts/pull/1955",
-    "repo": "python-scripts",
-    "author": "kcecena-apixio",
-    "merged_at": "2026-04-13T20:48:04Z",
-    "created_at": "2026-04-13T20:33:00Z"
-  },
-  {
     "title": "Fix images-prod working_directory",
     "url": "https://github.com/Apixio/platform-actions-tf/pull/3",
     "repo": "platform-actions-tf",
@@ -1582,6 +1590,14 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-04-10T17:08:02Z",
     "created_at": "2026-04-10T16:02:03Z"
+  },
+  {
+    "title": "Initial implementation of cloud9-build-utils with CI/CD pipeline",
+    "url": "https://github.com/Apixio/cloud9-build-utils/pull/1",
+    "repo": "cloud9-build-utils",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-10T16:42:57Z",
+    "created_at": "2026-04-02T04:09:05Z"
   },
   {
     "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
@@ -1792,6 +1808,14 @@
     "created_at": "2026-04-06T21:53:42Z"
   },
   {
+    "title": "PLT-4288: Reduce logs in Datadog.",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1397",
+    "repo": "apx-signalmanager",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-04-08T23:20:35Z",
+    "created_at": "2026-04-08T21:44:27Z"
+  },
+  {
     "title": "PLT-4475: Scaffold exp-ra-prd-use1 workspace",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/322",
     "repo": "databricks-ops-infra",
@@ -1912,14 +1936,6 @@
     "created_at": "2026-04-07T17:56:59Z"
   },
   {
-    "title": "Add Reconciliation Script",
-    "url": "https://github.com/Apixio/python-scripts/pull/1953",
-    "repo": "python-scripts",
-    "author": "deckardmehdy-apixio",
-    "merged_at": "2026-04-08T17:50:33Z",
-    "created_at": "2026-04-06T19:11:57Z"
-  },
-  {
     "title": "Binary file handling and performance fix",
     "url": "https://github.com/Apixio/di-platform/pull/338",
     "repo": "di-platform",
@@ -1950,6 +1966,14 @@
     "author": "adalundhe",
     "merged_at": "2026-04-08T14:11:47Z",
     "created_at": "2026-03-31T14:53:01Z"
+  },
+  {
+    "title": "PLT-4288: Log4j2 upgrade",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1395",
+    "repo": "apx-signalmanager",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-04-08T05:25:57Z",
+    "created_at": "2026-04-08T02:05:55Z"
   },
   {
     "title": "docs: realm docs",
@@ -2088,6 +2112,14 @@
     "created_at": "2026-04-03T18:57:48Z"
   },
   {
+    "title": "Refactor NPI missing-doc import pipeline for reliability and correctness",
+    "url": "https://github.com/Apixio/apx-npi/pull/122",
+    "repo": "apx-npi",
+    "author": "sgopalakrishnan-dv",
+    "merged_at": "2026-04-07T14:04:41Z",
+    "created_at": "2026-04-07T03:33:19Z"
+  },
+  {
     "title": "feat: add argument constraint enforcement to module restrictions",
     "url": "https://github.com/Apixio/terraform-module-enforcer/pull/5",
     "repo": "terraform-module-enforcer",
@@ -2104,28 +2136,12 @@
     "created_at": "2026-04-07T02:41:41Z"
   },
   {
-    "title": "Modify claimstype type to string",
-    "url": "https://github.com/Apixio/python-scripts/pull/1952",
-    "repo": "python-scripts",
-    "author": "jkaur-apixio",
-    "merged_at": "2026-04-07T02:16:45Z",
-    "created_at": "2026-04-01T20:18:15Z"
-  },
-  {
     "title": "AL: add enterprise install callback",
     "url": "https://github.com/Apixio/cloud9/pull/325",
     "repo": "cloud9",
     "author": "adalundhe",
     "merged_at": "2026-04-07T01:09:23Z",
     "created_at": "2026-04-06T17:43:20Z"
-  },
-  {
-    "title": "change claimsType type",
-    "url": "https://github.com/Apixio/python-scripts/pull/1954",
-    "repo": "python-scripts",
-    "author": "gdeshpande-apixio",
-    "merged_at": "2026-04-06T22:37:16Z",
-    "created_at": "2026-04-06T22:24:53Z"
   },
   {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
@@ -2200,6 +2216,22 @@
     "created_at": "2026-04-06T17:22:10Z"
   },
   {
+    "title": "Auto release PR 3.1.9",
+    "url": "https://github.com/Apixio/apx-npi/pull/121",
+    "repo": "apx-npi",
+    "author": "apixio-readonly",
+    "merged_at": "2026-04-06T17:18:22Z",
+    "created_at": "2026-04-06T17:13:39Z"
+  },
+  {
+    "title": "Enabled the AWSAuth for production",
+    "url": "https://github.com/Apixio/apx-npi/pull/120",
+    "repo": "apx-npi",
+    "author": "sgopalakrishnan-dv",
+    "merged_at": "2026-04-06T17:11:35Z",
+    "created_at": "2026-04-06T16:58:42Z"
+  },
+  {
     "title": "update schedule status for dev & exp",
     "url": "https://github.com/Apixio/ml-retrosp/pull/144",
     "repo": "ml-retrosp",
@@ -2214,6 +2246,22 @@
     "author": "anuccio-apixio",
     "merged_at": "2026-04-06T16:42:17Z",
     "created_at": "2026-04-06T16:37:38Z"
+  },
+  {
+    "title": "Auto release PR 3.1.8",
+    "url": "https://github.com/Apixio/apx-npi/pull/119",
+    "repo": "apx-npi",
+    "author": "apixio-readonly",
+    "merged_at": "2026-04-06T14:53:59Z",
+    "created_at": "2026-04-06T14:45:48Z"
+  },
+  {
+    "title": "New NPI PRD Domain config changes in NPI Services",
+    "url": "https://github.com/Apixio/apx-npi/pull/115",
+    "repo": "apx-npi",
+    "author": "sgopalakrishnan-dv",
+    "merged_at": "2026-04-06T14:40:57Z",
+    "created_at": "2026-03-23T14:56:19Z"
   },
   {
     "title": "dev -> main",
@@ -2232,12 +2280,12 @@
     "created_at": "2026-04-05T04:15:49Z"
   },
   {
-    "title": "Archon extractor py modules",
-    "url": "https://github.com/Apixio/di-platform/pull/326",
-    "repo": "di-platform",
-    "author": "mlagusker-apixio",
-    "merged_at": "2026-04-04T00:03:02Z",
-    "created_at": "2026-04-03T18:17:40Z"
+    "title": "Bump OCR controller memory.",
+    "url": "https://github.com/Apixio/apx-signalmanager/pull/1394",
+    "repo": "apx-signalmanager",
+    "author": "ribrayev-apixio",
+    "merged_at": "2026-04-04T21:35:49Z",
+    "created_at": "2026-04-04T21:20:48Z"
   },
   {
     "title": "only cleanup staged rows for docs that succeed",
@@ -2440,14 +2488,6 @@
     "created_at": "2026-04-01T19:15:59Z"
   },
   {
-    "title": "Accuracy fix",
-    "url": "https://github.com/Apixio/apx-appdashboard/pull/373",
-    "repo": "apx-appdashboard",
-    "author": "akvasov-apixio",
-    "merged_at": "2026-04-01T21:07:46Z",
-    "created_at": "2026-04-01T19:54:09Z"
-  },
-  {
     "title": "Ignore project mapping with IGNORED state",
     "url": "https://github.com/Apixio/apx-databricks/pull/689",
     "repo": "apx-databricks",
@@ -2550,13 +2590,5 @@
     "author": "luizalcantara-apixio",
     "merged_at": "2026-03-31T16:31:03Z",
     "created_at": "2026-03-30T23:23:04Z"
-  },
-  {
-    "title": "Successfully served T5 model through job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/54",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-03-30T22:03:01Z",
-    "created_at": "2026-03-30T22:02:52Z"
   }
 ]
