@@ -1,5 +1,29 @@
 [
   {
+    "title": "Add details to project breakdown report",
+    "url": "https://github.com/Apixio/apx-databricks/pull/700",
+    "repo": "apx-databricks",
+    "author": "alanli-datavant",
+    "merged_at": "2026-04-30T13:34:04Z",
+    "created_at": "2026-04-20T23:08:17Z"
+  },
+  {
+    "title": "feat: add wiz scanning workflow/action",
+    "url": "https://github.com/Apixio/cloud9/pull/342",
+    "repo": "cloud9",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-30T12:36:53Z",
+    "created_at": "2026-04-29T03:14:08Z"
+  },
+  {
+    "title": "fix: support per-service JDK version in chainguard-java template",
+    "url": "https://github.com/Apixio/cloud9-build-utils/pull/2",
+    "repo": "cloud9-build-utils",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-30T11:39:24Z",
+    "created_at": "2026-04-30T03:03:08Z"
+  },
+  {
     "title": "fix: validate scan inputs early to surface missing pod-name and tenant config",
     "url": "https://github.com/Apixio/actions-build-utils/pull/14",
     "repo": "actions-build-utils",
@@ -150,14 +174,6 @@
     "author": "chopkinsAtDatavant",
     "merged_at": "2026-04-29T15:05:38Z",
     "created_at": "2026-04-28T22:59:33Z"
-  },
-  {
-    "title": "EN-47192 update db declarations",
-    "url": "https://github.com/Apixio/codenavigator-monitoring-tf/pull/7",
-    "repo": "codenavigator-monitoring-tf",
-    "author": "jmotyka",
-    "merged_at": "2026-04-29T13:59:36Z",
-    "created_at": "2026-04-28T14:33:06Z"
   },
   {
     "title": "increase batch size to 8 after thorough testing",
