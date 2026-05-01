@@ -1,21 +1,5 @@
 [
   {
-    "title": "feat: detect unauthorized cross-account access via provider blocks and workspace env vars",
-    "url": "https://github.com/Apixio/terraform-module-enforcer/pull/6",
-    "repo": "terraform-module-enforcer",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-29T18:50:34Z",
-    "created_at": "2026-04-29T03:22:27Z"
-  },
-  {
-    "title": "SCIK-2695: Add ChartQA evaluation Databricks job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/59",
-    "repo": "ml-qamodel",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-04-29T17:01:23Z",
-    "created_at": "2026-04-28T22:40:58Z"
-  },
-  {
     "title": "Scoring perf: dynamic per-batch padding + length bucketing + configurable precision",
     "url": "https://github.com/Apixio/ml-icddet/pull/109",
     "repo": "ml-icddet",
@@ -48,12 +32,12 @@
     "created_at": "2026-04-24T17:05:41Z"
   },
   {
-    "title": "CLOUD-000: add migration reference for Port.io → new platform rebuild",
-    "url": "https://github.com/Apixio/port-tf/pull/39",
-    "repo": "port-tf",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-23T16:32:35Z",
-    "created_at": "2026-04-22T15:17:12Z"
+    "title": "fix(networks): correct MLflow VPC endpoint service name",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/92",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-24T13:56:37Z",
+    "created_at": "2026-04-23T23:04:14Z"
   },
   {
     "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
@@ -64,12 +48,36 @@
     "created_at": "2026-04-20T19:57:02Z"
   },
   {
+    "title": "PLT-4627 chore: post-TFC migration cleanup",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/91",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-17T21:26:53Z",
+    "created_at": "2026-04-17T20:00:40Z"
+  },
+  {
+    "title": "PLT-4627 feat(cicd): migrate cicd + infra modules to Terraform Cloud",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/90",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-17T19:57:07Z",
+    "created_at": "2026-04-17T19:09:39Z"
+  },
+  {
     "title": "Bcbstn ma document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/354",
     "repo": "di-platform",
     "author": "dgolich-apixio",
     "merged_at": "2026-04-15T23:02:25Z",
     "created_at": "2026-04-15T22:51:04Z"
+  },
+  {
+    "title": "PLT-4545 feat(iam): grant github-mlops-sgmk cross-account ECR pull for SageMaker DLCs",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/89",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-15T22:32:25Z",
+    "created_at": "2026-04-15T22:19:45Z"
   },
   {
     "title": "rename to curana and add document silver model",
@@ -80,12 +88,28 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
-    "title": "v1.2.2: null content guard, content_was_null flag, pre-step input validation",
-    "url": "https://github.com/Apixio/ml-infdate/pull/60",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-14T20:23:34Z",
-    "created_at": "2026-04-14T17:26:34Z"
+    "title": "PLT-4585 feat(iam): grant MLflow access to all execution roles",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/86",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-14T16:11:07Z",
+    "created_at": "2026-04-13T22:05:25Z"
+  },
+  {
+    "title": "PLT-4585 feat(studio): add MLflow tracking server to studio module",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/85",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-14T15:07:23Z",
+    "created_at": "2026-04-13T21:32:06Z"
+  },
+  {
+    "title": "PLT-4585 feat(iam+network): add MLflow tracking server role and VPC endpoint",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/84",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-13T21:53:19Z",
+    "created_at": "2026-04-13T21:32:03Z"
   },
   {
     "title": "Add GHA IAM role and shared secrets for images-prod",
@@ -96,12 +120,44 @@
     "created_at": "2026-04-13T20:02:43Z"
   },
   {
-    "title": "Release 1.2.1: stratified sampling, page cap parameters, content size logging",
-    "url": "https://github.com/Apixio/ml-infdate/pull/47",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-08T16:39:20Z",
-    "created_at": "2026-04-07T14:24:07Z"
+    "title": "feat(sagemaker): bump AWS provider to ~> 5.0 in all dev modules (PLT-4585)",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/82",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-13T20:59:41Z",
+    "created_at": "2026-04-13T20:43:44Z"
+  },
+  {
+    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-13T17:56:21Z",
+    "created_at": "2026-04-10T17:28:55Z"
+  },
+  {
+    "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/149",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-10T16:13:18Z",
+    "created_at": "2026-04-09T20:29:28Z"
+  },
+  {
+    "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/150",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-09T22:12:56Z",
+    "created_at": "2026-04-09T22:05:52Z"
+  },
+  {
+    "title": "PLT-4589 security: remove CodeArtifact access from SageMaker execution roles",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/81",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-08T18:00:40Z",
+    "created_at": "2026-04-08T17:02:48Z"
   },
   {
     "title": "feat: add document_metadata models for bcbskc, bcbsma, cbc, prominence",
@@ -112,12 +168,28 @@
     "created_at": "2026-04-08T04:34:27Z"
   },
   {
-    "title": "Fix OOM in pre step: replace collect_list+join with applyInPandas",
-    "url": "https://github.com/Apixio/ml-infdate/pull/49",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-07T18:54:51Z",
-    "created_at": "2026-04-07T18:41:57Z"
+    "title": "feat: add ml-inference-framework to OIDC trust",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/80",
+    "repo": "ml-ops-infra",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-07T22:51:38Z",
+    "created_at": "2026-04-07T22:50:17Z"
+  },
+  {
+    "title": "feat(monitoring): pre-create CloudWatch log groups for all common SageMaker step types",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/79",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-07T22:48:22Z",
+    "created_at": "2026-04-07T22:34:02Z"
+  },
+  {
+    "title": "fix: grant execution roles read access to shared SageMaker session bucket",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/77",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-07T18:39:45Z",
+    "created_at": "2026-04-07T18:34:55Z"
   },
   {
     "title": "KP coverage model updates",
@@ -136,14 +208,6 @@
     "created_at": "2026-04-07T17:40:27Z"
   },
   {
-    "title": "Add content size logging, CHANGELOG, and version bump to 1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/48",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-07T17:31:40Z",
-    "created_at": "2026-04-07T17:01:20Z"
-  },
-  {
     "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/326",
     "repo": "databricks-ops-infra",
@@ -160,28 +224,52 @@
     "created_at": "2026-04-03T16:02:13Z"
   },
   {
-    "title": "Remove notebooks/data — dataset creation moved to DAB jobs",
-    "url": "https://github.com/Apixio/ml-infdate/pull/43",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-03T18:10:25Z",
-    "created_at": "2026-04-03T17:59:29Z"
+    "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/146",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-06T20:46:04Z",
+    "created_at": "2026-04-06T19:49:56Z"
   },
   {
-    "title": "DsPy finetuning code",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/56",
-    "repo": "ml-qamodel",
-    "author": "yjiang-apixio",
-    "merged_at": "2026-04-02T20:40:40Z",
-    "created_at": "2026-04-02T20:40:27Z"
+    "title": "PLT-4376 Add model registry permissions",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T21:40:37Z",
+    "created_at": "2026-04-03T21:36:49Z"
   },
   {
-    "title": "Fix service principal UUIDs and migrate old SP assets — v1.2.1",
-    "url": "https://github.com/Apixio/ml-infdate/pull/37",
-    "repo": "ml-infdate",
-    "author": "evancanfield-apixio",
-    "merged_at": "2026-04-02T20:05:36Z",
-    "created_at": "2026-03-25T14:02:59Z"
+    "title": "feat: GPU fallback inference for event-driven MeatLAAT",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/138",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-03T16:33:19Z",
+    "created_at": "2026-04-02T23:08:24Z"
+  },
+  {
+    "title": "Add missing EC2 VPC permissions required by SageMaker VpcOnly mode",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/68",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T16:16:34Z",
+    "created_at": "2026-04-03T16:13:01Z"
+  },
+  {
+    "title": "Add SageMaker job actions to execution role base policy",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/66",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:25:39Z",
+    "created_at": "2026-04-03T15:22:19Z"
+  },
+  {
+    "title": "PLT-4376 Allow execution roles to pass themselves to SageMaker",
+    "url": "https://github.com/Apixio/ml-ops-infra/pull/65",
+    "repo": "ml-ops-infra",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-03T15:10:41Z",
+    "created_at": "2026-04-03T15:08:06Z"
   },
   {
     "title": "Add neg_only_schedule, selective LLM weight decay, and file logging",
