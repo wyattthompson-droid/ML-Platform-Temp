@@ -2494,13 +2494,5 @@
     "author": "alanli-datavant",
     "merged_at": "2026-04-01T18:03:21Z",
     "created_at": "2026-04-01T15:51:46Z"
-  },
-  {
-    "title": "feat: add admin environment-deregister command (CLOUD-5235)",
-    "url": "https://github.com/Apixio/cloud9/pull/318",
-    "repo": "cloud9",
-    "author": "kealanmurphy-dv",
-    "merged_at": "2026-04-01T10:55:55Z",
-    "created_at": "2026-03-30T15:59:05Z"
   }
 ]
