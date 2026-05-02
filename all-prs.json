@@ -2278,21 +2278,5 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-02T19:35:14Z",
     "created_at": "2026-04-02T17:14:53Z"
-  },
-  {
-    "title": "new repo for secret manager and claude rollout for all repo's",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/129",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-04-02T16:07:51Z",
-    "created_at": "2026-04-02T15:57:26Z"
-  },
-  {
-    "title": "PLT-4376 Use app-dev networks",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/58",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-02T15:54:46Z",
-    "created_at": "2026-04-02T15:42:34Z"
   }
 ]
