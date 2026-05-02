@@ -2294,13 +2294,5 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-02T15:54:46Z",
     "created_at": "2026-04-02T15:42:34Z"
-  },
-  {
-    "title": "feat: add pod and environment_type custom property support",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/127",
-    "repo": "tfc-bootstrap",
-    "author": "kealanmurphy-dv",
-    "merged_at": "2026-04-02T10:19:33Z",
-    "created_at": "2026-04-01T16:35:00Z"
   }
 ]
