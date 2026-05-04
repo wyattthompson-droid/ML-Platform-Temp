@@ -214,13 +214,5 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-06T20:46:04Z",
     "created_at": "2026-04-06T19:49:56Z"
-  },
-  {
-    "title": "PLT-4376 Add model registry permissions",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/74",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-03T21:40:37Z",
-    "created_at": "2026-04-03T21:36:49Z"
   }
 ]
