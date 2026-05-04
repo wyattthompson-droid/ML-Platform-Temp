@@ -1,5 +1,13 @@
 [
   {
+    "title": "Crosswalk management models",
+    "url": "https://github.com/Apixio/di-platform/pull/389",
+    "repo": "di-platform",
+    "author": "naditya-apixio",
+    "merged_at": "2026-05-04T18:42:49Z",
+    "created_at": "2026-05-04T18:16:30Z"
+  },
+  {
     "title": "DAT-7062 feat(llm-tenant): add provisioned_pt endpoint type for model-unit PT API",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/368",
     "repo": "databricks-ops-infra",
@@ -72,6 +80,14 @@
     "created_at": "2026-04-15T20:45:03Z"
   },
   {
+    "title": "middle last subset fixed",
+    "url": "https://github.com/Apixio/ml-daqari/pull/60",
+    "repo": "ml-daqari",
+    "author": "askeahey",
+    "merged_at": "2026-04-14T19:34:41Z",
+    "created_at": "2026-04-14T13:06:55Z"
+  },
+  {
     "title": "PLT-4585 feat(iam): grant MLflow access to all execution roles",
     "url": "https://github.com/Apixio/ml-ops-infra/pull/86",
     "repo": "ml-ops-infra",
@@ -94,14 +110,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-13T21:53:19Z",
     "created_at": "2026-04-13T21:32:03Z"
-  },
-  {
-    "title": "Add GHA IAM role and shared secrets for images-prod",
-    "url": "https://github.com/Apixio/platform-actions-tf/pull/2",
-    "repo": "platform-actions-tf",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-13T21:24:02Z",
-    "created_at": "2026-04-13T20:02:43Z"
   },
   {
     "title": "feat(sagemaker): bump AWS provider to ~> 5.0 in all dev modules (PLT-4585)",
@@ -176,43 +184,19 @@
     "created_at": "2026-04-07T18:34:55Z"
   },
   {
-    "title": "KP coverage model updates",
-    "url": "https://github.com/Apixio/di-platform/pull/336",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-04-07T17:43:38Z",
-    "created_at": "2026-04-07T17:42:50Z"
-  },
-  {
-    "title": "Feature/di 2994 kp coverage models",
-    "url": "https://github.com/Apixio/di-platform/pull/335",
-    "repo": "di-platform",
-    "author": "naditya-apixio",
-    "merged_at": "2026-04-07T17:41:43Z",
-    "created_at": "2026-04-07T17:40:27Z"
-  },
-  {
-    "title": "PLT-4290: ml-nexus SP access via safe YAML changes",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/326",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-04-06T22:36:20Z",
-    "created_at": "2026-04-03T15:43:44Z"
-  },
-  {
-    "title": "fix: remediate canonical_exp_prd grant drift",
-    "url": "https://github.com/Apixio/databricks-ops-infra/pull/327",
-    "repo": "databricks-ops-infra",
-    "author": "daviddelsol-cloud",
-    "merged_at": "2026-04-06T22:29:37Z",
-    "created_at": "2026-04-03T16:02:13Z"
-  },
-  {
     "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/146",
     "repo": "ml-retrosp",
     "author": "mwebb-datavant",
     "merged_at": "2026-04-06T20:46:04Z",
     "created_at": "2026-04-06T19:49:56Z"
+  },
+  {
+    "title": "feat: Add module scaffold and snowflake-org-accounts submodule",
+    "url": "https://github.com/Apixio/terraform-snowflake-admin/pull/1",
+    "repo": "terraform-snowflake-admin",
+    "author": "AGillon",
+    "merged_at": "2026-04-06T18:31:16Z",
+    "created_at": "2026-03-30T20:25:38Z"
   }
 ]
