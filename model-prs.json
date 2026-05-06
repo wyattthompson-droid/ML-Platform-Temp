@@ -1,19 +1,19 @@
 [
   {
+    "title": "chore(retro): bump llmfp 0.4.1 to 0.9.9 and switch rescore_with_llm to single-node on-demand",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/170",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-05-05T19:34:03Z",
+    "created_at": "2026-05-05T19:18:33Z"
+  },
+  {
     "title": "Crosswalk management models",
     "url": "https://github.com/Apixio/di-platform/pull/389",
     "repo": "di-platform",
     "author": "naditya-apixio",
     "merged_at": "2026-05-04T18:42:49Z",
     "created_at": "2026-05-04T18:16:30Z"
-  },
-  {
-    "title": "SCIK-2695: Add ChartQA evaluation Databricks job",
-    "url": "https://github.com/Apixio/ml-qamodel/pull/59",
-    "repo": "ml-qamodel",
-    "author": "akulkarni-apixio",
-    "merged_at": "2026-04-29T17:01:23Z",
-    "created_at": "2026-04-28T22:40:58Z"
   },
   {
     "title": "DAT-7062 feat(llm-tenant): add provisioned_pt endpoint type for model-unit PT API",
@@ -32,14 +32,6 @@
     "created_at": "2026-04-27T17:42:53Z"
   },
   {
-    "title": "fix(networks): correct MLflow VPC endpoint service name",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/92",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-24T13:56:37Z",
-    "created_at": "2026-04-23T23:04:14Z"
-  },
-  {
     "title": "fix(exp-ra-prd): unblock snowflake foreign catalog apply",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/355",
     "repo": "databricks-ops-infra",
@@ -48,36 +40,12 @@
     "created_at": "2026-04-20T19:57:02Z"
   },
   {
-    "title": "PLT-4627 chore: post-TFC migration cleanup",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/91",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-17T21:26:53Z",
-    "created_at": "2026-04-17T20:00:40Z"
-  },
-  {
-    "title": "PLT-4627 feat(cicd): migrate cicd + infra modules to Terraform Cloud",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/90",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-17T19:57:07Z",
-    "created_at": "2026-04-17T19:09:39Z"
-  },
-  {
     "title": "Bcbstn ma document silver model",
     "url": "https://github.com/Apixio/di-platform/pull/354",
     "repo": "di-platform",
     "author": "dgolich-apixio",
     "merged_at": "2026-04-15T23:02:25Z",
     "created_at": "2026-04-15T22:51:04Z"
-  },
-  {
-    "title": "PLT-4545 feat(iam): grant github-mlops-sgmk cross-account ECR pull for SageMaker DLCs",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/89",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-15T22:32:25Z",
-    "created_at": "2026-04-15T22:19:45Z"
   },
   {
     "title": "rename to curana and add document silver model",
@@ -94,38 +62,6 @@
     "author": "askeahey",
     "merged_at": "2026-04-14T19:34:41Z",
     "created_at": "2026-04-14T13:06:55Z"
-  },
-  {
-    "title": "PLT-4585 feat(iam): grant MLflow access to all execution roles",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/86",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-14T16:11:07Z",
-    "created_at": "2026-04-13T22:05:25Z"
-  },
-  {
-    "title": "PLT-4585 feat(studio): add MLflow tracking server to studio module",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/85",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-14T15:07:23Z",
-    "created_at": "2026-04-13T21:32:06Z"
-  },
-  {
-    "title": "PLT-4585 feat(iam+network): add MLflow tracking server role and VPC endpoint",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/84",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-13T21:53:19Z",
-    "created_at": "2026-04-13T21:32:03Z"
-  },
-  {
-    "title": "feat(sagemaker): bump AWS provider to ~> 5.0 in all dev modules (PLT-4585)",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/82",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-13T20:59:41Z",
-    "created_at": "2026-04-13T20:43:44Z"
   },
   {
     "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
@@ -150,38 +86,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-09T22:12:56Z",
     "created_at": "2026-04-09T22:05:52Z"
-  },
-  {
-    "title": "PLT-4589 security: remove CodeArtifact access from SageMaker execution roles",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/81",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-08T18:00:40Z",
-    "created_at": "2026-04-08T17:02:48Z"
-  },
-  {
-    "title": "feat: add ml-inference-framework to OIDC trust",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/80",
-    "repo": "ml-ops-infra",
-    "author": "anuccio-apixio",
-    "merged_at": "2026-04-07T22:51:38Z",
-    "created_at": "2026-04-07T22:50:17Z"
-  },
-  {
-    "title": "feat(monitoring): pre-create CloudWatch log groups for all common SageMaker step types",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/79",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-07T22:48:22Z",
-    "created_at": "2026-04-07T22:34:02Z"
-  },
-  {
-    "title": "fix: grant execution roles read access to shared SageMaker session bucket",
-    "url": "https://github.com/Apixio/ml-ops-infra/pull/77",
-    "repo": "ml-ops-infra",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-04-07T18:39:45Z",
-    "created_at": "2026-04-07T18:34:55Z"
   },
   {
     "title": "PLT-4372 integrate ml-infdate v1.2.0 into retro workflows",
