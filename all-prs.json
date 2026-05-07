@@ -1,5 +1,53 @@
 [
   {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/useracct-tf/pull/1",
+    "repo": "useracct-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:41:00Z",
+    "created_at": "2026-05-06T14:58:47Z"
+  },
+  {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/appdashboard-tf/pull/1",
+    "repo": "appdashboard-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:40:56Z",
+    "created_at": "2026-05-06T14:44:45Z"
+  },
+  {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/sparkmetrics-tf/pull/1",
+    "repo": "sparkmetrics-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:36:53Z",
+    "created_at": "2026-05-06T14:58:54Z"
+  },
+  {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/codenavigator-metrics-tf/pull/1",
+    "repo": "codenavigator-metrics-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:36:51Z",
+    "created_at": "2026-05-06T14:59:23Z"
+  },
+  {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/projectadmin-tf/pull/1",
+    "repo": "projectadmin-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:36:48Z",
+    "created_at": "2026-05-06T14:59:01Z"
+  },
+  {
+    "title": "CLOUD-6349: scaffold stg and prd environment directories",
+    "url": "https://github.com/Apixio/mapping-tf/pull/1",
+    "repo": "mapping-tf",
+    "author": "dmai-apixio",
+    "merged_at": "2026-05-07T04:36:45Z",
+    "created_at": "2026-05-06T14:59:16Z"
+  },
+  {
     "title": "Releasing Observibility apps and DD logging on existing bundles.",
     "url": "https://github.com/Apixio/di-platform/pull/415",
     "repo": "di-platform",
@@ -144,14 +192,6 @@
     "created_at": "2026-05-06T19:09:44Z"
   },
   {
-    "title": "feat: add terraform-github-secret-roles repository",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/163",
-    "repo": "tfc-bootstrap",
-    "author": "adalundhe",
-    "merged_at": "2026-05-06T19:14:36Z",
-    "created_at": "2026-05-06T18:40:27Z"
-  },
-  {
     "title": "DD Logging",
     "url": "https://github.com/Apixio/di-platform/pull/407",
     "repo": "di-platform",
@@ -230,38 +270,6 @@
     "author": "prashantkadam-apixio",
     "merged_at": "2026-05-06T17:15:30Z",
     "created_at": "2026-05-06T14:24:20Z"
-  },
-  {
-    "title": "feat!: update to use new secrets action and flow",
-    "url": "https://github.com/Apixio/action-sbt/pull/7",
-    "repo": "action-sbt",
-    "author": "adalundhe",
-    "merged_at": "2026-05-06T17:14:22Z",
-    "created_at": "2026-05-01T18:57:30Z"
-  },
-  {
-    "title": "feat!: update to use new secrets action and flow",
-    "url": "https://github.com/Apixio/action-maven/pull/16",
-    "repo": "action-maven",
-    "author": "adalundhe",
-    "merged_at": "2026-05-06T17:14:02Z",
-    "created_at": "2026-05-01T19:01:06Z"
-  },
-  {
-    "title": "feat:! update to use new secrets action and flow",
-    "url": "https://github.com/Apixio/action-utils/pull/8",
-    "repo": "action-utils",
-    "author": "adalundhe",
-    "merged_at": "2026-05-06T17:13:08Z",
-    "created_at": "2026-05-01T18:56:42Z"
-  },
-  {
-    "title": "feat!: update to use new secrets action and flow",
-    "url": "https://github.com/Apixio/action-python/pull/7",
-    "repo": "action-python",
-    "author": "adalundhe",
-    "merged_at": "2026-05-06T17:12:52Z",
-    "created_at": "2026-05-01T18:57:16Z"
   },
   {
     "title": "feat: update to use new secrets action and flow",
@@ -408,36 +416,12 @@
     "created_at": "2026-05-06T12:34:24Z"
   },
   {
-    "title": "Add Rinat Ibrayev to dataplatform team",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/161",
-    "repo": "tfc-bootstrap",
-    "author": "mwebb-datavant",
-    "merged_at": "2026-05-06T03:22:02Z",
-    "created_at": "2026-05-05T21:22:45Z"
-  },
-  {
-    "title": "Add multiple services",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/158",
-    "repo": "tfc-bootstrap",
-    "author": "dmai-apixio",
-    "merged_at": "2026-05-06T02:47:17Z",
-    "created_at": "2026-05-05T16:47:17Z"
-  },
-  {
     "title": "merge main back into dev",
     "url": "https://github.com/Apixio/di-platform/pull/397",
     "repo": "di-platform",
     "author": "mlagusker-apixio",
     "merged_at": "2026-05-06T01:24:13Z",
     "created_at": "2026-05-06T01:23:05Z"
-  },
-  {
-    "title": "feat: invite user to apixio script",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/162",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-05-06T01:22:26Z",
-    "created_at": "2026-05-05T21:51:43Z"
   },
   {
     "title": "release all the stuff to main",
@@ -520,14 +504,6 @@
     "created_at": "2026-05-05T20:13:48Z"
   },
   {
-    "title": "feat(gha-repositories): bump module to v2.3.0 to enable enterprise ac…",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/160",
-    "repo": "tfc-bootstrap",
-    "author": "adalundhe",
-    "merged_at": "2026-05-05T20:38:10Z",
-    "created_at": "2026-05-05T18:20:27Z"
-  },
-  {
     "title": "chore(retro): bump llmfp 0.4.1 to 0.9.9 and switch rescore_with_llm to single-node on-demand",
     "url": "https://github.com/Apixio/ml-retrosp/pull/170",
     "repo": "ml-retrosp",
@@ -550,14 +526,6 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-05-05T17:35:49Z",
     "created_at": "2026-05-05T17:00:54Z"
-  },
-  {
-    "title": "added new module repo for dms mgmt",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/159",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-05-05T17:28:53Z",
-    "created_at": "2026-05-05T16:49:48Z"
   },
   {
     "title": "Add review level property field",
@@ -616,14 +584,6 @@
     "created_at": "2026-05-01T22:11:08Z"
   },
   {
-    "title": "fix: add a plan at the end as workaround",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/157",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-05-04T23:22:05Z",
-    "created_at": "2026-05-04T21:31:54Z"
-  },
-  {
     "title": "Ddlog",
     "url": "https://github.com/Apixio/di-platform/pull/392",
     "repo": "di-platform",
@@ -638,22 +598,6 @@
     "author": "jkaur-apixio",
     "merged_at": "2026-05-04T22:17:34Z",
     "created_at": "2026-04-20T20:08:48Z"
-  },
-  {
-    "title": "feat: allow bi-data-replication TFC project in commercial prod/nonprod",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/155",
-    "repo": "tfc-bootstrap",
-    "author": "chopkinsAtDatavant",
-    "merged_at": "2026-05-04T21:29:35Z",
-    "created_at": "2026-05-01T21:27:28Z"
-  },
-  {
-    "title": "feat(aws-bootstrap): allow k8s-resources-exporter project to use tools, commercial-nonprod, commercial-prod creds",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/153",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-05-04T21:22:34Z",
-    "created_at": "2026-04-29T15:56:22Z"
   },
   {
     "title": "DAT-7167 Chainguard base image migration for signal-manager",
@@ -704,14 +648,6 @@
     "created_at": "2026-04-14T22:17:56Z"
   },
   {
-    "title": "chore: add dataplatform team to bi-data-infra, add bob",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/156",
-    "repo": "tfc-bootstrap",
-    "author": "AGillon",
-    "merged_at": "2026-05-04T18:04:39Z",
-    "created_at": "2026-05-04T16:11:01Z"
-  },
-  {
     "title": "Provision LS_AWS_US_EAST_1 and PROD_EXP_AWS_US_EAST_1 Snowflake accounts",
     "url": "https://github.com/Apixio/data-infra-tf/pull/7",
     "repo": "data-infra-tf",
@@ -742,14 +678,6 @@
     "author": "dv-mmounts",
     "merged_at": "2026-05-04T14:55:40Z",
     "created_at": "2026-05-01T19:36:04Z"
-  },
-  {
-    "title": "Remove deprecated SAST scan reusable workflow",
-    "url": "https://github.com/Apixio/metrics-core/pull/176",
-    "repo": "metrics-core",
-    "author": "rtsiroulnik-apixio",
-    "merged_at": "2026-05-03T23:54:54Z",
-    "created_at": "2026-05-01T22:54:00Z"
   },
   {
     "title": "dev -> main",
@@ -1024,14 +952,6 @@
     "created_at": "2026-04-29T21:38:12Z"
   },
   {
-    "title": "CLOUD-5884: add dv-registry-id tag to tfc-bootstrap aws accounts",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/154",
-    "repo": "tfc-bootstrap",
-    "author": "mcln-dv",
-    "merged_at": "2026-04-30T15:44:49Z",
-    "created_at": "2026-04-29T18:51:14Z"
-  },
-  {
     "title": "Add snowflake-tf-secrets workspace for SVC_TERRAFORM keypair",
     "url": "https://github.com/Apixio/data-infra-tf/pull/1",
     "repo": "data-infra-tf",
@@ -1102,14 +1022,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-29T16:35:35Z",
     "created_at": "2026-04-24T16:54:40Z"
-  },
-  {
-    "title": "feat(aws-bootstrap): add commercial nonprod + prod envs (DAT-1079)",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/152",
-    "repo": "tfc-bootstrap",
-    "author": "chopkinsAtDatavant",
-    "merged_at": "2026-04-29T15:05:38Z",
-    "created_at": "2026-04-28T22:59:33Z"
   },
   {
     "title": "increase batch size to 8 after thorough testing",
@@ -1192,14 +1104,6 @@
     "created_at": "2026-04-16T16:38:45Z"
   },
   {
-    "title": "rollout new template to gha repo's",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/150",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-04-28T19:02:30Z",
-    "created_at": "2026-04-28T14:34:15Z"
-  },
-  {
     "title": "slack web hook fix - cms batch creation",
     "url": "https://github.com/Apixio/di-platform/pull/374",
     "repo": "di-platform",
@@ -1246,22 +1150,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-28T15:55:28Z",
     "created_at": "2026-04-28T15:31:24Z"
-  },
-  {
-    "title": "AL: add action-fetch-aws-secret",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/151",
-    "repo": "tfc-bootstrap",
-    "author": "adalundhe",
-    "merged_at": "2026-04-28T15:45:40Z",
-    "created_at": "2026-04-28T15:35:47Z"
-  },
-  {
-    "title": "version bump",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/149",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-04-28T14:13:59Z",
-    "created_at": "2026-04-27T21:21:13Z"
   },
   {
     "title": "fix path for std file",
@@ -1326,14 +1214,6 @@
     "author": "mwebb-datavant",
     "merged_at": "2026-04-27T21:50:43Z",
     "created_at": "2026-04-27T20:25:53Z"
-  },
-  {
-    "title": "fixed non-resources modules repos checks",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/148",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-04-27T21:13:14Z",
-    "created_at": "2026-04-27T18:28:24Z"
   },
   {
     "title": "DAT-7062 feat(llm-tenants): add llm-fp provisioned throughput endpoints",
@@ -1470,14 +1350,6 @@
     "author": "prashantkadam-apixio",
     "merged_at": "2026-04-23T17:35:58Z",
     "created_at": "2026-04-07T00:43:29Z"
-  },
-  {
-    "title": "feat: add approved modules to tfc-bootstrap",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/147",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-23T16:43:52Z",
-    "created_at": "2026-04-23T15:19:38Z"
   },
   {
     "title": "[CN] EN47648 adding last provider functionality for manual add",
@@ -1696,14 +1568,6 @@
     "created_at": "2026-04-13T02:32:01Z"
   },
   {
-    "title": "EN-47557 Upgrade flink to 2.1.1",
-    "url": "https://github.com/Apixio/coding-core-utils/pull/20",
-    "repo": "coding-core-utils",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-04-20T22:20:52Z",
-    "created_at": "2026-04-20T20:47:04Z"
-  },
-  {
     "title": "feat(exp-ra-prd): add external-caller SP for match-scoring-service app (PLT-3131)",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/354",
     "repo": "databricks-ops-infra",
@@ -1760,14 +1624,6 @@
     "created_at": "2026-04-15T00:15:36Z"
   },
   {
-    "title": "feat(projects): add k8s-resources-exporter TFC project",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/145",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-20T14:08:30Z",
-    "created_at": "2026-04-19T22:37:19Z"
-  },
-  {
     "title": "feat: v1.3.0 — name_suffix, iam_role_arn, bump HVA default to 6.2.0_38",
     "url": "https://github.com/Apixio/terraform-aws-fivetran-agent/pull/8",
     "repo": "terraform-aws-fivetran-agent",
@@ -1782,38 +1638,6 @@
     "author": "dv-mmounts",
     "merged_at": "2026-04-17T18:10:39Z",
     "created_at": "2026-04-17T17:08:40Z"
-  },
-  {
-    "title": "add in repo for confluence sync",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/144",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-17T17:05:41Z",
-    "created_at": "2026-04-17T17:00:12Z"
-  },
-  {
-    "title": "bump project varset version and add additional projvarsets for ghadmin",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/143",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T16:42:36Z",
-    "created_at": "2026-04-17T16:33:41Z"
-  },
-  {
-    "title": "init github-administration-tf",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/142",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T13:38:16Z",
-    "created_at": "2026-04-17T13:19:54Z"
-  },
-  {
-    "title": "tweak setup provider registry script and add team token create script",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/141",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-17T13:05:26Z",
-    "created_at": "2026-04-16T15:17:43Z"
   },
   {
     "title": "PLT-4693: Multiple libraries for loading PDF",
@@ -1920,14 +1744,6 @@
     "created_at": "2026-04-14T21:09:14Z"
   },
   {
-    "title": "fix: switch to base64 encoded secret so it can be used more easily",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/140",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-14T20:48:05Z",
-    "created_at": "2026-04-14T20:34:20Z"
-  },
-  {
     "title": "PLT-4680 - Update SES role trust policy",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/340",
     "repo": "databricks-ops-infra",
@@ -1966,30 +1782,6 @@
     "author": "kmcgovern-apixio",
     "merged_at": "2026-04-14T17:10:57Z",
     "created_at": "2026-04-14T06:22:37Z"
-  },
-  {
-    "title": "allow platform-actions TFC project access to images-prod",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/139",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-13T19:29:14Z",
-    "created_at": "2026-04-13T19:27:12Z"
-  },
-  {
-    "title": "add platform-actions TFC project",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/138",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-13T19:25:17Z",
-    "created_at": "2026-04-13T19:02:06Z"
-  },
-  {
-    "title": "add script to setup provider registry",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/137",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-13T18:54:45Z",
-    "created_at": "2026-04-13T18:46:23Z"
   },
   {
     "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
@@ -2040,22 +1832,6 @@
     "created_at": "2026-04-09T20:29:28Z"
   },
   {
-    "title": "EN-47320 add retro-core as owner of the repo",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/136",
-    "repo": "tfc-bootstrap",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-04-10T15:56:21Z",
-    "created_at": "2026-04-10T15:15:21Z"
-  },
-  {
-    "title": "adding realm terraform provider repo",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/135",
-    "repo": "tfc-bootstrap",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-10T14:27:14Z",
-    "created_at": "2026-04-09T22:07:38Z"
-  },
-  {
     "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
     "url": "https://github.com/Apixio/ml-retrosp/pull/150",
     "repo": "ml-retrosp",
@@ -2086,22 +1862,6 @@
     "author": "ribrayev-apixio",
     "merged_at": "2026-04-08T23:20:35Z",
     "created_at": "2026-04-08T21:44:27Z"
-  },
-  {
-    "title": "chore: [DAT-6714] rename existing snowflake tf project",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/132",
-    "repo": "tfc-bootstrap",
-    "author": "AGillon",
-    "merged_at": "2026-04-08T21:30:27Z",
-    "created_at": "2026-04-06T19:52:53Z"
-  },
-  {
-    "title": " new module repo for msk cluster",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/134",
-    "repo": "tfc-bootstrap",
-    "author": "vivekkovi-cmyk",
-    "merged_at": "2026-04-08T19:27:00Z",
-    "created_at": "2026-04-08T19:23:36Z"
   },
   {
     "title": "added workflow for bundle cleanup after PR close",
@@ -2166,22 +1926,6 @@
     "author": "datavant-org-tooling[bot]",
     "merged_at": "2026-04-07T20:49:58Z",
     "created_at": "2026-04-07T20:47:25Z"
-  },
-  {
-    "title": "fixup mfang import",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/133",
-    "repo": "tfc-bootstrap",
-    "author": "kmcgovern-apixio",
-    "merged_at": "2026-04-07T17:19:32Z",
-    "created_at": "2026-04-07T17:18:11Z"
-  },
-  {
-    "title": "Update GitHub usernames and emails in auto.tfvars",
-    "url": "https://github.com/Apixio/tfc-bootstrap/pull/131",
-    "repo": "tfc-bootstrap",
-    "author": "vmourzenok-dv",
-    "merged_at": "2026-04-07T16:55:29Z",
-    "created_at": "2026-04-06T18:19:42Z"
   },
   {
     "title": "Refactor NPI missing-doc import pipeline for reliability and correctness",
