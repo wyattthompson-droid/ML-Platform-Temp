@@ -1,11 +1,35 @@
 [
   {
+    "title": "feat: allow output tables to be shared between workflows",
+    "url": "https://github.com/Apixio/ml-inference-framework/pull/6",
+    "repo": "ml-inference-framework",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-05-08T00:47:15Z",
+    "created_at": "2026-05-06T21:04:15Z"
+  },
+  {
+    "title": "Add CodeArtifact auth to install actions (CLOUD-5057)",
+    "url": "https://github.com/Apixio/apx-launchpad/pull/4378",
+    "repo": "apx-launchpad",
+    "author": "datavant-org-tooling[bot]",
+    "merged_at": "2026-05-07T20:55:52Z",
+    "created_at": "2026-05-07T01:24:52Z"
+  },
+  {
     "title": "DAT-7240 Local dev Docker environment + integration test infra",
     "url": "https://github.com/Apixio/apx-signalmanager/pull/1408",
     "repo": "apx-signalmanager",
     "author": "mwebb-datavant",
     "merged_at": "2026-05-06T22:39:03Z",
     "created_at": "2026-05-05T16:35:57Z"
+  },
+  {
+    "title": "chore(retro): bump llmfp 0.4.1 to 0.9.9 and switch rescore_with_llm to single-node on-demand",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/170",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-05-05T19:34:03Z",
+    "created_at": "2026-05-05T19:18:33Z"
   },
   {
     "title": "Crosswalk management models",
@@ -38,6 +62,30 @@
     "author": "daviddelsol-cloud",
     "merged_at": "2026-04-20T20:43:29Z",
     "created_at": "2026-04-20T19:57:02Z"
+  },
+  {
+    "title": "fix: filter poll_and_collect_meatlaat predictions by model_uri",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/151",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-13T17:56:21Z",
+    "created_at": "2026-04-10T17:28:55Z"
+  },
+  {
+    "title": "feat: add event-driven MeatLAAT support to all remaining batch workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/149",
+    "repo": "ml-retrosp",
+    "author": "anuccio-apixio",
+    "merged_at": "2026-04-10T16:13:18Z",
+    "created_at": "2026-04-09T20:29:28Z"
+  },
+  {
+    "title": "revert: remove DOS infdate integration, keep bundle cleanup workflows",
+    "url": "https://github.com/Apixio/ml-retrosp/pull/150",
+    "repo": "ml-retrosp",
+    "author": "mwebb-datavant",
+    "merged_at": "2026-04-09T22:12:56Z",
+    "created_at": "2026-04-09T22:05:52Z"
   },
   {
     "title": "Add Reconciliation Script",
