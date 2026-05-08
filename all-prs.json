@@ -1,5 +1,13 @@
 [
   {
+    "title": "DAB scaffolding for phone & address extraction",
+    "url": "https://github.com/Apixio/ml-nexus/pull/10",
+    "repo": "ml-nexus",
+    "author": "nithinkambam-apixio",
+    "merged_at": "2026-05-08T04:39:40Z",
+    "created_at": "2026-05-07T23:42:47Z"
+  },
+  {
     "title": "docs: add rollback to deploy reference, split diff to its own page",
     "url": "https://github.com/Apixio/cloud9/pull/344",
     "repo": "cloud9",
@@ -776,14 +784,6 @@
     "created_at": "2026-05-05T20:13:48Z"
   },
   {
-    "title": "feat(iam): add external-secrets IRSA roles for stg, mgmt-stg, tools-dev, commercial-nonprod",
-    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/4",
-    "repo": "k8s-resources-exporter-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-05-05T21:07:01Z",
-    "created_at": "2026-04-29T14:11:35Z"
-  },
-  {
     "title": "[READY] change channel names",
     "url": "https://github.com/Apixio/data_integrations/pull/2214",
     "repo": "data_integrations",
@@ -1544,14 +1544,6 @@
     "created_at": "2026-04-28T15:31:24Z"
   },
   {
-    "title": "feat(ecr): add cloud9 ecr module for k8s-resources-exporter",
-    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/3",
-    "repo": "k8s-resources-exporter-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-28T14:08:10Z",
-    "created_at": "2026-04-27T15:28:38Z"
-  },
-  {
     "title": "En 47945 empty alias fix",
     "url": "https://github.com/Apixio/apx-launchpad/pull/4346",
     "repo": "apx-launchpad",
@@ -1608,6 +1600,14 @@
     "created_at": "2026-04-27T17:42:53Z"
   },
   {
+    "title": "feat: Add composite action and reusable workflow for Confluence sync",
+    "url": "https://github.com/Apixio/action-confluence-sync/pull/1",
+    "repo": "action-confluence-sync",
+    "author": "kmcgovern-apixio",
+    "merged_at": "2026-04-27T18:04:28Z",
+    "created_at": "2026-04-21T13:58:01Z"
+  },
+  {
     "title": "EN-47908: adding Nexus chatbot service principals",
     "url": "https://github.com/Apixio/databricks-ops-infra/pull/359",
     "repo": "databricks-ops-infra",
@@ -1646,14 +1646,6 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-04-27T14:53:09Z",
     "created_at": "2026-04-24T19:18:48Z"
-  },
-  {
-    "title": "feat(workspaces): add ecr workspace",
-    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/2",
-    "repo": "k8s-resources-exporter-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-27T14:22:54Z",
-    "created_at": "2026-04-27T14:18:27Z"
   },
   {
     "title": "EN-47833 fix: enable submit when no-code reject is overturned",
@@ -1838,14 +1830,6 @@
     "author": "tejaswini1107-hub",
     "merged_at": "2026-04-22T15:42:26Z",
     "created_at": "2026-04-14T15:58:55Z"
-  },
-  {
-    "title": "feat(workspaces): define workspaces per cluster",
-    "url": "https://github.com/Apixio/k8s-resources-exporter-tf/pull/1",
-    "repo": "k8s-resources-exporter-tf",
-    "author": "jdonnelly-apixio",
-    "merged_at": "2026-04-22T15:20:12Z",
-    "created_at": "2026-04-21T13:41:47Z"
   },
   {
     "title": "add terraform import for ai_prd",
@@ -2414,13 +2398,5 @@
     "author": "adalundhe",
     "merged_at": "2026-04-08T14:11:47Z",
     "created_at": "2026-03-31T14:53:01Z"
-  },
-  {
-    "title": "PLT-4288: Log4j2 upgrade",
-    "url": "https://github.com/Apixio/apx-signalmanager/pull/1395",
-    "repo": "apx-signalmanager",
-    "author": "ribrayev-apixio",
-    "merged_at": "2026-04-08T05:25:57Z",
-    "created_at": "2026-04-08T02:05:55Z"
   }
 ]
